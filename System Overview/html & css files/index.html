@@ -1,0 +1,1149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tunbridge High School | System Overview</title>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../site-assistant.css" />
+  <link rel="stylesheet" href="../../gilroy.css" />
+  <script defer src="../../workspace-whatsapp.js"></script>
+  <script defer src="../../workspace-chatgpt.js"></script>
+  <script defer src="../../workspace-translator.js"></script>
+  <script defer src="../../workspace-text-to-speech.js"></script>
+  <script defer src="../../workspace-pdf-converter.js"></script>
+  <script defer src="../../workspace-media-compressor.js"></script>
+</head>
+<body>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <a class="brand" href="#">
+      <img class="brand-logo" src="../../assets/logo.jpg" alt="Tunbridge High School" />
+    </a>
+
+    <nav class="side-nav">
+      <a class="nav-item active" href="index.html" aria-current="page"><i data-lucide="house"></i><span>System Overview</span></a>
+      <a class="nav-item" href="../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+      <a class="nav-item" href="../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+      <a class="nav-item" href="../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+      <a class="nav-item" href="../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+      <a class="nav-item" href="../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+    </nav>
+
+    <button class="academic-year">
+      <i data-lucide="graduation-cap"></i>
+      <span>
+        <small>Academic Year</small>
+        <strong>2026 – 2027</strong>
+      </span>
+      <i class="year-chevron" data-lucide="chevron-down"></i>
+    </button>
+
+    <div class="sidebar-waves"><span></span><span></span></div>
+  </aside>
+
+  <main class="main-area">
+
+    <header class="topbar">
+      <label class="global-search">
+        <i data-lucide="search"></i>
+        <input type="search" placeholder="Search pages, students, teachers, reports..." />
+      </label>
+
+      <div class="top-actions">
+        <button class="top-pill" id="operation-tools-trigger" type="button" aria-haspopup="dialog" aria-controls="operation-tools-dialog">
+          <i data-lucide="layout-grid"></i>
+          <span>Modules</span>
+        </button>
+
+        <div class="intelligent-apps-dropdown">
+          <button class="top-pill" id="intelligent-apps-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="intelligent-apps-menu">
+            <i data-lucide="sparkles"></i>
+            <span>Intelligent Apps</span>
+            <i data-lucide="chevron-down" class="tiny-chevron"></i>
+          </button>
+          <div class="intelligent-apps-menu" id="intelligent-apps-menu" role="menu" aria-labelledby="intelligent-apps-trigger">
+            <div class="intelligent-apps-menu-panel">
+              <button type="button" role="menuitem">WhatsApp</button>
+              <button type="button" role="menuitem">ChatGPT</button>
+              <button type="button" role="menuitem">Language Translator</button>
+              <button type="button" role="menuitem">Text-to-Speech</button>
+              <button type="button" role="menuitem">PDF Converter</button>
+              <button type="button" role="menuitem">Media Compressor</button>
+              <button type="button" role="menuitem">360 Degree Tour</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="top-pill" id="ai-edge-trigger" type="button" aria-haspopup="dialog" aria-controls="ai-edge-dialog">
+          <i data-lucide="bot"></i>
+          <span>AI Edge</span>
+        </button>
+
+        <button class="notification">
+          <i data-lucide="bell"></i>
+          <b></b>
+        </button>
+
+        <div class="profile-menu-container">
+          <button class="profile profile-trigger" id="profile-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="profile-dropdown">
+            <span class="avatar">T</span>
+            <span class="profile-trigger-copy"><strong>TBHSADMIN</strong><small>Admin</small></span>
+            <i data-lucide="chevron-down" aria-hidden="true"></i>
+          </button>
+          <div class="profile-dropdown" id="profile-dropdown" role="menu" aria-labelledby="profile-trigger">
+            <section class="profile-identity">
+              <span>IDENTITY PROFILE</span>
+              <strong>TBHSADMIN</strong>
+              <p>student@gmail.com</p>
+              <b>ADMIN</b>
+            </section>
+            <button class="profile-signout" type="button" role="menuitem">Sign out <i data-lucide="log-out" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="welcome-hero">
+      <div class="hero-copy">
+        <p>WELCOME BACK, ADMIN <span>👋</span></p>
+        <h1>System Overview</h1>
+        <div>A unified view of your school's operations, academics, people and finance.</div>
+      </div>
+      <div class="hero-building" role="img" aria-label="Modern school campus"></div>
+    </section>
+
+    <section class="dashboard">
+
+      <div class="section-heading">
+        <strong>METRICS &amp; ANALYTICS</strong>
+        <span></span>
+        <small>Real-time school insights at a glance.</small>
+      </div>
+
+      <div class="metrics-grid">
+
+        <article class="metric-card blue">
+          <div class="metric-icon"><i data-lucide="file-text"></i></div>
+          <div class="metric-content">
+            <span>Applications</span>
+            <strong>6,183</strong>
+          </div>
+        </article>
+
+        <article class="metric-card orange">
+          <div class="metric-icon"><i data-lucide="users-round"></i></div>
+          <div class="metric-content">
+            <span>Students</span>
+            <strong>104</strong>
+          </div>
+        </article>
+
+        <article class="metric-card green">
+          <div class="metric-icon"><i data-lucide="graduation-cap"></i></div>
+          <div class="metric-content">
+            <span>Teachers</span>
+            <strong>80</strong>
+          </div>
+        </article>
+
+        <article class="metric-card purple">
+          <div class="metric-icon"><i data-lucide="wallet"></i></div>
+          <div class="metric-content">
+            <span>Fee Collection</span>
+            <strong>₹36,140</strong>
+          </div>
+        </article>
+
+      </div>
+
+      <section class="query-filter-bar" aria-labelledby="query-filter-heading">
+        <p class="query-filter-label" id="query-filter-heading">FILTER BY CATEGORY</p>
+        <div class="topic-pills" role="group" aria-label="Filter administrative queries">
+            <button class="selected" type="button" data-query-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-query-filter="operations" aria-pressed="false"><i data-lucide="briefcase-business"></i>Operations</button>
+            <button type="button" data-query-filter="overview" aria-pressed="false"><i data-lucide="chart-no-axes-column-increasing"></i>Overview</button>
+            <button type="button" data-query-filter="academics" aria-pressed="false"><i data-lucide="book-open"></i>Academics</button>
+            <button type="button" data-query-filter="attendance" aria-pressed="false"><i data-lucide="calendar-days"></i>Attendance</button>
+            <button type="button" data-query-filter="finance" aria-pressed="false"><i data-lucide="wallet"></i>Finance</button>
+            <button type="button" data-query-filter="staff" aria-pressed="false"><i data-lucide="users-round"></i>Staff</button>
+            <button type="button" data-query-filter="admissions" aria-pressed="false"><i data-lucide="user-round-plus"></i>Admissions</button>
+        </div>
+      </section>
+
+      <section class="queries-section">
+
+        <div class="queries-heading">
+          <h3>Administrative Queries <span id="queries-count">17</span></h3>
+          <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="administrative-queries-grid">
+            <span>Collapse</span><i data-lucide="chevron-up" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="query-grid" id="administrative-queries-grid">
+
+          <div class="query-column">
+
+            <a class="query-item" href="#">
+              <div class="query-icon blue"><i data-lucide="calendar"></i></div>
+              <div><b>OPERATIONS</b><span>What are the upcoming COE details and events?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon orange"><i data-lucide="calendar-days"></i></div>
+              <div><b>ATTENDANCE</b><span>Which classes have attendance problems?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon green"><i data-lucide="users-round"></i></div>
+              <div><b>STAFF</b><span>Which teachers are overloaded?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon purple"><i data-lucide="book-open"></i></div>
+              <div><b>ACADEMICS</b><span>Which subjects need extra help?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon green"><i data-lucide="graduation-cap"></i></div>
+              <div><b>ADMISSIONS</b><span>Which new admissions might drop out?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon blue"><i data-lucide="book-open"></i></div>
+              <div><b>OPERATIONS</b><span>Who has overdue library books?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+          </div>
+
+          <div class="query-column">
+
+            <a class="query-item" href="#">
+              <div class="query-icon green"><i data-lucide="chart-no-axes-column-increasing"></i></div>
+              <div><b>OVERVIEW</b><span>Overall school health score?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon amber"><i data-lucide="database"></i></div>
+              <div><b>FINANCE</b><span>How much fee will we collect this year?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon purple"><i data-lucide="book-open"></i></div>
+              <div><b>ACADEMICS</b><span>Who are the top students?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon green"><i data-lucide="users-round"></i></div>
+              <div><b>STAFF</b><span>Which teachers get best results?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon pink"><i data-lucide="bus-front"></i></div>
+              <div><b>OPERATIONS</b><span>Which bus routes are underused?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon pink"><i data-lucide="package"></i></div>
+              <div><b>OPERATIONS</b><span>What supplies are running low?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+          </div>
+
+          <div class="query-column">
+
+            <a class="query-item" href="#">
+              <div class="query-icon purple"><i data-lucide="book-open"></i></div>
+              <div><b>ACADEMICS</b><span>Which students might fail this term?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon amber"><i data-lucide="database"></i></div>
+              <div><b>FINANCE</b><span>Today's money summary?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon purple"><i data-lucide="book-open"></i></div>
+              <div><b>ACADEMICS</b><span>Which subjects have low pass rate?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon green"><i data-lucide="users-round"></i></div>
+              <div><b>STAFF</b><span>Which staff come late often?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+            <a class="query-item" href="#">
+              <div class="query-icon pink"><i data-lucide="package"></i></div>
+              <div><b>OPERATIONS</b><span>How full is the hostel?</span></div>
+              <i class="open-icon" data-lucide="arrow-up-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+
+    </section>
+  </main>
+</div>
+
+<dialog class="assistant-answer-dialog" id="assistant-answer-dialog" aria-labelledby="assistant-answer-title">
+  <div class="assistant-answer-window">
+    <aside class="assistant-answer-sidebar">
+      <div class="assistant-sidebar-brand"><span>YOUR SCHOOL<br />ASSISTANT</span></div>
+      <span class="assistant-sidebar-rule"></span>
+      <h2 id="assistant-answer-title">Principal<br />Assistant</h2>
+      <img class="assistant-preview-image" src="../../assets/ai-preview-image.png" alt="" />
+    </aside>
+    <div class="assistant-answer-main">
+      <header class="assistant-answer-header">
+        <span class="assistant-answer-badge"><i data-lucide="sparkles" aria-hidden="true"></i> AI PREVIEW</span>
+        <button class="assistant-answer-close" id="assistant-answer-close" type="button" aria-label="Close assistant response">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div class="assistant-answer-content">
+        <div class="assistant-question-card">
+          <div class="assistant-answer-label">
+            <i data-lucide="message-square-text" aria-hidden="true"></i>
+            <span>YOUR QUESTION</span>
+          </div>
+          <p class="assistant-answer-question" id="assistant-answer-question"></p>
+        </div>
+        <div class="assistant-thinking" id="assistant-thinking" role="status" aria-live="polite">
+          <span class="assistant-thinking-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Preparing a helpful response…</span>
+        </div>
+        <section class="assistant-response" id="assistant-response" aria-labelledby="assistant-response-title" aria-live="polite" hidden>
+          <span class="assistant-response-icon"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+          <div>
+            <div class="assistant-response-heading">
+              <h3 id="assistant-response-title">Suggested insight</h3>
+              <span>PREVIEW</span>
+            </div>
+            <p id="assistant-response-text"></p>
+          </div>
+        </section>
+      </div>
+      <footer class="assistant-answer-footer">
+        <button class="assistant-answer-done" id="assistant-answer-done" type="button">Got it <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+      </footer>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="operation-dialog" id="operation-tools-dialog" aria-labelledby="operation-tools-title">
+  <div class="operation-window">
+    <aside class="module-sidebar">
+      <div class="module-sidebar-header">
+        <div class="module-brand">
+          <span class="module-brand-icon"><i data-lucide="layout-grid"></i></span>
+          <div>
+            <strong>Modules</strong>
+            <small>School workspace</small>
+          </div>
+        </div>
+        <label class="module-search">
+          <i data-lucide="search"></i>
+          <input id="module-search-input" type="search" placeholder="Search sections..." autocomplete="off" aria-label="Search school modules and sections" />
+          <kbd>⌘ K</kbd>
+        </label>
+      </div>
+      <nav class="module-nav" id="module-nav" aria-label="School modules">
+        <button class="module-nav-item is-active" type="button" data-module="pre-configuration" aria-current="page">
+          <span class="module-nav-icon"><i data-lucide="settings-2"></i></span>
+          <span class="module-nav-copy"><strong>Pre Configuration</strong><small>1 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="preadmission">
+          <span class="module-nav-icon"><i data-lucide="user-round-search"></i></span>
+          <span class="module-nav-copy"><strong>Preadmission</strong><small>6 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="admission">
+          <span class="module-nav-icon"><i data-lucide="graduation-cap"></i></span>
+          <span class="module-nav-copy"><strong>Admission</strong><small>6 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="fees">
+          <span class="module-nav-icon"><i data-lucide="wallet"></i></span>
+          <span class="module-nav-copy"><strong>Fees</strong><small>3 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="exam">
+          <span class="module-nav-icon"><i data-lucide="book-open-check"></i></span>
+          <span class="module-nav-copy"><strong>Exam</strong><small>4 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="hrms">
+          <span class="module-nav-icon"><i data-lucide="users-round"></i></span>
+          <span class="module-nav-copy"><strong>HRMS</strong><small>4 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="front-office">
+          <span class="module-nav-icon"><i data-lucide="panels-top-left"></i></span>
+          <span class="module-nav-copy"><strong>Front Office</strong><small>2 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="leave-management">
+          <span class="module-nav-icon"><i data-lucide="mail"></i></span>
+          <span class="module-nav-copy"><strong>Leave Management</strong><small>1 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="upload">
+          <span class="module-nav-icon"><i data-lucide="upload"></i></span>
+          <span class="module-nav-copy"><strong>Upload</strong><small>1 section</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="time-table">
+          <span class="module-nav-icon"><i data-lucide="calendar-days"></i></span>
+          <span class="module-nav-copy"><strong>Time Table</strong><small>4 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="coe">
+          <span class="module-nav-icon"><i data-lucide="calendar-clock"></i></span>
+          <span class="module-nav-copy"><strong>COE</strong><small>2 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="birthday">
+          <span class="module-nav-icon"><i data-lucide="cake"></i></span>
+          <span class="module-nav-copy"><strong>Birthday</strong><small>1 section</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="sports">
+          <span class="module-nav-icon"><i data-lucide="trophy"></i></span>
+          <span class="module-nav-copy"><strong>Sports</strong><small>1 section</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="online-exam">
+          <span class="module-nav-icon"><i data-lucide="monitor"></i></span>
+          <span class="module-nav-copy"><strong>Online Exam</strong><small>3 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="library">
+          <span class="module-nav-icon"><i data-lucide="book-open"></i></span>
+          <span class="module-nav-copy"><strong>Library</strong><small>3 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="transport">
+          <span class="module-nav-icon"><i data-lucide="bus"></i></span>
+          <span class="module-nav-copy"><strong>Transport</strong><small>3 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="lms">
+          <span class="module-nav-icon"><i data-lucide="presentation"></i></span>
+          <span class="module-nav-copy"><strong>LMS</strong><small>1 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <button class="module-nav-item" type="button" data-module="ai-edge">
+          <span class="module-nav-icon"><i data-lucide="sparkles"></i></span>
+          <span class="module-nav-copy"><strong>AI Edge</strong><small>1 sections</small></span>
+          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+        </button>
+        <p class="module-empty" id="module-empty" hidden>No matching modules</p>
+      </nav>
+    </aside>
+
+    <section class="module-content">
+      <header class="module-toolbar">
+        <span class="module-toolbar-title">MODULE EXPLORER</span>
+        <button class="module-close" type="button" aria-label="Close modules">
+          <i data-lucide="x"></i>
+        </button>
+      </header>
+      <div class="module-main">
+        <div class="module-heading">
+          <div>
+            <p class="module-eyebrow"><span></span><b id="module-eyebrow-label">MODULE EXPLORER</b></p>
+            <h2 id="operation-tools-title">Pre Configuration</h2>
+            <p class="module-description">Set up the essentials that keep your school running smoothly.</p>
+          </div>
+          <div class="module-heading-art"><img src="../../assets/ai-preview-image.png" alt="" /></div>
+        </div>
+        <div class="module-section-heading">
+          <div><span class="section-heading-mark"></span><strong id="module-section-label">AVAILABLE SECTIONS</strong></div>
+          <span class="tool-count" id="tool-count">7 sections</span>
+        </div>
+        <div class="module-tool-list" id="module-tool-list"></div>
+        <p class="tool-empty" id="tool-empty" hidden>No sections match your search.</p>
+      </div>
+    </section>
+  </div>
+</dialog>
+
+<dialog class="ai-edge-dialog" id="ai-edge-dialog" aria-labelledby="ai-edge-title">
+  <div class="ai-edge-window">
+    <aside class="ai-edge-sidebar">
+      <div class="ai-edge-brand">
+        <span class="ai-edge-brand-icon"><i data-lucide="sparkles" aria-hidden="true"></i></span>
+        <div><strong>AI EDGE</strong><small>School intelligence</small></div>
+      </div>
+      <button class="ai-edge-nav-item is-active" type="button" aria-current="page">
+        <span>AI Tools</span><i data-lucide="chevron-right" aria-hidden="true"></i>
+      </button>
+    </aside>
+    <section class="ai-edge-main">
+      <header class="ai-edge-header">
+        <div><span class="ai-edge-eyebrow">QUICK ACCESS</span><h2 id="ai-edge-title">AI Tools</h2></div>
+        <button class="ai-edge-close" id="ai-edge-close" type="button" aria-label="Close AI Edge">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </header>
+      <div class="ai-edge-app-list" aria-label="AI tools">
+        <article class="ai-edge-app"><span class="ai-edge-app-icon"><i data-lucide="file-text" aria-hidden="true"></i></span><span>AI Question Paper Generator</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></article>
+        <article class="ai-edge-app"><span class="ai-edge-app-icon"><i data-lucide="notebook-pen" aria-hidden="true"></i></span><span>AI Notemaker</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></article>
+        <article class="ai-edge-app"><span class="ai-edge-app-icon"><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i></span><span>AI Performance Analysis</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></article>
+        <article class="ai-edge-app"><span class="ai-edge-app-icon"><i data-lucide="messages-square" aria-hidden="true"></i></span><span>AI Doubt Resolver</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></article>
+      </div>
+    </section>
+  </div>
+</dialog>
+
+<script>
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+
+  const operationDialog = document.querySelector("#operation-tools-dialog");
+  const operationTrigger = document.querySelector("#operation-tools-trigger");
+  const operationClose = operationDialog.querySelector(".module-close");
+  const aiEdgeTrigger = document.querySelector("#ai-edge-trigger");
+  const aiEdgeDialog = document.querySelector("#ai-edge-dialog");
+  const aiEdgeClose = document.querySelector("#ai-edge-close");
+  const profileMenuContainer = document.querySelector(".profile-menu-container");
+  const profileTrigger = document.querySelector("#profile-trigger");
+  const intelligentAppsDropdown = document.querySelector(".intelligent-apps-dropdown");
+  const intelligentAppsTrigger = document.querySelector("#intelligent-apps-trigger");
+  const moduleSearch = document.querySelector("#module-search-input");
+  const moduleNav = document.querySelector("#module-nav");
+  const moduleButtons = [...moduleNav.querySelectorAll(".module-nav-item")];
+  const toolList = document.querySelector("#module-tool-list");
+  const toolCount = document.querySelector("#tool-count");
+  const toolEmpty = document.querySelector("#tool-empty");
+  const moduleEmpty = document.querySelector("#module-empty");
+  const queriesToggle = document.querySelector(".collapse-btn");
+  const queryGrid = document.querySelector("#administrative-queries-grid");
+  const queryFilterButtons = [...document.querySelectorAll("[data-query-filter]")];
+  const queryItems = [...queryGrid.querySelectorAll(".query-item")];
+  const queryColumns = [...queryGrid.querySelectorAll(".query-column")];
+  const queryCount = document.querySelector("#queries-count");
+  const assistantDialog = document.querySelector("#assistant-answer-dialog");
+  const assistantDialogClose = document.querySelector("#assistant-answer-close");
+  const assistantDialogDone = document.querySelector("#assistant-answer-done");
+  const assistantQuestion = document.querySelector("#assistant-answer-question");
+  const assistantThinking = document.querySelector("#assistant-thinking");
+  const assistantResponse = document.querySelector("#assistant-response");
+  const assistantResponseText = document.querySelector("#assistant-response-text");
+  let assistantAnswerTimer;
+
+  const assistantSampleResponses = {
+    operations: "I would review the relevant operational records and summarize upcoming actions.",
+    overview: "I would combine key operational, academic, and finance indicators into a concise overview.",
+    academics: "I would review the academic records and highlight students or subjects that may need attention.",
+    attendance: "I would summarize attendance patterns and identify classes that may need follow-up.",
+    finance: "I would summarize fee activity and highlight items that may need follow-up.",
+    staff: "I would review staff records and summarize relevant workload or attendance patterns.",
+    admissions: "I would review the admissions pipeline and highlight items that may need follow-up."
+  };
+
+  const moduleContent = {
+    "pre-configuration": {
+      title: "Pre Configuration",
+      description: "Set up the essentials that keep your school running smoothly.",
+      tools: ["Master Configuration", "General Configuration", "Transaction Numbering", "Admission Standard", "Fee Standard", "Exam Standard", "Payroll Standard"]
+    },
+    preadmission: {
+      title: "Preadmission",
+      description: "Turn prospective families into your next school community.",
+      tools: [
+        "Oral Test Schedule", "Written Test Schedule",
+        "Oral Test Marks", "Written Test Marks",
+        "Status", "Prospectus Report", "Student Count Report",
+        "Schedule Report", "Registrationreport", "Pre Month End Report",
+        "Pre Admission Form", "Preadmission Online Payment",
+        "Bmc Pu Application Form", "Document View"
+      ],
+      categories: [
+        { title: "Interview Schedule", tools: ["Oral Test Schedule", "Written Test Schedule"] },
+        { title: "Marks Entry", tools: ["Oral Test Marks", "Written Test Marks"] },
+        { title: "Preadmission Status", tools: ["Status"] },
+        { title: "Reports", tools: ["Prospectus Report", "Student Count Report", "Schedule Report", "Registrationreport", "Pre Month End Report"] },
+        { title: "Application Form", tools: ["Pre Admission Form", "Preadmission Online Payment", "Bmc Pu Application Form"] },
+        { title: "Document View", tools: ["Document View"] }
+      ]
+    },
+    admission: {
+      title: "Admission",
+      description: "Welcome new students with a clear, connected admission process.",
+      categories: [
+        { title: "Masters", tools: [
+          "Academic Year", "Master Class", "Master Source", "Master Section", "Master Class Category",
+          "Master Reference", "Master Category", "Master Document", "Import", "Active Deactive Students",
+          "Section Allotment", "Class Teacher Mapping", "Master Activities", "Caste Category", "Master Caste", "Master Religion"
+        ] },
+        { title: "Admission Form", tools: ["Student Admission Form"] },
+        { title: "Attendance Entry", tools: ["Attendance Entry Type", "Attendance Login Privileges"] },
+        { title: "Student TC", tools: ["Student TC", "Student TC Cancel"] },
+        { title: "Reports", tools: [
+          "Student Search", "Student Birthday", "Classwise Daily Attendance", "Admission Register",
+          "Date Of Birth Certificate", "Study Certificate", "Student Attendance Report", "Student Yearly Attendance",
+          "100% Attendance Report", "Overall Daily Attendance", "Categorywise Attendance", "Class Wise Student Details",
+          "Student TC Report", "Class Teacher Report", "Smart Card Details"
+        ] },
+        { title: "Configuration", tools: ["User Password Creation", "General SMS"] }
+      ]
+    },
+    fees: {
+      title: "Fees",
+      description: "Manage fee structures, collections, and student support.",
+      categories: [
+        { title: "Masters", tools: [
+          "Fee Head", "Fee Installments", "Fee Terms", "Fee Class Category", "Custom Fee Group",
+          "Yearly Group Head Map", "Fee Amount Entry", "Student Fee Group Map", "Master Fine Slab",
+          "Fee Master Concession", "Payment Details", "Fee User Group Login Privilege"
+        ] },
+        { title: "Transaction", tools: [
+          "Fee Transaction", "Fee Refundables", "Cheque Bounce", "Fee Master Concession",
+          "Fee Opening Balance", "Fee Preadmission Transaction", "Fee Adjustment", "Fee Waived Off"
+        ] },
+        { title: "Reports", tools: [
+          "Fee Student Concession", "Fee Monthend Report", "Fee Refund Report",
+          "Fee Demand Register Report", "Fee Details Report"
+        ] }
+      ]
+    },
+    exam: {
+      title: "Exam",
+      description: "Plan assessments and keep every result organized.",
+      categories: [
+        { title: "Master", tools: [
+          "Exam Master", "Exam Master Category", "Sub Exam Master", "Subject Master", "Master Grade", "Master Subject Group"
+        ] },
+        { title: "Exam Mapping", tools: [
+          "Student Mapping", "Category Subject Mapping", "Exam Subject Wizard", "Exam Login Privileges", "Promotion", "Subject Group Mapping"
+        ] },
+        { title: "Marks Calculation", tools: ["Calculation", "Promotion Calculation"] },
+        { title: "Reports", tools: [
+          "Exam Cumulative Report", "Cumulative Reports", "Exam Month End Report", "BIS Progress Card Report"
+        ] }
+      ]
+    },
+    hrms: {
+      title: "HRMS",
+      description: "Support your people with streamlined staff administration.",
+      categories: [
+        { title: "Master", tools: [
+          "Master Bank", "Master Course", "Marital Status", "Master Gender", "Earning And Deduction",
+          "Professional Tax", "Leave Year", "Employee Category", "Master Loan", "Group Department Designation Mapping"
+        ] },
+        { title: "Employee Register", tools: ["Employee Register"] },
+        { title: "Transaction", tools: [
+          "Salary Calculation", "Mass Updation", "Salary Advance", "Employee Loan", "Employee Salary Details"
+        ] },
+        { title: "Report", tools: [
+          "Salary Statement", "Salary Slip", "Employee Contribution", "Employee Strength", "ESI Report",
+          "Head Wise Report", "Bank Cash Report", "Employee Profile", "Employee Service Report", "Salary Certificate",
+          "BGHS Salary Cumulative", "EPF Contribution", "PF Challan", "Form 10", "Form 5", "PF Form 6A",
+          "PF Form 3A", "HRMS Monthend Report", "Employee Salary Slip", "Employee Offer Letter"
+        ] }
+      ]
+    },
+    "front-office": {
+      title: "Front Office",
+      description: "Manage staff shifts, holiday schedules, and front office attendance reports.",
+      categories: [
+        { title: "Master", tools: ["Master Holiday", "Shift Setting Master", "Employee Shift Mapping"] },
+        { title: "Reports", tools: [
+          "Holiday Report", "Employee Monthly Report", "Employee Log Report", "Employee Late In / Early Out Report",
+          "Employee In/Out Report", "Employee Yearly Report", "Employee Absent Report"
+        ] }
+      ]
+    },
+    "leave-management": {
+      title: "Leave Management",
+      description: "Manage staff leave requests, balances, and approvals.",
+      categories: [
+        { title: "Leave Management", tools: [
+          "Master Leave", "Leave Transaction", "Leave Details", "Leave Opening Balance",
+          "Leave Report", "Leave Transfer", "Admin Leave Apply", "Leave Authorization"
+        ] }
+      ]
+    },
+    upload: {
+      title: "Upload",
+      description: "Manage school notices and shared information.",
+      categories: [
+        { title: "Notice Board", tools: ["Notice Board"] }
+      ]
+    },
+    "time-table": {
+      title: "Time Table",
+      description: "Organize class periods, staff assignments, and timetable changes.",
+      categories: [
+        { title: "Master", tools: [
+          "Category Class Mapping", "Category Category TT", "Break Time Setting", "Period Allocation",
+          "Staff Abbreviation", "Subject Abbreviation", "Period Time Setting", "Building", "Period Distribution", "Masterday"
+        ] },
+        { title: "Constraints", tools: [
+          "Consecutive", "Bifurcation Constraints", "Lab", "Subject Restriction", "Fixing Period"
+        ] },
+        { title: "Transaction", tools: [
+          "Timetable Generation", "Staff Replacement In Unallocated Period", "Staff Replacement In Their Timetable",
+          "Staff Replacement From Existing To New", "Deputation", "Manual Period Insertion", "Staff Period Transform"
+        ] },
+        { title: "Report", tools: ["Staffwise Report", "Classwise Report", "Subjectwise Report", "Consolidated Report"] }
+      ]
+    },
+    coe: {
+      title: "COE",
+      description: "Manage school events and review end-of-month reports.",
+      categories: [
+        { title: "Master", tools: ["COE"] },
+        { title: "Reports", tools: ["COE Month End Report"] }
+      ]
+    },
+    birthday: {
+      title: "Birthday",
+      description: "View student birthday information and reports.",
+      categories: [
+        { title: "Birthday Report", tools: ["Birthday Report"] }
+      ]
+    },
+    sports: {
+      title: "Sports",
+      description: "Review student sports and achievement reports.",
+      categories: [
+        { title: "Reports", tools: ["Topper List Report"] }
+      ]
+    },
+    "online-exam": {
+      title: "Online Exam",
+      description: "Manage online exam questions, publishing, and reports.",
+      categories: [
+        { title: "Masters", tools: ["Master Questions", "Exam Question Mapping"] },
+        { title: "Transaction", tools: ["Answer Paper Correction", "Online Exam Publish To Student"] },
+        { title: "Report", tools: ["School Online Exam Report"] }
+      ]
+    },
+    library: {
+      title: "Library",
+      description: "Manage library books, circulation, and collection reports.",
+      categories: [
+        { title: "Master", tools: [
+          "Lib Master", "Master Department", "Subject", "Master Accessories", "Master Library",
+          "Rack Details", "Master Author", "Master Time Slab"
+        ] },
+        { title: "Transaction", tools: ["Book Register", "Book Transaction", "Circulation Parameter"] },
+        { title: "Report", tools: [
+          "Circulation Report", "Rack Report", "Book Arrival Report", "Available Books Report",
+          "Purchase Donate Report", "Transaction Count Report"
+        ] }
+      ]
+    },
+    transport: {
+      title: "Transport",
+      description: "Manage vehicles, routes, student assignments, and transport reports.",
+      categories: [
+        { title: "Master", tools: [
+          "Transport Master Area", "Transport Master Driver", "Transport Master Fuel Type", "Transport Master Location",
+          "Transport Master Route", "Transport Master Vehicle", "Transport Master Vehicle Type", "Transport Master Session",
+          "Transport Schedule"
+        ] },
+        { title: "Transaction", tools: [
+          "Transport Student Route Mapping", "Transport Route Location Mapping", "Transport Approve",
+          "Vehicle Route Mapping", "Vehicle Driver Mapping"
+        ] },
+        { title: "Reports", tools: [
+          "Transport Approval Report", "Consolidated Bus Route Report", "Student Route Mapping Report"
+        ] }
+      ]
+    },
+    lms: {
+      title: "LMS",
+      description: "Coordinate staff meetings and schedules.",
+      categories: [
+        { title: "Schedule", tools: ["Meeting Schedule", "Staff Meeting Profile"] }
+      ]
+    },
+    "ai-edge": {
+      title: "AI Edge",
+      description: "Explore AI-powered tools for teaching and school operations.",
+      categories: [
+        { title: "AI Tools", tools: [
+          "AI Question Paper Generator", "AI Notemaker", "AI Performance Analysis", "AI Doubt Resolver"
+        ] }
+      ]
+    }
+  };
+
+  let selectedModule = "pre-configuration";
+
+  function renderModule(moduleKey) {
+    selectedModule = moduleKey;
+    const module = moduleContent[moduleKey];
+    if (!module) {
+      const selectedButton = moduleButtons.find((button) => button.dataset.module === moduleKey);
+      const title = selectedButton?.querySelector(".module-nav-copy strong")?.textContent.trim() || "Module";
+      document.querySelector("#operation-tools-title").textContent = title;
+      document.querySelector(".module-description").textContent = "Explore this area of your school workspace.";
+      document.querySelector(".module-main").classList.remove("is-preadmission", "is-admission", "is-fees", "is-exam", "is-hrms", "is-front-office", "is-leave-management", "is-upload", "is-time-table", "is-coe", "is-birthday", "is-sports", "is-online-exam", "is-library", "is-transport", "is-lms", "is-ai-edge", "is-preconfiguration");
+      document.querySelector("#module-eyebrow-label").textContent = "MODULE EXPLORER";
+      moduleButtons.forEach((button) => {
+        const active = button === selectedButton;
+        button.classList.toggle("is-active", active);
+        if (active) button.setAttribute("aria-current", "page");
+        else button.removeAttribute("aria-current");
+      });
+      toolList.replaceChildren();
+      toolCount.hidden = true;
+      toolEmpty.textContent = "Section details will appear here.";
+      toolEmpty.hidden = false;
+      return;
+    }
+    document.querySelector("#operation-tools-title").textContent = module.title;
+    document.querySelector(".module-description").textContent = module.description;
+    const isPreadmission = moduleKey === "preadmission";
+    document.querySelector(".module-main").classList.toggle("is-preadmission", isPreadmission);
+    document.querySelector(".module-main").classList.toggle("is-admission", moduleKey === "admission");
+    document.querySelector(".module-main").classList.toggle("is-fees", moduleKey === "fees");
+    document.querySelector(".module-main").classList.toggle("is-exam", moduleKey === "exam");
+    document.querySelector(".module-main").classList.toggle("is-hrms", moduleKey === "hrms");
+    document.querySelector(".module-main").classList.toggle("is-front-office", moduleKey === "front-office");
+    document.querySelector(".module-main").classList.toggle("is-leave-management", moduleKey === "leave-management");
+    document.querySelector(".module-main").classList.toggle("is-upload", moduleKey === "upload");
+    document.querySelector(".module-main").classList.toggle("is-time-table", moduleKey === "time-table");
+    document.querySelector(".module-main").classList.toggle("is-coe", moduleKey === "coe");
+    document.querySelector(".module-main").classList.toggle("is-birthday", moduleKey === "birthday");
+    document.querySelector(".module-main").classList.toggle("is-sports", moduleKey === "sports");
+    document.querySelector(".module-main").classList.toggle("is-online-exam", moduleKey === "online-exam");
+    document.querySelector(".module-main").classList.toggle("is-library", moduleKey === "library");
+    document.querySelector(".module-main").classList.toggle("is-transport", moduleKey === "transport");
+    document.querySelector(".module-main").classList.toggle("is-lms", moduleKey === "lms");
+    document.querySelector(".module-main").classList.toggle("is-ai-edge", moduleKey === "ai-edge");
+    document.querySelector(".module-main").classList.toggle("is-preconfiguration", moduleKey === "pre-configuration");
+    document.querySelector("#module-eyebrow-label").textContent = isPreadmission ? "EXPLORER" : "MODULE EXPLORER";
+    document.querySelector("#module-section-label").textContent = isPreadmission ? "PREADMISSION" : "AVAILABLE SECTIONS";
+
+    moduleButtons.forEach((button) => {
+      const active = button.dataset.module === moduleKey;
+      button.classList.toggle("is-active", active);
+      if (active) button.setAttribute("aria-current", "page");
+      else button.removeAttribute("aria-current");
+    });
+
+    renderTools();
+  }
+
+  function renderTools() {
+    const query = moduleSearch.value.trim().toLocaleLowerCase();
+    const module = moduleContent[selectedModule];
+    toolList.replaceChildren();
+
+    if (module.categories) {
+      let visibleTools = 0;
+      module.categories.forEach((category) => {
+        const categoryMatches = category.title.toLocaleLowerCase().includes(query);
+        const matchingTools = category.tools.filter((tool) => !query || categoryMatches || tool.toLocaleLowerCase().includes(query));
+        if (matchingTools.length === 0) return;
+
+        const categoryCard = document.createElement("section");
+        categoryCard.className = "preadmission-category";
+        const categoryTitle = document.createElement("h3");
+        categoryTitle.textContent = category.title;
+        const categoryTools = document.createElement("div");
+        categoryTools.className = "preadmission-category-tools";
+        let serialNumber = 0;
+
+        matchingTools.forEach((tool) => {
+          serialNumber += 1;
+          const toolRoutes = {
+            "Oral Test Schedule": "../../Modules/Preadmission/Interview%20Schedule/Oral/oral.html",
+            "Oral Test Marks": "../../Modules/Preadmission/Marks%20entry/oral/oral.html",
+            "Written Test Marks": "../../Modules/Preadmission/Marks%20entry/written/written.html",
+            "Status": "../../Modules/Preadmission/Preadmission%20Status/status.html",
+            "Student Count Report": "../../Modules/Preadmission/Student%20Count/studentcount.html",
+            "Schedule Report": "../../Modules/Preadmission/Reports/Schedule%20Reports/SR.html",
+            "Registrationreport": "../../Modules/Preadmission/Reports/Registration%20Report/registrationreport.html",
+            "Pre Month End Report": "../../Modules/Preadmission/Reports/Pre-Month%20end%20report/PMER.html"
+          };
+          const toolRoute = toolRoutes[tool];
+          const item = document.createElement(toolRoute ? "a" : "div");
+          item.className = "preadmission-tool-item";
+          if (toolRoute) {
+            item.href = toolRoute;
+            item.setAttribute("aria-label", `Open ${tool}`);
+          }
+          const number = document.createElement("span");
+          number.className = "module-tool-number preadmission-tool-number";
+          number.textContent = String(serialNumber).padStart(2, "0");
+          const label = document.createElement("span");
+          label.className = "preadmission-tool-label";
+          label.textContent = tool;
+          item.append(number, label);
+          categoryTools.append(item);
+        });
+
+        visibleTools += matchingTools.length;
+        categoryCard.append(categoryTitle, categoryTools);
+        if (matchingTools.length > 7) {
+          const scrollHint = document.createElement("p");
+          scrollHint.className = "category-scroll-hint";
+          scrollHint.textContent = "Scroll for more ↓";
+          categoryCard.append(scrollHint);
+        }
+        toolList.append(categoryCard);
+      });
+
+      toolCount.textContent = `${visibleTools} ${visibleTools === 1 ? "section" : "sections"}`;
+      toolCount.hidden = false;
+      toolEmpty.hidden = visibleTools !== 0;
+      if (window.lucide) lucide.createIcons();
+      return;
+    }
+
+    toolCount.hidden = false;
+    const tools = module.tools.filter((tool) => tool.toLocaleLowerCase().includes(query));
+    tools.forEach((tool, index) => {
+      const isMasterConfiguration = selectedModule === "pre-configuration" && tool === "Master Configuration";
+      const isGeneralConfiguration = selectedModule === "pre-configuration" && tool === "General Configuration";
+      const isTransactionNumbering = selectedModule === "pre-configuration" && tool === "Transaction Numbering";
+      const isAdmissionStandard = selectedModule === "pre-configuration" && tool === "Admission Standard";
+      const isConfigurationPage = isMasterConfiguration || isGeneralConfiguration || isTransactionNumbering || isAdmissionStandard;
+      const item = document.createElement(isConfigurationPage ? "a" : "div");
+      item.className = "module-tool-item";
+      if (isConfigurationPage) {
+        item.classList.add("module-tool-link");
+        item.href = isMasterConfiguration
+          ? "../../Modules/Preconfiguration/Master/master.html"
+          : isGeneralConfiguration
+            ? "../../Modules/Preconfiguration/General/general.html"
+            : isTransactionNumbering
+              ? "../../Modules/Preconfiguration/Transaction%20Numbering/TN.html"
+              : "../../Modules/Preconfiguration/Admission%20Standard/admission.html";
+        item.setAttribute("aria-label", `Open ${tool}`);
+      }
+      const toolIcons = {
+        "Master Configuration": "settings",
+        "General Configuration": "sliders-horizontal",
+        "Transaction Numbering": "file-text",
+        "Admission Standard": "graduation-cap",
+        "Fee Standard": "wallet-cards",
+        "Exam Standard": "book-open",
+        "Payroll Standard": "users-round"
+      };
+      const number = document.createElement("span");
+      number.className = "module-tool-number";
+      const icon = document.createElement("i");
+      icon.dataset.lucide = toolIcons[tool] || "layout-grid";
+      number.append(icon);
+      const label = document.createElement("span");
+      label.className = "module-tool-label";
+      label.textContent = tool;
+      const arrow = document.createElement("i");
+      arrow.className = "module-tool-arrow";
+      arrow.dataset.lucide = "arrow-up-right";
+      item.append(number, label, arrow);
+      toolList.append(item);
+    });
+
+    toolCount.textContent = `${tools.length} ${tools.length === 1 ? "section" : "sections"}`;
+    toolEmpty.hidden = tools.length !== 0;
+    if (window.lucide) lucide.createIcons();
+  }
+
+  function filterModules() {
+    const query = moduleSearch.value.trim().toLocaleLowerCase();
+    let visibleModules = 0;
+
+    moduleButtons.forEach((button) => {
+      const module = moduleContent[button.dataset.module];
+      if (!module) {
+        const title = button.querySelector(".module-nav-copy strong").textContent;
+        const matches = title.toLocaleLowerCase().includes(query);
+        button.hidden = !matches;
+        if (matches) visibleModules += 1;
+        return;
+      }
+      const categories = module.categories?.map((category) => category.title).join(" ") || "";
+      const moduleItems = module.tools || module.categories?.flatMap((category) => category.tools) || [];
+      const matches = `${module.title} ${moduleItems.join(" ")} ${categories}`.toLocaleLowerCase().includes(query);
+      button.hidden = !matches;
+      if (matches) visibleModules += 1;
+    });
+
+    moduleEmpty.hidden = visibleModules !== 0;
+    if (query && !moduleButtons.find((button) => button.dataset.module === selectedModule && !button.hidden)) {
+      const firstVisible = moduleButtons.find((button) => !button.hidden);
+      if (firstVisible) renderModule(firstVisible.dataset.module);
+    } else {
+      renderTools();
+    }
+  }
+
+  function filterQueries(filter) {
+    let visibleCount = 0;
+
+    queryItems.forEach((item) => {
+      const category = item.querySelector("b").textContent.trim().toLocaleLowerCase();
+      const matches = filter === "all" || category === filter;
+      item.hidden = !matches;
+      if (matches) visibleCount += 1;
+    });
+
+    queryColumns.forEach((column) => {
+      column.hidden = !column.querySelector(".query-item:not([hidden])");
+    });
+
+    queryCount.textContent = String(visibleCount);
+    queryFilterButtons.forEach((button) => {
+      const selected = button.dataset.queryFilter === filter;
+      button.classList.toggle("selected", selected);
+      button.setAttribute("aria-pressed", String(selected));
+    });
+  }
+
+  function showAssistantResponse(card) {
+    window.clearTimeout(assistantAnswerTimer);
+
+    const question = card.querySelector("span").textContent.trim();
+    const category = card.querySelector("b").textContent.trim().toLocaleLowerCase();
+
+    assistantQuestion.textContent = question;
+    assistantResponseText.textContent = assistantSampleResponses[category] || "I would review the relevant school records and summarize the key findings.";
+    assistantThinking.hidden = false;
+    assistantResponse.hidden = true;
+    assistantDialog.showModal();
+
+    assistantAnswerTimer = window.setTimeout(() => {
+      assistantThinking.hidden = true;
+      assistantResponse.hidden = false;
+    }, 1400);
+  }
+
+  operationTrigger.addEventListener("click", () => {
+    operationDialog.showModal();
+    moduleSearch.value = "";
+    filterModules();
+    moduleSearch.focus();
+  });
+
+  aiEdgeTrigger.addEventListener("click", () => aiEdgeDialog.showModal());
+  aiEdgeClose.addEventListener("click", () => aiEdgeDialog.close());
+  aiEdgeDialog.addEventListener("click", (event) => {
+    if (event.target === aiEdgeDialog) aiEdgeDialog.close();
+  });
+
+  const setProfileMenuOpen = (open) => {
+    profileMenuContainer.dataset.open = String(open);
+    profileTrigger.setAttribute("aria-expanded", String(open));
+  };
+  profileTrigger.addEventListener("click", () => {
+    setProfileMenuOpen(profileMenuContainer.dataset.open !== "true");
+  });
+  profileMenuContainer.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setProfileMenuOpen(false);
+      profileTrigger.focus();
+    }
+  });
+  document.addEventListener("pointerdown", (event) => {
+    if (!profileMenuContainer.contains(event.target)) setProfileMenuOpen(false);
+  });
+
+  const setIntelligentAppsOpen = (open) => {
+    intelligentAppsDropdown.dataset.open = String(open);
+    intelligentAppsTrigger.setAttribute("aria-expanded", String(open));
+  };
+  intelligentAppsDropdown.addEventListener("pointerenter", () => setIntelligentAppsOpen(true));
+  intelligentAppsDropdown.addEventListener("pointerleave", () => setIntelligentAppsOpen(false));
+  intelligentAppsDropdown.addEventListener("focusin", () => setIntelligentAppsOpen(true));
+  intelligentAppsDropdown.addEventListener("focusout", (event) => {
+    if (!intelligentAppsDropdown.contains(event.relatedTarget)) setIntelligentAppsOpen(false);
+  });
+  intelligentAppsTrigger.addEventListener("click", () => {
+    setIntelligentAppsOpen(intelligentAppsDropdown.dataset.open !== "true");
+  });
+  intelligentAppsDropdown.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setIntelligentAppsOpen(false);
+      intelligentAppsTrigger.focus();
+    }
+  });
+  document.addEventListener("pointerdown", (event) => {
+    if (!intelligentAppsDropdown.contains(event.target)) setIntelligentAppsOpen(false);
+  });
+
+  operationClose?.addEventListener("click", () => operationDialog.close());
+  operationDialog.addEventListener("click", (event) => {
+    if (event.target === operationDialog) operationDialog.close();
+  });
+  moduleButtons.forEach((button) => {
+    button.addEventListener("click", () => renderModule(button.dataset.module));
+  });
+  moduleSearch.addEventListener("input", filterModules);
+  moduleSearch.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      moduleSearch.value = "";
+      filterModules();
+    }
+  });
+
+  queriesToggle.addEventListener("click", () => {
+    const expanded = queriesToggle.getAttribute("aria-expanded") === "true";
+    queriesToggle.setAttribute("aria-expanded", String(!expanded));
+    queriesToggle.querySelector("span").textContent = expanded ? "Expand" : "Collapse";
+    queryGrid.hidden = expanded;
+  });
+  queryFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => filterQueries(button.dataset.queryFilter));
+  });
+  queryGrid.addEventListener("click", (event) => {
+    const card = event.target.closest(".query-item");
+    if (!card) return;
+    event.preventDefault();
+    showAssistantResponse(card);
+  });
+  assistantDialogClose.addEventListener("click", () => assistantDialog.close());
+  assistantDialogDone.addEventListener("click", () => assistantDialog.close());
+  assistantDialog.addEventListener("click", (event) => {
+    if (event.target === assistantDialog) assistantDialog.close();
+  });
+  assistantDialog.addEventListener("close", () => window.clearTimeout(assistantAnswerTimer));
+
+  filterQueries("all");
+  renderModule(selectedModule);
+
+  const requestedDialog = new URLSearchParams(window.location.search).get("open");
+  if (requestedDialog === "operation-tools") {
+    operationDialog.showModal();
+    moduleSearch.focus();
+  } else if (requestedDialog === "ai-edge") {
+    aiEdgeDialog.showModal();
+  }
+</script>
+
+  <script src="../../site-assistant.js"></script>
+</body>
+</html>

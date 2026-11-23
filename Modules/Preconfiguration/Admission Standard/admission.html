@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17234b" />
+  <title>Admission Standard | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="admission.css" />
+  <link rel="stylesheet" href="../../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../gilroy.css" />
+  <script defer src="../../../workspace-header.js"></script>
+  <script defer src="../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../workspace-translator.js"></script>
+  <script defer src="../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button">
+        <i data-lucide="graduation-cap"></i>
+        <span><small>Academic Year</small><strong>2026 – 2027</strong></span>
+        <i class="year-chevron" data-lucide="chevron-down"></i>
+      </button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search">
+          <i data-lucide="search"></i>
+          <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" />
+        </label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="admission-banner" aria-labelledby="admission-page-title">
+        <div class="admission-banner-copy">
+          <p class="admission-eyebrow">PRE-CONFIGURATION <span>›</span> CONFIGURATION</p>
+          <h1 id="admission-page-title"><i data-lucide="square-pen" aria-hidden="true"></i>Admission Standard</h1>
+          <p class="admission-subtitle">Configure admission, attendance, and communication defaults.</p>
+        </div>
+        <nav class="admission-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools">Pre Configuration</a>
+          <i data-lucide="chevron-right" aria-hidden="true"></i><strong>Admission Standard</strong>
+        </nav>
+      </section>
+
+      <section class="admission-content">
+        <section class="admission-card" aria-labelledby="admission-card-title">
+          <header class="admission-card-header">
+            <div class="admission-card-heading">
+              <span class="admission-heading-mark" aria-hidden="true"></span>
+              <div>
+                <h2 id="admission-card-title">Admission Standard</h2>
+                <p>Set admission form options and attendance defaults.</p>
+              </div>
+            </div>
+            <p class="admission-status" id="admission-status" role="status" aria-live="polite"></p>
+          </header>
+          <form id="admission-form">
+            <div class="admission-settings-grid">
+              <div class="admission-column">
+                <fieldset class="admission-box admission-check-grid">
+                  <label class="admission-option"><input type="checkbox" name="admissionAdditionalFields" /><span>Admission Additional Fields</span></label>
+                  <label class="admission-option"><input type="checkbox" name="tcAdditionalFields" /><span>TC Additional Fields</span></label>
+                </fieldset>
+                <fieldset class="admission-box admission-check-grid">
+                  <label class="admission-option"><input type="checkbox" name="maxAgeApplicable" /><span>Max Age Applicable</span></label>
+                  <label class="admission-option"><input type="checkbox" name="minAgeApplicable" /><span>Min Age Applicable</span></label>
+                </fieldset>
+                <fieldset class="admission-box admission-check-grid admission-three-options">
+                  <label class="admission-option"><input type="checkbox" name="paymentRequiredPermanentTc" /><span>Payment Required For Permanent TC</span></label>
+                  <label class="admission-option"><input type="checkbox" name="libraryFlag" /><span>LibraryFlag</span></label>
+                  <label class="admission-option"><input type="checkbox" name="ecsFlag" /><span>ECS Flag</span></label>
+                </fieldset>
+                <fieldset class="admission-box admission-check-grid">
+                  <label class="admission-option"><input type="checkbox" name="parentMonthlyIncome" /><span>Parent's monthly income</span></label>
+                  <label class="admission-option"><input type="checkbox" name="parentAnnualIncome" /><span>Parent's annual income</span></label>
+                </fieldset>
+                <fieldset class="admission-box admission-radio-card">
+                  <legend>Attendance Entry Type <span>*</span></legend>
+                  <div class="admission-choice-row">
+                    <label class="admission-option"><input type="radio" name="attendanceEntryType" value="Present" required /><span>Present</span></label>
+                    <label class="admission-option"><input type="radio" name="attendanceEntryType" value="Absent" required checked /><span>Absent</span></label>
+                  </div>
+                </fieldset>
+                <section class="admission-box logo-box" aria-labelledby="logo-label">
+                  <h3 id="logo-label">Logo</h3>
+                  <div class="logo-controls">
+                    <label class="logo-file-wrap"><input id="admission-logo" name="logo" type="file" accept="image/*" aria-label="Choose admission logo" /></label>
+                    <button class="logo-view-button" id="logo-view" type="button">View</button>
+                  </div>
+                  <p class="logo-file-name" id="logo-file-name" aria-live="polite">No file chosen</p>
+                </section>
+                <fieldset class="admission-box admission-radio-card">
+                  <legend>Attendance Default Order <span>*</span></legend>
+                  <div class="admission-order-grid">
+                    <label class="admission-option"><input type="radio" name="attendanceDefaultOrder" value="gender-ascending" required /><span>Order By Gender Ascending</span></label>
+                    <label class="admission-option"><input type="radio" name="attendanceDefaultOrder" value="gender-descending" required /><span>Order By Gender Descending</span></label>
+                    <label class="admission-option"><input type="radio" name="attendanceDefaultOrder" value="roll-no" required checked /><span>Order By ROLL NO</span></label>
+                    <label class="admission-option"><input type="radio" name="attendanceDefaultOrder" value="name-ascending" required /><span>Order By Name Ascending</span></label>
+                    <label class="admission-option"><input type="radio" name="attendanceDefaultOrder" value="name-descending" required /><span>Order By Name Descending</span></label>
+                    <label class="admission-option"><input type="radio" name="attendanceDefaultOrder" value="regno" required /><span>Order By REGNO</span></label>
+                    <label class="admission-option"><input type="radio" name="attendanceDefaultOrder" value="admno" required /><span>Order By ADMNO</span></label>
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="admission-column">
+                <fieldset class="admission-box admission-radio-card">
+                  <legend>Gender <span>*</span></legend>
+                  <div class="admission-choice-row">
+                    <label class="admission-option"><input type="radio" name="gender" value="Male" required checked /><span>Male</span></label>
+                    <label class="admission-option"><input type="radio" name="gender" value="Female" required /><span>Female</span></label>
+                    <label class="admission-option"><input type="radio" name="gender" value="Other" required /><span>Other</span></label>
+                  </div>
+                </fieldset>
+                <fieldset class="admission-box admission-radio-card">
+                  <legend>Admission Form Format</legend>
+                  <div class="admission-choice-row">
+                    <label class="admission-option"><input type="checkbox" name="schoolCollegeAddress" /><span>School /College Address</span></label>
+                    <label class="admission-option"><input type="checkbox" name="categoryAddress" /><span>Category Address</span></label>
+                  </div>
+                </fieldset>
+                <fieldset class="admission-box admission-radio-card">
+                  <legend>Photo Upload</legend>
+                  <div class="admission-choice-row">
+                    <label class="admission-option"><input type="radio" name="photoUpload" value="Manual Photo Upload" required checked /><span>Manual Photo Upload</span></label>
+                    <label class="admission-option"><input type="radio" name="photoUpload" value="Web Camera" required /><span>Web Camera</span></label>
+                  </div>
+                </fieldset>
+                <fieldset class="admission-box admission-radio-card">
+                  <legend>Default sms/email receiver <span>*</span></legend>
+                  <div class="admission-choice-row">
+                    <label class="admission-option"><input type="radio" name="smsEmailReceiver" value="Father" required /><span>Father</span></label>
+                    <label class="admission-option"><input type="radio" name="smsEmailReceiver" value="Mother" required /><span>Mother</span></label>
+                    <label class="admission-option"><input type="radio" name="smsEmailReceiver" value="Student" required checked /><span>Student</span></label>
+                    <label class="admission-option"><input type="radio" name="smsEmailReceiver" value="Both M/F" required /><span>Both M/F</span></label>
+                  </div>
+                </fieldset>
+                <fieldset class="admission-box admission-radio-card">
+                  <legend>Attendance Scheduler Absent SMS <span>*</span></legend>
+                  <div class="admission-choice-row">
+                    <label class="admission-option"><input type="radio" name="attendanceAbsentSms" value="Period Wise" required /><span>Period Wise</span></label>
+                    <label class="admission-option"><input type="radio" name="attendanceAbsentSms" value="End Of The Day" required checked /><span>End Of The Day</span></label>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+            <footer class="admission-form-footer">
+              <div class="admission-form-actions">
+                <button class="admission-button admission-save" type="submit"><i data-lucide="save" aria-hidden="true"></i>Save</button>
+                <button class="admission-button admission-clear" id="admission-clear" type="button"><i data-lucide="x" aria-hidden="true"></i>Clear</button>
+                <button class="admission-button admission-reset" id="admission-reset" type="button"><i data-lucide="rotate-ccw" aria-hidden="true"></i>Reset</button>
+              </div>
+            </footer>
+          </form>
+        </section>
+      </section>
+
+      <footer class="admission-footer">
+        <span><i data-lucide="shield" aria-hidden="true"></i>© VAPS 2019. All rights reserved.</span>
+        <span class="admission-footer-divider" aria-hidden="true"></span>
+        <strong>VAPS DIGITAL CAMPUS</strong>
+        <span class="admission-footer-divider" aria-hidden="true"></span>
+        <span><i data-lucide="phone" aria-hidden="true"></i>Toll Free No. 01206901888</span>
+      </footer>
+    </main>
+  </div>
+
+  <dialog class="logo-preview-dialog" id="logo-preview-dialog" aria-labelledby="logo-preview-title">
+    <header>
+      <h2 id="logo-preview-title">Admission Logo</h2>
+      <button class="logo-preview-close" id="logo-preview-close" type="button" aria-label="Close logo preview"><i data-lucide="x" aria-hidden="true"></i></button>
+    </header>
+    <img id="logo-preview-image" alt="Selected admission logo preview" hidden />
+  </dialog>
+
+  <script>
+    (() => {
+      const storageKey = "vaps.admissionStandard.v1";
+      const form = document.querySelector("#admission-form");
+      const status = document.querySelector("#admission-status");
+      const logoInput = document.querySelector("#admission-logo");
+      const logoFileName = document.querySelector("#logo-file-name");
+      const logoDialog = document.querySelector("#logo-preview-dialog");
+      const logoPreview = document.querySelector("#logo-preview-image");
+      const checkboxInputs = [...form.querySelectorAll('input[type="checkbox"]')];
+      const radioInputs = [...form.querySelectorAll('input[type="radio"]')];
+      let savedState = null;
+      let logoDataUrl = null;
+      let logoName = "";
+
+      function showStatus(message, isError = false) {
+        status.textContent = message;
+        status.classList.toggle("is-error", isError);
+        status.classList.toggle("is-visible", Boolean(message));
+      }
+
+      function currentState() {
+        const controls = {};
+        checkboxInputs.forEach((input) => { controls[input.name] = input.checked; });
+        radioInputs.forEach((input) => {
+          if (input.checked) controls[input.name] = input.value;
+        });
+        return { controls, logoDataUrl, logoName };
+      }
+
+      function applyState(state) {
+        checkboxInputs.forEach((input) => {
+          input.checked = state.controls[input.name] === true;
+        });
+        radioInputs.forEach((input) => {
+          input.checked = state.controls[input.name] === input.value;
+        });
+        logoDataUrl = state.logoDataUrl;
+        logoName = state.logoName;
+        logoFileName.textContent = logoName || "No file chosen";
+        logoPreview.src = logoDataUrl || "";
+        logoPreview.hidden = !logoDataUrl;
+        logoInput.value = "";
+      }
+
+      function loadSettings() {
+        try {
+          const raw = window.localStorage.getItem(storageKey);
+          if (!raw) return;
+          const parsed = JSON.parse(raw);
+          if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)
+            || !parsed.controls || typeof parsed.controls !== "object"
+            || Array.isArray(parsed.controls)
+            || typeof parsed.logoName !== "string"
+            || (parsed.logoDataUrl !== null && typeof parsed.logoDataUrl !== "string")) {
+            throw new TypeError("Saved Admission Standard settings have an invalid format.");
+          }
+          Object.entries(parsed.controls).forEach(([name, value]) => {
+            if (typeof value !== "boolean" && typeof value !== "string") {
+              throw new TypeError(`Saved Admission Standard setting "${name}" is invalid.`);
+            }
+          });
+          checkboxInputs.forEach((input) => {
+            if (typeof parsed.controls[input.name] !== "boolean") {
+              throw new TypeError(`Saved Admission Standard setting "${input.name}" is invalid.`);
+            }
+          });
+          [...new Set(radioInputs.map((input) => input.name))].forEach((name) => {
+            const value = parsed.controls[name];
+            if (typeof value !== "string" || !radioInputs.some((input) => input.name === name && input.value === value)) {
+              throw new TypeError(`Saved Admission Standard setting "${name}" is invalid.`);
+            }
+          });
+          savedState = parsed;
+          applyState(savedState);
+        } catch (error) {
+          console.error("Admission Standard settings load error:", error);
+          showStatus("Saved settings could not be loaded. Check browser storage before saving.", true);
+        }
+      }
+
+      function clearOptionalSettings() {
+        checkboxInputs.forEach((input) => { input.checked = false; });
+        logoInput.value = "";
+        logoDataUrl = null;
+        logoName = "";
+        logoFileName.textContent = "No file chosen";
+        logoPreview.removeAttribute("src");
+        logoPreview.hidden = true;
+        showStatus("Optional fields and logo cleared. Save to apply the changes.");
+      }
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const state = currentState();
+        try {
+          window.localStorage.setItem(storageKey, JSON.stringify(state));
+        } catch (error) {
+          console.error("Admission Standard settings save error:", error);
+          showStatus("Settings could not be saved. Check browser storage and try again.", true);
+          return;
+        }
+        savedState = state;
+        showStatus("Admission Standard settings saved.");
+      });
+
+      document.querySelector("#admission-clear").addEventListener("click", clearOptionalSettings);
+      document.querySelector("#admission-reset").addEventListener("click", () => {
+        if (savedState) {
+          applyState(savedState);
+          showStatus("Settings restored to the last saved values.");
+        } else {
+          form.reset();
+          logoDataUrl = null;
+          logoName = "";
+          logoFileName.textContent = "No file chosen";
+          logoPreview.removeAttribute("src");
+          logoPreview.hidden = true;
+          showStatus("Settings restored to their default values.");
+        }
+      });
+
+      logoInput.addEventListener("change", () => {
+        const file = logoInput.files?.[0];
+        if (!file) return;
+        if (!file.type.startsWith("image/")) {
+          logoInput.value = "";
+          showStatus("Choose an image file for the admission logo.", true);
+          return;
+        }
+        if (file.size > 1024 * 1024) {
+          logoInput.value = "";
+          showStatus("The logo must be 1 MB or smaller.", true);
+          return;
+        }
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+          if (typeof reader.result !== "string") {
+            showStatus("The selected logo could not be read.", true);
+            return;
+          }
+          logoDataUrl = reader.result;
+          logoName = file.name;
+          logoFileName.textContent = file.name;
+          logoPreview.src = logoDataUrl;
+          logoPreview.hidden = false;
+          showStatus("Logo ready to save.");
+        });
+        reader.addEventListener("error", () => {
+          console.error("Admission Standard logo read error:", reader.error);
+          showStatus("The selected logo could not be read.", true);
+        });
+        reader.readAsDataURL(file);
+      });
+
+      document.querySelector("#logo-view").addEventListener("click", () => {
+        if (!logoDataUrl) {
+          showStatus("Choose a logo image before viewing it.", true);
+          return;
+        }
+        logoPreview.src = logoDataUrl;
+        logoPreview.hidden = false;
+        logoDialog.showModal();
+      });
+      document.querySelector("#logo-preview-close").addEventListener("click", () => logoDialog.close());
+      logoDialog.addEventListener("click", (event) => {
+        const bounds = logoDialog.getBoundingClientRect();
+        if (event.target === logoDialog && (
+          event.clientX < bounds.left || event.clientX > bounds.right
+          || event.clientY < bounds.top || event.clientY > bounds.bottom
+        )) logoDialog.close();
+      });
+
+      loadSettings();
+      if (window.lucide) window.lucide.createIcons();
+    })();
+  </script>
+  <script src="../../../site-assistant.js"></script>
+</body>
+</html>

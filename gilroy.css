@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy-Medium"), local("Gilroy Medium");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy Main";
+  src: local("Gilroy-Medium"), local("Gilroy Medium");
+  font-style: normal;
+  font-weight: 600;
+  size-adjust: 112%;
+  font-display: swap;
+}
+
+body,
+body * {
+  font-family: "Gilroy", Arial, sans-serif !important;
+  font-weight: 600 !important;
+}
+
+body main > :not(.topbar),
+body main > :not(.topbar) * {
+  font-family: "Gilroy Main", Arial, sans-serif !important;
+}
+
+body.teachers-page main > :not(.topbar),
+body.teachers-page main > :not(.topbar) * {
+  font-family: "Gilroy", Arial, sans-serif !important;
+}

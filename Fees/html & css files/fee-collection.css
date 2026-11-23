@@ -1,0 +1,80 @@
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+body { min-width: 320px; color: #172342; background: linear-gradient(120deg, #f8f9ff, #fff 48%, #f6f7ff); }
+
+.fee-hero {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px clamp(22px, 3.2vw, 48px);
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: radial-gradient(circle at 78% 12%, rgba(196,211,255,.16), transparent 25%), linear-gradient(112deg,#17234b 0%,#2d4786 56%,#4968b3 100%);
+}
+
+.fee-hero::after {
+  content: "";
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  top: -265px;
+  right: 12%;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 50%;
+  box-shadow: 0 0 0 40px rgba(255,255,255,.035), 0 0 0 80px rgba(255,255,255,.025), 0 0 0 120px rgba(255,255,255,.018);
+  pointer-events: none;
+}
+
+.fee-hero > div,
+.fee-hero-icon { position: relative; z-index: 1; }
+.fee-kicker { margin: 0 0 8px; color: #d7def8; font-size: 11px; font-weight: 800; letter-spacing: 1.5px; }
+.fee-hero h1 { margin: 0; color: #fff; font-size: clamp(30px,3.2vw,40px); font-weight: 800; letter-spacing: -1px; }
+.fee-description { margin: 8px 0 0; color: #dce3ff; font-size: 14px; }
+.fee-hero-icon { width: 72px; height: 72px; flex: none; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.2); border-radius: 22px; color: #e1e8ff; background: rgba(255,255,255,.1); }
+.fee-hero-icon svg { width: 32px; height: 32px; }
+
+.fee-content { width: 100%; padding: 0 clamp(14px,1.5vw,28px) 36px; position: relative; z-index: 2; margin-top: -18px; }
+.fee-form-card { padding: 28px clamp(18px,2vw,32px) 25px; border: 1px solid #e4e9f4; border-radius: 23px; background: rgba(255,255,255,.98); box-shadow: 0 16px 42px rgba(24,42,84,.1),0 2px 6px rgba(24,42,84,.04); }
+.collection-mode { width: fit-content; min-height: 48px; display: flex; justify-content: center; align-items: center; gap: 24px; margin: 0 0 24px; padding: 8px 18px; border: 1px solid #e2e8f5; border-radius: 14px; background: linear-gradient(110deg,#f8faff,#f4f7fd); }
+.collection-mode label { position: relative; top: 4px; display: inline-flex; align-items: center; gap: 10px; color: #34415f; font-size: 14px; font-weight: 600; cursor: pointer; }
+.collection-mode input { width: 19px; height: 19px; margin: 0; accent-color: #4268ff; cursor: pointer; }
+.fee-select-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+.fee-field { min-width: 0; display: flex; flex-direction: column; gap: 8px; color: #34415f; font-size: 13px; font-weight: 700; }
+.fee-field b { color: #e34f5d; }
+.fee-field select { width: 100%; height: 48px; padding: 0 34px 0 14px; border: 1px solid #dfe5f2; border-radius: 12px; outline: 0; color: #394563; background: #fff; box-shadow: 0 2px 5px rgba(26,44,87,.04); font: inherit; font-size: 13px; }
+.fee-field select:focus { border-color: #8ca3ed; box-shadow: 0 0 0 3px rgba(66,104,255,.12); }
+.fee-form-message { margin: 0; color: #40558f; font-size: 12px; }
+.fee-form-message:not(:empty) { margin-top: 17px; padding: 11px 13px; border: 1px solid #dfe6ff; border-radius: 10px; background: #f1f4ff; }
+.fee-form-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 27px; padding-top: 22px; border-top: 1px solid #e4e9f4; }
+.fee-cancel,.fee-submit { min-width: 150px; min-height: 42px; padding: 0 20px; display: inline-flex; justify-content: center; align-items: center; gap: 9px; border-radius: 11px; font: inherit; font-size: 12px; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform .16s, box-shadow .16s, background .16s; }
+.fee-cancel { border: 1px solid #dfe5f2; color: #405477; background: #f3f6fc; }
+.fee-submit { border: 1px solid #304b8f; color: #fff; background: linear-gradient(110deg,#19244e,#304b8f); box-shadow: 0 5px 13px rgba(25,36,78,.18); }
+.fee-submit svg { width: 17px; height: 17px; }
+.fee-cancel:hover,.fee-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(24,42,84,.16); }
+.fee-submit:hover { background: linear-gradient(110deg,#151f43,#29447f); }
+
+@media(max-width:900px) {
+  .fee-select-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media(max-width:600px) {
+  .fee-hero { min-height: 155px; padding: 20px 18px; }
+  .fee-hero h1 { font-size: 29px; }
+  .fee-description { max-width: 290px; font-size: 12px; line-height: 1.5; }
+  .fee-hero-icon { width: 48px; height: 48px; border-radius: 15px; }
+  .fee-hero-icon svg { width: 23px; height: 23px; }
+  .fee-content { padding: 0 10px 24px; margin-top: -22px; }
+  .fee-form-card { padding: 17px 14px; border-radius: 18px; }
+  .collection-mode { min-height: 44px; gap: 18px; margin-bottom: 20px; padding: 7px 12px; }
+  .collection-mode label { gap: 8px; font-size: 13px; }
+  .fee-select-grid { grid-template-columns: 1fr; gap: 14px; }
+  .fee-field { font-size: 12px; }
+  .fee-field select { height: 44px; font-size: 13px; }
+  .fee-form-actions { justify-content: stretch; gap: 10px; margin-top: 20px; padding-top: 16px; }
+  .fee-cancel,.fee-submit { min-width: 0; min-height: 40px; flex: 1; padding: 0 12px; font-size: 12px; }
+}
+
+@media(prefers-reduced-motion:reduce) { .fee-cancel,.fee-submit { transition: none; } }

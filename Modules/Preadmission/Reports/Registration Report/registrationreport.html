@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17234b" />
+  <title>Registration Report | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="registrationreport.css" />
+  <link rel="stylesheet" href="../../../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../../gilroy.css" />
+  <script defer src="../../../../workspace-header.js"></script>
+  <script defer src="../../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../../workspace-translator.js"></script>
+  <script defer src="../../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><img class="brand-logo" src="../../../../assets/logo.jpg" alt="Tunbridge High School" /></a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button"><i data-lucide="graduation-cap"></i><span><small>Academic Year</small><strong>2026 – 2027</strong></span><i class="year-chevron" data-lucide="chevron-down"></i></button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search"><i data-lucide="search"></i><input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" /></label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="registration-banner" aria-labelledby="registration-page-title">
+        <div class="registration-banner-copy">
+          <p class="registration-eyebrow">PREADMISSION <span>›</span> REPORTS</p>
+          <h1 id="registration-page-title"><i data-lucide="square-pen" aria-hidden="true"></i>Registration report</h1>
+        </div>
+        <nav class="registration-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools">Preadmission</a><i data-lucide="chevron-right" aria-hidden="true"></i>
+          <span>Preadmission</span><i data-lucide="chevron-right" aria-hidden="true"></i><span>Reports</span><i data-lucide="chevron-right" aria-hidden="true"></i><strong>Registrationreport</strong>
+        </nav>
+      </section>
+
+      <section class="registration-content">
+        <section class="registration-card" aria-label="Registration report filters">
+          <form id="registration-report-form">
+            <div class="registration-filter-area">
+              <fieldset class="registration-range-options">
+                <legend class="sr-only">Select report range</legend>
+                <label class="registration-choice"><input type="radio" name="rangeType" value="year" checked /><span class="registration-radio" aria-hidden="true"></span><span>Year Wise</span></label>
+                <label class="registration-choice"><input type="radio" name="rangeType" value="dates" /><span class="registration-radio" aria-hidden="true"></span><span>Between Dates</span></label>
+              </fieldset>
+
+              <label class="registration-year-field" id="registration-year-field" for="registration-academic-year"><span>Academic Year</span><select id="registration-academic-year" name="academicYear" required><option value="2026-2027" selected>2026-2027</option><option value="2025-2026">2025-2026</option><option value="2024-2025">2024-2025</option><option value="2023-2024">2023-2024</option></select></label>
+              <label class="registration-date-field" id="registration-from-field" for="registration-from-date" hidden><span>From Date</span><input id="registration-from-date" name="fromDate" type="date" disabled /></label>
+              <label class="registration-date-field" id="registration-to-field" for="registration-to-date" hidden><span>To Date</span><input id="registration-to-date" name="toDate" type="date" disabled /></label>
+            </div>
+
+            <div class="registration-actions">
+              <button class="registration-button registration-reset" type="reset"><i data-lucide="rotate-ccw" aria-hidden="true"></i>Reset</button>
+              <button class="registration-button registration-report" type="submit"><i data-lucide="file-text" aria-hidden="true"></i>Report</button>
+              <button class="registration-button registration-export" id="registration-export" type="button"><i data-lucide="file-spreadsheet" aria-hidden="true"></i>Export to Excel</button>
+              <button class="registration-button registration-print" id="registration-print" type="button"><i data-lucide="printer" aria-hidden="true"></i>Print</button>
+            </div>
+          </form>
+        </section>
+        <p class="registration-status" id="registration-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <footer class="registration-footer"><span><i data-lucide="shield-check" aria-hidden="true"></i>Secure school workspace</span><span>© 2026 Tunbridge ERP <b aria-hidden="true">·</b> Registrationreport</span></footer>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const form = document.querySelector("#registration-report-form");
+      const yearField = document.querySelector("#registration-year-field");
+      const fromField = document.querySelector("#registration-from-field");
+      const toField = document.querySelector("#registration-to-field");
+      const fromDate = document.querySelector("#registration-from-date");
+      const toDate = document.querySelector("#registration-to-date");
+      const status = document.querySelector("#registration-status");
+
+      function updateRange() {
+        const betweenDates = form.elements.namedItem("rangeType").value === "dates";
+        yearField.hidden = betweenDates;
+        const yearSelect = yearField.querySelector("select");
+        yearSelect.disabled = betweenDates;
+        yearSelect.required = !betweenDates;
+        [fromField, toField].forEach((field) => {
+          field.hidden = !betweenDates;
+          const input = field.querySelector("input");
+          input.disabled = !betweenDates;
+          input.required = betweenDates;
+        });
+      }
+
+      function showStatus(message, isError = false) {
+        status.textContent = message;
+        status.classList.toggle("is-visible", Boolean(message));
+        status.classList.toggle("is-error", isError);
+      }
+
+      form.addEventListener("change", (event) => {
+        if (event.target.name === "rangeType") updateRange();
+        showStatus("");
+      });
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        showStatus("");
+        if (!form.reportValidity()) return;
+        if (form.elements.namedItem("rangeType").value === "dates" && fromDate.value > toDate.value) {
+          showStatus("The From Date must be on or before the To Date.", true);
+          toDate.focus();
+          return;
+        }
+        showStatus("Report filters are ready. Registration records will appear here when report data is connected.");
+      });
+      form.addEventListener("reset", () => setTimeout(() => {
+        updateRange();
+        showStatus("");
+      }, 0));
+      document.querySelector("#registration-export").addEventListener("click", () => {
+        showStatus("Generate a report before exporting registration records.", true);
+      });
+      document.querySelector("#registration-print").addEventListener("click", () => window.print());
+
+      updateRange();
+      if (window.lucide) lucide.createIcons();
+    })();
+  </script>
+</body>
+</html>

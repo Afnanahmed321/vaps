@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admission Register | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="application.css" />
+  <link rel="stylesheet" href="../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../site-assistant.css" />
+  <link rel="stylesheet" href="../../gilroy.css" />
+  <script defer src="../../workspace-header.js"></script>
+  <script defer src="../../workspace-whatsapp.js"></script>
+  <script defer src="../../workspace-chatgpt.js"></script>
+  <script defer src="../../workspace-translator.js"></script>
+  <script defer src="../../workspace-text-to-speech.js"></script>
+  <script defer src="../../workspace-pdf-converter.js"></script>
+  <script defer src="../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item active" href="application.html" aria-current="page"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button"><i data-lucide="graduation-cap"></i><span><small>Academic Year</small><strong>2026 – 2027</strong></span><i class="year-chevron" data-lucide="chevron-down"></i></button>
+      <div class="sidebar-waves"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search"><i data-lucide="search"></i><input type="search" placeholder="Search pages, students, teachers, reports..." /></label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="page-banner">
+        <div class="banner-copy">
+          <h1>Admission Register</h1>
+          <p class="banner-subtitle">Build a clear, custom register from the classes and student details you need.</p>
+          <div class="banner-highlights" aria-label="Available report data">
+            <span><i data-lucide="layers-3"></i><strong id="class-total">15</strong> classes</span>
+            <span><i data-lucide="list-checks"></i><strong id="field-total">13</strong> report fields</span>
+          </div>
+        </div>
+        <div class="banner-mark" aria-hidden="true"><i data-lucide="clipboard-list"></i></div>
+      </section>
+
+      <section class="content-area">
+        <form class="register-card" id="register-form">
+          <div class="card-heading"><div><span class="heading-mark"></span><span class="card-kicker">REPORT BUILDER</span><h2>Configure your register</h2><p>Select the year, admission status, classes, and fields for your report.</p></div><button class="collapse-btn" id="collapse-button" type="button" aria-expanded="true" aria-label="Collapse register options"><i data-lucide="chevron-up"></i></button></div>
+          <div class="register-body" id="register-body">
+            <div class="filters-row">
+              <label class="year-field"><span>Academic Year <b>*</b></span><select id="academic-year" required><option value="">Select Academic Year</option><option>2026 – 2027</option><option>2025 – 2026</option><option>2024 – 2025</option></select></label>
+              <fieldset class="status-options"><legend class="sr-only">Admission status</legend>
+                <label><input type="radio" name="status" value="all" checked><span>All</span></label>
+                <label><input type="radio" name="status" value="present"><span>Present</span></label>
+                <label><input type="radio" name="status" value="left"><span>Left</span></label>
+                <label><input type="radio" name="status" value="deactive"><span>Deactive</span></label>
+              </fieldset>
+            </div>
+
+            <div class="choice-columns">
+              <section class="choice-group" aria-labelledby="classes-heading">
+                <div class="choice-heading"><h3 id="classes-heading">Classes <small id="class-count">0 selected</small></h3><span>Choose one or more classes</span></div>
+                <label class="search-field"><i data-lucide="search"></i><input type="search" data-filter="classes" placeholder="Search classes..." aria-label="Search classes"></label>
+                <label class="select-all"><input type="checkbox" data-select-all="classes"><span>Select all classes</span></label>
+                <div class="choice-list" id="classes-list">
+                  <label class="choice-item"><input type="checkbox" name="classes" value="Pre Nursery"><span>Pre Nursery</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="Lower Nursery"><span>Lower Nursery</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="Upper Nursery"><span>Upper Nursery</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="II"><span>II</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="I"><span>I</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="III"><span>III</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="IV"><span>IV</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="V"><span>V</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="VI"><span>VI</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="VII"><span>VII</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="VIII"><span>VIII</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="IX"><span>IX</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="X"><span>X</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="XI"><span>XI</span></label>
+                  <label class="choice-item"><input type="checkbox" name="classes" value="XII"><span>XII</span></label>
+                </div>
+              </section>
+
+              <section class="choice-group" aria-labelledby="fields-heading">
+                <div class="choice-heading"><h3 id="fields-heading">Report fields <small id="field-count">0 selected</small></h3><span>Choose the details to include</span></div>
+                <label class="search-field"><i data-lucide="search"></i><input type="search" data-filter="fields" placeholder="Search fields..." aria-label="Search report fields"></label>
+                <label class="select-all"><input type="checkbox" data-select-all="fields"><span>Select all fields</span></label>
+                <div class="choice-list" id="fields-list">
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Adm No"><span>Adm No</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="First Name"><span>First Name</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Middle Name"><span>Middle Name</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Last Name"><span>Last Name</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Adm Date"><span>Adm Date</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Registration No"><span>Registration No</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Class"><span>Class</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Section"><span>Section</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Date of Birth"><span>Date of Birth</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Gender"><span>Gender</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Father Name"><span>Father Name</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Contact Number"><span>Contact Number</span></label>
+                  <label class="choice-item"><input type="checkbox" name="fields" value="Address"><span>Address</span></label>
+                </div>
+              </section>
+            </div>
+            <div class="form-actions"><p class="form-note"><i data-lucide="info"></i> Select at least one class and one report field.</p><div class="action-buttons"><button class="btn btn-primary" type="submit"><i data-lucide="file-text"></i> Generate Report</button><button class="btn" type="reset"><i data-lucide="rotate-ccw"></i> Reset</button><a class="btn" href="../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="x"></i> Cancel</a></div></div>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+      <footer class="page-footer"><span><i data-lucide="shield"></i> © Tunbridge High School</span><span>VAPS Digital Campus</span><span><i data-lucide="phone"></i> School ERP</span></footer>
+    </main>
+  </div>
+  <script>
+    if (window.lucide) lucide.createIcons();
+    const form = document.querySelector('#register-form');
+    const message = document.querySelector('#form-message');
+    const countSelected = (name) => [...form.querySelectorAll(`input[name="${name}"]:checked`)].length;
+    function updateCounts() {
+      document.querySelector('#class-count').textContent = `${countSelected('classes')} selected`;
+      document.querySelector('#field-count').textContent = `${countSelected('fields')} selected`;
+      ['classes', 'fields'].forEach((group) => {
+        const items = [...form.querySelectorAll(`input[name="${group}"]`)];
+        const selectAll = form.querySelector(`[data-select-all="${group}"]`);
+        selectAll.checked = items.length > 0 && items.every((item) => item.checked);
+        selectAll.indeterminate = items.some((item) => item.checked) && !selectAll.checked;
+      });
+    }
+    document.querySelector('#class-total').textContent = form.querySelectorAll('input[name="classes"]').length;
+    document.querySelector('#field-total').textContent = allFields.length;
+    form.addEventListener('change', (event) => {
+      if (event.target.matches('[data-select-all]')) {
+        const group = event.target.dataset.selectAll;
+        form.querySelectorAll(`input[name="${group}"]`).forEach((item) => { if (!item.closest('.choice-item').hidden) item.checked = event.target.checked; });
+      }
+      updateCounts();
+      message.textContent = '';
+    });
+    document.querySelectorAll('[data-filter]').forEach((search) => search.addEventListener('input', () => {
+      const list = document.querySelector(`#${search.dataset.filter}-list`);
+      const query = search.value.trim().toLocaleLowerCase();
+      list.querySelectorAll('.choice-item').forEach((item) => { item.hidden = !item.textContent.toLocaleLowerCase().includes(query); });
+    }));
+    form.addEventListener('reset', () => setTimeout(() => { document.querySelectorAll('[data-filter]').forEach((input) => { input.value = ''; }); document.querySelectorAll('.choice-item').forEach((item) => { item.hidden = false; }); updateCounts(); message.textContent = ''; }, 0));
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!document.querySelector('#academic-year').value) { message.textContent = 'Please select an academic year.'; document.querySelector('#academic-year').focus(); return; }
+      if (!countSelected('classes') || !countSelected('fields')) { message.textContent = 'Select at least one class and one report field to generate the report.'; return; }
+      message.textContent = 'Your report selections are ready. Report generation will be available when connected to school data.';
+    });
+    const collapseButton = document.querySelector('#collapse-button');
+    collapseButton.addEventListener('click', () => {
+      const body = document.querySelector('#register-body');
+      const expanded = collapseButton.getAttribute('aria-expanded') === 'true';
+      collapseButton.setAttribute('aria-expanded', String(!expanded));
+      body.hidden = expanded;
+      collapseButton.innerHTML = `<i data-lucide="chevron-${expanded ? 'down' : 'up'}"></i>`;
+      if (window.lucide) lucide.createIcons();
+    });
+    updateCounts();
+  </script>
+  <script src="../../site-assistant.js"></script>
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17234b" />
+  <title>Oral Test Schedule | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="oral.css" />
+  <link rel="stylesheet" href="../../../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../../gilroy.css" />
+  <script defer src="../../../../workspace-header.js"></script>
+  <script defer src="../../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../../workspace-translator.js"></script>
+  <script defer src="../../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button">
+        <i data-lucide="graduation-cap"></i>
+        <span><small>Academic Year</small><strong>2026 – 2027</strong></span>
+        <i class="year-chevron" data-lucide="chevron-down"></i>
+      </button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search">
+          <i data-lucide="search"></i>
+          <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" />
+        </label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="oral-banner" aria-labelledby="oral-page-title">
+        <div class="oral-banner-copy">
+          <p class="oral-eyebrow">PREADMISSION <span>›</span> INTERVIEW SCHEDULE</p>
+          <h1 id="oral-page-title"><i data-lucide="calendar-days" aria-hidden="true"></i>Oral Test Schedule</h1>
+          <p>Plan and manage oral test sessions for prospective students.</p>
+        </div>
+        <nav class="oral-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools">Preadmission</a>
+          <i data-lucide="chevron-right" aria-hidden="true"></i>
+          <span>Oral Test Schedule</span>
+        </nav>
+      </section>
+
+      <section class="oral-content">
+        <div class="oral-page-heading">
+          <div class="oral-heading-copy">
+            <span class="oral-heading-mark" aria-hidden="true"></span>
+            <div>
+              <h2>Oral Test Schedules</h2>
+              <p>View and manage oral test schedules for preadmission.</p>
+            </div>
+          </div>
+          <label class="oral-record-search">
+            <i data-lucide="search" aria-hidden="true"></i>
+            <input id="schedule-search" type="search" placeholder="Search schedules..." aria-label="Search schedules" />
+          </label>
+          <button class="oral-button oral-button-primary" id="add-schedule" type="button" aria-controls="schedule-editor" aria-expanded="false"><i data-lucide="plus" aria-hidden="true"></i>Add Schedule</button>
+        </div>
+
+        <section class="oral-card oral-editor" id="schedule-editor" aria-labelledby="schedule-editor-title" hidden>
+          <header class="oral-card-header">
+            <div>
+              <h3 id="schedule-editor-title">Add New Schedule</h3>
+              <p>Define a new oral test schedule and assign students.</p>
+            </div>
+            <button class="oral-icon-button" id="close-schedule" type="button" aria-label="Close schedule form"><i data-lucide="x" aria-hidden="true"></i><span>Close</span></button>
+          </header>
+          <form id="schedule-form">
+            <div class="oral-form-grid">
+              <div class="oral-detail-fields">
+                <label class="oral-field" for="schedule-name">
+                  <span>Schedule Name <b>*</b></span>
+                  <input id="schedule-name" name="scheduleName" type="text" placeholder="Enter schedule name" maxlength="80" required />
+                </label>
+                <label class="oral-field" for="schedule-class">
+                  <span>Class <b>*</b></span>
+                  <select id="schedule-class" name="className" required>
+                    <option value="">Select Class</option>
+                    <option>Nursery</option><option>LKG</option><option>UKG</option>
+                    <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+                    <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+                    <option>Class 7</option><option>Class 8</option><option>Class 9</option>
+                    <option>Class 10</option><option>Class 11</option><option>Class 12</option>
+                  </select>
+                </label>
+                <label class="oral-field" for="schedule-date">
+                  <span>Schedule Date <b>*</b></span>
+                  <input id="schedule-date" name="scheduleDate" type="date" required />
+                </label>
+                <label class="oral-field" for="schedule-remarks"><span>Remarks</span><input id="schedule-remarks" name="remarks" type="text" /></label>
+                <label class="oral-field" for="schedule-supervisor"><span>Supervisor</span><input id="schedule-supervisor" name="supervisor" type="text" /></label>
+                <label class="oral-field oral-field-textarea" for="schedule-skills">
+                  <span>Skill/Knowledge</span>
+                  <textarea id="schedule-skills" name="skills" rows="3" placeholder="Enter Skills/Knowledge"></textarea>
+                </label>
+              </div>
+
+              <div class="oral-time-fields">
+                <fieldset class="oral-format-options">
+                  <legend class="sr-only">Time format</legend>
+                  <label><input type="radio" name="timeFormat" value="12" checked /><span>12 Hours</span></label>
+                  <label><input type="radio" name="timeFormat" value="24" /><span>24 Hours</span></label>
+                </fieldset>
+                <div class="oral-time-control">
+                  <label for="time-from-hour">Schedule Time From <b>*</b></label>
+                  <div class="oral-time-inputs">
+                    <input id="time-from-hour" name="fromHour" type="number" min="1" max="12" value="12" required aria-label="Start hour" />
+                    <span>:</span>
+                    <input name="fromMinute" type="number" min="0" max="59" value="00" required aria-label="Start minute" />
+                    <select name="fromMeridiem" aria-label="Start AM or PM"><option>AM</option><option selected>PM</option></select>
+                  </div>
+                </div>
+                <div class="oral-time-control">
+                  <label for="time-to-hour">Schedule Time To <b>*</b></label>
+                  <div class="oral-time-inputs">
+                    <input id="time-to-hour" name="toHour" type="number" min="1" max="12" value="12" required aria-label="End hour" />
+                    <span>:</span>
+                    <input name="toMinute" type="number" min="0" max="59" value="00" required aria-label="End minute" />
+                    <select name="toMeridiem" aria-label="End AM or PM"><option>AM</option><option selected>PM</option></select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="oral-options-fields">
+                <fieldset class="oral-check-options">
+                  <legend class="sr-only">Schedule options</legend>
+                  <label><input type="checkbox" name="videoConferencing" /><span>🎥 Video conferencing</span></label>
+                  <label><input type="checkbox" name="autoSelectStudents" checked /><span>Auto Select Students</span></label>
+                  <label><input type="checkbox" name="commonTimeSlot" /><span>Common Schedule Time Slot</span></label>
+                </fieldset>
+                <label class="oral-field oral-number-field" for="individual-time">
+                  <span>Individual student interaction time <b>*</b></span>
+                  <span class="oral-number-unit"><input id="individual-time" name="individualTime" type="number" min="0" value="0" required /><span>Minutes</span></span>
+                </label>
+                <label class="oral-field oral-number-field" for="student-count">
+                  <span>No. Of Students <b>*</b></span>
+                  <input id="student-count" name="studentCount" type="number" value="0" readonly />
+                </label>
+              </div>
+            </div>
+
+            <section class="oral-student-selection" aria-labelledby="student-selection-title">
+              <header class="oral-table-title">
+                <h3 id="student-selection-title">STUDENT SELECTION</h3>
+                <span>Total Grid Records: <b id="student-total">0</b></span>
+                <span class="oral-selected-count">SELECTED: <b id="selected-count">0 / 0</b></span>
+              </header>
+              <div class="oral-table-scroll">
+                <table class="oral-table" aria-label="Students available for this schedule">
+                  <thead>
+                    <tr>
+                      <th scope="col">SL.NO</th><th scope="col">Student Name</th><th scope="col">Registration No</th>
+                      <th scope="col">Class</th><th scope="col">Gender</th><th scope="col">Mobile Number</th>
+                      <th scope="col">Email No</th>
+                      <th scope="col"><label class="sr-only" for="select-all-students">Select all students</label><input id="select-all-students" type="checkbox" aria-label="Select all students" /></th>
+                    </tr>
+                  </thead>
+                  <tbody id="student-rows"><tr><td class="oral-empty-cell" colspan="8">No results.</td></tr></tbody>
+                </table>
+              </div>
+              <div class="oral-table-pagination">
+                <span class="oral-entry-count" id="student-entry-count">No entries found</span>
+                <label>ROWS PER PAGE
+                  <select id="student-page-size" aria-label="Students per page"><option>10</option><option>25</option><option>50</option></select>
+                </label>
+                <div class="oral-pagination-buttons" aria-label="Student pages">
+                  <button type="button" disabled aria-label="First student page"><i data-lucide="chevrons-left"></i></button>
+                  <button type="button" disabled aria-label="Previous student page"><i data-lucide="chevron-left"></i></button>
+                  <button type="button" disabled aria-label="Next student page"><i data-lucide="chevron-right"></i></button>
+                  <button type="button" disabled aria-label="Last student page"><i data-lucide="chevrons-right"></i></button>
+                </div>
+              </div>
+            </section>
+
+            <footer class="oral-form-actions">
+              <button class="oral-button oral-button-secondary" id="reset-schedule" type="reset"><i data-lucide="rotate-ccw" aria-hidden="true"></i>Reset</button>
+              <button class="oral-button oral-button-save" type="submit"><i data-lucide="save" aria-hidden="true"></i>Save Schedule</button>
+            </footer>
+          </form>
+        </section>
+
+        <section class="oral-card oral-existing-card" aria-labelledby="existing-schedules-title">
+          <header class="oral-card-header oral-existing-header">
+            <h2 id="existing-schedules-title">Existing Schedules</h2>
+            <button class="oral-icon-button oral-collapse" id="collapse-schedules" type="button" aria-expanded="true" aria-controls="existing-schedules-content" aria-label="Collapse existing schedules"><i data-lucide="chevron-up" aria-hidden="true"></i></button>
+          </header>
+          <div id="existing-schedules-content">
+            <div class="oral-list-toolbar">
+              <strong>ORAL TEST/INTERACTION SCHEDULED LIST</strong>
+              <label><input id="only-scheduled" type="checkbox" /><span>Only Scheduled List</span></label>
+              <label><input id="print-page-break" type="checkbox" checked /><span>Print Page Break</span></label>
+              <button id="print-schedules" type="button" aria-label="Print schedules"><i data-lucide="printer"></i></button>
+              <button id="export-schedules" type="button" aria-label="Export schedules to CSV"><i data-lucide="file-spreadsheet"></i></button>
+            </div>
+            <div class="oral-list-filters">
+              <span>GRID RECORDS: <b id="schedule-record-count">0</b></span>
+              <span>SCHEDULED STUDENTS: <b id="scheduled-student-count">0</b></span>
+              <div class="oral-list-tools">
+                <fieldset class="oral-format-options">
+                  <legend class="sr-only">Schedule list time format</legend>
+                  <label><input type="radio" name="listTimeFormat" value="12" checked /><span>12 Hours</span></label>
+                  <label><input type="radio" name="listTimeFormat" value="24" /><span>24 Hours</span></label>
+                </fieldset>
+              </div>
+            </div>
+            <div class="oral-table-scroll oral-existing-scroll">
+              <table class="oral-table" aria-label="Existing oral test schedules">
+                <thead>
+                  <tr><th scope="col">SL.NO</th><th scope="col">Scheduled Name</th><th scope="col">Created Date</th><th scope="col">Scheduled Date</th><th scope="col">From</th><th scope="col">To</th><th scope="col">Delete</th></tr>
+                </thead>
+                <tbody id="schedule-rows"><tr><td class="oral-empty-cell" colspan="7">No results.</td></tr></tbody>
+              </table>
+            </div>
+            <div class="oral-table-pagination">
+              <span class="oral-entry-count" id="schedule-entry-count">No entries found</span>
+              <label>ROWS PER PAGE
+                <select id="schedule-page-size" aria-label="Schedules per page"><option>10</option><option>25</option><option>50</option></select>
+              </label>
+              <div class="oral-pagination-buttons" aria-label="Schedule pages">
+                <button type="button" disabled aria-label="First schedule page"><i data-lucide="chevrons-left"></i></button>
+                <button type="button" disabled aria-label="Previous schedule page"><i data-lucide="chevron-left"></i></button>
+                <button type="button" disabled aria-label="Next schedule page"><i data-lucide="chevron-right"></i></button>
+                <button type="button" disabled aria-label="Last schedule page"><i data-lucide="chevrons-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <p class="oral-status" id="oral-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <footer class="oral-footer">
+        <span><i data-lucide="shield-check"></i>Secure school workspace</span>
+        <span>© 2026 Tunbridge ERP <b aria-hidden="true">·</b> Oral Test Schedule</span>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const storageKey = "vaps.preadmission.oralSchedules.v1";
+      const form = document.querySelector("#schedule-form");
+      const editor = document.querySelector("#schedule-editor");
+      const addScheduleButton = document.querySelector("#add-schedule");
+      const scheduleRows = document.querySelector("#schedule-rows");
+      const scheduleSearch = document.querySelector("#schedule-search");
+      const onlyScheduled = document.querySelector("#only-scheduled");
+      const status = document.querySelector("#oral-status");
+      const fromHour = form.elements.namedItem("fromHour");
+      const toHour = form.elements.namedItem("toHour");
+      const studentCountInput = form.elements.namedItem("studentCount");
+      let schedules = [];
+
+      function showStatus(message, isError = false) {
+        status.textContent = message;
+        status.classList.toggle("is-error", isError);
+        status.classList.toggle("is-visible", Boolean(message));
+      }
+
+      function setEditorVisible(visible) {
+        editor.hidden = !visible;
+        addScheduleButton.setAttribute("aria-expanded", String(visible));
+      }
+
+      function localDateValue(date = new Date()) {
+        const offset = date.getTimezoneOffset() * 60000;
+        return new Date(date.getTime() - offset).toISOString().slice(0, 10);
+      }
+
+      function selectedTimeFormat() {
+        return form.querySelector('input[name="timeFormat"]:checked').value;
+      }
+
+      function updateTimeFormat(convert = true) {
+        const is24Hour = selectedTimeFormat() === "24";
+        ["from", "to"].forEach((prefix) => {
+          const hourInput = form.elements.namedItem(`${prefix}Hour`);
+          const minuteInput = form.elements.namedItem(`${prefix}Minute`);
+          const meridiem = form.elements.namedItem(`${prefix}Meridiem`);
+          const previousHour = Number(hourInput.value);
+          if (convert) {
+            if (is24Hour) {
+              const converted = previousHour % 12 + (meridiem.value === "PM" ? 12 : 0);
+              hourInput.value = String(converted).padStart(2, "0");
+            } else {
+              const converted = previousHour % 24;
+              meridiem.value = converted >= 12 ? "PM" : "AM";
+              hourInput.value = String(converted % 12 || 12);
+            }
+          }
+          hourInput.min = is24Hour ? "0" : "1";
+          hourInput.max = is24Hour ? "23" : "12";
+          minuteInput.max = "59";
+          meridiem.hidden = is24Hour;
+        });
+      }
+
+      function timeInMinutes(prefix) {
+        const hour = Number(form.elements.namedItem(`${prefix}Hour`).value);
+        const minute = Number(form.elements.namedItem(`${prefix}Minute`).value);
+        if (selectedTimeFormat() === "24") return hour * 60 + minute;
+        const meridiem = form.elements.namedItem(`${prefix}Meridiem`).value;
+        return (hour % 12 + (meridiem === "PM" ? 12 : 0)) * 60 + minute;
+      }
+
+      function formatTime(schedule, prefix, format = "12") {
+        const value = schedule[`${prefix}Minutes`];
+        const hour = Math.floor(value / 60);
+        const minute = value % 60;
+        if (format === "24") return `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
+        return `${hour % 12 || 12}:${String(minute).padStart(2, "0")} ${hour < 12 ? "AM" : "PM"}`;
+      }
+
+      function renderSchedules() {
+        const query = scheduleSearch.value.trim().toLocaleLowerCase();
+        const listFormat = document.querySelector('input[name="listTimeFormat"]:checked').value;
+        const filteredSchedules = schedules.filter((schedule) => {
+          const matchesQuery = `${schedule.name} ${schedule.className} ${schedule.date}`.toLocaleLowerCase().includes(query);
+          return matchesQuery && (!onlyScheduled.checked || schedule.studentCount > 0);
+        });
+        scheduleRows.replaceChildren();
+        if (filteredSchedules.length === 0) {
+          const row = document.createElement("tr");
+          const cell = document.createElement("td");
+          cell.className = "oral-empty-cell";
+          cell.colSpan = 7;
+          cell.textContent = "No results.";
+          row.append(cell);
+          scheduleRows.append(row);
+        } else {
+          filteredSchedules.forEach((schedule, index) => {
+            const row = document.createElement("tr");
+            const values = [String(index + 1), schedule.name, schedule.createdDate, schedule.date, formatTime(schedule, "from", listFormat), formatTime(schedule, "to", listFormat)];
+            values.forEach((value) => {
+              const cell = document.createElement("td");
+              cell.textContent = value;
+              row.append(cell);
+            });
+            const actionCell = document.createElement("td");
+            const deleteButton = document.createElement("button");
+            deleteButton.className = "oral-delete-button";
+            deleteButton.type = "button";
+            deleteButton.setAttribute("aria-label", `Delete ${schedule.name}`);
+            deleteButton.dataset.scheduleId = String(schedule.id);
+            deleteButton.innerHTML = '<i data-lucide="trash-2" aria-hidden="true"></i>';
+            actionCell.append(deleteButton);
+            row.append(actionCell);
+            scheduleRows.append(row);
+          });
+        }
+        document.querySelector("#schedule-record-count").textContent = String(filteredSchedules.length);
+        document.querySelector("#scheduled-student-count").textContent = String(
+          filteredSchedules.reduce((total, schedule) => total + schedule.studentCount, 0)
+        );
+        document.querySelector("#schedule-entry-count").textContent = filteredSchedules.length
+          ? `Showing ${filteredSchedules.length} schedule${filteredSchedules.length === 1 ? "" : "s"}`
+          : "No entries found";
+        document.querySelectorAll(".oral-pagination-buttons button").forEach((button) => {
+          button.disabled = filteredSchedules.length === 0;
+        });
+        if (window.lucide) lucide.createIcons();
+      }
+
+      function loadSchedules() {
+        try {
+          const stored = window.localStorage.getItem(storageKey);
+          if (!stored) return;
+          const parsed = JSON.parse(stored);
+          if (!Array.isArray(parsed) || parsed.some((schedule) => (
+            !schedule || typeof schedule.id !== "number" || typeof schedule.name !== "string"
+            || typeof schedule.date !== "string" || typeof schedule.fromMinutes !== "number"
+            || typeof schedule.toMinutes !== "number" || typeof schedule.studentCount !== "number"
+          ))) {
+            throw new TypeError("Saved oral schedules have an invalid format.");
+          }
+          schedules = parsed;
+        } catch (error) {
+          console.error("Oral schedule load error:", error);
+          showStatus("Saved schedules could not be loaded. Check browser storage before saving.", true);
+        }
+      }
+
+      function saveSchedules() {
+        try {
+          window.localStorage.setItem(storageKey, JSON.stringify(schedules));
+        } catch (error) {
+          console.error("Oral schedule save error:", error);
+          showStatus("Schedule could not be saved. Check browser storage and try again.", true);
+          return false;
+        }
+        return true;
+      }
+
+      form.addEventListener("change", (event) => {
+        if (event.target.name === "timeFormat") updateTimeFormat();
+      });
+
+      form.addEventListener("reset", () => {
+        window.setTimeout(() => {
+          form.elements.namedItem("scheduleDate").value = localDateValue();
+          studentCountInput.value = "0";
+          updateTimeFormat(false);
+        }, 0);
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        const formData = new FormData(form);
+        const schedule = {
+          id: Date.now(),
+          name: String(formData.get("scheduleName")).trim(),
+          className: formData.get("className"),
+          date: formData.get("scheduleDate"),
+          remarks: String(formData.get("remarks") || "").trim(),
+          supervisor: String(formData.get("supervisor") || "").trim(),
+          skills: String(formData.get("skills") || "").trim(),
+          fromMinutes: timeInMinutes("from"),
+          toMinutes: timeInMinutes("to"),
+          videoConferencing: formData.get("videoConferencing") === "on",
+          autoSelectStudents: formData.get("autoSelectStudents") === "on",
+          commonTimeSlot: formData.get("commonTimeSlot") === "on",
+          individualTime: Number(formData.get("individualTime")),
+          studentCount: 0,
+          createdDate: new Intl.DateTimeFormat("en", { day: "2-digit", month: "short", year: "numeric" }).format(new Date())
+        };
+        schedules.unshift(schedule);
+        if (!saveSchedules()) {
+          schedules.shift();
+          return;
+        }
+        renderSchedules();
+        showStatus("Oral test schedule saved.");
+        form.reset();
+        setEditorVisible(false);
+      });
+
+      addScheduleButton.addEventListener("click", () => {
+        setEditorVisible(true);
+        editor.scrollIntoView({ behavior: "smooth", block: "start" });
+        form.elements.namedItem("scheduleName").focus({ preventScroll: true });
+      });
+      document.querySelector("#close-schedule").addEventListener("click", () => setEditorVisible(false));
+      document.querySelector("#collapse-schedules").addEventListener("click", (event) => {
+        const button = event.currentTarget;
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        button.setAttribute("aria-label", expanded ? "Expand existing schedules" : "Collapse existing schedules");
+        document.querySelector("#existing-schedules-content").hidden = expanded;
+        button.innerHTML = `<i data-lucide="${expanded ? "chevron-down" : "chevron-up"}" aria-hidden="true"></i>`;
+        if (window.lucide) lucide.createIcons();
+      });
+      document.querySelector("#schedule-search").addEventListener("input", renderSchedules);
+      document.querySelector("#only-scheduled").addEventListener("change", renderSchedules);
+      document.querySelectorAll('input[name="listTimeFormat"]').forEach((input) => input.addEventListener("change", renderSchedules));
+      document.querySelector("#select-all-students").addEventListener("change", (event) => {
+        event.currentTarget.checked = false;
+      });
+      scheduleRows.addEventListener("click", (event) => {
+        const button = event.target.closest(".oral-delete-button");
+        if (!button) return;
+        const index = schedules.findIndex((schedule) => String(schedule.id) === button.dataset.scheduleId);
+        if (index < 0) return;
+        const [deleted] = schedules.splice(index, 1);
+        if (!saveSchedules()) schedules.splice(index, 0, deleted);
+        renderSchedules();
+      });
+      document.querySelector("#print-schedules").addEventListener("click", () => window.print());
+      document.querySelector("#export-schedules").addEventListener("click", () => {
+        const rows = [["SL.NO", "Scheduled Name", "Class", "Created Date", "Scheduled Date", "From", "To"]];
+        schedules.forEach((schedule, index) => rows.push([
+          String(index + 1), schedule.name, schedule.className, schedule.createdDate,
+          schedule.date, formatTime(schedule, "from"), formatTime(schedule, "to")
+        ]));
+        const csv = rows.map((row) => row.map((value) => `"${String(value).replaceAll('"', '""')}"`).join(",")).join("\r\n");
+        const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "oral-test-schedules.csv";
+        link.click();
+        URL.revokeObjectURL(url);
+      });
+
+      form.elements.namedItem("scheduleDate").value = localDateValue();
+      loadSchedules();
+      renderSchedules();
+      if (window.lucide) lucide.createIcons();
+    })();
+  </script>
+  <script src="../../../../site-assistant.js"></script>
+</body>
+</html>

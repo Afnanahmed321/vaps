@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17234b" />
+  <title>Schedule Report | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="SR.css" />
+  <link rel="stylesheet" href="../../../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../../gilroy.css" />
+  <script defer src="../../../../workspace-header.js"></script>
+  <script defer src="../../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../../workspace-translator.js"></script>
+  <script defer src="../../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><img class="brand-logo" src="../../../../assets/logo.jpg" alt="Tunbridge High School" /></a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button"><i data-lucide="graduation-cap"></i><span><small>Academic Year</small><strong>2026 – 2027</strong></span><i class="year-chevron" data-lucide="chevron-down"></i></button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search"><i data-lucide="search"></i><input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" /></label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="sr-banner" aria-labelledby="sr-page-title">
+        <div class="sr-banner-copy">
+          <p class="sr-eyebrow">PREADMISSION <span>›</span> REPORTS</p>
+          <h1 id="sr-page-title"><i data-lucide="calendar-range" aria-hidden="true"></i>Schedule Report</h1>
+        </div>
+        <nav class="sr-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools">Preadmission</a><i data-lucide="chevron-right" aria-hidden="true"></i>
+          <span>Preadmission</span><i data-lucide="chevron-right" aria-hidden="true"></i><span>Reports</span><i data-lucide="chevron-right" aria-hidden="true"></i><strong>Schedule Report</strong>
+        </nav>
+      </section>
+
+      <section class="sr-content">
+        <section class="sr-card" aria-labelledby="sr-card-title">
+          <header class="sr-card-header">
+            <div><p class="sr-card-kicker">PREADMISSION</p><h2 id="sr-card-title">Schedule Report</h2><p>Choose the schedule filters and report format.</p></div>
+            <button class="sr-collapse" id="toggle-report" type="button" aria-expanded="true" aria-controls="report-card-content" aria-label="Collapse Schedule Report"><i data-lucide="chevron-up" aria-hidden="true"></i></button>
+          </header>
+
+          <form id="schedule-report-form" novalidate>
+            <div class="sr-form-content" id="report-card-content">
+              <div class="sr-toggle-row">
+                <label class="sr-check-label"><input type="checkbox" id="scheduled-only" name="scheduledOnly" /><span class="sr-checkbox" aria-hidden="true"></span><span>Scheduled Report</span></label>
+              </div>
+
+              <div class="sr-filter-panel">
+                <fieldset class="sr-option-group sr-range-options">
+                  <legend>Report Range <b>*</b></legend>
+                  <label class="sr-radio-label"><input type="radio" name="rangeType" value="year" checked /><span class="sr-radio" aria-hidden="true"></span>Year Wise</label>
+                  <label class="sr-radio-label"><input type="radio" name="rangeType" value="dates" /><span class="sr-radio" aria-hidden="true"></span>Between Dates</label>
+                </fieldset>
+
+                <label class="sr-field" id="academic-year-field" for="academic-year"><span>Academic Year <b>*</b></span><select id="academic-year" name="academicYear" required><option value="">Select Academic Year</option><option>2026-2027</option><option>2025-2026</option><option>2024-2025</option></select></label>
+                <label class="sr-field sr-date-field" id="from-date-field" for="from-date" hidden><span>From Date <b>*</b></span><input id="from-date" name="fromDate" type="date" disabled /></label>
+                <label class="sr-field sr-date-field" id="to-date-field" for="to-date" hidden><span>To Date <b>*</b></span><input id="to-date" name="toDate" type="date" disabled /></label>
+
+                <label class="sr-field" for="report-class"><span>Class <b>*</b></span><select id="report-class" name="className" required><option value="">Select Class</option><option>Pre Nursery</option><option>Lower Nursery</option><option>Upper Nursery</option><option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option><option>VI</option><option>VII</option><option>VIII</option><option>IX</option><option>X</option><option>XI</option><option>XII</option></select></label>
+
+                <fieldset class="sr-option-group sr-schedule-types">
+                  <legend>Schedule Type <b>*</b></legend>
+                  <label class="sr-radio-label"><input type="radio" name="scheduleType" value="oral" checked /><span class="sr-radio" aria-hidden="true"></span>Oral Test</label>
+                  <label class="sr-radio-label"><input type="radio" name="scheduleType" value="written" /><span class="sr-radio" aria-hidden="true"></span>Written Test</label>
+                  <label class="sr-radio-label"><input type="radio" name="scheduleType" value="intimation" /><span class="sr-radio" aria-hidden="true"></span>Intimation Schedule</label>
+                </fieldset>
+
+                <fieldset class="sr-option-group sr-time-options">
+                  <legend>Time Format <b>*</b></legend>
+                  <label class="sr-radio-label"><input type="radio" name="timeFormat" value="12" checked /><span class="sr-radio" aria-hidden="true"></span>12 Hours Format</label>
+                  <label class="sr-radio-label"><input type="radio" name="timeFormat" value="24" /><span class="sr-radio" aria-hidden="true"></span>24 Hours Format</label>
+                </fieldset>
+                <label class="sr-field" for="schedule-name"><span>Schedule Name <b>*</b></span><select id="schedule-name" name="scheduleId" required><option value="">Select Schedule Name</option></select></label>
+              </div>
+
+              <div class="sr-form-footer">
+                <p class="sr-help"><i data-lucide="info" aria-hidden="true"></i><span id="schedule-help">Choose the details above to generate a schedule report.</span></p>
+                <div class="sr-actions"><button class="sr-button sr-primary" type="submit"><i data-lucide="file-text" aria-hidden="true"></i>Report</button><button class="sr-button sr-secondary" id="reset-report" type="reset"><i data-lucide="rotate-ccw" aria-hidden="true"></i>Reset</button><button class="sr-button sr-cancel" id="cancel-report" type="button"><i data-lucide="x" aria-hidden="true"></i>Cancel</button></div>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <section class="sr-results" id="schedule-report-results" aria-live="polite" hidden>
+          <div class="sr-results-heading"><div><p>REPORT PREVIEW</p><h2 id="results-title">Schedule Report</h2></div><span id="results-count">0 schedules</span></div>
+          <div class="sr-table-wrap"><table class="sr-table"><thead><tr><th scope="col">Schedule Name</th><th scope="col">Class</th><th scope="col">Date</th><th scope="col">Time</th><th scope="col">Students</th></tr></thead><tbody id="results-rows"></tbody></table></div>
+        </section>
+        <p class="sr-status" id="sr-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <footer class="sr-footer"><span><i data-lucide="shield-check" aria-hidden="true"></i>Secure school workspace</span><span>© 2026 Tunbridge ERP <b aria-hidden="true">·</b> Schedule Report</span></footer>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const storageKey = "vaps.preadmission.oralSchedules.v1";
+      const form = document.querySelector("#schedule-report-form");
+      const scheduleSelect = document.querySelector("#schedule-name");
+      const status = document.querySelector("#sr-status");
+      const results = document.querySelector("#schedule-report-results");
+      const yearField = document.querySelector("#academic-year-field");
+      const fromField = document.querySelector("#from-date-field");
+      const toField = document.querySelector("#to-date-field");
+      let schedules = [];
+
+      const showStatus = (message, isError = false) => {
+        status.textContent = message;
+        status.classList.toggle("is-error", isError);
+        status.classList.toggle("is-visible", Boolean(message));
+      };
+
+      function updateRange() {
+        const betweenDates = form.elements.namedItem("rangeType").value === "dates";
+        yearField.hidden = betweenDates;
+        yearField.querySelector("select").disabled = betweenDates;
+        yearField.querySelector("select").required = !betweenDates;
+        [fromField, toField].forEach((field) => {
+          const input = field.querySelector("input");
+          field.hidden = !betweenDates;
+          input.disabled = !betweenDates;
+          input.required = betweenDates;
+        });
+      }
+
+      function updateSchedules() {
+        const type = form.elements.namedItem("scheduleType").value;
+        const selectedClass = form.elements.namedItem("className").value;
+        scheduleSelect.replaceChildren(new Option("Select Schedule Name", ""));
+        if (type !== "oral") {
+          document.querySelector("#schedule-help").textContent = "Saved schedule names are currently available for Oral Test schedules.";
+          return;
+        }
+        const matching = schedules.filter((schedule) => !selectedClass || !schedule.className || schedule.className === selectedClass);
+        matching.forEach((schedule) => {
+          const option = new Option(`${schedule.name} — ${schedule.className || "Class not set"} — ${schedule.date || ""}`, String(schedule.id));
+          scheduleSelect.append(option);
+        });
+        document.querySelector("#schedule-help").textContent = matching.length
+          ? `${matching.length} saved Oral Test schedule${matching.length === 1 ? "" : "s"} available for the selected class.`
+          : "No saved Oral Test schedules match this class. Create a schedule first.";
+      }
+
+      function loadSchedules() {
+        try {
+          const value = localStorage.getItem(storageKey);
+          const parsed = value ? JSON.parse(value) : [];
+          schedules = Array.isArray(parsed) ? parsed.filter((item) => item && typeof item.id === "number" && typeof item.name === "string") : [];
+        } catch (error) {
+          console.error("Schedule Report could not read saved schedules:", error);
+          schedules = [];
+          showStatus("Saved schedules could not be read from browser storage.", true);
+        }
+        updateSchedules();
+      }
+
+      form.addEventListener("change", (event) => {
+        if (event.target.name === "rangeType") updateRange();
+        if (event.target.name === "scheduleType" || event.target.name === "className") updateSchedules();
+        results.hidden = true;
+        showStatus("");
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        results.hidden = true;
+        showStatus("");
+        if (!form.reportValidity()) return;
+        const type = form.elements.namedItem("scheduleType").value;
+        if (type !== "oral") {
+          showStatus("Saved report data is currently available for Oral Test schedules only.", true);
+          return;
+        }
+        const selected = schedules.find((item) => String(item.id) === scheduleSelect.value);
+        if (!selected) {
+          showStatus("No matching saved schedule was found. Create an Oral Test schedule first.", true);
+          return;
+        }
+        const format = form.elements.namedItem("timeFormat").value;
+        const toTime = (minutes) => {
+          const hour = Math.floor(minutes / 60);
+          const minute = String(minutes % 60).padStart(2, "0");
+          return format === "24" ? `${String(hour).padStart(2, "0")}:${minute}` : `${hour % 12 || 12}:${minute} ${hour < 12 ? "AM" : "PM"}`;
+        };
+        const row = document.createElement("tr");
+        [selected.name, selected.className || "—", selected.date || "—", `${toTime(selected.fromMinutes)} – ${toTime(selected.toMinutes)}`, String(Number(selected.studentCount) || 0)].forEach((value) => {
+          const cell = document.createElement("td");
+          cell.textContent = value;
+          row.append(cell);
+        });
+        document.querySelector("#results-rows").replaceChildren(row);
+        document.querySelector("#results-title").textContent = form.elements.namedItem("rangeType").value === "year"
+          ? `Schedule Report · ${form.elements.namedItem("academicYear").value}`
+          : `Schedule Report · ${form.elements.namedItem("fromDate").value} to ${form.elements.namedItem("toDate").value}`;
+        document.querySelector("#results-count").textContent = "1 schedule";
+        results.hidden = false;
+      });
+
+      form.addEventListener("reset", () => setTimeout(() => {
+        updateRange();
+        updateSchedules();
+        results.hidden = true;
+        showStatus("");
+      }, 0));
+
+      document.querySelector("#cancel-report").addEventListener("click", () => {
+        form.reset();
+        results.hidden = true;
+        showStatus("Report filters cleared.");
+      });
+      document.querySelector("#toggle-report").addEventListener("click", (event) => {
+        const button = event.currentTarget;
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        document.querySelector("#report-card-content").hidden = expanded;
+        button.setAttribute("aria-label", expanded ? "Expand Schedule Report" : "Collapse Schedule Report");
+      });
+
+      updateRange();
+      loadSchedules();
+      if (window.lucide) lucide.createIcons();
+    })();
+  </script>
+</body>
+</html>

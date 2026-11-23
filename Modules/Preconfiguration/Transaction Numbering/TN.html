@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17234b" />
+  <title>Transaction Numbering | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="TN.css" />
+  <link rel="stylesheet" href="../../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../gilroy.css" />
+  <script defer src="../../../workspace-header.js"></script>
+  <script defer src="../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../workspace-translator.js"></script>
+  <script defer src="../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button">
+        <i data-lucide="graduation-cap"></i>
+        <span><small>Academic Year</small><strong>2026 – 2027</strong></span>
+        <i class="year-chevron" data-lucide="chevron-down"></i>
+      </button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search">
+          <i data-lucide="search"></i>
+          <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" />
+        </label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile">
+            <div class="avatar">T</div>
+            <div><strong>TBHSADMIN</strong><small>Admin</small></div>
+            <i data-lucide="chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <section class="tn-banner" aria-labelledby="tn-title">
+        <div class="tn-banner-copy">
+          <p class="tn-eyebrow">PRE-CONFIGURATION <span>›</span> CONFIGURATION</p>
+          <h1 id="tn-title"><i data-lucide="list-ordered" aria-hidden="true"></i>Transaction Numbering</h1>
+          <p>Set the numbering rules used across your school workflows.</p>
+        </div>
+        <nav class="tn-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools">Pre Configuration</a>
+          <i data-lucide="chevron-right" aria-hidden="true"></i>
+          <span>Transaction Numbering</span>
+        </nav>
+      </section>
+
+      <section class="tn-content">
+        <nav class="tn-tabs" role="tablist" aria-label="Transaction type">
+          <button class="tn-tab is-active" id="tab-enquiry" type="button" role="tab" aria-selected="true" aria-controls="tn-table-panel" data-type="Enquiry">Enquiry</button>
+          <button class="tn-tab" id="tab-registration" type="button" role="tab" aria-selected="false" aria-controls="tn-table-panel" data-type="Registration">Registration</button>
+          <button class="tn-tab" id="tab-prospectus" type="button" role="tab" aria-selected="false" aria-controls="tn-table-panel" data-type="Prospectus">Prospectus</button>
+          <button class="tn-tab" id="tab-pre-registration" type="button" role="tab" aria-selected="false" aria-controls="tn-table-panel" data-type="PreRegistration">PreRegistration</button>
+          <button class="tn-tab" id="tab-admission" type="button" role="tab" aria-selected="false" aria-controls="tn-table-panel" data-type="Admission">Admission</button>
+          <button class="tn-tab" id="tab-admission-reg" type="button" role="tab" aria-selected="false" aria-controls="tn-table-panel" data-type="AdmissionReg">AdmissionReg</button>
+          <button class="tn-tab" id="tab-receipt" type="button" role="tab" aria-selected="false" aria-controls="tn-table-panel" data-type="Receipt">Receipt</button>
+          <button class="tn-tab" id="tab-voucher" type="button" role="tab" aria-selected="false" aria-controls="tn-table-panel" data-type="Voucher">Voucher</button>
+          <button class="tn-tab" id="tab-transaction" type="button" role="tab" aria-selected="false" aria-controls="tn-table-panel" data-type="Transaction">Transaction</button>
+          <button class="tn-tab" id="tab-application" type="button" role="tab" aria-selected="false" aria-controls="tn-table-panel" data-type="Application">Application</button>
+        </nav>
+
+        <div class="tn-voucher-toolbar" id="tn-voucher-toolbar" hidden>
+          <button class="tn-button tn-button-primary" id="tn-add-voucher" type="button"><i data-lucide="plus"></i>Add Voucher Numbering</button>
+        </div>
+
+        <section class="tn-card" aria-labelledby="numbering-rules-title">
+          <div class="tn-card-header">
+            <div>
+              <p class="tn-card-eyebrow">NUMBERING SETUP</p>
+              <h2 id="numbering-rules-title">Enquiry numbering</h2>
+            </div>
+            <div class="tn-card-actions">
+              <p class="tn-status" id="tn-status" role="status" aria-live="polite"></p>
+              <button class="tn-collapse" id="tn-collapse" type="button" aria-expanded="true" aria-controls="tn-table-panel" aria-label="Collapse numbering table">
+                <i data-lucide="chevron-up" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <div class="tn-table-panel" id="tn-table-panel">
+            <div class="tn-table-scroll">
+              <table class="tn-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Sl. No.</th>
+                    <th scope="col">Starting Number</th>
+                    <th scope="col">Width of Numeric</th>
+                    <th scope="col">Zero Prefix</th>
+                    <th scope="col">Restart Numbering</th>
+                    <th scope="col">Auto / Manual</th>
+                    <th scope="col">Academic Year Suffix</th>
+                    <th scope="col">Prefix</th>
+                    <th scope="col" class="tn-actions-heading">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="numbering-row"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <dialog class="tn-edit-dialog tn-voucher-dialog tn-voucher-editor" id="tn-voucher-editor" aria-labelledby="tn-voucher-title">
+          <header class="tn-voucher-editor-header">
+            <h2 id="tn-voucher-title">Add New Voucher Numbering</h2>
+            <button class="tn-dialog-close" id="tn-voucher-close" type="button" aria-label="Close voucher form"><i data-lucide="x"></i></button>
+          </header>
+          <form id="tn-voucher-form">
+            <div class="tn-voucher-form-content">
+              <div class="tn-voucher-identifiers">
+                <label class="tn-registration-control" for="tn-voucher-name">
+                  <span class="tn-field-label">Voucher name</span>
+                  <input class="tn-text-input" id="tn-voucher-name" name="voucherName" type="text" maxlength="60" placeholder="e.g. Payment Voucher" required />
+                </label>
+                <label class="tn-registration-control" for="tn-voucher-type">
+                  <span class="tn-field-label">Voucher type</span>
+                  <input class="tn-text-input" id="tn-voucher-type" name="voucherType" type="text" maxlength="20" placeholder="e.g. PV" required />
+                </label>
+              </div>
+
+              <fieldset class="tn-choice-group">
+                <legend>Numbering mode <span>*</span></legend>
+                <label class="tn-radio-option">
+                  <input type="radio" name="voucherMode" value="Manual" required />
+                  <span class="tn-radio-indicator"></span>
+                  <span>Manual</span>
+                </label>
+                <label class="tn-radio-option">
+                  <input type="radio" name="voucherMode" value="Auto" required checked />
+                  <span class="tn-radio-indicator"></span>
+                  <span>Auto</span>
+                </label>
+              </fieldset>
+
+              <fieldset class="tn-choice-group tn-voucher-duplicate" id="tn-voucher-duplicate" disabled hidden>
+                <legend>Prevent duplicate numbers <span>*</span></legend>
+                <label class="tn-radio-option">
+                  <input type="radio" name="voucherPreventDuplicate" value="Yes" required />
+                  <span class="tn-radio-indicator"></span>
+                  <span>Yes</span>
+                </label>
+                <label class="tn-radio-option">
+                  <input type="radio" name="voucherPreventDuplicate" value="No" required checked />
+                  <span class="tn-radio-indicator"></span>
+                  <span>No</span>
+                </label>
+              </fieldset>
+
+              <fieldset class="tn-registration-fields tn-voucher-auto-fields" id="tn-voucher-auto-fields" disabled hidden>
+                <fieldset class="tn-registration-section">
+                  <legend>Prefix</legend>
+                  <div class="tn-registration-control">
+                    <span class="tn-field-label">Prefix type <span>*</span></span>
+                    <div class="tn-registration-choice-row">
+                      <label class="tn-radio-option">
+                        <input type="radio" name="voucherPrefixType" value="financialYear" required checked />
+                        <span class="tn-radio-indicator"></span>
+                        <span>Financial Year Code</span>
+                      </label>
+                      <label class="tn-radio-option">
+                        <input type="radio" name="voucherPrefixType" value="particulars" required />
+                        <span class="tn-radio-indicator"></span>
+                        <span>Particulars</span>
+                      </label>
+                    </div>
+                  </div>
+                  <label class="tn-registration-control" for="tn-voucher-prefix-particulars">
+                    <span class="tn-field-label">Particulars</span>
+                    <input class="tn-text-input" id="tn-voucher-prefix-particulars" name="voucherPrefixParticulars" type="text" maxlength="30" />
+                  </label>
+                  <label class="tn-registration-control" for="tn-voucher-width">
+                    <span class="tn-field-label">Width of numeric part</span>
+                    <input class="tn-text-input" id="tn-voucher-width" name="voucherWidth" type="number" min="0" max="12" value="2" required />
+                  </label>
+                </fieldset>
+                <fieldset class="tn-registration-section">
+                  <legend>Suffix</legend>
+                  <div class="tn-registration-control">
+                    <span class="tn-field-label">Suffix type <span>*</span></span>
+                    <div class="tn-registration-choice-row">
+                      <label class="tn-radio-option">
+                        <input type="radio" name="voucherSuffixType" value="financialYear" required checked />
+                        <span class="tn-radio-indicator"></span>
+                        <span>Financial Year Code</span>
+                      </label>
+                      <label class="tn-radio-option">
+                        <input type="radio" name="voucherSuffixType" value="particulars" required />
+                        <span class="tn-radio-indicator"></span>
+                        <span>Particulars</span>
+                      </label>
+                    </div>
+                  </div>
+                  <label class="tn-registration-control" for="tn-voucher-suffix-particulars">
+                    <span class="tn-field-label">Particulars</span>
+                    <input class="tn-text-input" id="tn-voucher-suffix-particulars" name="voucherSuffixParticulars" type="text" maxlength="30" />
+                  </label>
+                  <label class="tn-registration-control" for="tn-voucher-starting-number">
+                    <span class="tn-field-label">SLNO starting from</span>
+                    <input class="tn-text-input" id="tn-voucher-starting-number" name="voucherStartingNumber" type="number" min="0" value="1" required />
+                  </label>
+                </fieldset>
+                <div class="tn-registration-options tn-voucher-options">
+                  <fieldset class="tn-registration-option-group">
+                    <legend>Prefix with zero</legend>
+                    <div class="tn-registration-choice-row">
+                      <label class="tn-radio-option">
+                        <input type="radio" name="voucherZeroPrefix" value="Yes" required />
+                        <span class="tn-radio-indicator"></span>
+                        <span>Yes</span>
+                      </label>
+                      <label class="tn-radio-option">
+                        <input type="radio" name="voucherZeroPrefix" value="No" required checked />
+                        <span class="tn-radio-indicator"></span>
+                        <span>No</span>
+                      </label>
+                    </div>
+                  </fieldset>
+                  <fieldset class="tn-registration-option-group tn-voucher-restart">
+                    <legend>Restart numbering frequency</legend>
+                    <div class="tn-registration-choice-row">
+                      <label class="tn-radio-option">
+                        <input type="radio" name="voucherRestart" value="Never" required checked />
+                        <span class="tn-radio-indicator"></span>
+                        <span>Never</span>
+                      </label>
+                      <label class="tn-radio-option">
+                        <input type="radio" name="voucherRestart" value="Yearly" required />
+                        <span class="tn-radio-indicator"></span>
+                        <span>Yearly</span>
+                      </label>
+                      <label class="tn-radio-option">
+                        <input type="radio" name="voucherRestart" value="Monthly" required />
+                        <span class="tn-radio-indicator"></span>
+                        <span>Monthly</span>
+                      </label>
+                    </div>
+                  </fieldset>
+                </div>
+              </fieldset>
+            </div>
+            <footer class="tn-dialog-actions">
+              <button class="tn-button tn-button-secondary" type="reset"><i data-lucide="rotate-ccw"></i>Reset</button>
+              <button class="tn-button tn-button-primary" type="submit"><i data-lucide="save"></i>Save Configuration</button>
+            </footer>
+          </form>
+        </dialog>
+      </section>
+
+      <footer class="tn-footer">
+        <span><i data-lucide="shield"></i> © VAPS 2019. All rights reserved.</span>
+        <span class="tn-footer-divider" aria-hidden="true"></span>
+        <strong>VAPS DIGITAL CAMPUS</strong>
+        <span class="tn-footer-divider" aria-hidden="true"></span>
+        <span><i data-lucide="phone"></i> Toll Free No. 01206901888</span>
+      </footer>
+    </main>
+  </div>
+
+  <dialog class="tn-edit-dialog" id="tn-edit-dialog" aria-labelledby="tn-dialog-title">
+    <form id="tn-edit-form">
+      <header class="tn-dialog-header">
+        <div>
+          <p>TRANSACTION NUMBERING</p>
+          <h2 id="tn-dialog-title">Edit Enquiry Numbering</h2>
+        </div>
+        <button class="tn-dialog-close" type="button" aria-label="Close dialog"><i data-lucide="x"></i></button>
+      </header>
+      <div class="tn-dialog-content">
+        <label class="tn-registration-control tn-receipt-name" id="tn-receipt-name-control" for="tn-receipt-name" hidden>
+          <span class="tn-field-label">Transaction name</span>
+          <input class="tn-text-input" id="tn-receipt-name" name="receiptTransactionName" type="text" maxlength="60" placeholder="e.g. Fee Receipt" disabled />
+        </label>
+        <fieldset class="tn-choice-group">
+          <legend>Numbering mode <span>*</span></legend>
+          <label class="tn-radio-option">
+            <input type="radio" name="numberingMode" value="Manual" required />
+            <span class="tn-radio-indicator"></span>
+            <span>Manual</span>
+          </label>
+          <label class="tn-radio-option">
+            <input type="radio" name="numberingMode" value="Auto" required />
+            <span class="tn-radio-indicator"></span>
+            <span>Auto</span>
+          </label>
+        </fieldset>
+        <fieldset class="tn-choice-group tn-duplicate-group" id="tn-duplicate-group">
+          <legend>Prevent duplicate numbers <span>*</span></legend>
+          <label class="tn-radio-option">
+            <input type="radio" name="preventDuplicate" value="Yes" required />
+            <span class="tn-radio-indicator"></span>
+            <span>Yes</span>
+          </label>
+          <label class="tn-radio-option">
+            <input type="radio" name="preventDuplicate" value="No" required />
+            <span class="tn-radio-indicator"></span>
+            <span>No</span>
+          </label>
+        </fieldset>
+        <fieldset class="tn-registration-fields" id="tn-registration-fields" disabled hidden>
+          <fieldset class="tn-registration-section">
+            <legend>Prefix</legend>
+            <div class="tn-registration-control">
+              <span class="tn-field-label">Prefix type <span>*</span></span>
+              <div class="tn-registration-choice-row">
+                <label class="tn-radio-option">
+                  <input type="radio" name="prefixType" value="academicYear" required />
+                  <span class="tn-radio-indicator"></span>
+                  <span>Academic Year Code</span>
+                </label>
+                <label class="tn-radio-option">
+                  <input type="radio" name="prefixType" value="particulars" required />
+                  <span class="tn-radio-indicator"></span>
+                  <span>Particulars</span>
+                </label>
+              </div>
+            </div>
+            <label class="tn-registration-control" for="tn-prefix-particulars">
+              <span class="tn-field-label">Particulars</span>
+              <input class="tn-text-input" id="tn-prefix-particulars" name="prefixParticulars" type="text" maxlength="30" />
+            </label>
+            <label class="tn-registration-control" for="tn-registration-width">
+              <span class="tn-field-label">Width of numeric part</span>
+              <input class="tn-text-input" id="tn-registration-width" name="registrationWidth" type="number" min="1" max="12" required />
+            </label>
+          </fieldset>
+          <fieldset class="tn-registration-section">
+            <legend>Suffix</legend>
+            <div class="tn-registration-control">
+              <span class="tn-field-label">Suffix type <span>*</span></span>
+              <div class="tn-registration-choice-row">
+                <label class="tn-radio-option">
+                  <input type="radio" name="suffixType" value="academicYear" required />
+                  <span class="tn-radio-indicator"></span>
+                  <span>Academic Year Code</span>
+                </label>
+                <label class="tn-radio-option">
+                  <input type="radio" name="suffixType" value="particulars" required />
+                  <span class="tn-radio-indicator"></span>
+                  <span>Particulars</span>
+                </label>
+              </div>
+            </div>
+            <label class="tn-registration-control" for="tn-suffix-particulars">
+              <span class="tn-field-label">Particulars</span>
+              <input class="tn-text-input" id="tn-suffix-particulars" name="suffixParticulars" type="text" maxlength="30" />
+            </label>
+            <label class="tn-registration-control" for="tn-registration-starting-number">
+              <span class="tn-field-label">SLNO starting from</span>
+              <input class="tn-text-input" id="tn-registration-starting-number" name="registrationStartingNumber" type="number" min="1" required />
+            </label>
+          </fieldset>
+          <div class="tn-registration-options">
+            <fieldset class="tn-registration-option-group">
+              <legend>Prefix with zero</legend>
+              <div class="tn-registration-choice-row">
+                <label class="tn-radio-option">
+                  <input type="radio" name="registrationZeroPrefix" value="Yes" required />
+                  <span class="tn-radio-indicator"></span>
+                  <span>Yes</span>
+                </label>
+                <label class="tn-radio-option">
+                  <input type="radio" name="registrationZeroPrefix" value="No" required />
+                  <span class="tn-radio-indicator"></span>
+                  <span>No</span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset class="tn-registration-option-group">
+              <legend>Restart numbering frequency</legend>
+              <div class="tn-registration-choice-row">
+                <label class="tn-radio-option">
+                  <input type="radio" name="registrationRestart" value="Never" required />
+                  <span class="tn-radio-indicator"></span>
+                  <span>Never</span>
+                </label>
+                <label class="tn-radio-option">
+                  <input type="radio" name="registrationRestart" value="Yearly" required />
+                  <span class="tn-radio-indicator"></span>
+                  <span>Yearly</span>
+                </label>
+                <label class="tn-radio-option">
+                  <input type="radio" name="registrationRestart" value="Monthly" required />
+                  <span class="tn-radio-indicator"></span>
+                  <span>Monthly</span>
+                </label>
+              </div>
+            </fieldset>
+          </div>
+        </fieldset>
+        <fieldset class="tn-registration-fields tn-receipt-fields" id="tn-receipt-fields" disabled hidden>
+              <fieldset class="tn-registration-section">
+                <legend>Prefix</legend>
+                <div class="tn-registration-control">
+                  <span class="tn-field-label">Prefix type <span>*</span></span>
+                  <div class="tn-registration-choice-row">
+                    <label class="tn-radio-option">
+                      <input type="radio" name="receiptPrefixType" value="academicYear" required />
+                      <span class="tn-radio-indicator"></span>
+                      <span>Academic Year Code</span>
+                    </label>
+                    <label class="tn-radio-option">
+                      <input type="radio" name="receiptPrefixType" value="particulars" required />
+                      <span class="tn-radio-indicator"></span>
+                      <span>Particulars</span>
+                    </label>
+                  </div>
+                </div>
+                <label class="tn-registration-control" id="tn-receipt-prefix-particulars-field" for="tn-receipt-prefix-particulars" hidden>
+                  <span class="tn-field-label">Particulars</span>
+                  <input class="tn-text-input" id="tn-receipt-prefix-particulars" name="receiptPrefixParticulars" type="text" maxlength="30" />
+                </label>
+                <label class="tn-registration-control" for="tn-receipt-width">
+                  <span class="tn-field-label">Width of numeric part</span>
+                  <input class="tn-text-input" id="tn-receipt-width" name="receiptWidth" type="number" min="0" max="12" required />
+                </label>
+              </fieldset>
+              <fieldset class="tn-registration-section">
+                <legend>Suffix</legend>
+                <div class="tn-registration-control">
+                  <span class="tn-field-label">Suffix type <span>*</span></span>
+                  <div class="tn-registration-choice-row">
+                    <label class="tn-radio-option">
+                      <input type="radio" name="receiptSuffixType" value="academicYear" required />
+                      <span class="tn-radio-indicator"></span>
+                      <span>Academic Year Code</span>
+                    </label>
+                    <label class="tn-radio-option">
+                      <input type="radio" name="receiptSuffixType" value="particulars" required />
+                      <span class="tn-radio-indicator"></span>
+                      <span>Particulars</span>
+                    </label>
+                  </div>
+                </div>
+                <label class="tn-registration-control" id="tn-receipt-suffix-particulars-field" for="tn-receipt-suffix-particulars" hidden>
+                  <span class="tn-field-label">Particulars</span>
+                  <input class="tn-text-input" id="tn-receipt-suffix-particulars" name="receiptSuffixParticulars" type="text" maxlength="30" />
+                </label>
+                <label class="tn-registration-control" for="tn-receipt-starting-number">
+                  <span class="tn-field-label">SLNO starting from</span>
+                  <input class="tn-text-input" id="tn-receipt-starting-number" name="receiptStartingNumber" type="number" min="0" required />
+                </label>
+              </fieldset>
+              <div class="tn-registration-options">
+                <fieldset class="tn-registration-option-group">
+                  <legend>Prefix with zero</legend>
+                  <div class="tn-registration-choice-row">
+                    <label class="tn-radio-option">
+                      <input type="radio" name="receiptZeroPrefix" value="Yes" required />
+                      <span class="tn-radio-indicator"></span>
+                      <span>Yes</span>
+                    </label>
+                    <label class="tn-radio-option">
+                      <input type="radio" name="receiptZeroPrefix" value="No" required />
+                      <span class="tn-radio-indicator"></span>
+                      <span>No</span>
+                    </label>
+                  </div>
+                </fieldset>
+                <fieldset class="tn-registration-option-group">
+                  <legend>Restart numbering frequency</legend>
+                  <div class="tn-registration-choice-row">
+                    <label class="tn-radio-option">
+                      <input type="radio" name="receiptRestart" value="Never" required />
+                      <span class="tn-radio-indicator"></span>
+                      <span>Never</span>
+                    </label>
+                    <label class="tn-radio-option">
+                      <input type="radio" name="receiptRestart" value="Yearly" required />
+                      <span class="tn-radio-indicator"></span>
+                      <span>Yearly</span>
+                    </label>
+                    <label class="tn-radio-option">
+                      <input type="radio" name="receiptRestart" value="Monthly" required />
+                      <span class="tn-radio-indicator"></span>
+                      <span>Monthly</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+            </fieldset>
+      </div>
+      <footer class="tn-dialog-actions">
+        <button class="tn-button tn-button-secondary" id="tn-reset" type="button"><i data-lucide="rotate-ccw"></i>Reset</button>
+        <button class="tn-button tn-button-primary" id="tn-save" type="submit"><i data-lucide="save"></i>Save Configuration</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <script>
+    (() => {
+      const storageKey = "vaps.transactionNumbering.v1";
+      const tabButtons = [...document.querySelectorAll(".tn-tab")];
+      const tableBody = document.querySelector("#numbering-row");
+      const tablePanel = document.querySelector("#tn-table-panel");
+      const collapseButton = document.querySelector("#tn-collapse");
+      const cardTitle = document.querySelector("#numbering-rules-title");
+      const status = document.querySelector("#tn-status");
+      const dialog = document.querySelector("#tn-edit-dialog");
+      const editForm = document.querySelector("#tn-edit-form");
+      const voucherToolbar = document.querySelector("#tn-voucher-toolbar");
+      const voucherEditor = document.querySelector("#tn-voucher-editor");
+      const voucherForm = document.querySelector("#tn-voucher-form");
+      const voucherTitle = document.querySelector("#tn-voucher-title");
+      const defaultConfig = {
+        startingNumber: "1",
+        width: "2",
+        zeroPrefix: "No",
+        restart: "Never",
+        mode: "Manual",
+        academicYearSuffix: "Academic Year",
+        prefix: "Academic Year",
+        preventDuplicate: "No"
+      };
+      const defaultRegistrationConfig = {
+        ...defaultConfig,
+        width: "4",
+        mode: "Auto",
+        academicYearSuffix: "/23-24",
+        prefix: "RF/",
+        prefixType: "particulars",
+        prefixParticulars: "RF/",
+        suffixType: "particulars",
+        suffixParticulars: "/23-24"
+      };
+      const defaultProspectusConfig = {
+        ...defaultConfig,
+        startingNumber: "0",
+        width: "0"
+      };
+      const defaultPreRegistrationConfig = {
+        ...defaultConfig,
+        width: "4",
+        academicYearSuffix: "/23-24",
+        prefix: "RF/",
+        preventDuplicate: "Yes"
+      };
+      const defaultAdmissionConfig = {
+        ...defaultConfig,
+        startingNumber: "0",
+        width: "0",
+        preventDuplicate: "Yes"
+      };
+      const defaultReceiptConfig = {
+        transactionName: "",
+        startingNumber: "0",
+        width: "0",
+        zeroPrefix: "No",
+        restart: "Never",
+        mode: "Auto",
+        academicYearSuffix: "N/A",
+        prefix: "N/A",
+        prefixType: "academicYear",
+        prefixParticulars: "",
+        suffixType: "academicYear",
+        suffixParticulars: "",
+        isConfigured: false
+      };
+      const typeDefaults = {
+        Registration: defaultRegistrationConfig,
+        Prospectus: defaultProspectusConfig,
+        PreRegistration: defaultPreRegistrationConfig,
+        Admission: defaultAdmissionConfig,
+        AdmissionReg: defaultAdmissionConfig,
+        Transaction: defaultAdmissionConfig,
+        Application: defaultAdmissionConfig
+      };
+      const types = tabButtons.map((button) => button.dataset.type);
+      function createDefaultConfig(type) {
+        if (type === "Receipt") {
+          return {
+            rows: Array.from({ length: 6 }, () => ({ ...defaultReceiptConfig }))
+          };
+        }
+        if (type === "Voucher") return { items: [] };
+        return { ...(typeDefaults[type] || defaultConfig) };
+      }
+
+      const defaultConfigs = Object.fromEntries(types.map((type) => [type, createDefaultConfig(type)]));
+      let configurations = Object.fromEntries(types.map((type) => [type, createDefaultConfig(type)]));
+      let selectedType = "Enquiry";
+      let selectedReceiptRowIndex = 0;
+      let editingVoucherIndex = null;
+      let storageUnavailable = false;
+
+      function showStatus(message, isError = false) {
+        status.textContent = message;
+        status.classList.toggle("is-error", isError);
+        status.classList.toggle("is-visible", Boolean(message));
+      }
+
+      function loadConfigurations() {
+        try {
+          const stored = window.localStorage.getItem(storageKey);
+          if (!stored) return;
+          const parsed = JSON.parse(stored);
+          if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+            throw new TypeError("Transaction numbering settings must be an object.");
+          }
+          configurations = Object.fromEntries(types.map((type) => {
+            const storedConfig = parsed[type];
+            if (type === "Voucher") {
+              return [type, { items: Array.isArray(storedConfig?.items) ? storedConfig.items : [] }];
+            }
+            if (type === "Receipt") {
+              const storedRows = Array.isArray(storedConfig?.rows)
+                ? storedConfig.rows
+                : storedConfig && typeof storedConfig === "object" && !Array.isArray(storedConfig)
+                  ? [storedConfig]
+                  : [];
+              const rows = defaultConfigs.Receipt.rows.map((defaultRow, index) => {
+                const storedRow = storedRows[index];
+                const legacyReceipt = index === 0 && !Array.isArray(storedConfig?.rows) && storedRow;
+                return {
+                  ...defaultRow,
+                  ...(storedRow && typeof storedRow === "object" && !Array.isArray(storedRow) ? storedRow : {}),
+                  ...(legacyReceipt ? { isConfigured: true } : {})
+                };
+              });
+              return [type, { rows }];
+            }
+            return [type, { ...defaultConfigs[type], ...(storedConfig || {}) }];
+          }));
+        } catch (error) {
+          storageUnavailable = true;
+          console.error("Transaction numbering storage error:", error);
+          showStatus("Settings could not be loaded from this browser. Check storage permissions before saving.", true);
+        }
+      }
+
+      function renderRow() {
+        const config = configurations[selectedType];
+        const isVoucher = selectedType === "Voucher";
+        const isReceipt = selectedType === "Receipt";
+        cardTitle.textContent = `${selectedType} numbering`;
+        tableBody.replaceChildren();
+
+        if (isVoucher) {
+          if (config.items.length === 0) {
+            const row = document.createElement("tr");
+            const emptyCell = document.createElement("td");
+            emptyCell.className = "tn-empty-state";
+            emptyCell.colSpan = 9;
+            emptyCell.textContent = "No results.";
+            row.append(emptyCell);
+            tableBody.append(row);
+          } else {
+            config.items.forEach((item, index) => {
+              const row = document.createElement("tr");
+              const isAuto = item.mode === "Auto";
+              const values = [
+                String(index + 1),
+                isAuto ? item.startingNumber : "N/A",
+                isAuto ? item.width : "N/A",
+                item.zeroPrefix || "No",
+                item.restart || "Never",
+                item.mode,
+                isAuto ? item.academicYearSuffix : "N/A",
+                isAuto ? item.prefix : "N/A"
+              ];
+              values.forEach((value) => {
+                const cell = document.createElement("td");
+                cell.textContent = value;
+                row.append(cell);
+              });
+
+              const actionCell = document.createElement("td");
+              actionCell.className = "tn-actions-cell";
+              const editButton = document.createElement("button");
+              editButton.className = "tn-edit-button";
+              editButton.type = "button";
+              editButton.setAttribute("aria-label", `Edit ${item.voucherName} voucher numbering`);
+              const editIcon = document.createElement("i");
+              editIcon.dataset.lucide = "square-pen";
+              editButton.append(editIcon);
+              editButton.addEventListener("click", () => openVoucherForm(item, index));
+              actionCell.append(editButton);
+              row.append(actionCell);
+              tableBody.append(row);
+            });
+          }
+          if (window.lucide) window.lucide.createIcons();
+          return;
+        }
+
+        const rows = isReceipt ? config.rows : [config];
+        rows.forEach((rowConfig, index) => {
+          const row = document.createElement("tr");
+          const showNotConfigured = isReceipt && !rowConfig.isConfigured;
+          const values = [
+            String(index + 1),
+            showNotConfigured ? "N/A" : rowConfig.startingNumber,
+            showNotConfigured ? "N/A" : rowConfig.width,
+            rowConfig.zeroPrefix,
+            rowConfig.restart,
+            rowConfig.mode,
+            showNotConfigured ? "N/A" : rowConfig.academicYearSuffix,
+            showNotConfigured ? "N/A" : rowConfig.prefix
+          ];
+          values.forEach((value) => {
+            const cell = document.createElement("td");
+            cell.textContent = value;
+            row.append(cell);
+          });
+
+          const actionCell = document.createElement("td");
+          actionCell.className = "tn-actions-cell";
+          const editButton = document.createElement("button");
+          editButton.className = "tn-edit-button";
+          editButton.type = "button";
+          editButton.setAttribute(
+            "aria-label",
+            `Edit ${selectedType} numbering${isReceipt ? ` row ${index + 1}` : ""}`
+          );
+          const editIcon = document.createElement("i");
+          editIcon.dataset.lucide = "square-pen";
+          editButton.append(editIcon);
+          editButton.addEventListener("click", () => {
+            if (isReceipt) selectedReceiptRowIndex = index;
+            openEditDialog();
+          });
+          actionCell.append(editButton);
+          row.append(actionCell);
+          tableBody.append(row);
+        });
+        if (window.lucide) window.lucide.createIcons();
+      }
+
+      function selectType(type) {
+        selectedType = type;
+        tabButtons.forEach((button) => {
+          const isActive = button.dataset.type === type;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-selected", String(isActive));
+        });
+        const isVoucher = type === "Voucher";
+        voucherToolbar.hidden = !isVoucher;
+        if (!isVoucher && voucherEditor.open) voucherEditor.close();
+        showStatus("");
+        renderRow();
+      }
+
+      function setRadioValue(name, value, form = editForm) {
+        const input = form.querySelector(`input[name="${name}"][value="${value}"]`);
+        if (input) input.checked = true;
+      }
+
+      function populateRegistrationFields(config) {
+        setRadioValue("prefixType", config.prefixType);
+        setRadioValue("suffixType", config.suffixType);
+        setRadioValue("registrationZeroPrefix", config.zeroPrefix);
+        setRadioValue("registrationRestart", config.restart);
+        editForm.elements.namedItem("prefixParticulars").value = config.prefixParticulars ?? config.prefix;
+        editForm.elements.namedItem("registrationWidth").value = config.width;
+        editForm.elements.namedItem("suffixParticulars").value = config.suffixParticulars ?? config.academicYearSuffix;
+        editForm.elements.namedItem("registrationStartingNumber").value = config.startingNumber;
+      }
+
+      function populateReceiptFields(config) {
+        setRadioValue("receiptPrefixType", config.prefixType);
+        setRadioValue("receiptSuffixType", config.suffixType);
+        setRadioValue("receiptZeroPrefix", config.zeroPrefix);
+        setRadioValue("receiptRestart", config.restart);
+        editForm.elements.namedItem("receiptTransactionName").value = config.transactionName;
+        editForm.elements.namedItem("receiptPrefixParticulars").value = config.prefixParticulars;
+        editForm.elements.namedItem("receiptWidth").value = config.width;
+        editForm.elements.namedItem("receiptSuffixParticulars").value = config.suffixParticulars;
+        editForm.elements.namedItem("receiptStartingNumber").value = config.startingNumber;
+        updateReceiptParticularsVisibility();
+      }
+
+      function updateReceiptParticularsVisibility() {
+        const prefixType = editForm.querySelector('input[name="receiptPrefixType"]:checked')?.value;
+        const suffixType = editForm.querySelector('input[name="receiptSuffixType"]:checked')?.value;
+        document.querySelector("#tn-receipt-prefix-particulars-field").hidden = prefixType !== "particulars";
+        document.querySelector("#tn-receipt-suffix-particulars-field").hidden = suffixType !== "particulars";
+      }
+
+      function updateVoucherModeFields() {
+        const isAuto = voucherForm.querySelector('input[name="voucherMode"]:checked')?.value === "Auto";
+        const autoFields = document.querySelector("#tn-voucher-auto-fields");
+        const duplicateFields = document.querySelector("#tn-voucher-duplicate");
+        autoFields.hidden = !isAuto;
+        autoFields.disabled = !isAuto;
+        duplicateFields.hidden = isAuto;
+        duplicateFields.disabled = isAuto;
+      }
+
+      function openVoucherForm(item = null, index = null) {
+        editingVoucherIndex = index;
+        voucherForm.reset();
+        voucherTitle.textContent = item ? "Edit Voucher Numbering" : "Add New Voucher Numbering";
+        if (item) {
+          voucherForm.elements.namedItem("voucherName").value = item.voucherName;
+          voucherForm.elements.namedItem("voucherType").value = item.voucherType;
+          setRadioValue("voucherMode", item.mode, voucherForm);
+          if (item.mode === "Manual") {
+            setRadioValue("voucherPreventDuplicate", item.preventDuplicate, voucherForm);
+          } else {
+            setRadioValue("voucherPrefixType", item.prefixType, voucherForm);
+            setRadioValue("voucherSuffixType", item.suffixType, voucherForm);
+            setRadioValue("voucherZeroPrefix", item.zeroPrefix, voucherForm);
+            setRadioValue("voucherRestart", item.restart, voucherForm);
+            voucherForm.elements.namedItem("voucherPrefixParticulars").value = item.prefixParticulars;
+            voucherForm.elements.namedItem("voucherSuffixParticulars").value = item.suffixParticulars;
+            voucherForm.elements.namedItem("voucherWidth").value = item.width;
+            voucherForm.elements.namedItem("voucherStartingNumber").value = item.startingNumber;
+          }
+        }
+        updateVoucherModeFields();
+        if (!voucherEditor.open) voucherEditor.showModal();
+        if (window.lucide) window.lucide.createIcons();
+      }
+
+      function closeVoucherForm() {
+        if (voucherEditor.open) voucherEditor.close();
+        editingVoucherIndex = null;
+        voucherForm.reset();
+        updateVoucherModeFields();
+      }
+
+      function openEditDialog() {
+        const isRegistration = selectedType === "Registration";
+        const isReceipt = selectedType === "Receipt";
+        const config = isReceipt
+          ? configurations.Receipt.rows[selectedReceiptRowIndex]
+          : configurations[selectedType];
+        document.querySelector("#tn-dialog-title").textContent = `Edit ${selectedType} Numbering`;
+        dialog.classList.toggle("is-registration", isRegistration);
+        dialog.classList.toggle("is-receipt", isReceipt);
+        const duplicateGroup = document.querySelector("#tn-duplicate-group");
+        const registrationFields = document.querySelector("#tn-registration-fields");
+        const receiptFields = document.querySelector("#tn-receipt-fields");
+        const receiptNameControl = document.querySelector("#tn-receipt-name-control");
+        duplicateGroup.hidden = isRegistration || isReceipt;
+        duplicateGroup.disabled = isRegistration || isReceipt;
+        registrationFields.hidden = !isRegistration;
+        registrationFields.disabled = !isRegistration;
+        receiptFields.hidden = !isReceipt;
+        receiptFields.disabled = !isReceipt;
+        receiptNameControl.hidden = !isReceipt;
+        editForm.elements.namedItem("receiptTransactionName").disabled = !isReceipt;
+        setRadioValue("numberingMode", config.mode);
+        if (!isReceipt) setRadioValue("preventDuplicate", config.preventDuplicate);
+        if (isRegistration) populateRegistrationFields(config);
+        if (isReceipt) populateReceiptFields(config);
+        dialog.showModal();
+        if (window.lucide) window.lucide.createIcons();
+      }
+
+      dialog.querySelector(".tn-dialog-close").addEventListener("click", () => dialog.close());
+      document.querySelector("#tn-add-voucher").addEventListener("click", () => openVoucherForm());
+      document.querySelector("#tn-voucher-close").addEventListener("click", closeVoucherForm);
+      voucherEditor.addEventListener("click", (event) => {
+        const bounds = voucherEditor.getBoundingClientRect();
+        if (event.target === voucherEditor && (
+          event.clientX < bounds.left || event.clientX > bounds.right
+          || event.clientY < bounds.top || event.clientY > bounds.bottom
+        )) closeVoucherForm();
+      });
+      voucherForm.addEventListener("change", (event) => {
+        if (event.target.name === "voucherMode") updateVoucherModeFields();
+      });
+      voucherForm.addEventListener("reset", () => window.setTimeout(updateVoucherModeFields, 0));
+      voucherForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (storageUnavailable) {
+          showStatus("Settings cannot be saved until browser storage is available.", true);
+          return;
+        }
+        const formData = new FormData(voucherForm);
+        const mode = formData.get("voucherMode");
+        const item = {
+          voucherName: formData.get("voucherName").trim(),
+          voucherType: formData.get("voucherType").trim(),
+          mode,
+          preventDuplicate: mode === "Manual" ? formData.get("voucherPreventDuplicate") : "No",
+          startingNumber: "N/A",
+          width: "N/A",
+          zeroPrefix: "No",
+          restart: "Never",
+          academicYearSuffix: "N/A",
+          prefix: "N/A"
+        };
+        if (mode === "Auto") {
+          const prefixType = formData.get("voucherPrefixType");
+          const suffixType = formData.get("voucherSuffixType");
+          const prefixParticulars = formData.get("voucherPrefixParticulars");
+          const suffixParticulars = formData.get("voucherSuffixParticulars");
+          Object.assign(item, {
+            prefixType,
+            prefixParticulars,
+            prefix: prefixType === "particulars" ? prefixParticulars : "Financial Year",
+            width: formData.get("voucherWidth"),
+            suffixType,
+            suffixParticulars,
+            academicYearSuffix: suffixType === "particulars" ? suffixParticulars : "Financial Year",
+            startingNumber: formData.get("voucherStartingNumber"),
+            zeroPrefix: formData.get("voucherZeroPrefix"),
+            restart: formData.get("voucherRestart")
+          });
+        }
+        const wasEditing = editingVoucherIndex !== null;
+        if (wasEditing) {
+          configurations.Voucher.items[editingVoucherIndex] = item;
+        } else {
+          configurations.Voucher.items.push(item);
+        }
+        try {
+          window.localStorage.setItem(storageKey, JSON.stringify(configurations));
+        } catch (error) {
+          console.error("Voucher numbering save error:", error);
+          showStatus("Voucher numbering could not be saved. Check this browser’s storage and try again.", true);
+          return;
+        }
+        renderRow();
+        closeVoucherForm();
+        showStatus(`Voucher numbering ${wasEditing ? "updated" : "added"}.`);
+      });
+      editForm.addEventListener("change", (event) => {
+        if (event.target.name === "receiptPrefixType" || event.target.name === "receiptSuffixType") {
+          updateReceiptParticularsVisibility();
+        }
+      });
+      dialog.addEventListener("click", (event) => {
+        const bounds = dialog.getBoundingClientRect();
+        if (event.target === dialog && (
+          event.clientX < bounds.left || event.clientX > bounds.right
+          || event.clientY < bounds.top || event.clientY > bounds.bottom
+        )) dialog.close();
+      });
+
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => selectType(button.dataset.type));
+      });
+
+      collapseButton.addEventListener("click", () => {
+        const expanded = collapseButton.getAttribute("aria-expanded") === "true";
+        collapseButton.setAttribute("aria-expanded", String(!expanded));
+        collapseButton.setAttribute("aria-label", expanded ? "Expand numbering table" : "Collapse numbering table");
+        collapseButton.innerHTML = `<i data-lucide="${expanded ? "chevron-down" : "chevron-up"}" aria-hidden="true"></i>`;
+        tablePanel.hidden = expanded;
+        if (window.lucide) window.lucide.createIcons();
+      });
+
+      document.querySelector("#tn-reset").addEventListener("click", () => {
+        if (selectedType === "Registration") {
+          setRadioValue("numberingMode", defaultRegistrationConfig.mode);
+          populateRegistrationFields(defaultRegistrationConfig);
+          return;
+        }
+        if (selectedType === "Receipt") {
+          setRadioValue("numberingMode", defaultReceiptConfig.mode);
+          populateReceiptFields(defaultReceiptConfig);
+          return;
+        }
+        if (selectedType === "Transaction" || selectedType === "Application") {
+          setRadioValue("numberingMode", defaultAdmissionConfig.mode);
+          setRadioValue("preventDuplicate", defaultAdmissionConfig.preventDuplicate);
+          return;
+        }
+        setRadioValue("numberingMode", defaultConfig.mode);
+        setRadioValue("preventDuplicate", defaultConfig.preventDuplicate);
+      });
+
+      editForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (storageUnavailable) {
+          showStatus("Settings cannot be saved until browser storage is available.", true);
+          return;
+        }
+        const formData = new FormData(editForm);
+        if (selectedType === "Receipt") {
+          const prefixType = formData.get("receiptPrefixType");
+          const suffixType = formData.get("receiptSuffixType");
+          const prefixParticulars = formData.get("receiptPrefixParticulars");
+          const suffixParticulars = formData.get("receiptSuffixParticulars");
+          configurations.Receipt.rows[selectedReceiptRowIndex] = {
+            ...configurations.Receipt.rows[selectedReceiptRowIndex],
+            transactionName: formData.get("receiptTransactionName"),
+            mode: formData.get("numberingMode"),
+            prefixType,
+            prefixParticulars,
+            prefix: prefixType === "particulars" ? prefixParticulars : "Academic Year",
+            width: formData.get("receiptWidth"),
+            suffixType,
+            suffixParticulars,
+            academicYearSuffix: suffixType === "particulars" ? suffixParticulars : "Academic Year",
+            startingNumber: formData.get("receiptStartingNumber"),
+            zeroPrefix: formData.get("receiptZeroPrefix"),
+            restart: formData.get("receiptRestart"),
+            isConfigured: true
+          };
+        } else {
+          const updatedConfig = {
+            ...configurations[selectedType],
+            mode: formData.get("numberingMode")
+          };
+          if (selectedType === "Registration") {
+            const prefixType = formData.get("prefixType");
+            const suffixType = formData.get("suffixType");
+            const prefixParticulars = formData.get("prefixParticulars");
+            const suffixParticulars = formData.get("suffixParticulars");
+            Object.assign(updatedConfig, {
+              prefixType,
+              prefixParticulars,
+              prefix: prefixType === "particulars" ? prefixParticulars : "Academic Year",
+              width: formData.get("registrationWidth"),
+              suffixType,
+              suffixParticulars,
+              academicYearSuffix: suffixType === "particulars" ? suffixParticulars : "Academic Year",
+              startingNumber: formData.get("registrationStartingNumber"),
+              zeroPrefix: formData.get("registrationZeroPrefix"),
+              restart: formData.get("registrationRestart")
+            });
+          } else {
+            updatedConfig.preventDuplicate = formData.get("preventDuplicate");
+          }
+          configurations[selectedType] = updatedConfig;
+        }
+        try {
+          window.localStorage.setItem(storageKey, JSON.stringify(configurations));
+        } catch (error) {
+          console.error("Transaction numbering save error:", error);
+          showStatus("Configuration could not be saved. Check this browser’s storage and try again.", true);
+          return;
+        }
+        renderRow();
+        dialog.close();
+        showStatus(`${selectedType} numbering configuration saved.`);
+      });
+
+      loadConfigurations();
+      renderRow();
+    })();
+  </script>
+  <script src="../../../site-assistant.js"></script>
+</body>
+</html>

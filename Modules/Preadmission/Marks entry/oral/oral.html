@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17234b" />
+  <title>Oral Test Marks | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="oral.css" />
+  <link rel="stylesheet" href="../../../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../../gilroy.css" />
+  <script defer src="../../../../workspace-header.js"></script>
+  <script defer src="../../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../../workspace-translator.js"></script>
+  <script defer src="../../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button">
+        <i data-lucide="graduation-cap"></i>
+        <span><small>Academic Year</small><strong>2026 – 2027</strong></span>
+        <i class="year-chevron" data-lucide="chevron-down"></i>
+      </button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search">
+          <i data-lucide="search"></i>
+          <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" />
+        </label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="marks-banner" aria-labelledby="marks-page-title">
+        <div class="marks-banner-copy">
+          <p class="marks-eyebrow">PREADMISSION <span>›</span> MARKS ENTRY</p>
+          <h1 id="marks-page-title"><i data-lucide="square-pen" aria-hidden="true"></i>Oral Test Marks</h1>
+          <p>Oral Test Marks</p>
+        </div>
+        <nav class="marks-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools">Preadmission</a>
+          <i data-lucide="chevron-right" aria-hidden="true"></i>
+          <span>Oral Test Marks</span>
+        </nav>
+      </section>
+
+      <section class="marks-content">
+        <div class="marks-page-heading">
+          <div class="marks-heading-copy">
+            <span class="marks-heading-mark" aria-hidden="true"></span>
+            <div>
+              <h2>Oral Test/Interaction Schedule Marks</h2>
+              <p>Update the student's oral test marks based on schedule and oral test conducted.</p>
+            </div>
+          </div>
+        </div>
+
+        <section class="marks-card" aria-labelledby="search-schedule-title">
+          <header class="marks-card-header">
+            <h3 id="search-schedule-title">Search Schedule</h3>
+            <button class="marks-collapse" id="toggle-search" type="button" aria-expanded="true" aria-controls="search-card-content" aria-label="Collapse schedule search">
+              <i data-lucide="chevron-up" aria-hidden="true"></i>
+            </button>
+          </header>
+          <form id="schedule-search-form">
+            <div class="marks-search-fields" id="search-card-content">
+              <label class="marks-field" for="schedule-name">
+                <span>Schedule Name <b>*</b></span>
+                <select id="schedule-name" name="scheduleId" required>
+                  <option value="">Select Schedule Name</option>
+                </select>
+              </label>
+              <label class="marks-field" for="oral-test-by">
+                <span>Oral Test By <b>*</b></span>
+                <select id="oral-test-by" name="oralTestBy" required disabled>
+                  <option value="">Select Oral Test By</option>
+                </select>
+              </label>
+              <div class="marks-search-actions">
+                <button class="marks-button marks-search-button" type="submit"><i data-lucide="search" aria-hidden="true"></i>Search</button>
+                <button class="marks-button marks-cancel-button" id="cancel-search" type="button"><i data-lucide="x" aria-hidden="true"></i>Cancel</button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <section class="marks-results" id="marks-results" aria-live="polite" hidden>
+          <div class="marks-results-heading">
+            <div>
+              <p class="marks-results-eyebrow">SEARCH RESULTS</p>
+              <h3 id="results-title">Schedule students</h3>
+            </div>
+            <span id="results-count">0 students</span>
+          </div>
+          <div class="marks-table-scroll">
+            <table class="marks-table">
+              <thead>
+                <tr><th scope="col">SL.NO</th><th scope="col">Student Name</th><th scope="col">Registration No</th><th scope="col">Class</th><th scope="col">Oral Test Marks</th></tr>
+              </thead>
+              <tbody id="marks-results-rows"><tr><td class="marks-empty" colspan="5">No students found for this schedule.</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+
+        <p class="marks-status" id="marks-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <footer class="marks-footer">
+        <span><i data-lucide="shield-check" aria-hidden="true"></i>Secure school workspace</span>
+        <span>© 2026 Tunbridge ERP <b aria-hidden="true">·</b> Oral Test Marks</span>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const storageKey = "vaps.preadmission.oralSchedules.v1";
+      const scheduleSelect = document.querySelector("#schedule-name");
+      const oralTestBySelect = document.querySelector("#oral-test-by");
+      const form = document.querySelector("#schedule-search-form");
+      const results = document.querySelector("#marks-results");
+      const status = document.querySelector("#marks-status");
+      let schedules = [];
+
+      function showStatus(message, isError = false) {
+        status.textContent = message;
+        status.classList.toggle("is-error", isError);
+        status.classList.toggle("is-visible", Boolean(message));
+      }
+
+      function loadSchedules() {
+        try {
+          const stored = window.localStorage.getItem(storageKey);
+          if (!stored) return;
+          const parsed = JSON.parse(stored);
+          if (!Array.isArray(parsed) || parsed.some((schedule) => (
+            !schedule || typeof schedule.id !== "number" || typeof schedule.name !== "string"
+          ))) {
+            throw new TypeError("Saved oral schedules have an invalid format.");
+          }
+          schedules = parsed;
+          schedules.forEach((schedule) => {
+            const option = document.createElement("option");
+            option.value = String(schedule.id);
+            option.textContent = `${schedule.name} — ${schedule.className || "Class not set"} — ${schedule.date || ""}`;
+            scheduleSelect.append(option);
+          });
+        } catch (error) {
+          console.error("Oral Test Marks schedule load error:", error);
+          showStatus("Saved schedules could not be loaded. Check browser storage and try again.", true);
+        }
+      }
+
+      function updateOralTestBy() {
+        oralTestBySelect.replaceChildren();
+        const placeholder = document.createElement("option");
+        placeholder.value = "";
+        placeholder.textContent = "Select Oral Test By";
+        oralTestBySelect.append(placeholder);
+
+        const schedule = schedules.find((item) => String(item.id) === scheduleSelect.value);
+        if (!schedule) {
+          oralTestBySelect.disabled = true;
+          return;
+        }
+        const examinerNames = [...new Set([schedule.supervisor].filter((name) => typeof name === "string" && name.trim()))];
+        const availableExaminers = examinerNames.length ? examinerNames : ["Not specified"];
+        availableExaminers.forEach((name) => {
+          const option = document.createElement("option");
+          option.value = name;
+          option.textContent = name;
+          oralTestBySelect.append(option);
+        });
+        oralTestBySelect.disabled = false;
+      }
+
+      scheduleSelect.addEventListener("change", updateOralTestBy);
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        results.hidden = true;
+        showStatus("");
+        if (!schedules.length) {
+          showStatus("No oral test schedules are available. Create a schedule first.", true);
+          return;
+        }
+        if (!form.reportValidity()) return;
+
+        const schedule = schedules.find((item) => String(item.id) === scheduleSelect.value);
+        if (!schedule) {
+          showStatus("The selected schedule could not be found. Refresh the page and try again.", true);
+          return;
+        }
+        const studentCount = Number(schedule.studentCount) || 0;
+        document.querySelector("#results-title").textContent = schedule.name;
+        document.querySelector("#results-count").textContent = `${studentCount} ${studentCount === 1 ? "student" : "students"}`;
+        document.querySelector("#marks-results-rows .marks-empty").textContent = studentCount
+          ? "Student records are not available in this browser."
+          : "No students are assigned to this schedule.";
+        results.hidden = false;
+        if (studentCount === 0) {
+          showStatus(`No students are assigned to “${schedule.name}”.`);
+        } else {
+          showStatus("Student details are not available in this browser yet.", true);
+        }
+      });
+
+      document.querySelector("#cancel-search").addEventListener("click", () => {
+        form.reset();
+        updateOralTestBy();
+        results.hidden = true;
+        showStatus("");
+      });
+
+      document.querySelector("#toggle-search").addEventListener("click", (event) => {
+        const button = event.currentTarget;
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        button.setAttribute("aria-label", expanded ? "Expand schedule search" : "Collapse schedule search");
+        document.querySelector("#search-card-content").hidden = expanded;
+        button.innerHTML = `<i data-lucide="${expanded ? "chevron-down" : "chevron-up"}" aria-hidden="true"></i>`;
+        if (window.lucide) lucide.createIcons();
+      });
+
+      loadSchedules();
+      if (window.lucide) lucide.createIcons();
+    })();
+  </script>
+  <script src="../../../../site-assistant.js"></script>
+</body>
+</html>

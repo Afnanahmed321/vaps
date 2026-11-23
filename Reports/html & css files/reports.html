@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="reports.css" />
+  <link rel="stylesheet" href="../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../site-assistant.css" />
+  <link rel="stylesheet" href="../../gilroy.css" />
+  <script defer src="../../workspace-header.js"></script>
+  <script defer src="../../workspace-whatsapp.js"></script>
+  <script defer src="../../workspace-chatgpt.js"></script>
+  <script defer src="../../workspace-translator.js"></script>
+  <script defer src="../../workspace-text-to-speech.js"></script>
+  <script defer src="../../workspace-pdf-converter.js"></script>
+  <script defer src="../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item active" href="reports.html" aria-current="page"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button">
+        <i data-lucide="graduation-cap"></i>
+        <span><small>Academic Year</small><strong>2026 – 2027</strong></span>
+        <i class="year-chevron" data-lucide="chevron-down"></i>
+      </button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search">
+          <i data-lucide="search"></i>
+          <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" />
+        </label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile">
+            <div class="avatar">T</div>
+            <div><strong>TBHSADMIN</strong><small>Admin</small></div>
+            <i data-lucide="chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <div class="reports-page">
+        <header class="reports-page-heading">
+          <div>
+            <p class="reports-eyebrow"><span></span> SCHOOL INSIGHTS</p>
+            <h1>Reports</h1>
+          </div>
+          <div class="reports-total">
+            <span class="reports-total-icon"><i data-lucide="archive"></i></span>
+            <span><small>Saved reports</small><strong id="saved-report-count">0</strong></span>
+          </div>
+        </header>
+
+        <section class="saved-reports-card saved-reports-library" aria-labelledby="saved-reports-title">
+          <div class="saved-reports-heading">
+            <div>
+              <p class="panel-eyebrow">YOUR LIBRARY</p>
+              <h2 id="saved-reports-title" tabindex="-1">Saved reports</h2>
+            </div>
+          </div>
+          <div class="report-filter-bar" role="group" aria-label="Filter saved reports">
+            <label class="report-filter-field">
+              <span>Category</span>
+              <select id="report-category-filter">
+                <option value="">All categories</option>
+              </select>
+            </label>
+            <label class="report-filter-field">
+              <span>From date</span>
+              <input id="report-date-from" type="date" />
+            </label>
+            <label class="report-filter-field">
+              <span>To date</span>
+              <input id="report-date-to" type="date" />
+            </label>
+            <button class="report-filter-clear" id="clear-report-filters" type="button">Clear filters</button>
+          </div>
+          <p class="report-filter-error" id="report-filter-error" role="alert" hidden></p>
+          <p class="report-results-count" id="report-results-count" aria-live="polite"></p>
+          <div class="saved-report-list" id="saved-report-list"></div>
+          <p class="storage-error" id="report-link-error" role="alert" hidden></p>
+          <div class="storage-error" id="storage-error" role="alert" hidden></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <dialog class="report-detail-dialog" id="report-detail-dialog" aria-labelledby="report-detail-title">
+    <header class="report-detail-header">
+      <div>
+        <p class="panel-eyebrow">SAVED REPORT</p>
+        <h2 id="report-detail-title"></h2>
+        <p class="report-detail-question" id="report-detail-question"></p>
+      </div>
+      <img class="report-detail-art" src="../Assets/collection.png" alt="" aria-hidden="true">
+      <button class="report-detail-close" type="button" aria-label="Close report details">
+        <i data-lucide="x"></i>
+      </button>
+    </header>
+    <div class="report-detail-meta">
+      <span id="report-detail-period"></span>
+      <span class="sample-tag"><i data-lucide="flask-conical"></i> Figures</span>
+    </div>
+    <div class="report-metrics" id="report-detail-metrics"></div>
+    <div class="report-table-heading">
+      <div><h3>Report breakdown</h3></div>
+    </div>
+    <div class="report-table-wrap">
+      <table class="report-table">
+        <thead id="report-detail-table-head"></thead>
+        <tbody id="report-detail-table-body"></tbody>
+      </table>
+    </div>
+    <div class="report-summary">
+      <i data-lucide="info"></i>
+      <p id="report-detail-summary"></p>
+    </div>
+  </dialog>
+  <script src="reports.js"></script>
+  <script src="../../site-assistant.js"></script>
+</body>
+</html>

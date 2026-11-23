@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17234b" />
+  <title>Preadmission Status | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="status.css" />
+  <link rel="stylesheet" href="../../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../gilroy.css" />
+  <script defer src="../../../workspace-header.js"></script>
+  <script defer src="../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../workspace-translator.js"></script>
+  <script defer src="../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><img class="brand-logo" src="../../../../assets/logo.jpg" alt="Tunbridge High School" /></a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button"><i data-lucide="graduation-cap"></i><span><small>Academic Year</small><strong>2026 – 2027</strong></span><i class="year-chevron" data-lucide="chevron-down"></i></button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search"><i data-lucide="search"></i><input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" /></label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="status-banner" aria-labelledby="status-page-title">
+        <div class="status-banner-copy">
+          <p class="status-eyebrow">PREADMISSION <span>›</span> STATUS</p>
+          <h1 id="status-page-title"><i data-lucide="square-pen" aria-hidden="true"></i>Preadmission Status</h1>
+          <p>Search application and admission status by academic year and class.</p>
+        </div>
+        <nav class="status-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools">Preadmission</a><i data-lucide="chevron-right" aria-hidden="true"></i><span>Preadmission</span><i data-lucide="chevron-right" aria-hidden="true"></i><span>Preadmission Status</span><i data-lucide="chevron-right" aria-hidden="true"></i><strong>Status</strong>
+        </nav>
+      </section>
+
+      <section class="status-content">
+        <section class="status-card" aria-labelledby="status-search-title">
+          <header class="status-card-header">
+            <h2 id="status-search-title">Preadmission Status Search</h2>
+            <button class="status-collapse" id="toggle-status-search" type="button" aria-expanded="true" aria-controls="status-search-body" aria-label="Collapse status search"><i data-lucide="chevron-up" aria-hidden="true"></i></button>
+          </header>
+          <div class="status-search-body" id="status-search-body">
+            <fieldset class="status-type-switch"><legend class="sr-only">Choose status type</legend>
+              <label><input type="radio" name="status-type" value="application" checked><span>Application Status</span></label>
+              <label><input type="radio" name="status-type" value="admission"><span>Admission Status</span></label>
+            </fieldset>
+            <form id="status-search-form" novalidate>
+              <div class="status-filter-panel">
+                <label class="status-field" for="academic-year"><span>Academic Year <b>*</b></span><select id="academic-year" name="academicYear" required><option value="2026-2027">2026-2027</option><option value="2025-2026">2025-2026</option><option value="2024-2025">2024-2025</option></select></label>
+                <label class="status-field" for="class-name"><span>Class <b>*</b></span><select id="class-name" name="className" required><option value="">Select Class</option><option>Pre Nursery</option><option>Lower Nursery</option><option>Upper Nursery</option><option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option><option>VI</option><option>VII</option><option>VIII</option><option>IX</option><option>X</option><option>XI</option><option>XII</option></select></label>
+                <label class="status-field" for="status-value"><span>Status <b>*</b></span><select id="status-value" name="status" required><option value="">Select Status</option></select></label>
+                <div class="status-actions"><button class="status-button status-search-button" type="submit"><i data-lucide="search" aria-hidden="true"></i>Search</button><button class="status-button status-cancel-button" id="cancel-status-search" type="button"><i data-lucide="x" aria-hidden="true"></i>Cancel</button></div>
+              </div>
+            </form>
+            <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+          </div>
+        </section>
+      </section>
+
+      <footer class="status-footer"><span><i data-lucide="shield-check" aria-hidden="true"></i>© VAPS 2019. All rights reserved.</span><span><b>VAPS DIGITAL CAMPUS -</b></span><span><i data-lucide="phone" aria-hidden="true"></i>Toll Free No. 01206901888</span></footer>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const form = document.querySelector('#status-search-form');
+      const statusTypeInputs = [...document.querySelectorAll('input[name="status-type"]')];
+      const statusSelect = document.querySelector('#status-value');
+      const message = document.querySelector('#status-message');
+      const statusOptions = {
+        application: ['Submitted', 'Under Review', 'Shortlisted', 'Rejected', 'Waitlisted'],
+        admission: ['Admitted', 'Admission Pending', 'Confirmed', 'Withdrawn', 'Not Admitted']
+      };
+      function updateStatusOptions() {
+        const selectedType = document.querySelector('input[name="status-type"]:checked').value;
+        statusSelect.replaceChildren(new Option('Select Status', ''));
+        statusOptions[selectedType].forEach((status) => statusSelect.add(new Option(status, status)));
+        message.textContent = '';
+      }
+      statusTypeInputs.forEach((input) => input.addEventListener('change', updateStatusOptions));
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        message.textContent = '';
+        if (!form.reportValidity()) return;
+        message.textContent = 'Status search is ready. Connect school records to display matching applicants.';
+      });
+      document.querySelector('#cancel-status-search').addEventListener('click', () => {
+        form.reset();
+        document.querySelector('input[name="status-type"][value="application"]').checked = true;
+        document.querySelector('#academic-year').value = '2026-2027';
+        updateStatusOptions();
+        document.querySelector('#class-name').value = '';
+        statusSelect.value = '';
+      });
+      document.querySelector('#toggle-status-search').addEventListener('click', (event) => {
+        const button = event.currentTarget;
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        button.setAttribute('aria-label', expanded ? 'Expand status search' : 'Collapse status search');
+        document.querySelector('#status-search-body').hidden = expanded;
+        button.innerHTML = `<i data-lucide="chevron-${expanded ? 'down' : 'up'}" aria-hidden="true"></i>`;
+        if (window.lucide) lucide.createIcons();
+      });
+      updateStatusOptions();
+      if (window.lucide) lucide.createIcons();
+    })();
+  </script>
+  <script src="../../../../site-assistant.js"></script>
+</body>
+</html>

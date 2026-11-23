@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Directory | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="teachers.css" />
+  <link rel="stylesheet" href="../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../site-assistant.css" />
+  <link rel="stylesheet" href="../../gilroy.css" />
+  <script defer src="../../workspace-header.js"></script>
+  <script defer src="../../workspace-whatsapp.js"></script>
+  <script defer src="../../workspace-chatgpt.js"></script>
+  <script defer src="../../workspace-translator.js"></script>
+  <script defer src="../../workspace-text-to-speech.js"></script>
+  <script defer src="../../workspace-pdf-converter.js"></script>
+  <script defer src="../../workspace-media-compressor.js"></script>
+</head>
+<body class="teachers-page">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item active" href="teachers.html" aria-current="page"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button"><i data-lucide="graduation-cap"></i><span><small>Academic Year</small><strong>2026 – 2027</strong></span><i class="year-chevron" data-lucide="chevron-down"></i></button>
+      <div class="sidebar-waves"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search"><i data-lucide="search"></i><input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" /></label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="page-heading">
+        <div>
+          <h1>Employee Directory</h1>
+          <p class="page-description">Manage your school team, employee records, and account status.</p>
+        </div>
+        <div class="heading-stat"><span class="stat-icon"><i data-lucide="users-round"></i></span><span><strong id="employee-total">0</strong><small>Team members</small></span></div>
+      </section>
+
+      <section class="content-area">
+        <div class="directory-card">
+          <div class="directory-toolbar">
+            <label class="directory-search">
+              <i data-lucide="search"></i>
+              <input id="employee-search" type="search" placeholder="Search by name, code, order..." aria-label="Search employees" />
+              <kbd>⌘ K</kbd>
+            </label>
+            <div class="toolbar-actions">
+              <div class="filter-wrap">
+                <button class="toolbar-button" id="filter-toggle" type="button" aria-expanded="false" aria-controls="filter-menu"><i data-lucide="list-filter"></i>Filter<i class="button-chevron" data-lucide="chevron-down"></i></button>
+                <div class="filter-menu" id="filter-menu" hidden>
+                  <strong>Employee status</strong>
+                  <label><input type="checkbox" value="Active" checked> Active</label>
+                  <label><input type="checkbox" value="Inactive" checked> Inactive</label>
+                  <button class="clear-filter" id="clear-filter" type="button">Reset filters</button>
+                </div>
+              </div>
+              <button class="toolbar-button" id="export-button" type="button"><i data-lucide="download"></i>Export<i class="button-chevron" data-lucide="chevron-down"></i></button>
+              <button class="toolbar-button add-button" id="add-employee" type="button"><i data-lucide="plus"></i>Add Employee</button>
+            </div>
+          </div>
+
+          <div class="table-scroll">
+            <table class="employee-table">
+              <thead>
+                <tr>
+                  <th class="check-column"><input id="select-page" type="checkbox" aria-label="Select all employees on this page"></th>
+                  <th><button class="sort-button" data-sort="serial" type="button">Sl No <i data-lucide="arrow-up-down"></i></button></th>
+                  <th><button class="sort-button" data-sort="firstName" type="button">First Name <i data-lucide="arrow-up-down"></i></button></th>
+                  <th><button class="sort-button" data-sort="middleName" type="button">Middle Name <i data-lucide="arrow-up-down"></i></button></th>
+                  <th><button class="sort-button" data-sort="lastName" type="button">Last Name <i data-lucide="arrow-up-down"></i></button></th>
+                  <th><button class="sort-button" data-sort="code" type="button">Employee Code <i data-lucide="arrow-up-down"></i></button></th>
+                  <th>Employee Photo</th>
+                  <th><button class="sort-button" data-sort="order" type="button">Employee Order <i data-lucide="arrow-up-down"></i></button></th>
+                  <th><button class="sort-button" data-sort="status" type="button">Status <i data-lucide="arrow-up-down"></i></button></th>
+                  <th class="actions-heading">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="employee-rows"></tbody>
+            </table>
+            <div class="empty-state" id="empty-state" hidden><span><i data-lucide="search-x"></i></span><strong>No employees found</strong><p>Try changing your search or status filters.</p></div>
+          </div>
+
+          <div class="table-footer">
+            <p class="result-count" id="result-count"></p>
+            <div class="page-size">
+              <label for="page-size">Rows per page</label>
+              <select id="page-size"><option value="10">10</option><option value="20">20</option></select>
+            </div>
+            <nav class="pagination" id="pagination" aria-label="Employee pages"></nav>
+          </div>
+        </div>
+      </section>
+
+      <footer class="page-footer"><span><i data-lucide="shield"></i> © Tunbridge High School</span><span>VAPS Digital Campus</span><span><i data-lucide="phone"></i> School ERP</span></footer>
+    </main>
+  </div>
+
+  <dialog class="employee-dialog" id="employee-dialog" aria-labelledby="dialog-title">
+    <form class="employee-form" id="employee-form">
+      <div class="dialog-heading">
+        <span class="dialog-icon"><i data-lucide="user-round-plus"></i></span>
+        <div><p class="dialog-kicker">TEAM DIRECTORY</p><h2 id="dialog-title">Add employee</h2><p>Enter the employee details below.</p></div>
+        <button class="dialog-close" type="button" id="dialog-close" aria-label="Close dialog"><i data-lucide="x"></i></button>
+      </div>
+      <input id="employee-id" type="hidden">
+      <div class="employee-form-grid">
+        <label><span class="field-label">First name <span class="required-mark">*</span></span><input id="first-name" name="firstName" required autocomplete="given-name"></label>
+        <label><span class="field-label">Middle name</span><input id="middle-name" name="middleName" autocomplete="additional-name"></label>
+        <label><span class="field-label">Last name</span><input id="last-name" name="lastName" autocomplete="family-name"></label>
+        <label><span class="field-label">Employee code <span class="required-mark">*</span></span><input id="employee-code" name="code" required></label>
+        <label><span class="field-label">Employee order</span><input id="employee-order" name="order" inputmode="numeric" placeholder="e.g. 5933"></label>
+        <label><span class="field-label">Status</span><select id="employee-status" name="status"><option>Active</option><option>Inactive</option></select></label>
+      </div>
+      <p class="dialog-error" id="dialog-error" role="alert"></p>
+      <div class="dialog-actions"><button class="toolbar-button" type="button" id="dialog-cancel">Cancel</button><button class="toolbar-button add-button" type="submit"><i data-lucide="check"></i>Save employee</button></div>
+    </form>
+  </dialog>
+
+  <script>
+    if (window.lucide) lucide.createIcons();
+
+    const employees = [
+      { id: 1, firstName: "SUCHI", middleName: "B", lastName: "N", code: "60002", order: "", status: "Active" },
+      { id: 2, firstName: "Esther", middleName: "-", lastName: "Ellis", code: "ESEL2026", order: "5933", status: "Active" },
+      { id: 3, firstName: "NAVEEN KUMAR", middleName: "B", lastName: "N", code: "SWS2026", order: "", status: "Active" },
+      { id: 4, firstName: "Jiju", middleName: "-", lastName: "Philip", code: "JP2026", order: "5711", status: "Active" },
+      { id: 5, firstName: "Svetlana", middleName: "-", lastName: "Micetich", code: "SV2026", order: "5710", status: "Active" },
+      { id: 6, firstName: "Krithika", middleName: "-", lastName: "B", code: "KB2005", order: "5709", status: "Active" },
+      { id: 7, firstName: "Priya", middleName: "-", lastName: "Chaudhary", code: "PS2026", order: "5708", status: "Active" },
+      { id: 8, firstName: "Shreshta", middleName: "V", lastName: "Rao", code: "SVR2025", order: "5262", status: "Active" },
+      { id: 9, firstName: "Pooja", middleName: "-", lastName: "Shekar G", code: "PSG2025", order: "5198", status: "Active" },
+      { id: 10, firstName: "Nausheena", middleName: "-", lastName: "Khuddus", code: "NK2025", order: "5158", status: "Active" }
+    ];
+
+    const rows = document.querySelector("#employee-rows");
+    const searchInput = document.querySelector("#employee-search");
+    const pageSize = document.querySelector("#page-size");
+    const pagination = document.querySelector("#pagination");
+    const resultCount = document.querySelector("#result-count");
+    const selectPage = document.querySelector("#select-page");
+    const filterMenu = document.querySelector("#filter-menu");
+    const employeeDialog = document.querySelector("#employee-dialog");
+    const employeeForm = document.querySelector("#employee-form");
+    let currentPage = 1;
+    let sortKey = "serial";
+    let sortDirection = 1;
+
+    function filteredEmployees() {
+      const query = searchInput.value.trim().toLocaleLowerCase();
+      const activeStatuses = [...filterMenu.querySelectorAll('input[type="checkbox"]:checked')].map((input) => input.value);
+      return employees.filter((employee) => {
+        const searchable = `${employee.firstName} ${employee.middleName} ${employee.lastName} ${employee.code} ${employee.order}`.toLocaleLowerCase();
+        return searchable.includes(query) && activeStatuses.includes(employee.status);
+      }).sort((a, b) => {
+        const left = sortKey === "serial" ? a.id : a[sortKey];
+        const right = sortKey === "serial" ? b.id : b[sortKey];
+        return String(left || "").localeCompare(String(right || ""), undefined, { numeric: true }) * sortDirection;
+      });
+    }
+
+    function makeCell(text, className) {
+      const cell = document.createElement("td");
+      if (className) cell.className = className;
+      cell.textContent = text || "-";
+      return cell;
+    }
+
+    function render() {
+      const matches = filteredEmployees();
+      const perPage = Number(pageSize.value);
+      const pageCount = Math.max(1, Math.ceil(matches.length / perPage));
+      currentPage = Math.min(currentPage, pageCount);
+      const start = (currentPage - 1) * perPage;
+      const pageEmployees = matches.slice(start, start + perPage);
+      rows.replaceChildren();
+
+      pageEmployees.forEach((employee, index) => {
+        const row = document.createElement("tr");
+        const selection = document.createElement("td");
+        selection.className = "check-column";
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "row-select";
+        checkbox.setAttribute("aria-label", `Select ${employee.firstName} ${employee.lastName}`);
+        selection.append(checkbox);
+        row.append(selection, makeCell(start + index + 1, "serial-cell"), makeCell(employee.firstName), makeCell(employee.middleName), makeCell(employee.lastName), makeCell(employee.code, "code-cell"));
+
+        const photo = document.createElement("td");
+        const photoContent = document.createElement("div");
+        photoContent.className = "photo-cell";
+        const badge = document.createElement("span");
+        badge.className = "employee-badge";
+        badge.setAttribute("aria-label", `${employee.firstName} ${employee.lastName}`);
+        badge.innerHTML = '<i data-lucide="graduation-cap"></i>';
+        const download = document.createElement("button");
+        download.type = "button";
+        download.className = "photo-download";
+        download.setAttribute("aria-label", `Download ${employee.firstName}'s photo`);
+        download.innerHTML = '<i data-lucide="download"></i> Download';
+        download.addEventListener("click", () => { document.querySelector("#toast").textContent = "Employee photo is not available in this preview."; });
+        photoContent.append(badge, download);
+        photo.append(photoContent);
+        row.append(photo, makeCell(employee.order));
+
+        const statusCell = document.createElement("td");
+        const status = document.createElement("span");
+        status.className = `status-badge ${employee.status === "Active" ? "is-active" : "is-inactive"}`;
+        status.textContent = employee.status;
+        statusCell.append(status);
+        row.append(statusCell);
+
+        const actions = document.createElement("td");
+        actions.className = "row-actions";
+        const edit = document.createElement("button");
+        edit.type = "button";
+        edit.className = "edit-button";
+        edit.setAttribute("aria-label", `Edit ${employee.firstName} ${employee.lastName}`);
+        edit.innerHTML = '<i data-lucide="square-pen"></i>';
+        edit.addEventListener("click", () => openEmployeeDialog(employee));
+        const toggleLabel = document.createElement("label");
+        toggleLabel.className = "status-toggle";
+        toggleLabel.setAttribute("aria-label", `Set ${employee.firstName} ${employee.lastName} ${employee.status === "Active" ? "inactive" : "active"}`);
+        const toggle = document.createElement("input");
+        toggle.type = "checkbox";
+        toggle.checked = employee.status === "Active";
+        toggle.addEventListener("change", () => {
+          employee.status = toggle.checked ? "Active" : "Inactive";
+          currentPage = 1;
+          render();
+        });
+        toggleLabel.append(toggle, document.createElement("span"));
+        actions.append(edit, toggleLabel);
+        row.append(actions);
+        rows.append(row);
+      });
+
+      document.querySelector("#employee-total").textContent = employees.length;
+      resultCount.textContent = matches.length
+        ? `Showing ${start + 1} to ${start + pageEmployees.length} of ${matches.length} entries`
+        : "Showing 0 entries";
+      document.querySelector("#empty-state").hidden = matches.length > 0;
+      selectPage.checked = pageEmployees.length > 0 && pageEmployees.every((_, index) => rows.querySelectorAll(".row-select")[index].checked);
+      selectPage.indeterminate = false;
+      renderPagination(pageCount);
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function renderPagination(pageCount) {
+      pagination.replaceChildren();
+      const addPageButton = (label, page, options = {}) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = `page-button${options.active ? " is-current" : ""}`;
+        button.textContent = label;
+        button.disabled = Boolean(options.disabled);
+        if (options.label) button.setAttribute("aria-label", options.label);
+        if (options.active) button.setAttribute("aria-current", "page");
+        button.addEventListener("click", () => { currentPage = page; render(); });
+        pagination.append(button);
+      };
+      addPageButton("«", Math.max(1, currentPage - 1), { disabled: currentPage === 1, label: "Previous page" });
+      addPageButton("‹", Math.max(1, currentPage - 1), { disabled: currentPage === 1, label: "Previous page" });
+      for (let page = 1; page <= pageCount; page += 1) addPageButton(String(page), page, { active: page === currentPage, label: `Page ${page}` });
+      addPageButton("›", Math.min(pageCount, currentPage + 1), { disabled: currentPage === pageCount, label: "Next page" });
+      addPageButton("»", Math.min(pageCount, currentPage + 1), { disabled: currentPage === pageCount, label: "Last page" });
+    }
+
+    function openEmployeeDialog(employee) {
+      employeeForm.reset();
+      document.querySelector("#dialog-error").textContent = "";
+      document.querySelector("#dialog-title").textContent = employee ? "Edit employee" : "Add employee";
+      document.querySelector("#employee-id").value = employee ? employee.id : "";
+      if (employee) {
+        document.querySelector("#first-name").value = employee.firstName;
+        document.querySelector("#middle-name").value = employee.middleName === "-" ? "" : employee.middleName;
+        document.querySelector("#last-name").value = employee.lastName === "-" ? "" : employee.lastName;
+        document.querySelector("#employee-code").value = employee.code;
+        document.querySelector("#employee-order").value = employee.order;
+        document.querySelector("#employee-status").value = employee.status;
+      }
+      employeeDialog.showModal();
+      document.querySelector("#first-name").focus();
+    }
+
+    document.querySelector("#add-employee").addEventListener("click", () => openEmployeeDialog());
+    document.querySelector("#dialog-close").addEventListener("click", () => employeeDialog.close());
+    document.querySelector("#dialog-cancel").addEventListener("click", () => employeeDialog.close());
+    employeeDialog.addEventListener("click", (event) => {
+      if (event.target === employeeDialog) employeeDialog.close();
+    });
+    employeeForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const id = Number(document.querySelector("#employee-id").value);
+      const code = document.querySelector("#employee-code").value.trim();
+      const duplicateCode = employees.some((employee) => employee.code.toLocaleLowerCase() === code.toLocaleLowerCase() && employee.id !== id);
+      if (duplicateCode) {
+        document.querySelector("#dialog-error").textContent = "An employee with this code already exists.";
+        return;
+      }
+      const values = {
+        firstName: document.querySelector("#first-name").value.trim(),
+        middleName: document.querySelector("#middle-name").value.trim() || "-",
+        lastName: document.querySelector("#last-name").value.trim() || "-",
+        code,
+        order: document.querySelector("#employee-order").value.trim(),
+        status: document.querySelector("#employee-status").value
+      };
+      const existing = employees.find((employee) => employee.id === id);
+      if (existing) Object.assign(existing, values);
+      else employees.push({ id: Math.max(0, ...employees.map((employee) => employee.id)) + 1, ...values });
+      currentPage = 1;
+      employeeDialog.close();
+      render();
+    });
+
+    searchInput.addEventListener("input", () => { currentPage = 1; render(); });
+    pageSize.addEventListener("change", () => { currentPage = 1; render(); });
+    filterMenu.addEventListener("change", () => { currentPage = 1; render(); });
+    document.querySelector("#clear-filter").addEventListener("click", () => {
+      filterMenu.querySelectorAll('input[type="checkbox"]').forEach((input) => { input.checked = true; });
+      currentPage = 1;
+      render();
+    });
+    document.querySelector("#filter-toggle").addEventListener("click", (event) => {
+      const button = event.currentTarget;
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!expanded));
+      filterMenu.hidden = expanded;
+    });
+    document.addEventListener("click", (event) => {
+      if (!event.target.closest(".filter-wrap")) {
+        filterMenu.hidden = true;
+        document.querySelector("#filter-toggle").setAttribute("aria-expanded", "false");
+      }
+    });
+    document.querySelector("#export-button").addEventListener("click", () => {
+      const columns = ["Sl No", "First Name", "Middle Name", "Last Name", "Employee Code", "Employee Order", "Status"];
+      const lines = filteredEmployees().map((employee, index) => [index + 1, employee.firstName, employee.middleName, employee.lastName, employee.code, employee.order, employee.status]);
+      const csv = [columns, ...lines].map((line) => line.map((value) => `"${String(value).replaceAll('"', '""')}"`).join(",")).join("\r\n");
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
+      link.download = "employee-directory.csv";
+      link.click();
+      URL.revokeObjectURL(link.href);
+    });
+    document.querySelectorAll(".sort-button").forEach((button) => button.addEventListener("click", () => {
+      sortDirection = sortKey === button.dataset.sort ? sortDirection * -1 : 1;
+      sortKey = button.dataset.sort;
+      render();
+    }));
+    selectPage.addEventListener("change", () => rows.querySelectorAll(".row-select").forEach((checkbox) => { checkbox.checked = selectPage.checked; }));
+
+    render();
+  </script>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="../../site-assistant.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17234b" />
+  <title>Pre Month End Report | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="PMER.css" />
+  <link rel="stylesheet" href="../../../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../../gilroy.css" />
+  <script defer src="../../../../workspace-header.js"></script>
+  <script defer src="../../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../../workspace-translator.js"></script>
+  <script defer src="../../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><img class="brand-logo" src="../../../../assets/logo.jpg" alt="Tunbridge High School" /></a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button"><i data-lucide="graduation-cap"></i><span><small>Academic Year</small><strong>2026 – 2027</strong></span><i class="year-chevron" data-lucide="chevron-down"></i></button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search"><i data-lucide="search"></i><input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" /></label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="pmer-banner" aria-labelledby="pmer-page-title">
+        <div class="pmer-banner-copy">
+          <p class="pmer-eyebrow">PREADMISSION <span>›</span> REPORTS</p>
+          <h1 id="pmer-page-title"><i data-lucide="square-pen" aria-hidden="true"></i>Pre Month End Report</h1>
+        </div>
+        <nav class="pmer-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools">Preadmission</a><i data-lucide="chevron-right" aria-hidden="true"></i>
+          <span>Preadmission</span><i data-lucide="chevron-right" aria-hidden="true"></i><span>Reports</span><i data-lucide="chevron-right" aria-hidden="true"></i><strong>Pre Month End Report</strong>
+        </nav>
+      </section>
+
+      <section class="pmer-content">
+        <section class="pmer-card" aria-label="Pre Month End Report filters">
+          <form id="pmer-form">
+            <div class="pmer-fields">
+              <label class="pmer-field" for="pmer-academic-year"><span>Academic Year <b>*</b></span><select id="pmer-academic-year" name="academicYear" required><option value="">Select Academic Year</option><option>2026-2027</option><option>2025-2026</option><option>2024-2025</option><option>2023-2024</option></select></label>
+              <label class="pmer-field" for="pmer-month"><span>Month <b>*</b></span><select id="pmer-month" name="month" required><option value="">Select Month</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select></label>
+              <label class="pmer-field" for="pmer-year"><span>Year <b>*</b></span><select id="pmer-year" name="year" required><option value="">Select Year</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option></select></label>
+              <label class="pmer-field" for="pmer-ie-name"><span>IE Name</span><input id="pmer-ie-name" name="ieName" type="text" placeholder="Enter Name" autocomplete="off" /></label>
+            </div>
+            <div class="pmer-actions">
+              <button class="pmer-button pmer-reset" type="reset"><i data-lucide="rotate-ccw" aria-hidden="true"></i>Reset</button>
+              <button class="pmer-button pmer-generate" type="submit"><i data-lucide="save" aria-hidden="true"></i>Generate Report</button>
+            </div>
+          </form>
+        </section>
+        <p class="pmer-status" id="pmer-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <footer class="pmer-footer"><span><i data-lucide="shield-check" aria-hidden="true"></i>Secure school workspace</span><span>© 2026 Tunbridge ERP <b aria-hidden="true">·</b> Pre Month End Report</span></footer>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const form = document.querySelector("#pmer-form");
+      const status = document.querySelector("#pmer-status");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        status.textContent = "Report filters are ready. Pre Month End report data will appear here when the report source is connected.";
+        status.classList.add("is-visible");
+      });
+      form.addEventListener("reset", () => {
+        status.textContent = "";
+        status.classList.remove("is-visible");
+      });
+      if (window.lucide) lucide.createIcons();
+    })();
+  </script>
+</body>
+</html>

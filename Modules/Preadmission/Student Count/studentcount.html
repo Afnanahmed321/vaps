@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17234b" />
+  <title>Student Count Report | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="studentcount.css" />
+  <link rel="stylesheet" href="../../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../gilroy.css" />
+  <script defer src="../../../workspace-header.js"></script>
+  <script defer src="../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../workspace-translator.js"></script>
+  <script defer src="../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><img class="brand-logo" src="../../../../assets/logo.jpg" alt="Tunbridge High School" /></a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button"><i data-lucide="graduation-cap"></i><span><small>Academic Year</small><strong>2026 – 2027</strong></span><i class="year-chevron" data-lucide="chevron-down"></i></button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search"><i data-lucide="search"></i><input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" /></label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="count-banner" aria-labelledby="count-page-title">
+        <div class="count-banner-copy">
+          <p class="count-eyebrow">PREADMISSION <span>›</span> REPORTS</p>
+          <h1 id="count-page-title"><i data-lucide="square-pen" aria-hidden="true"></i>Student Count Report</h1>
+          <p>Review application totals and generate a count report for a selected range.</p>
+        </div>
+        <nav class="count-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools">Preadmission</a><i data-lucide="chevron-right" aria-hidden="true"></i><span>Preadmission</span><i data-lucide="chevron-right" aria-hidden="true"></i><span>Reports</span><i data-lucide="chevron-right" aria-hidden="true"></i><strong>Student Count Report</strong>
+        </nav>
+      </section>
+
+      <section class="count-content">
+        <section class="count-card" aria-labelledby="count-form-title">
+          <header class="count-card-header">
+            <div class="count-card-title"><span class="count-heading-mark" aria-hidden="true"></span><div><h2 id="count-form-title">Student Count Summary</h2><p>Review application totals and generate a count report for a selected range.</p></div></div>
+            <button class="count-collapse" id="toggle-count-form" type="button" aria-expanded="true" aria-controls="count-form-body" aria-label="Collapse student count report form"><i data-lucide="chevron-up" aria-hidden="true"></i></button>
+          </header>
+          <div class="count-card-body" id="count-form-body">
+            <section class="count-stats" aria-label="Application count summary">
+              <article class="count-stat stat-registered"><span class="stat-icon"><i data-lucide="user-round-check"></i></span><strong>0</strong><span>Registered<br>Applications</span></article>
+              <article class="count-stat stat-not-filled"><span class="stat-icon"><i data-lucide="file-x-2"></i></span><strong>0</strong><span>Form Not Filled</span></article>
+              <article class="count-stat stat-filled"><span class="stat-icon"><i data-lucide="file-check-2"></i></span><strong>0</strong><span>Form Filled</span></article>
+              <article class="count-stat stat-paid"><span class="stat-icon"><i data-lucide="badge-indian-rupee"></i></span><strong>0</strong><span>Payment Done</span></article>
+              <article class="count-stat stat-unpaid"><span class="stat-icon"><i data-lucide="badge-x"></i></span><strong>0</strong><span>Payment Not<br>Done</span></article>
+              <article class="count-stat stat-transferred"><span class="stat-icon"><i data-lucide="arrow-left-right"></i></span><strong>0</strong><span>Transferred</span></article>
+              <article class="count-stat stat-duplicate"><span class="stat-icon"><i data-lucide="file-check-2"></i></span><strong>0</strong><span>Duplicate</span></article>
+            </section>
+            <div class="count-form-section-heading"><h3>Add New Student Count Report</h3><p>Fill in the report type and date range below.</p></div>
+            <form id="student-count-form" novalidate>
+              <div class="count-filter-panel">
+                <label class="count-report-type" for="report-type"><span>Select Report Type</span><select id="report-type" name="reportType" required><option value="registered">Registered list</option><option value="not-filled">Form Not Filled</option><option value="filled">Form Filled</option><option value="payment-done">Payment Done</option><option value="payment-not-done">Payment Not Done</option><option value="transferred">Transferred</option><option value="duplicate">Duplicate</option></select></label>
+                <fieldset class="count-range"><legend>Select Range</legend>
+                  <div class="count-range-options"><label><input type="radio" name="rangeType" value="year" id="year-wise"><span>Year wise</span></label><label><input type="radio" name="rangeType" value="dates" id="between-dates" checked><span>Between Dates</span></label></div>
+                  <div class="count-range-fields">
+                    <label class="count-date-field" id="from-date-wrap"><i data-lucide="calendar-days"></i><input type="date" id="from-date" name="fromDate" aria-label="From date" required></label>
+                    <label class="count-date-field" id="to-date-wrap"><i data-lucide="calendar-days"></i><input type="date" id="to-date" name="toDate" aria-label="To date" required></label>
+                    <label class="count-year-field" id="year-wrap" hidden><span>Academic Year</span><select id="academic-year" name="academicYear" disabled><option value="">Select Academic Year</option><option>2026 – 2027</option><option>2025 – 2026</option><option>2024 – 2025</option></select></label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="count-actions"><button class="count-button count-reset-button" type="reset"><i data-lucide="rotate-ccw" aria-hidden="true"></i>Reset</button><button class="count-button count-search-button" type="submit"><i data-lucide="search" aria-hidden="true"></i>Search</button></div>
+              <p class="count-message" id="count-message" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+      </section>
+
+      <footer class="count-footer"><span><i data-lucide="shield-check" aria-hidden="true"></i>© VAPS 2019. All rights reserved.</span><span><b>VAPS DIGITAL CAMPUS -</b></span><span><i data-lucide="phone" aria-hidden="true"></i>Toll Free No. 01206901888</span></footer>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const form = document.querySelector('#student-count-form');
+      const yearWise = document.querySelector('#year-wise');
+      const betweenDates = document.querySelector('#between-dates');
+      const fromDate = document.querySelector('#from-date');
+      const toDate = document.querySelector('#to-date');
+      const yearSelect = document.querySelector('#academic-year');
+      const yearWrap = document.querySelector('#year-wrap');
+      const dateWraps = [document.querySelector('#from-date-wrap'), document.querySelector('#to-date-wrap')];
+      const message = document.querySelector('#count-message');
+      function updateRange() {
+        const isYear = yearWise.checked;
+        dateWraps.forEach((wrap) => { wrap.hidden = isYear; });
+        fromDate.disabled = isYear;
+        toDate.disabled = isYear;
+        fromDate.required = !isYear;
+        toDate.required = !isYear;
+        yearWrap.hidden = !isYear;
+        yearSelect.disabled = !isYear;
+        yearSelect.required = isYear;
+        message.textContent = '';
+      }
+      yearWise.addEventListener('change', updateRange);
+      betweenDates.addEventListener('change', updateRange);
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        message.textContent = '';
+        if (!form.reportValidity()) return;
+        if (betweenDates.checked && fromDate.value > toDate.value) {
+          message.textContent = 'The From date must be earlier than or the same as the To date.';
+          return;
+        }
+        message.textContent = 'Report filters are ready. Connect applicant records to display the student count.';
+      });
+      form.addEventListener('reset', () => setTimeout(() => { updateRange(); message.textContent = ''; }, 0));
+      document.querySelector('#toggle-count-form').addEventListener('click', (event) => {
+        const button = event.currentTarget;
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', String(!expanded));
+        button.setAttribute('aria-label', expanded ? 'Expand student count report form' : 'Collapse student count report form');
+        document.querySelector('#count-form-body').hidden = expanded;
+        button.innerHTML = `<i data-lucide="chevron-${expanded ? 'down' : 'up'}" aria-hidden="true"></i>`;
+        if (window.lucide) lucide.createIcons();
+      });
+      updateRange();
+      if (window.lucide) lucide.createIcons();
+    })();
+  </script>
+  <script src="../../../../site-assistant.js"></script>
+</body>
+</html>

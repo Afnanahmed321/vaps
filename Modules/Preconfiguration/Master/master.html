@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17234b" />
+  <title>Master Configuration | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="master.css" />
+  <link rel="stylesheet" href="../../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../gilroy.css" />
+  <script defer src="../../../workspace-header.js"></script>
+  <script defer src="../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../workspace-translator.js"></script>
+  <script defer src="../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button">
+        <i data-lucide="graduation-cap"></i>
+        <span><small>Academic Year</small><strong>2026 – 2027</strong></span>
+        <i class="year-chevron" data-lucide="chevron-down"></i>
+      </button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search">
+          <i data-lucide="search"></i>
+          <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" />
+        </label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile">
+            <div class="avatar">T</div>
+            <div><strong>TBHSADMIN</strong><small>Admin</small></div>
+            <i data-lucide="chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-banner">
+        <div class="banner-copy">
+          <p class="eyebrow">PRE-CONFIGURATION <span>›</span> MASTER DATA</p>
+          <h1>Master Configuration</h1>
+          <p class="banner-subtitle">Manage the trusts, institutes, and academic years in your workspace.</p>
+        </div>
+        <div class="banner-mark" aria-hidden="true"><i data-lucide="layers-3"></i></div>
+      </section>
+
+      <section class="content-area">
+        <section class="master-card" aria-labelledby="records-title">
+          <div class="card-toolbar">
+            <div class="card-heading">
+              <span class="heading-mark" aria-hidden="true"></span>
+              <div>
+                <h2 id="records-title">Configuration records</h2>
+                <p>View and maintain your school’s master details.</p>
+              </div>
+            </div>
+            <div class="toolbar-actions">
+              <label class="record-search">
+                <i data-lucide="search"></i>
+                <input id="record-search" type="search" placeholder="Search configurations..." aria-label="Search configuration records" />
+              </label>
+              <button class="button button-primary" id="add-record" type="button"><i data-lucide="plus"></i>Add Master Configuration</button>
+            </div>
+          </div>
+
+          <div class="table-scroll">
+            <table class="master-table">
+              <thead>
+                <tr>
+                  <th aria-sort="ascending"><button class="sort-button" data-sort="serial" type="button">Sl No <i data-lucide="arrow-up-down"></i></button></th>
+                  <th aria-sort="none"><button class="sort-button" data-sort="trust" type="button">Trust <i data-lucide="arrow-up-down"></i></button></th>
+                  <th aria-sort="none"><button class="sort-button" data-sort="institute" type="button">Institute <i data-lucide="arrow-up-down"></i></button></th>
+                  <th aria-sort="none"><button class="sort-button" data-sort="academicYear" type="button">Academic Year <i data-lucide="arrow-up-down"></i></button></th>
+                  <th class="actions-heading">Action</th>
+                </tr>
+              </thead>
+              <tbody id="record-rows"></tbody>
+            </table>
+            <div class="empty-state" id="empty-state" hidden>
+              <span><i data-lucide="search-x"></i></span>
+              <strong>No configurations found</strong>
+              <p>Try another search or add a new master configuration.</p>
+            </div>
+          </div>
+
+          <div class="table-footer">
+            <label class="page-size">Rows per page
+              <select id="page-size" aria-label="Rows per page">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+              </select>
+            </label>
+            <span class="record-range" id="record-range" aria-live="polite"></span>
+            <div class="pagination">
+              <button class="page-button" id="previous-page" type="button" aria-label="Previous page"><i data-lucide="chevron-left"></i></button>
+              <span id="page-status" aria-live="polite"></span>
+              <button class="page-button" id="next-page" type="button" aria-label="Next page"><i data-lucide="chevron-right"></i></button>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <span><i data-lucide="shield-check"></i> Secure school workspace</span>
+        <span>© 2026 Tunbridge ERP <b aria-hidden="true">·</b> Master Configuration</span>
+      </footer>
+    </main>
+  </div>
+
+  <dialog class="record-dialog" id="record-dialog" aria-labelledby="dialog-title">
+    <form id="record-form">
+      <header class="settings-header">
+        <div class="settings-title">
+          <h2 id="dialog-title">Add General Settings</h2>
+        </div>
+        <button class="settings-close" id="close-dialog" type="button" aria-label="Close dialog"><i data-lucide="x"></i></button>
+      </header>
+
+      <div class="settings-layout">
+        <div class="settings-column">
+          <section class="settings-card" aria-labelledby="general-settings-title">
+            <header class="settings-card-header">
+              <h3 id="general-settings-title">General Settings</h3>
+              <button class="settings-toggle" type="button" aria-label="Collapse General Settings" aria-expanded="true" aria-controls="general-settings-body"><i data-lucide="chevron-down"></i></button>
+            </header>
+            <div class="settings-card-body settings-fields" id="general-settings-body">
+              <label class="form-field">Trust
+                <input name="trust" type="text" required maxlength="100" placeholder="e.g. Tunbridge Education Trust" />
+              </label>
+              <label class="form-field">Institute
+                <input name="institute" type="text" required maxlength="100" placeholder="e.g. Tunbridge High School" />
+              </label>
+              <label class="form-field"><span>Academic Year <b class="required-mark">*</b></span>
+                <select name="academicYear" required>
+                  <option value="2026–2027" selected>2026-2027</option>
+                  <option value="2025–2026">2025-2026</option>
+                  <option value="2024–2025">2024-2025</option>
+                </select>
+              </label>
+            </div>
+          </section>
+
+          <section class="settings-card" aria-labelledby="enquiry-settings-title">
+            <header class="settings-card-header">
+              <h3 id="enquiry-settings-title">Enquiry &amp; Prospectus Settings</h3>
+              <button class="settings-toggle" type="button" aria-label="Collapse Enquiry and Prospectus Settings" aria-expanded="true" aria-controls="enquiry-settings-body"><i data-lucide="chevron-down"></i></button>
+            </header>
+            <div class="settings-card-body settings-checks" id="enquiry-settings-body">
+              <label class="setting-option"><input type="checkbox" name="enquiryApplicable"><span>Enquiry Applicable</span></label>
+              <label class="setting-option"><input type="checkbox" name="prospectusFeesApplicable"><span>Prospectus Fees Applicable</span></label>
+              <label class="setting-option"><input type="checkbox" name="prospectusDownload"><span>Prospectus Download</span></label>
+            </div>
+          </section>
+
+          <section class="settings-card" aria-labelledby="registration-settings-title">
+            <header class="settings-card-header">
+              <h3 id="registration-settings-title">General Registration Settings</h3>
+              <button class="settings-toggle" type="button" aria-label="Collapse General Registration Settings" aria-expanded="true" aria-controls="registration-settings-body"><i data-lucide="chevron-down"></i></button>
+            </header>
+            <div class="settings-card-body registration-settings" id="registration-settings-body">
+              <div class="nested-settings">
+                <label class="setting-option"><input type="checkbox" name="prospectusFee"><span>Prospectus Fee</span></label>
+                <div class="nested-options">
+                  <label class="setting-option"><input type="checkbox" name="registrationSms"><span>Registration SMS</span></label>
+                  <label class="setting-option"><input type="checkbox" name="registrationEmail"><span>Registration Email</span></label>
+                </div>
+              </div>
+              <div class="nested-settings">
+                <label class="setting-option"><input type="checkbox" name="applicationFeeApplicable"><span>Application Fee Applicable</span></label>
+                <div class="nested-options">
+                  <label class="setting-option"><input type="checkbox" name="applicationSms"><span>Application SMS</span></label>
+                  <label class="setting-option"><input type="checkbox" name="applicationEmail"><span>Application Email</span></label>
+                </div>
+              </div>
+              <label class="setting-option"><input type="checkbox" name="healthCertificateApplicable"><span>Health Certificate Applicable</span></label>
+              <label class="number-setting"><span>Maximum application can be filled by a user per class for this year:</span><input type="number" name="maxApplications" value="1" min="1" step="1" required aria-label="Maximum applications per user per class" /></label>
+              <label class="number-setting"><span>Increment Application No. By:</span><input type="number" name="applicationNumberIncrement" value="0" min="0" step="1" required aria-label="Application number increment" /></label>
+            </div>
+          </section>
+        </div>
+
+        <div class="settings-column">
+          <section class="settings-card" aria-labelledby="student-form-settings-title">
+            <header class="settings-card-header">
+              <h3 id="student-form-settings-title">Student Application Form Settings</h3>
+              <button class="settings-toggle" type="button" aria-label="Collapse Student Application Form Settings" aria-expanded="true" aria-controls="student-form-settings-body"><i data-lucide="chevron-down"></i></button>
+            </header>
+            <div class="settings-card-body settings-check-columns" id="student-form-settings-body">
+              <div class="settings-checks">
+                <label class="setting-option"><input type="checkbox" name="onlineApplicationCutOffDate"><span>Online Application Cut Off Date</span></label>
+                <label class="setting-option"><input type="checkbox" name="admissionMaximumAge"><span>Admission maximum age</span></label>
+                <label class="setting-option"><input type="checkbox" name="admissionMinimumAge"><span>Admission minimum age</span></label>
+                <label class="setting-option"><input type="checkbox" name="hostelApplicable"><span>Hostel Applicable</span></label>
+                <label class="setting-option"><input type="checkbox" name="transportApplicable"><span>Transport Applicable</span></label>
+                <label class="setting-option"><input type="checkbox" name="siblingConcession"><span>Sibling concession</span></label>
+              </div>
+              <div class="settings-checks">
+                <label class="setting-option"><input type="checkbox" name="parentConcession"><span>Parent concession</span></label>
+                <label class="setting-option"><input type="checkbox" name="ecsOptionApplicable"><span>ECS option Applicable</span></label>
+                <label class="setting-option"><input type="checkbox" name="gymApplicable"><span>Gym Applicable</span></label>
+                <label class="setting-option"><input type="checkbox" name="fatherAlive"><span>Father Alive</span></label>
+                <label class="setting-option"><input type="checkbox" name="motherAlive"><span>Mother Alive</span></label>
+                <label class="setting-option"><input type="checkbox" name="maritalStatus"><span>Marital Status</span></label>
+              </div>
+            </div>
+          </section>
+
+          <section class="settings-card" aria-labelledby="scheduling-settings-title">
+            <header class="settings-card-header">
+              <h3 id="scheduling-settings-title">General Scheduling</h3>
+              <button class="settings-toggle" type="button" aria-label="Collapse General Scheduling" aria-expanded="true" aria-controls="scheduling-settings-body"><i data-lucide="chevron-down"></i></button>
+            </header>
+            <div class="settings-card-body settings-checks" id="scheduling-settings-body">
+              <label class="setting-option"><input type="checkbox" name="oraltestApplicable"><span>Oraltest Applicable</span></label>
+              <label class="setting-option"><input type="checkbox" name="writtentestApplicable"><span>Writtentest Applicable</span></label>
+              <label class="setting-option"><input type="checkbox" name="commonScheduleFlag"><span>CommonSchedule Flag</span></label>
+            </div>
+          </section>
+
+          <section class="settings-card" aria-labelledby="preadmission-settings-title">
+            <header class="settings-card-header">
+              <h3 id="preadmission-settings-title">Preadmission Settings</h3>
+              <button class="settings-toggle" type="button" aria-label="Collapse Preadmission Settings" aria-expanded="true" aria-controls="preadmission-settings-body"><i data-lucide="chevron-down"></i></button>
+            </header>
+            <div class="settings-card-body settings-checks" id="preadmission-settings-body">
+              <label class="setting-option"><input type="checkbox" name="transferToAdmissionOnFullPayment"><span>Transfer To Admission directly while making full Payment</span></label>
+              <label class="setting-option"><input type="checkbox" name="transferToAdmissionWithoutPaymentConfirmation"><span>Transfer To Admission Without Partial/Full payment Confirmation</span></label>
+              <label class="setting-option"><input type="checkbox" name="feePaymentWithoutAdmissionConfirmation"><span>Option for fee Payment Without Admission Confirmation</span></label>
+              <label class="setting-option"><input type="checkbox" name="admissionConfirmation"><span>Admission Confirmation</span></label>
+              <label class="setting-option"><input type="checkbox" name="offlineFeeApplicable"><span>Offline Fee Applicable</span></label>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button class="button button-primary" id="save-record" type="submit"><i data-lucide="save"></i>Save</button>
+        <button class="button button-secondary" id="cancel-dialog" type="button">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    if (window.lucide) lucide.createIcons();
+
+    const records = [
+      { id: 1, serial: 1, trust: "Tunbridge Education Trust", institute: "Tunbridge High School", academicYear: "2026–2027" },
+      { id: 2, serial: 2, trust: "Tunbridge Education Trust", institute: "Tunbridge High School", academicYear: "2025–2026" },
+      { id: 3, serial: 3, trust: "Tunbridge Education Trust", institute: "Tunbridge High School", academicYear: "2024–2025" }
+    ];
+    const recordRows = document.querySelector("#record-rows");
+    const searchInput = document.querySelector("#record-search");
+    const pageSizeInput = document.querySelector("#page-size");
+    const recordRange = document.querySelector("#record-range");
+    const pageStatus = document.querySelector("#page-status");
+    const previousPage = document.querySelector("#previous-page");
+    const nextPage = document.querySelector("#next-page");
+    const emptyState = document.querySelector("#empty-state");
+    const recordDialog = document.querySelector("#record-dialog");
+    const recordForm = document.querySelector("#record-form");
+    const toast = document.querySelector("#toast");
+    let currentPage = 1;
+    let sortKey = "serial";
+    let sortDirection = 1;
+    let editingId = null;
+    let nextId = 4;
+    let toastTimer;
+
+    function filteredRecords() {
+      const query = searchInput.value.trim().toLocaleLowerCase();
+      return records
+        .filter((record) => `${record.serial} ${record.trust} ${record.institute} ${record.academicYear}`.toLocaleLowerCase().includes(query))
+        .sort((first, second) => {
+          const firstValue = first[sortKey];
+          const secondValue = second[sortKey];
+          const comparison = typeof firstValue === "number"
+            ? firstValue - secondValue
+            : String(firstValue).localeCompare(String(secondValue), undefined, { numeric: true, sensitivity: "base" });
+          return comparison * sortDirection;
+        });
+    }
+
+    function renderRecords() {
+      const matchingRecords = filteredRecords();
+      const pageSize = Number(pageSizeInput.value);
+      const pageCount = Math.max(1, Math.ceil(matchingRecords.length / pageSize));
+      currentPage = Math.min(currentPage, pageCount);
+      const pageRecords = matchingRecords.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+      recordRows.replaceChildren();
+
+      pageRecords.forEach((record) => {
+        const row = document.createElement("tr");
+        const values = [String(record.serial).padStart(2, "0"), record.trust, record.institute, record.academicYear];
+        values.forEach((value, index) => {
+          const cell = document.createElement("td");
+          cell.textContent = value;
+          if (index === 0) cell.className = "serial-cell";
+          row.append(cell);
+        });
+
+        const actionCell = document.createElement("td");
+        actionCell.className = "row-actions";
+        const editButton = document.createElement("button");
+        editButton.type = "button";
+        editButton.className = "icon-button";
+        editButton.dataset.action = "edit";
+        editButton.dataset.id = String(record.id);
+        editButton.setAttribute("aria-label", `Edit ${record.institute}, ${record.academicYear}`);
+        const editIcon = document.createElement("i");
+        editIcon.dataset.lucide = "pencil";
+        editButton.append(editIcon);
+
+        const deleteButton = document.createElement("button");
+        deleteButton.type = "button";
+        deleteButton.className = "icon-button delete-button";
+        deleteButton.dataset.action = "delete";
+        deleteButton.dataset.id = String(record.id);
+        deleteButton.setAttribute("aria-label", `Delete ${record.institute}, ${record.academicYear}`);
+        const deleteIcon = document.createElement("i");
+        deleteIcon.dataset.lucide = "trash-2";
+        deleteButton.append(deleteIcon);
+        actionCell.append(editButton, deleteButton);
+        row.append(actionCell);
+        recordRows.append(row);
+      });
+
+      emptyState.hidden = matchingRecords.length !== 0;
+      recordRange.textContent = matchingRecords.length
+        ? `Showing ${(currentPage - 1) * pageSize + 1}–${Math.min(currentPage * pageSize, matchingRecords.length)} of ${matchingRecords.length} records`
+        : "Showing 0 of 0 records";
+      pageStatus.textContent = `${currentPage} / ${pageCount}`;
+      previousPage.disabled = currentPage <= 1;
+      nextPage.disabled = currentPage >= pageCount;
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function showToast(message) {
+      window.clearTimeout(toastTimer);
+      toast.textContent = message;
+      toast.classList.add("is-visible");
+      toastTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 2600);
+    }
+
+    function openRecordDialog(record = null) {
+      recordForm.reset();
+      editingId = record ? record.id : null;
+      recordForm.elements.namedItem("trust").value = record ? record.trust : "";
+      recordForm.elements.namedItem("institute").value = record ? record.institute : "";
+      recordForm.elements.namedItem("academicYear").value = record ? record.academicYear : "2026–2027";
+      const savedOptions = record?.settings?.options ?? {};
+      recordForm.querySelectorAll('input[type="checkbox"][name]').forEach((input) => {
+        input.checked = Boolean(savedOptions[input.name]);
+      });
+      recordForm.elements.namedItem("maxApplications").value = record?.settings?.maxApplications ?? "1";
+      recordForm.elements.namedItem("applicationNumberIncrement").value = record?.settings?.applicationNumberIncrement ?? "0";
+      document.querySelectorAll(".settings-toggle").forEach((button) => {
+        document.getElementById(button.getAttribute("aria-controls")).hidden = false;
+        button.setAttribute("aria-expanded", "true");
+        const heading = button.closest(".settings-card").querySelector("h3").textContent;
+        button.setAttribute("aria-label", `Collapse ${heading}`);
+      });
+      document.querySelector("#dialog-title").textContent = record ? "Edit General Configuration" : "Add General Configuration";
+      document.querySelector("#save-record").innerHTML = '<i data-lucide="save"></i>Save';
+      if (window.lucide) lucide.createIcons();
+      recordDialog.showModal();
+      recordForm.elements.namedItem("trust").focus();
+    }
+
+    document.querySelector("#add-record").addEventListener("click", () => openRecordDialog());
+    document.querySelector("#close-dialog").addEventListener("click", () => recordDialog.close());
+    document.querySelector("#cancel-dialog").addEventListener("click", () => recordDialog.close());
+    recordDialog.addEventListener("click", (event) => {
+      if (event.target === recordDialog) recordDialog.close();
+    });
+    document.querySelectorAll(".settings-toggle").forEach((button) => {
+      button.addEventListener("click", () => {
+        const body = document.getElementById(button.getAttribute("aria-controls"));
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        body.hidden = expanded;
+        button.setAttribute("aria-expanded", String(!expanded));
+        const heading = button.closest(".settings-card").querySelector("h3").textContent;
+        button.setAttribute("aria-label", `${expanded ? "Expand" : "Collapse"} ${heading}`);
+      });
+    });
+
+    recordForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const trust = recordForm.elements.namedItem("trust").value.trim();
+      const institute = recordForm.elements.namedItem("institute").value.trim();
+      const academicYear = recordForm.elements.namedItem("academicYear").value.trim();
+      const settings = {
+        options: Object.fromEntries([...recordForm.querySelectorAll('input[type="checkbox"][name]')]
+          .map((input) => [input.name, input.checked])),
+        maxApplications: Number(recordForm.elements.namedItem("maxApplications").value),
+        applicationNumberIncrement: Number(recordForm.elements.namedItem("applicationNumberIncrement").value)
+      };
+      if (!trust || !institute || !academicYear) {
+        const invalidField = ["trust", "institute", "academicYear"]
+          .map((name) => recordForm.elements.namedItem(name))
+          .find((field) => !field.value.trim());
+        invalidField.setCustomValidity("Enter at least one non-space character.");
+        invalidField.reportValidity();
+        return;
+      }
+
+      if (editingId !== null) {
+        const record = records.find((item) => item.id === editingId);
+        if (!record) {
+          recordDialog.close();
+          showToast("This configuration is no longer available. Refresh and try again.");
+          return;
+        }
+        Object.assign(record, { trust, institute, academicYear, settings });
+        showToast("Settings updated.");
+      } else {
+        records.push({ id: nextId++, serial: Math.max(0, ...records.map((item) => item.serial)) + 1, trust, institute, academicYear, settings });
+        showToast("Settings saved.");
+      }
+
+      recordDialog.close();
+      recordForm.reset();
+      currentPage = 1;
+      renderRecords();
+    });
+
+    recordForm.addEventListener("input", (event) => {
+      if (event.target instanceof HTMLInputElement) event.target.setCustomValidity("");
+    });
+
+    recordRows.addEventListener("click", (event) => {
+      const button = event.target.closest("button[data-action]");
+      if (!button) return;
+      const id = Number(button.dataset.id);
+      const record = records.find((item) => item.id === id);
+      if (!record) {
+        showToast("This configuration could not be found. Please refresh the page.");
+        renderRecords();
+        return;
+      }
+      if (button.dataset.action === "edit") openRecordDialog(record);
+      if (button.dataset.action === "delete" && window.confirm(`Delete the ${record.academicYear} configuration for ${record.institute}?`)) {
+        records.splice(records.indexOf(record), 1);
+        renderRecords();
+        showToast("Configuration deleted.");
+      }
+    });
+
+    searchInput.addEventListener("input", () => {
+      currentPage = 1;
+      renderRecords();
+    });
+    pageSizeInput.addEventListener("change", () => {
+      currentPage = 1;
+      renderRecords();
+    });
+    previousPage.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage -= 1;
+        renderRecords();
+      }
+    });
+    nextPage.addEventListener("click", () => {
+      const pageCount = Math.max(1, Math.ceil(filteredRecords().length / Number(pageSizeInput.value)));
+      if (currentPage < pageCount) {
+        currentPage += 1;
+        renderRecords();
+      }
+    });
+    document.querySelectorAll(".sort-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const nextKey = button.dataset.sort;
+        sortDirection = sortKey === nextKey ? sortDirection * -1 : 1;
+        sortKey = nextKey;
+        document.querySelectorAll(".sort-button").forEach((item) => {
+          item.closest("th").setAttribute("aria-sort", item === button ? (sortDirection === 1 ? "ascending" : "descending") : "none");
+        });
+        renderRecords();
+      });
+    });
+
+    renderRecords();
+  </script>
+  <script src="../../../site-assistant.js"></script>
+</body>
+</html>

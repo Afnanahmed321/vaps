@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fee Collection | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="fee-collection.css" />
+  <link rel="stylesheet" href="../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../site-assistant.css" />
+  <link rel="stylesheet" href="../../gilroy.css" />
+  <script defer src="../../workspace-header.js"></script>
+  <script defer src="../../workspace-whatsapp.js"></script>
+  <script defer src="../../workspace-chatgpt.js"></script>
+  <script defer src="../../workspace-translator.js"></script>
+  <script defer src="../../workspace-text-to-speech.js"></script>
+  <script defer src="../../workspace-pdf-converter.js"></script>
+  <script defer src="../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item active" href="fee-collection.html" aria-current="page"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button"><i data-lucide="graduation-cap"></i><span><small>Academic Year</small><strong>2026 – 2027</strong></span><i class="year-chevron" data-lucide="chevron-down"></i></button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search"><i data-lucide="search"></i><input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" /></label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="fee-hero">
+        <div><p class="fee-kicker">SCHOOL FINANCE</p><h1>Fee Collection</h1><p class="fee-description">Choose the students and class details for your fee report.</p></div>
+        <span class="fee-hero-icon" aria-hidden="true"><i data-lucide="wallet-cards"></i></span>
+      </section>
+
+      <section class="fee-content">
+        <form class="fee-form-card" id="fee-report-form">
+          <fieldset class="collection-mode" aria-label="Collection scope">
+            <label><input type="radio" name="scope" value="all" checked /><span>All</span></label>
+            <label><input type="radio" name="scope" value="individual" /><span>Individual</span></label>
+          </fieldset>
+
+          <div class="fee-select-grid">
+            <label class="fee-field"><span>Academic Year <b>*</b></span><select id="fee-year" required><option value="">Select Academic Year</option><option>2026 – 2027</option><option>2025 – 2026</option><option>2024 – 2025</option></select></label>
+            <label class="fee-field"><span>Class <b>*</b></span><select id="fee-class" required><option value="">Select Class</option><option>Pre Nursery</option><option>Lower Nursery</option><option>Upper Nursery</option><option>I</option><option>II</option><option>III</option><option>IV</option><option>V</option><option>VI</option><option>VII</option><option>VIII</option><option>IX</option><option>X</option><option>XI</option><option>XII</option></select></label>
+            <label class="fee-field"><span>Section <b>*</b></span><select id="fee-section" required><option value="">Select Section</option><option>A</option><option>B</option><option>C</option><option>D</option></select></label>
+          </div>
+
+          <p class="fee-form-message" id="fee-form-message" role="status" aria-live="polite"></p>
+          <div class="fee-form-actions"><a class="fee-cancel" href="../../System%20Overview/html%20%26%20css%20files/index.html">Cancel</a><button class="fee-submit" type="submit">Report <i data-lucide="arrow-right"></i></button></div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script>
+    if (window.lucide) lucide.createIcons();
+    const feeForm = document.querySelector('#fee-report-form');
+    feeForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!feeForm.reportValidity()) return;
+      document.querySelector('#fee-form-message').textContent = 'Fee report filters are ready. Connect live school data to generate verified results.';
+    });
+  </script>
+  <script src="../../site-assistant.js"></script>
+</body>
+</html>

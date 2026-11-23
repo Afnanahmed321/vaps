@@ -1,0 +1,638 @@
+* {
+  box-sizing: border-box;
+}
+
+.admission-breadcrumbs a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+:root {
+  color-scheme: light;
+  --admission-blue: #4268ff;
+  --admission-ink: #17213a;
+  --admission-muted: #78839a;
+  --admission-border: #e4e9f4;
+  --admission-surface: #fff;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  color: var(--admission-ink);
+  background:
+    radial-gradient(ellipse at 86% 0%, #eef2ff 0, transparent 30%),
+    #f7f8ff;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.admission-banner {
+  min-height: 162px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px clamp(22px, 3.2vw, 48px);
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 78% 12%, rgba(196, 211, 255, .16), transparent 25%),
+    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #4968b3 100%);
+}
+
+.admission-banner::after {
+  content: "";
+  width: 330px;
+  height: 330px;
+  position: absolute;
+  top: -250px;
+  right: 12%;
+  border: 1px solid #ffffff20;
+  border-radius: 50%;
+  box-shadow: 0 0 0 40px #ffffff08, 0 0 0 80px #ffffff06, 0 0 0 120px #ffffff04;
+  pointer-events: none;
+}
+
+.admission-banner-copy,
+.admission-breadcrumbs {
+  position: relative;
+  z-index: 1;
+}
+
+.admission-banner h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: clamp(27px, 3vw, 37px);
+  font-weight: 600;
+  letter-spacing: -.7px;
+}
+
+.admission-banner h1 svg {
+  width: 23px;
+  height: 23px;
+}
+
+.admission-banner-copy p {
+  margin: 8px 0 0;
+  color: #dce3ff;
+  font-size: 14px;
+}
+
+.admission-banner .admission-eyebrow {
+  margin: 0 0 7px;
+  color: #d7def8;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+}
+
+.admission-eyebrow span {
+  padding: 0 7px;
+  color: #aab8ec;
+}
+
+.admission-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  position: relative;
+  z-index: 1;
+  color: #e5eaff;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.admission-breadcrumbs a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.admission-breadcrumbs strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.admission-breadcrumbs svg {
+  width: 14px;
+  height: 14px;
+  opacity: .8;
+}
+
+.admission-content {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  margin-top: -18px;
+  padding: 0 clamp(14px, 2.5vw, 32px) 25px;
+}
+
+.admission-card {
+  overflow: hidden;
+  border: 1px solid #e4e9f4;
+  border-radius: 21px;
+  background: rgba(255, 255, 255, .98);
+  box-shadow: 0 16px 42px rgba(24, 42, 84, .1), 0 2px 6px rgba(24, 42, 84, .04);
+}
+
+.admission-card-header {
+  min-height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 17px 21px;
+  border-bottom: 1px solid #edf0f6;
+}
+
+.admission-card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.admission-heading-mark {
+  width: 4px;
+  height: 42px;
+  flex: none;
+  border-radius: 4px;
+  background: linear-gradient(#526cff, #3554c6);
+}
+
+.admission-card-header h2 {
+  margin: 0;
+  color: #182440;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -.3px;
+}
+
+.admission-card-heading > div > p {
+  margin: 5px 0 0;
+  color: #78839a;
+  font-size: 12px;
+}
+
+.admission-status {
+  display: none;
+  margin: 0;
+  color: #357650;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.admission-status.is-visible {
+  display: block;
+}
+
+.admission-status.is-error {
+  color: #bd3d4b;
+}
+
+#admission-form {
+  padding: 20px 22px 22px;
+}
+
+.admission-settings-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+
+.admission-column {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admission-box {
+  min-width: 0;
+  margin: 0;
+  padding: 16px 18px;
+  border: 1px solid #e4e9f4;
+  border-radius: 16px;
+  background: var(--admission-surface);
+  box-shadow: 0 3px 8px rgba(24, 42, 84, .035);
+}
+
+.admission-check-grid {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.admission-three-options {
+  grid-template-columns: 1.15fr .8fr .8fr;
+}
+
+.admission-option {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #34415d;
+  font-size: 14px;
+  line-height: 1.15;
+  cursor: pointer;
+}
+
+.admission-option input {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  margin: 0;
+  accent-color: var(--admission-blue);
+  cursor: pointer;
+}
+
+.admission-radio-card {
+  min-height: 95px;
+}
+
+.admission-radio-card legend {
+  display: block;
+  width: 100%;
+  margin: 0 0 14px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.admission-radio-card legend span {
+  color: #df5965;
+}
+
+.admission-choice-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+
+.admission-order-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+}
+
+.logo-box h3 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.logo-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(100px, .95fr);
+  gap: 9px;
+}
+
+.logo-file-wrap {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo-file-wrap input {
+  width: 100%;
+  min-width: 0;
+  height: 38px;
+  border: 1px solid #dfe4ef;
+  border-radius: 11px;
+  color: #273453;
+  background: #fff;
+  font-size: 12px;
+}
+
+.logo-file-wrap input::file-selector-button {
+  height: 36px;
+  margin-right: 10px;
+  padding: 0 16px;
+  border: 0;
+  border-right: 1px solid #e1e6f0;
+  border-radius: 10px 0 0 10px;
+  color: #34415d;
+  background: #fff;
+  cursor: pointer;
+}
+
+.logo-view-button {
+  min-height: 40px;
+  border: 1px solid #dfe4ef;
+  border-radius: 11px;
+  color: #3554c6;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(28, 40, 74, .06);
+}
+
+.logo-view-button:hover {
+  background: #f5f7ff;
+  border-color: #cbd6fb;
+}
+
+.logo-file-name {
+  margin: 5px 0 0;
+  color: var(--admission-muted);
+  font-size: 11px;
+}
+
+.admission-form-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  padding: 14px 0 0;
+  border-top: 1px solid #e7eaf2;
+}
+
+.admission-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.admission-button {
+  min-width: 120px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 20px;
+  border: 1px solid #dfe4ef;
+  border-radius: 12px;
+  color: #52617b;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(24, 42, 84, .06);
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+}
+
+.admission-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(24, 39, 68, .08);
+}
+
+.admission-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.admission-save {
+  border-color: #3554c6;
+  color: #fff;
+  background: linear-gradient(110deg, #526cff, #3554c6);
+  box-shadow: 0 4px 10px rgba(66, 104, 255, .2);
+}
+
+.admission-clear {
+  color: #3554c6;
+}
+
+.admission-reset {
+  border-color: #f0c5ca;
+  color: #c83d4b;
+}
+
+.admission-reset:hover {
+  background: #fff6f7;
+}
+
+.admission-footer {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 20px;
+  border-top: 1px solid #e1e8f2;
+  color: #65748c;
+  background: #fff;
+  font-size: 11px;
+}
+
+.admission-footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.admission-footer svg {
+  width: 15px;
+  height: 15px;
+  color: #4268ff;
+}
+
+.admission-footer strong {
+  color: #405473;
+  font-size: 10px;
+}
+
+.admission-footer-divider {
+  width: 1px;
+  height: 16px;
+  background: #dce4ef;
+}
+
+.logo-preview-dialog {
+  width: min(600px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  overflow: auto;
+  border: 1px solid #dfe6f1;
+  border-radius: 17px;
+  color: var(--admission-ink);
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(16, 32, 68, .25);
+}
+
+.logo-preview-dialog::backdrop {
+  background: rgba(17, 29, 59, .5);
+  backdrop-filter: blur(4px);
+}
+
+.logo-preview-dialog header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e8edf5;
+}
+
+.logo-preview-dialog h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.logo-preview-close {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e1e8f2;
+  border-radius: 11px;
+  color: #5d6270;
+  background: #fff;
+}
+
+.logo-preview-dialog img {
+  max-width: calc(100% - 32px);
+  max-height: 70vh;
+  display: block;
+  margin: 16px auto;
+  object-fit: contain;
+}
+
+.logo-preview-dialog img[hidden] {
+  display: none;
+}
+
+.admission-option input:focus-visible,
+.admission-button:focus-visible,
+.logo-view-button:focus-visible,
+.logo-preview-close:focus-visible {
+  outline: 3px solid rgba(66, 104, 255, .22);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1150px) {
+  .admission-breadcrumbs {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .admission-banner {
+    min-height: 150px;
+    padding: 22px;
+  }
+
+  .admission-banner h1 {
+    font-size: 27px;
+  }
+
+  .admission-card-header {
+    min-height: 68px;
+    padding: 13px 17px;
+  }
+
+  .admission-card-header h2 {
+    font-size: 20px;
+  }
+
+  #admission-form {
+    padding: 16px;
+  }
+
+  .admission-settings-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .admission-column {
+    gap: 16px;
+  }
+
+  .admission-box {
+    padding: 14px;
+    border-radius: 13px;
+  }
+
+  .admission-check-grid {
+    gap: 12px;
+  }
+
+  .admission-three-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admission-option {
+    font-size: 13px;
+  }
+
+  .admission-choice-row {
+    gap: 12px 18px;
+  }
+
+  .admission-order-grid {
+    gap: 13px 12px;
+  }
+
+  .admission-form-footer {
+    margin-top: 17px;
+    padding-top: 17px;
+  }
+
+  .admission-form-actions {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 460px) {
+  .admission-banner {
+    padding: 19px 15px;
+  }
+
+  .admission-banner h1 {
+    gap: 8px;
+    font-size: 24px;
+  }
+
+  .admission-banner h1 svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .admission-check-grid,
+  .admission-three-options,
+  .admission-order-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .logo-controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admission-button {
+    min-width: 95px;
+    padding: 0 13px;
+  }
+
+  .admission-footer {
+    gap: 7px;
+    padding: 12px;
+    font-size: 9px;
+  }
+
+  .admission-footer-divider {
+    display: none;
+  }
+}

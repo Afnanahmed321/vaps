@@ -1,0 +1,1100 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  --tn-ink: #172342;
+  --tn-muted: #74829a;
+  --tn-line: #e2e8f2;
+  --tn-blue: #304b8f;
+  --tn-navy: #19244e;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  color: var(--tn-ink);
+  background:
+    radial-gradient(ellipse at 86% 0%, #edf2fb 0, transparent 33%),
+    #f6f8fc;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+.main-area {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.tn-banner {
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 26px clamp(22px, 3.2vw, 48px);
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 78% 12%, rgba(196, 211, 255, .16), transparent 25%),
+    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #4968b3 100%);
+}
+
+.tn-banner::after {
+  content: "";
+  width: 340px;
+  height: 340px;
+  position: absolute;
+  top: -260px;
+  right: 12%;
+  border: 1px solid #ffffff20;
+  border-radius: 50%;
+  box-shadow: 0 0 0 42px #ffffff08, 0 0 0 84px #ffffff06, 0 0 0 126px #ffffff04;
+  pointer-events: none;
+}
+
+.tn-banner-copy,
+.tn-breadcrumbs {
+  position: relative;
+  z-index: 1;
+}
+
+.tn-eyebrow {
+  margin: 0 0 8px;
+  color: #d7def8;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+}
+
+.tn-eyebrow span {
+  padding: 0 7px;
+  color: #aab8ec;
+}
+
+.tn-banner h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: clamp(27px, 3vw, 37px);
+  font-weight: 650;
+  letter-spacing: -.7px;
+}
+
+.tn-banner h1 svg {
+  width: 25px;
+  height: 25px;
+  flex: none;
+  stroke-width: 1.8;
+}
+
+.tn-banner-copy > p:last-child {
+  margin: 8px 0 0;
+  color: #dce3ff;
+  font-size: 14px;
+}
+
+.tn-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e5eaff;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.tn-breadcrumbs a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tn-breadcrumbs a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tn-breadcrumbs svg {
+  width: 14px;
+  height: 14px;
+  opacity: .75;
+}
+
+.tn-breadcrumbs span {
+  color: #fff;
+  font-weight: 700;
+}
+
+.tn-content {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  margin-top: -18px;
+  padding: 0 clamp(14px, 2.5vw, 32px) 28px;
+}
+
+.tn-tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+  padding: 5px;
+  overflow-x: auto;
+  border: 1px solid #dfe6f1;
+  border-radius: 17px;
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 7px 20px rgba(27, 47, 86, .055);
+  scrollbar-width: thin;
+  scrollbar-color: #cbd6e8 transparent;
+}
+
+.tn-voucher-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin: -5px 0 15px;
+}
+
+.tn-voucher-toolbar[hidden] {
+  display: none;
+}
+
+.tn-tab {
+  min-height: 42px;
+  flex: 1 0 auto;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 12px;
+  color: #687791;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+  transition: color .16s ease, background .16s ease, box-shadow .16s ease;
+}
+
+.tn-tab:hover {
+  color: #294779;
+  background: #f0f4fb;
+}
+
+.tn-tab.is-active {
+  color: #fff;
+  background: linear-gradient(120deg, #243d73, #3c5f9e);
+  box-shadow: 0 5px 13px rgba(37, 64, 112, .2);
+}
+
+.tn-card {
+  overflow: hidden;
+  border: 1px solid #e1e8f2;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 0 13px 35px rgba(28, 48, 88, .09), 0 2px 6px rgba(28, 48, 88, .035);
+}
+
+.tn-voucher-editor {
+  margin: 0;
+}
+
+.tn-voucher-editor-header {
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #edf1f7;
+}
+
+.tn-voucher-editor-header h2 {
+  margin: 0;
+  color: #24395f;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.tn-voucher-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px 24px;
+}
+
+.tn-voucher-identifiers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 16px 18px;
+  border: 1px solid #dce5f1;
+  border-radius: 16px;
+  background: linear-gradient(110deg, #fff, #f8faff);
+}
+
+.tn-voucher-options {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.tn-voucher-options .tn-registration-option-group {
+  padding: 13px 16px;
+  border: 1px solid #dce5f1;
+  border-radius: 15px;
+  background: linear-gradient(110deg, #fff, #f8faff);
+}
+
+.tn-voucher-restart legend {
+  color: #345b99;
+  font-size: 17px;
+}
+
+.tn-voucher-restart .tn-registration-choice-row::before {
+  content: "Frequency:";
+  margin-right: 4px;
+  color: #536782;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tn-card-header {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #edf1f7;
+}
+
+.tn-card-eyebrow {
+  margin: 0 0 4px;
+  color: #7d8ba4;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.tn-card-header h2 {
+  margin: 0;
+  color: #24395f;
+  font-size: 17px;
+  font-weight: 750;
+  letter-spacing: -.3px;
+  text-transform: capitalize;
+}
+
+.tn-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tn-status {
+  display: none;
+  margin: 0;
+  color: #347652;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.tn-status.is-visible {
+  display: block;
+}
+
+.tn-status.is-error {
+  color: #a63d49;
+}
+
+.tn-collapse {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e5ebf4;
+  border-radius: 12px;
+  color: #71819b;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(33, 54, 91, .05);
+  transition: color .16s ease, border-color .16s ease, background .16s ease;
+}
+
+.tn-collapse:hover {
+  border-color: #c8d5e8;
+  color: #35598f;
+  background: #f7f9fd;
+}
+
+.tn-collapse svg {
+  width: 17px;
+  height: 17px;
+}
+
+.tn-table-panel {
+  padding: 19px;
+}
+
+.tn-table-panel[hidden] {
+  display: none;
+}
+
+.tn-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #dce5f1;
+  border-radius: 15px;
+  scrollbar-color: #c7d4e7 #f5f8fc;
+  scrollbar-width: thin;
+}
+
+.tn-table {
+  width: 100%;
+  min-width: 1060px;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+}
+
+.tn-table th,
+.tn-table td {
+  padding: 14px 13px;
+  border-bottom: 1px solid #edf1f6;
+  color: #4a5e7d;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.tn-table th {
+  color: #647592;
+  background: #f7f9fd;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .35px;
+}
+
+.tn-table th:first-child {
+  padding-left: 18px;
+  border-top-left-radius: 14px;
+}
+
+.tn-table th:last-child {
+  border-top-right-radius: 14px;
+}
+
+.tn-table td:first-child {
+  padding-left: 18px;
+  color: #8390a5;
+}
+
+.tn-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tn-table tbody tr {
+  transition: background .15s ease;
+}
+
+.tn-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.tn-empty-state {
+  padding: 28px 16px !important;
+  color: #74829a !important;
+  background: #f8faff;
+  font-size: 14px !important;
+  text-align: center;
+}
+
+.tn-actions-heading,
+.tn-actions-cell {
+  width: 76px;
+  text-align: center;
+}
+
+.tn-edit-button {
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: #42669f;
+  background: #edf3fc;
+  transition: border-color .16s ease, color .16s ease, background .16s ease, transform .16s ease;
+}
+
+.tn-edit-button:hover {
+  transform: translateY(-1px);
+  border-color: #c6d5e9;
+  color: #243d73;
+  background: #e2ebf8;
+}
+
+.tn-edit-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tn-footer {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 20px;
+  border-top: 1px solid #e1e8f2;
+  color: #65748c;
+  background: rgba(255, 255, 255, .9);
+  font-size: 11px;
+}
+
+.tn-footer span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tn-footer svg {
+  width: 14px;
+  height: 14px;
+  color: #42669f;
+}
+
+.tn-footer strong {
+  color: #405473;
+  font-size: 10px;
+  letter-spacing: .25px;
+}
+
+.tn-footer-divider {
+  width: 1px;
+  height: 16px;
+  background: #dce4ef;
+}
+
+.tn-edit-dialog {
+  width: min(700px, calc(100vw - 32px));
+  height: fit-content;
+  position: fixed;
+  inset: 50% auto auto 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  overflow: auto;
+  border: 1px solid #dfe6f1;
+  border-radius: 21px;
+  color: var(--tn-ink);
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(16, 32, 68, .25);
+}
+
+.tn-edit-dialog.is-registration,
+.tn-edit-dialog.is-receipt,
+.tn-edit-dialog.tn-voucher-dialog {
+  width: min(940px, calc(100vw - 32px));
+}
+
+.tn-edit-dialog::backdrop {
+  background: rgba(17, 29, 59, .5);
+  backdrop-filter: blur(4px);
+}
+
+.tn-edit-dialog[open] {
+  animation: tn-dialog-in .18s ease-out;
+}
+
+.tn-edit-dialog form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tn-dialog-header {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  border-bottom: 1px solid #e8edf5;
+}
+
+.tn-dialog-header p {
+  margin: 0 0 5px;
+  color: #7285a5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.tn-dialog-header h2 {
+  margin: 0;
+  color: #172342;
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: -.4px;
+}
+
+.tn-dialog-close {
+  width: 39px;
+  height: 39px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e1e8f2;
+  border-radius: 12px;
+  color: #687993;
+  background: #fff;
+  transition: color .15s ease, background .15s ease;
+}
+
+.tn-dialog-close:hover {
+  color: #263f76;
+  background: #f2f6fc;
+}
+
+.tn-dialog-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.tn-dialog-content {
+  min-height: 0;
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 14px;
+  overflow: auto;
+  max-height: calc(100dvh - 180px);
+  padding: 16px clamp(20px, 3vw, 40px);
+}
+
+.tn-choice-group {
+  min-width: 0;
+  min-height: 78px;
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(100px, auto));
+  align-items: center;
+  gap: 14px clamp(22px, 4vw, 44px);
+  margin: 0;
+  padding: 13px 20px;
+  border: 1px solid #dce5f1;
+  border-radius: 17px;
+  background: linear-gradient(110deg, #fff, #f8faff);
+}
+
+.tn-choice-group[hidden] {
+  display: none;
+}
+
+.tn-choice-group legend {
+  grid-column: 1;
+  max-width: 320px;
+  margin: 0;
+  color: #35598f;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tn-choice-group legend span {
+  color: #db5f68;
+}
+
+.tn-registration-fields {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.tn-registration-fields[hidden] {
+  display: none;
+}
+
+.tn-receipt-name {
+  width: 100%;
+}
+
+.tn-registration-control[hidden] {
+  display: none;
+}
+
+.tn-registration-section {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 15px;
+  margin: 0;
+  padding: 14px 17px 17px;
+  border: 1px solid #dce5f1;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #fff, #f8faff);
+}
+
+.tn-registration-section > legend {
+  padding: 0 5px;
+  color: #345b99;
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -.3px;
+}
+
+.tn-registration-control {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #344967;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.tn-field-label {
+  color: #536782;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tn-field-label span {
+  color: #db5f68;
+}
+
+.tn-registration-choice-row {
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 19px;
+}
+
+.tn-registration-choice-row .tn-radio-option {
+  gap: 8px;
+  font-size: 13px;
+}
+
+.tn-registration-choice-row .tn-radio-indicator {
+  width: 18px;
+  height: 18px;
+}
+
+.tn-registration-choice-row .tn-radio-indicator::after {
+  width: 7px;
+  height: 7px;
+}
+
+.tn-text-input {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 13px;
+  border: 1px solid #dce4ef;
+  border-radius: 12px;
+  outline: none;
+  color: #263a59;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(33, 54, 91, .04);
+  font-size: 14px;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.tn-text-input:focus {
+  border-color: #7894c0;
+  box-shadow: 0 0 0 3px rgba(53, 91, 153, .12);
+}
+
+.tn-registration-options {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: 12px 20px;
+  padding-top: 13px;
+  border-top: 1px solid #e1e8f2;
+}
+
+.tn-registration-option-group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.tn-registration-option-group legend {
+  margin-bottom: 9px;
+  color: #536782;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tn-radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #344967;
+  font-size: 15px;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.tn-radio-option input {
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  opacity: 0;
+}
+
+.tn-radio-indicator {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border: 2px solid #9aabc5;
+  border-radius: 50%;
+  background: #fff;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.tn-radio-indicator::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  transform: scale(0);
+  transition: transform .15s ease;
+}
+
+.tn-radio-option input:checked + .tn-radio-indicator {
+  border-color: #345b99;
+  box-shadow: 0 0 0 3px rgba(53, 91, 153, .1);
+}
+
+.tn-radio-option input:checked + .tn-radio-indicator::after {
+  background: #345b99;
+  transform: scale(1);
+}
+
+.tn-radio-option input:focus-visible + .tn-radio-indicator {
+  outline: 3px solid #a9bfdf;
+  outline-offset: 3px;
+}
+
+.tn-dialog-actions {
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 11px 24px;
+  border-top: 1px solid #e8edf5;
+  background: #fbfcfe;
+}
+
+.tn-button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.tn-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tn-button:hover {
+  transform: translateY(-1px);
+}
+
+.tn-button-secondary {
+  border-color: #dce4ef;
+  color: #526580;
+  background: #fff;
+}
+
+.tn-button-secondary:hover {
+  background: #f3f6fb;
+}
+
+.tn-button-primary {
+  color: #fff;
+  background: linear-gradient(120deg, #233c72, #3c5f9f);
+  box-shadow: 0 6px 15px rgba(35, 60, 114, .2);
+}
+
+.tn-button-primary:hover {
+  box-shadow: 0 8px 18px rgba(35, 60, 114, .26);
+}
+
+.tn-collapse:focus-visible,
+.tn-tab:focus-visible,
+.tn-edit-button:focus-visible,
+.tn-dialog-close:focus-visible,
+.tn-button:focus-visible {
+  outline: 3px solid #a8bfdf;
+  outline-offset: 3px;
+}
+
+@keyframes tn-dialog-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 8px)) scale(.99);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media(max-width:1050px) {
+  .tn-breadcrumbs {
+    display: none;
+  }
+}
+
+@media(max-width:700px) {
+  .tn-banner {
+    min-height: 150px;
+    padding: 22px;
+  }
+
+  .tn-banner h1 {
+    font-size: 27px;
+  }
+
+  .tn-banner-copy > p:last-child {
+    max-width: 330px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .tn-content {
+    padding: 0 14px 22px;
+  }
+
+  .tn-tabs {
+    gap: 3px;
+    margin-bottom: 15px;
+    border-radius: 14px;
+  }
+
+  .tn-tab {
+    min-height: 39px;
+    padding: 0 13px;
+    font-size: 11px;
+  }
+
+  .tn-card {
+    border-radius: 17px;
+  }
+
+  .tn-card-header {
+    min-height: 69px;
+    padding: 12px 14px;
+  }
+
+  .tn-card-actions {
+    align-items: flex-end;
+    flex-direction: column-reverse;
+    gap: 5px;
+  }
+
+  .tn-status {
+    max-width: 190px;
+    text-align: right;
+    font-size: 9px;
+  }
+
+  .tn-table-panel {
+    padding: 12px;
+  }
+
+  .tn-voucher-form-content {
+    gap: 12px;
+    padding: 14px 12px;
+  }
+
+  .tn-voucher-identifiers {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 13px;
+    padding: 13px;
+  }
+
+  .tn-voucher-editor-header {
+    min-height: 68px;
+    padding: 11px 14px;
+  }
+
+  .tn-voucher-editor-header h2 {
+    font-size: 16px;
+  }
+
+  .tn-table th,
+  .tn-table td {
+    padding: 12px 10px;
+  }
+
+  .tn-footer {
+    justify-content: center;
+    gap: 7px;
+    padding: 13px 12px;
+    font-size: 9px;
+  }
+
+  .tn-footer-divider {
+    display: none !important;
+  }
+
+  .tn-edit-dialog {
+    width: calc(100vw - 20px);
+    max-height: calc(100dvh - 20px);
+    border-radius: 17px;
+  }
+
+  .tn-dialog-header {
+    min-height: 74px;
+    padding: 12px 16px;
+  }
+
+  .tn-dialog-header h2 {
+    font-size: 19px;
+  }
+
+  .tn-dialog-content {
+    justify-content: flex-start;
+    gap: 12px;
+    max-height: calc(100dvh - 170px);
+    padding: 14px 12px;
+  }
+
+  .tn-edit-dialog.is-registration,
+  .tn-edit-dialog.is-receipt,
+  .tn-edit-dialog.tn-voucher-dialog {
+    width: calc(100vw - 20px);
+  }
+
+  .tn-registration-fields,
+  .tn-registration-options {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tn-registration-options {
+    gap: 13px;
+  }
+
+  .tn-registration-section {
+    gap: 13px;
+    padding: 12px 14px 14px;
+  }
+
+  .tn-registration-section > legend {
+    font-size: 18px;
+  }
+
+  .tn-choice-group {
+    min-height: 78px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px 20px;
+    padding: 13px 14px;
+  }
+
+  .tn-choice-group legend {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 2px;
+    font-size: 14px;
+  }
+
+  .tn-radio-option {
+    font-size: 13px;
+  }
+
+  .tn-dialog-actions {
+    min-height: 72px;
+    gap: 9px;
+    padding: 11px 13px;
+  }
+
+  .tn-button {
+    min-height: 42px;
+    padding: 0 12px;
+    font-size: 11px;
+  }
+}
+
+@media(max-width:440px) {
+  .tn-banner {
+    padding: 19px 15px;
+  }
+
+  .tn-banner h1 {
+    gap: 8px;
+    font-size: 24px;
+  }
+
+  .tn-banner h1 svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .tn-card-header h2 {
+    font-size: 15px;
+  }
+
+  .tn-status {
+    max-width: 130px;
+  }
+
+  .tn-dialog-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tn-button {
+    width: 100%;
+    padding: 0 8px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .tn-tab,
+  .tn-collapse,
+  .tn-edit-button,
+  .tn-dialog-close,
+  .tn-radio-indicator,
+  .tn-radio-indicator::after,
+  .tn-button {
+    transition: none;
+  }
+
+  .tn-edit-dialog[open] {
+    animation: none;
+  }
+}

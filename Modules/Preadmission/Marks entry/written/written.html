@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17234b" />
+  <title>Written Test Marks | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="written.css" />
+  <link rel="stylesheet" href="../../../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../../gilroy.css" />
+  <script defer src="../../../../workspace-header.js"></script>
+  <script defer src="../../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../../workspace-translator.js"></script>
+  <script defer src="../../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../../workspace-media-compressor.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button">
+        <i data-lucide="graduation-cap"></i>
+        <span><small>Academic Year</small><strong>2026 – 2027</strong></span>
+        <i class="year-chevron" data-lucide="chevron-down"></i>
+      </button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search">
+          <i data-lucide="search"></i>
+          <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" />
+        </label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile"><div class="avatar">T</div><div><strong>TBHSADMIN</strong><small>Admin</small></div><i data-lucide="chevron-down"></i></div>
+        </div>
+      </header>
+
+      <section class="written-banner" aria-labelledby="written-page-title">
+        <div class="written-banner-copy">
+          <p class="written-eyebrow">PREADMISSION <span>›</span> MARKS ENTRY</p>
+          <h1 id="written-page-title"><i data-lucide="square-pen" aria-hidden="true"></i>Written Test Marks</h1>
+          <p>Written Test Marks</p>
+        </div>
+        <nav class="written-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools">Preadmission</a>
+          <i data-lucide="chevron-right" aria-hidden="true"></i>
+          <span>Preadmission</span>
+          <i data-lucide="chevron-right" aria-hidden="true"></i>
+          <span>Marks Entry</span>
+          <i data-lucide="chevron-right" aria-hidden="true"></i>
+          <strong>Written Test Marks</strong>
+        </nav>
+      </section>
+
+      <section class="written-content">
+        <div class="written-page-heading">
+          <div class="written-heading-copy">
+            <span class="written-heading-mark" aria-hidden="true"></span>
+            <div>
+              <h2>Written/Aptitude Test Marks</h2>
+              <p>Update the student's written test marks based on schedule and subject.</p>
+            </div>
+          </div>
+        </div>
+
+        <section class="written-card" aria-labelledby="search-schedule-title">
+          <header class="written-card-header">
+            <h3 id="search-schedule-title">Search Schedule</h3>
+            <button class="written-collapse" id="toggle-search" type="button" aria-expanded="true" aria-controls="search-card-content" aria-label="Collapse schedule search">
+              <i data-lucide="chevron-up" aria-hidden="true"></i>
+            </button>
+          </header>
+          <form id="written-search-form" novalidate>
+            <div class="written-search-layout" id="search-card-content">
+              <label class="written-subject-field" for="subject-name">
+                <span>Subject <b>*</b></span>
+                <select id="subject-name" name="subject" required>
+                  <option value="">Select Subject Name</option>
+                </select>
+              </label>
+
+              <fieldset class="written-student-picker">
+                <legend class="sr-only">Select students</legend>
+                <label class="written-student written-select-all" for="select-all-students">
+                  <input id="select-all-students" type="checkbox" checked />
+                  <span>Select All Students</span>
+                </label>
+                <div class="written-student-list" id="student-list">
+                  <label class="written-student"><input type="checkbox" value="class" checked /><span>class</span></label>
+                  <label class="written-student"><input type="checkbox" value="NAVNITHA B N" checked /><span>NAVNITHA B N</span></label>
+                  <label class="written-student"><input type="checkbox" value="Nishma" checked /><span>Nishma</span></label>
+                  <label class="written-student"><input type="checkbox" value="SHREEJITH" checked /><span>SHREEJITH</span></label>
+                  <label class="written-student"><input type="checkbox" value="status middle last" checked /><span>status middle last</span></label>
+                  <label class="written-student"><input type="checkbox" value="SUMITHRA M" checked /><span>SUMITHRA M</span></label>
+                  <label class="written-student"><input type="checkbox" value="test shared" checked /><span>test shared</span></label>
+                  <label class="written-student"><input type="checkbox" value="THANU" checked /><span>THANU</span></label>
+                </div>
+              </fieldset>
+
+              <div class="written-actions">
+                <button class="written-button written-search-button" type="submit"><i data-lucide="search" aria-hidden="true"></i>Search</button>
+                <button class="written-button written-cancel-button" id="cancel-search" type="button"><i data-lucide="x" aria-hidden="true"></i>Cancel</button>
+              </div>
+            </div>
+          </form>
+        </section>
+        <p class="written-status" id="written-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <footer class="written-footer">
+        <span><i data-lucide="shield-check" aria-hidden="true"></i>© VAPS 2019. All rights reserved.</span>
+        <span><b>VAPS DIGITAL CAMPUS -</b></span>
+        <span><i data-lucide="phone" aria-hidden="true"></i>Toll Free No. 01206901888</span>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const form = document.querySelector("#written-search-form");
+      const studentList = document.querySelector("#student-list");
+      const selectAll = document.querySelector("#select-all-students");
+      const subjectSelect = document.querySelector("#subject-name");
+      const status = document.querySelector("#written-status");
+
+      function showStatus(message, isError = false) {
+        status.textContent = message;
+        status.classList.toggle("is-visible", Boolean(message));
+        status.classList.toggle("is-error", isError);
+      }
+
+      function updateSelectAll() {
+        const checkboxes = [...studentList.querySelectorAll('input[type="checkbox"]')];
+        const selectedCount = checkboxes.filter((checkbox) => checkbox.checked).length;
+        selectAll.checked = checkboxes.length > 0 && selectedCount === checkboxes.length;
+        selectAll.indeterminate = selectedCount > 0 && selectedCount < checkboxes.length;
+      }
+
+      selectAll.addEventListener("change", () => {
+        studentList.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+          checkbox.checked = selectAll.checked;
+        });
+        showStatus("");
+      });
+
+      studentList.addEventListener("change", (event) => {
+        if (event.target.matches('input[type="checkbox"]')) updateSelectAll();
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        showStatus("");
+        const hasSubjects = [...subjectSelect.options].some((option) => option.value);
+        if (!hasSubjects) {
+          showStatus("No subjects are available to search yet.", true);
+          return;
+        }
+        if (!form.reportValidity()) return;
+        const selectedStudents = studentList.querySelectorAll('input[type="checkbox"]:checked').length;
+        if (selectedStudents === 0) {
+          showStatus("Select at least one student to continue.", true);
+          return;
+        }
+        showStatus("Written test schedule details are not available in this browser yet.", true);
+      });
+
+      document.querySelector("#cancel-search").addEventListener("click", () => {
+        form.reset();
+        studentList.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+          checkbox.checked = true;
+        });
+        updateSelectAll();
+        showStatus("");
+      });
+
+      document.querySelector("#toggle-search").addEventListener("click", (event) => {
+        const button = event.currentTarget;
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        button.setAttribute("aria-label", expanded ? "Expand schedule search" : "Collapse schedule search");
+        document.querySelector("#search-card-content").hidden = expanded;
+        button.innerHTML = `<i data-lucide="${expanded ? "chevron-down" : "chevron-up"}" aria-hidden="true"></i>`;
+        if (window.lucide) lucide.createIcons();
+      });
+
+      if (window.lucide) lucide.createIcons();
+    })();
+  </script>
+  <script src="../../../../site-assistant.js"></script>
+</body>
+</html>
