@@ -3631,6 +3631,59 @@ button {
   .attendance-date-field { grid-column: 1 / -1; }
 }
 
+@media (max-width: 600px) {
+  .performance-chart {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 4px;
+    min-height: 150px;
+    overflow: visible;
+  }
+
+  .performance-axis {
+    font-size: 9px;
+    line-height: 12px;
+  }
+
+  .performance-bars {
+    gap: 2px;
+    padding-inline: 0;
+  }
+
+  .performance-bars dt {
+    font-size: 8px;
+    line-height: 10px;
+  }
+
+  .performance-bars dd {
+    font-size: 8px;
+  }
+
+  .performance-bars > div::before {
+    inset-inline: 22%;
+    width: 56%;
+    max-width: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .performance-chart {
+    grid-template-columns: 27px minmax(0, 1fr);
+  }
+
+  .performance-axis {
+    font-size: 8px;
+  }
+
+  .performance-bars {
+    gap: 1px;
+  }
+
+  .performance-bars dt,
+  .performance-bars dd {
+    font-size: 7.5px;
+  }
+}
+
 @media (max-width: 1200px) {
   .performance-bars dt span { display: block; }
   .performance-chart { margin-bottom: 29px; }
@@ -4580,4 +4633,81 @@ button {
 
 @media (max-width: 480px) {
   .performance-term-panel { width: min(256px, calc(100vw - 114px)); }
+}
+
+@media (max-width: 760px) {
+  .app-shell[data-mobile-navigation] .welcome-hero {
+    margin: 12px 10px 8px;
+    padding: clamp(16px, 5vw, 24px);
+    border-radius: 17px;
+  }
+
+  .app-shell[data-mobile-navigation] .hero-copy { width: 100%; }
+  .app-shell[data-mobile-navigation] .hero-copy h1 { max-width: 18ch; font-size: clamp(27px, 7vw, 37px); }
+  .app-shell[data-mobile-navigation] .hero-description { max-width: 38ch; font-size: 14px; }
+  .app-shell[data-mobile-navigation] .hero-ribbon { opacity: 1; }
+  .app-shell[data-mobile-navigation] .hero-building {
+    background-image:
+      linear-gradient(90deg, #06273f 0%, rgb(6 39 63 / 60%) 35%, transparent 85%),
+      url('../../assets/school-image.png');
+    filter: none;
+    opacity: 1;
+  }
+  .app-shell[data-mobile-navigation] .hero-copy :is(.hero-greeting, .hero-description) {
+    text-shadow: 0 1px 4px #02172c;
+  }
+  .app-shell[data-mobile-navigation] .hero-badge { white-space: normal; }
+  .app-shell[data-mobile-navigation] .hero-badge svg { flex: none; }
+  .app-shell[data-mobile-navigation] .dashboard { padding-inline: 10px; }
+  .app-shell[data-mobile-navigation] .section-heading { gap: 5px 8px; }
+
+  .app-shell[data-mobile-navigation] .students-overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 10px;
+  }
+
+  .app-shell[data-mobile-navigation] .metric-card.overview-stat-card {
+    width: 100%;
+    height: auto;
+    min-height: 128px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 8px 7px 8px 11px;
+  }
+
+  .app-shell[data-mobile-navigation] .overview-stat-card .metric-icon {
+    width: 44px;
+    height: 40px;
+    flex: none;
+  }
+
+  .app-shell[data-mobile-navigation] .overview-stat-card .metric-icon img {
+    width: 62px;
+    height: 62px;
+    transform: translate(-9px, -11px);
+  }
+
+  .app-shell[data-mobile-navigation] .overview-stat-card .metric-divider { display: none; }
+  .app-shell[data-mobile-navigation] .overview-stat-card .metric-content { padding-right: 0; }
+  .app-shell[data-mobile-navigation] .overview-stat-card .metric-content span {
+    font-size: clamp(14px, 4vw, 16px);
+    white-space: normal;
+  }
+  .app-shell[data-mobile-navigation] .overview-stat-card .metric-content strong {
+    font-size: clamp(22px, 6.5vw, 26px);
+  }
+
+  .app-shell[data-mobile-navigation] .overview-stat-card .metric-ribbon {
+    width: 20px;
+    height: 29px;
+    right: 5px;
+  }
+
+  .app-shell[data-mobile-navigation] .overview-stat-card .metric-ribbon svg {
+    width: 13px;
+    height: 13px;
+  }
 }
