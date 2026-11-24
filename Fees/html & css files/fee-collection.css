@@ -20,35 +20,9 @@ body { min-width: 320px; color: #152235; background: #f6f6f5; }
   box-shadow: 0 4px 12px #10263e16;
 }
 
-.fee-hero::after {
-  content: "";
-  position: absolute;
-  inset: auto -5% -62px 52%;
-  z-index: -1;
-  height: 108px;
-  border-top: 2px solid #c3a16b;
-  border-radius: 65% 45% 0 0;
-  background: linear-gradient(130deg, #c3a16b1c, #c3a16b06);
-  box-shadow: 0 -5px 0 #c3a16b16, 0 -10px 0 #c3a16b0b;
-  transform: rotate(-9deg);
-  pointer-events: none;
-}
 
 .fee-hero h1 { margin: 0; font-size: clamp(29px, 3.2vw, 39px); font-weight: 600; letter-spacing: -.025em; }
 .fee-description { margin: 6px 0 0; color: #f7f1e5; font-size: 14px; line-height: 1.5; }
-.fee-hero-icon {
-  width: 72px;
-  height: 72px;
-  flex: none;
-  display: grid;
-  place-items: center;
-  border: 1px solid #d5a65055;
-  border-radius: 27px;
-  color: #ecd4a3;
-  background: #ffffff0f;
-  transform: rotate(-8deg);
-}
-.fee-hero-icon svg { width: 35px; height: 35px; stroke-width: 1.5; }
 
 .fee-content { width: 100%; padding: 12px clamp(14px, 1.5vw, 28px) 18px; }
 .fee-form-card { padding: 22px clamp(18px, 2vw, 32px); border: 1px solid var(--school-border); border-radius: 23px; background: var(--school-surface); box-shadow: 0 7px 22px #15223512; }
@@ -82,8 +56,6 @@ body { min-width: 320px; color: #152235; background: #f6f6f5; }
   .fee-hero { min-height: 0; padding: 17px 18px; }
   .fee-hero h1 { font-size: clamp(22px, 6vw, 27px); }
   .fee-description { max-width: 290px; font-size: 14px; line-height: 1.5; }
-  .fee-hero-icon { width: 48px; height: 48px; border-radius: 15px; }
-  .fee-hero-icon svg { width: 23px; height: 23px; }
   .fee-content { padding-bottom: 18px; }
   .fee-form-card { padding: 17px 14px; border-radius: 18px; }
   .collection-mode { min-height: 44px; gap: 18px; margin-bottom: 20px; padding: 7px 12px; }

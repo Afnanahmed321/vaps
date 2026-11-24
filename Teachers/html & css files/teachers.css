@@ -400,19 +400,6 @@ button {
   box-shadow: 0 4px 12px #10263e16;
 }
 
-.page-heading::after {
-  content: "";
-  position: absolute;
-  inset: auto -5% -62px 52%;
-  z-index: -1;
-  height: 108px;
-  border-top: 2px solid #c3a16b;
-  border-radius: 65% 45% 0 0;
-  background: linear-gradient(130deg, #c3a16b1c, #c3a16b06);
-  box-shadow: 0 -5px 0 #c3a16b16, 0 -10px 0 #c3a16b0b;
-  transform: rotate(-9deg);
-  pointer-events: none;
-}
 
 .page-heading h1 {
   margin: 0;
@@ -448,25 +435,7 @@ button {
   color: #ecd4a3;
 }
 
-.banner-mark {
-  width: 72px;
-  height: 72px;
-  flex: none;
-  display: grid;
-  place-items: center;
-  border: 1px solid #d5a65055;
-  border-radius: 27px;
-  color: #ecd4a3;
-  background: #ffffff0f;
-  box-shadow: 0 14px 35px #0d1a411f;
-  transform: rotate(-8deg);
-}
 
-.banner-mark svg {
-  width: 35px;
-  height: 35px;
-  stroke-width: 1.5;
-}
 
 .content-area {
   width: 100%;
@@ -1211,8 +1180,9 @@ body {
   display: grid;
   place-items: center;
   border-radius: 14px;
-  color: #244762;
-  background: #eef2ff;
+  border: 1px solid #e8d9be;
+  color: #79521f;
+  background: #f8f3e9;
 }
 
 .dialog-icon svg {
@@ -1226,7 +1196,7 @@ body {
 
 .dialog-kicker {
   margin: 0 0 3px;
-  color: #244762;
+  color: #79521f;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.2px;
@@ -1250,7 +1220,7 @@ body {
   display: grid;
   place-items: center;
   margin-left: auto;
-  border: 1px solid #e8ebf2;
+  border: 1px solid #e8dece;
   border-radius: 10px;
   color: #7a869c;
   background: #fff;
@@ -1284,7 +1254,7 @@ body {
   width: 100%;
   height: 40px;
   padding: 0 11px;
-  border: 1px solid #e0e5ef;
+  border: 1px solid #e7dfd2;
   border-radius: 10px;
   outline: 0;
   color: #34415f;
@@ -1294,8 +1264,8 @@ body {
 
 .employee-form-grid input:focus,
 .employee-form-grid select:focus {
-  border-color: #aabcfb;
-  box-shadow: 0 0 0 3px rgba(36, 71, 98, .1);
+  border-color: #b88d47;
+  box-shadow: 0 0 0 3px #c3a16b29;
 }
 
 .dialog-error {
@@ -1315,8 +1285,10 @@ body {
   gap: 8px;
   margin-top: 18px;
   padding-top: 15px;
-  border-top: 1px solid #edf0f5;
+  border-top: 1px solid #e8dece;
 }
+
+.dialog-actions .add-button { border-color: #c3a16b; }
 
 .toast {
   position: fixed;
@@ -1504,16 +1476,7 @@ body {
     font-size: 27px;
   }
 
-  .banner-mark {
-    width: 58px;
-    height: 58px;
-    border-radius: 20px;
-  }
 
-  .banner-mark svg {
-    width: 29px;
-    height: 29px;
-  }
 
   .directory-toolbar {
     padding: 12px;
@@ -1610,16 +1573,7 @@ body {
     font-size: 14px;
   }
 
-  .banner-mark {
-    width: 43px;
-    height: 43px;
-    border-radius: 14px;
-  }
 
-  .banner-mark svg {
-    width: 24px;
-    height: 24px;
-  }
 
   .toolbar-actions {
     flex-wrap: wrap;

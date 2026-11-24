@@ -1,0 +1,181 @@
+.academic-years-toolbar { align-items: center; flex-wrap: wrap; }
+.academic-years-toolbar h2 { margin: 0; color: var(--school-ink); font-size: 21px; }
+.academic-year-note { display: flex; align-items: center; gap: 7px; margin: 6px 0 0; color: #79521f; font-size: 14px; }
+.academic-year-note svg { width: 16px; height: 16px; flex: none; }
+.academic-years-search { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 17px; }
+.academic-years-search .record-search { margin: 0; }
+#year-feedback { margin: 0; color: #536172; font-size: 13px; }
+#year-feedback:empty { display: none; }
+.academic-year-table { min-width: 970px; }
+.academic-year-table td { white-space: nowrap; }
+.academic-year-table tbody tr:hover { background: #f7f7f6; }
+.academic-year-table .sort-button { font-size: 13px; }
+.year-empty { margin: 18px; color: #536172; }
+.year-row-actions { display: flex; align-items: center; gap: 8px; }
+.year-row-actions button { flex: none; }
+.year-row-actions .year-edit-button { color: #193e5d; }
+.year-row-actions .year-edit-button svg { width: 17px; height: 17px; }
+.year-status { display: inline-flex; align-items: center; gap: 5px; color: #536172; font-size: 12px; }
+.year-status input {
+  appearance: none;
+  position: relative;
+  width: 31px;
+  height: 18px;
+  margin: 0;
+  border-radius: 99px;
+  background: #697785;
+  cursor: pointer;
+}
+.year-status input::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+}
+.year-status input:checked { background: #247354; }
+.year-status input:checked::after { left: 16px; }
+.year-status input:focus-visible { outline: 2px solid #b88d47; outline-offset: 2px; }
+.year-status:has(:checked) { color: #226448; }
+.year-flag { display: inline-block; padding: 3px 8px; border-radius: 20px; background: #f0f1f0; color: #536172; font-size: 12px; font-weight: 600; }
+.year-flag.is-set { background: #e1f2e8; color: #235a43; }
+.year-dialog {
+  width: min(560px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  padding: 0;
+  border: 1px solid #dcc69f;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 24px 70px #061b303d;
+}
+.year-dialog::backdrop { background: #061b3077; }
+.year-dialog-header {
+  --module-wave-width: min(44%, 224px);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 88px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #1d3851;
+  color: #fff9ed;
+  background: radial-gradient(ellipse at 80% 100%, #164663, #09253e 57%, #061b30);
+}
+.year-dialog-header h2 { margin: 0; color: inherit; font-size: 22px; }
+.year-dialog-header button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  border: 1px solid #c3a16b88;
+  border-radius: 10px;
+  color: #fff9ed;
+  background: #10263e;
+}
+.year-dialog-header button:hover { border-color: #d5a650; background: #193e5d; }
+.year-dialog-header svg { width: 17px; height: 17px; }
+.year-dialog-body { padding: 16px 18px; background: #f6f7f7; }
+.year-popup-panel {
+  overflow: hidden;
+  border: 2px solid #e5e0d7;
+  border-radius: 15px;
+  background: #fff;
+}
+.year-popup-panel-heading {
+  display: flex;
+  align-items: center;
+  min-height: 53px;
+  padding: 8px 14px;
+  border-bottom: 1px solid #e7e5df;
+  background: #f7f4ed;
+}
+.year-popup-panel-heading h3 {
+  margin: 0;
+  padding-left: 9px;
+  border-left: 3px solid #9d793e;
+  color: #182440;
+  font-size: 17px;
+}
+.year-popup-panel-content { padding: 13px 14px; }
+.year-edit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.year-field { display: grid; gap: 5px; min-width: 0; color: #34415d; font-size: 14px; font-weight: 600; }
+.year-field :is(input, select) { width: 100%; min-width: 0; min-height: 38px; padding: 6px 8px; border: 1px solid #e5e0d7; border-radius: 8px; color: #152235; background: #fff; font: inherit; }
+.year-check { display: flex; align-items: center; align-self: end; gap: 7px; min-height: 38px; font-size: 14px; }
+.year-check input { accent-color: #10263e; }
+.year-flag-note { grid-column: 1 / -1; margin: 0; color: #536172; font-size: 13px; }
+.year-dialog-actions { position: sticky; bottom: 0; display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; padding: 12px 18px; border-top: 1px solid #e5e0d7; background: #fafafa; }
+.year-order-note { margin: 0 0 10px; color: #536172; font-size: 14px; }
+.year-order-list { display: grid; gap: 5px; }
+.year-order-list label { display: grid; grid-template-columns: minmax(0, 1fr) 82px; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 7px; background: #f5f5f4; }
+.year-order-list input { width: 100%; padding: 5px 8px; border: 1px solid #e5e0d7; border-radius: 6px; background: #fff; }
+#year-order-error { margin: 8px 0 0; color: #92383e; font-size: 13px; }
+#year-order-error:empty { margin: 0; }
+@media (max-width: 540px) {
+  .year-dialog-header { min-height: 72px; }
+  .year-edit-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+.year-dialog.is-report { width: min(860px, calc(100vw - 24px)); }
+.year-report-tools {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px 18px;
+  border-bottom: 1px solid #e5e0d7;
+  background: #f7f7f6;
+}
+.year-report-tools .button { justify-content: center; }
+.year-report-tools #year-report-excel { color: #226448; }
+.year-report-document { padding: 18px clamp(14px, 3vw, 28px) 20px; }
+.year-report-school {
+  display: grid;
+  place-items: center;
+  padding: 7px 0 15px;
+  border-bottom: 1px solid #e5e0d7;
+}
+.year-report-logo {
+  display: block;
+  width: min(100%, 590px);
+  height: auto;
+}
+#year-report-heading { margin: 13px 0 10px; color: #193e5d; font-size: 19px; text-align: center; }
+.year-report-table-wrap { overflow-x: auto; border: 1px solid #e5e0d7; border-radius: 13px; }
+.year-report-table { width: 100%; min-width: 340px; border-spacing: 0; text-align: center; font-size: 14px; font-variant-numeric: tabular-nums; }
+.year-report-table :is(th, td) { padding: 8px; white-space: nowrap; }
+.year-report-table th { color: #193e5d; background: #f5f4f1; }
+.year-report-table td { border-top: 1px solid #e5e0d7; }
+.year-report-table tr:nth-child(even) { background: #fafafa; }
+.year-report-pagination,
+.year-report-pagination nav { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.year-report-pagination { justify-content: space-between; margin-top: 12px; color: #536172; font-size: 13px; }
+.year-report-pagination .button { min-height: 34px; }
+.year-report-pagination .button:disabled { opacity: .5; cursor: default; }
+
+@media print {
+  body:has(.year-dialog.is-report[open]) > :not(.year-dialog) { display: none !important; }
+  .year-dialog.is-report[open] {
+    position: static;
+    inset: auto;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    overflow: visible;
+    border: 0;
+    box-shadow: none;
+  }
+  .year-dialog.is-report::backdrop { display: none; }
+  .year-dialog.is-report :is(.year-dialog-header, .year-report-tools, .year-report-pagination) { display: none; }
+  .year-report-document { padding: 0; }
+  .year-report-table-wrap { overflow: visible; }
+  .year-report-table thead { display: table-header-group; }
+  .year-report-table tr { break-inside: avoid; }
+}

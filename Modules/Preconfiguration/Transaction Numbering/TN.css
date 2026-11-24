@@ -182,7 +182,7 @@ button {
   border-radius: 12px;
   color: #687791;
   background: transparent;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   white-space: nowrap;
   transition: color .16s ease, background .16s ease, box-shadow .16s ease;
@@ -907,7 +907,7 @@ button {
   .tn-tab {
     min-height: 39px;
     padding: 0 13px;
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .tn-card {

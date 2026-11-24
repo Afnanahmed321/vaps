@@ -2178,3 +2178,41 @@ select:not([multiple]):not(.page-size select):not(.oral-table-pagination select)
 }
 
 .app-shell :is(.picker-menu, .filter-menu) input { accent-color: #193e5d; }
+
+/* Keep the same corner artwork on Module Explorer and its destination pages. */
+.module-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+:is(.main-area, .reports-page) > .module-banner {
+  --module-wave-width: min(50%, 385px);
+}
+
+.module-banner.module-heading::after,
+.record-dialog > form > .module-banner::after,
+#edit-dialog > form > .edit-dialog-header.module-banner::after,
+.year-dialog > .module-banner::after,
+:is(.main-area, .reports-page) > .module-banner::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 auto;
+  z-index: -1;
+  width: var(--module-wave-width, min(57%, 385px));
+  height: auto;
+  aspect-ratio: 1236 / 466;
+  border: 0;
+  border-radius: 0;
+  background: url("System%20Overview/Assets/module-banner-wave.svg") bottom right / contain no-repeat;
+  box-shadow: none;
+  transform: none;
+  mask-image: linear-gradient(to right, transparent, #000 23%);
+  pointer-events: none;
+}
+
+@media (max-width: 560px) {
+  :is(.main-area, .reports-page) > .module-banner {
+    --module-wave-width: min(40%, 155px);
+  }
+}

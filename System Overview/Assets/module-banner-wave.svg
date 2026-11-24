@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1236 466">
+  <defs>
+    <radialGradient id="navy" cx=".48" cy=".46" r=".79">
+      <stop stop-color="#144d7c"/>
+      <stop offset=".64" stop-color="#0a2c4a"/>
+      <stop offset="1" stop-color="#061d31"/>
+    </radialGradient>
+    <linearGradient id="fine" x2="1" y2=".15">
+      <stop stop-color="#7e5627" stop-opacity=".2"/>
+      <stop offset=".38" stop-color="#caa166"/>
+      <stop offset=".72" stop-color="#f8deb0"/>
+      <stop offset="1" stop-color="#8e5f2a"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1=".02" y1=".93" x2="1" y2=".25">
+      <stop stop-color="#9b6733"/>
+      <stop offset=".26" stop-color="#e6ac5a"/>
+      <stop offset=".58" stop-color="#fff1d4"/>
+      <stop offset=".8" stop-color="#f5c87d"/>
+      <stop offset="1" stop-color="#9b6428"/>
+    </linearGradient>
+    <linearGradient id="cream" x1=".43" y1="0" x2=".65" y2="1">
+      <stop stop-color="#c8a581"/>
+      <stop offset=".53" stop-color="#ead8c1"/>
+      <stop offset="1" stop-color="#f2e4d1"/>
+    </linearGradient>
+    <linearGradient id="shadow" x1=".48" x2=".51" y2="1">
+      <stop stop-color="#041322"/>
+      <stop offset="1" stop-color="#0c2e4b"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#navy)" d="M0 0h1236v466H0z"/>
+  <g fill="none" stroke="url(#fine)" stroke-width="2.4">
+    <path d="M35 302C244 319 405 239 567 164S977 2 1239 111"/>
+    <path opacity=".8" d="M45 309C263 332 408 264 580 189S987 37 1239 149"/>
+    <path opacity=".65" d="M45 316C272 339 430 280 600 213S991 76 1239 184"/>
+    <path opacity=".49" d="M54 323C286 348 443 305 622 239S993 113 1239 216"/>
+    <path opacity=".32" d="M62 334C303 358 462 329 644 266S1006 151 1239 246"/>
+  </g>
+  <path fill="url(#shadow)" d="M-4 285C174 293 364 365 561 353C796 341 1014 205 1239 239V466H-4Z"/>
+  <path d="M-4 286C174 294 364 366 561 354C796 342 1014 206 1239 240" fill="none" stroke="url(#ribbon)" stroke-width="8"/>
+  <path d="M-4 296C174 304 364 376 561 364C796 352 1014 216 1239 250" fill="none" stroke="#bf9256" stroke-opacity=".32" stroke-width="2"/>
+  <path fill="#0b365a" opacity=".42" d="M0 394C280 350 433 479 613 392L815 325 850 466H0Z"/>
+  <path fill="url(#ribbon)" d="M1236 215C1045 175 904 217 706 303C524 382 361 438 146 466H1236Z"/>
+  <path fill="url(#cream)" d="M1236 269C1051 224 904 286 722 350C549 413 409 453 275 466H1207Q1229 446 1236 427Z"/>
+</svg>

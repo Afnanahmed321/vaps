@@ -207,7 +207,6 @@ button,a,select { -webkit-tap-highlight-color:transparent; }
 
 /* Student report page, using the Admission Register page theme */
 .page-banner { min-height:180px; flex:none; padding:17px clamp(22px,4vw,48px) 20px; display:flex; flex-direction:column; align-items:flex-start; position:relative; overflow:hidden; color:#fff; background:linear-gradient(115deg,#2c4478 0%,#304a82 58%,#354f87 100%); }
-.page-banner:after { content:""; position:absolute; width:400px; height:400px; right:8%; top:-290px; border:1px solid #ffffff18; border-radius:50%; box-shadow:0 0 0 42px #ffffff08,0 0 0 84px #ffffff06,0 0 0 126px #ffffff04; }
 .student-breadcrumb { height:24px; display:flex; align-items:center; gap:12px; position:relative; z-index:2; color:#dce5ff; font-size:12px; font-weight:600; }
 .student-breadcrumb a { height:20px; display:grid; place-items:center; color:#fff; }
 .student-breadcrumb a svg { width:16px; height:16px; }
@@ -218,8 +217,6 @@ button,a,select { -webkit-tap-highlight-color:transparent; }
 .student-hero-icon svg { width:27px; height:27px; }
 .page-banner h1 { margin:0; color:#fff; font-size:clamp(25px,3vw,35px); letter-spacing:-.8px; font-weight:600; }
 .student-hero-content p { margin:6px 0 0; color:#e0e7fb; font-size:13px; }
-.banner-mark { width:70px; height:70px; display:grid; place-items:center; border:1px solid #ffffff25; border-radius:21px; color:#dce4ff; background:#ffffff12; transform:rotate(5deg); position:absolute; z-index:1; right:clamp(25px,5vw,65px); top:57px; }
-.banner-mark svg { width:34px; height:34px; }
 .content-area { width:100%; max-width:none; margin:0 auto; padding:20px clamp(14px,1.5vw,28px); flex:1; }
 .student-card { overflow:hidden; border:1px solid #e7eaf6; border-radius:19px; background:rgba(255,255,255,.96); box-shadow:0 8px 28px #1b2d6110; }
 .card-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; padding:18px 22px; border-bottom:1px solid #edf0f8; }
@@ -289,7 +286,6 @@ button,a,select { -webkit-tap-highlight-color:transparent; }
   .student-hero-icon { width:46px; height:46px; border-radius:14px; }
   .student-hero-content p { max-width:260px; font-size:11px; line-height:1.45; }
   .page-banner h1 { font-size:21px; }
-  .banner-mark { width:46px; height:46px; right:15px; top:61px; }
   .content-area { padding:12px 9px; }
   .student-layout { grid-template-columns:1fr; }
   .field-list { height:250px; }
@@ -408,30 +404,7 @@ button,a,select { -webkit-tap-highlight-color:transparent; }
   box-shadow: 0 4px 12px #10263e16;
 }
 
-.page-banner::after {
-  inset: auto -5% -62px 52%;
-  width: auto;
-  height: 108px;
-  border: 0;
-  border-top: 2px solid #c3a16b;
-  border-radius: 65% 45% 0 0;
-  background: linear-gradient(130deg, #c3a16b1c, #c3a16b06);
-  box-shadow: 0 -5px 0 #c3a16b16, 0 -10px 0 #c3a16b0b;
-  transform: rotate(-9deg);
-  pointer-events: none;
-}
 
-.page-banner::before {
-  content: "";
-  position: absolute;
-  inset: auto -6% -58px 44%;
-  height: 110px;
-  border-top: 1px solid #d3b27b66;
-  border-radius: 60% 45% 0 0;
-  box-shadow: 0 -7px 0 #d3b27b20, 0 -14px 0 #d3b27b12;
-  transform: rotate(-9deg);
-  pointer-events: none;
-}
 
 .student-hero-content {
   min-width: 0;
@@ -461,18 +434,6 @@ button,a,select { -webkit-tap-highlight-color:transparent; }
   line-height: 1.5;
 }
 
-.banner-mark {
-  position: relative;
-  inset: auto;
-  width: 72px;
-  height: 72px;
-  flex: none;
-  color: #d6e3ed;
-  border-color: #dce6ef50;
-  border-radius: 25px;
-  background: linear-gradient(145deg, rgba(255,255,255,.17), rgba(255,255,255,.06));
-  box-shadow: 0 14px 35px rgba(13, 26, 65, .12);
-}
 
 .content-area {
   max-width: none;
@@ -922,10 +883,6 @@ button,a,select { -webkit-tap-highlight-color:transparent; }
     font-size: 25px;
   }
 
-  .banner-mark {
-    width: 50px;
-    height: 50px;
-  }
 
   .content-area {
     margin-top: 0;
@@ -1026,16 +983,7 @@ button,a,select { -webkit-tap-highlight-color:transparent; }
     letter-spacing: -.5px;
   }
 
-  .banner-mark {
-    width: 37px;
-    height: 37px;
-    border-radius: 11px;
-  }
 
-  .banner-mark svg {
-    width: 21px;
-    height: 21px;
-  }
 
   .content-area {
     padding-right: 8px;

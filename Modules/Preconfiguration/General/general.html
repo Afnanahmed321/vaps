@@ -60,17 +60,11 @@
         </div>
       </header>
 
-      <section class="page-banner">
+      <section class="page-banner module-banner">
         <div class="banner-copy">
-          <p class="eyebrow">PRE-CONFIGURATION <span>›</span> CONFIGURATION</p>
           <h1><i data-lucide="square-pen" aria-hidden="true"></i>General Configuration</h1>
           <p class="banner-subtitle">Manage general settings for the institution.</p>
         </div>
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
-          <a href="../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools">Pre Configuration</a>
-          <i data-lucide="chevron-right" aria-hidden="true"></i>
-          <span>General Configuration</span>
-        </nav>
       </section>
 
       <section class="content-area">
@@ -145,7 +139,7 @@
 
   <dialog class="edit-dialog" id="edit-dialog" aria-labelledby="edit-dialog-title">
     <form id="edit-form">
-      <header class="edit-dialog-header">
+      <header class="edit-dialog-header module-action-header module-banner">
         <div>
           <h2 id="edit-dialog-title">Edit General Configuration</h2>
         </div>
@@ -155,186 +149,251 @@
         <div class="settings-columns">
           <div class="settings-column">
             <section class="settings-panel" aria-labelledby="otp-settings-title">
-              <h3 id="otp-settings-title">OTP Settings</h3>
-              <div class="settings-options">
-                <label class="settings-option"><input type="checkbox" name="mobileOtpApplicable"><span>Mobile OTP Applicable</span></label>
-                <label class="settings-option"><input type="checkbox" name="emailOtpApplicable"><span>Email OTP Applicable</span></label>
+              <header class="settings-panel-header">
+                <h3 id="otp-settings-title">OTP Settings</h3>
+                <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="otp-settings-title" aria-expanded="true" aria-controls="otp-settings-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+              </header>
+              <div class="settings-panel-body" id="otp-settings-panel-body">
+                <div class="settings-options">
+                  <label class="settings-option"><input type="checkbox" name="mobileOtpApplicable"><span>Mobile OTP Applicable</span></label>
+                  <label class="settings-option"><input type="checkbox" name="emailOtpApplicable"><span>Email OTP Applicable</span></label>
+                </div>
               </div>
             </section>
 
             <section class="settings-panel" aria-labelledby="qr-settings-title">
-              <h3 id="qr-settings-title">QRCode/Whatsapp Settings</h3>
-              <div class="settings-options">
-                <label class="settings-option"><input type="checkbox" name="qrCodeEnable"><span>QRCode Enable</span></label>
-                <label class="settings-option"><input type="checkbox" name="whatsappEnable"><span>Whatsapp Enable</span></label>
+              <header class="settings-panel-header">
+                <h3 id="qr-settings-title">QRCode/Whatsapp Settings</h3>
+                <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="qr-settings-title" aria-expanded="true" aria-controls="qr-settings-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+              </header>
+              <div class="settings-panel-body" id="qr-settings-panel-body">
+                <div class="settings-options">
+                  <label class="settings-option"><input type="checkbox" name="qrCodeEnable"><span>QRCode Enable</span></label>
+                  <label class="settings-option"><input type="checkbox" name="whatsappEnable"><span>Whatsapp Enable</span></label>
+                </div>
               </div>
             </section>
 
             <section class="settings-panel" aria-labelledby="photo-settings-title">
-              <h3 id="photo-settings-title">Photos Path Settings</h3>
-              <div class="settings-fields">
-                <label class="settings-field" for="student-photo-path"><span>Student Photo Path</span><input id="student-photo-path" name="studentPhotoPath" type="text"></label>
-                <label class="settings-field" for="staff-photo-path"><span>Staff Photo Path</span><input id="staff-photo-path" name="staffPhotoPath" type="text"></label>
+              <header class="settings-panel-header">
+                <h3 id="photo-settings-title">Photos Path Settings</h3>
+                <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="photo-settings-title" aria-expanded="true" aria-controls="photo-settings-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+              </header>
+              <div class="settings-panel-body" id="photo-settings-panel-body">
+                <div class="settings-fields">
+                  <label class="settings-field" for="student-photo-path"><span>Student Photo Path</span><input id="student-photo-path" name="studentPhotoPath" type="text"></label>
+                  <label class="settings-field" for="staff-photo-path"><span>Staff Photo Path</span><input id="staff-photo-path" name="staffPhotoPath" type="text"></label>
+                </div>
               </div>
             </section>
 
             <section class="settings-panel" aria-labelledby="sms-email-title">
-              <h3 id="sms-email-title">SMS and Email Settings</h3>
-              <div class="settings-fields">
-                <label class="settings-field" for="sms-domain"><span>SMS Domain <b>*</b></span><input id="sms-domain" name="smsDomain" type="text" placeholder="Enter SMS domain"></label>
-                <label class="settings-field" for="sms-url"><span>SMS URL <b>*</b></span><input id="sms-url" name="smsUrl" type="text" placeholder="Enter SMS URL"></label>
-                <label class="settings-field" for="sms-username"><span>SMS Username <b>*</b></span><input id="sms-username" name="smsUsername" type="text" placeholder="Enter SMS username"></label>
-                <label class="settings-field" for="sms-password"><span>SMS Password <b>*</b></span><input id="sms-password" name="smsPassword" type="password" autocomplete="new-password"></label>
-                <label class="settings-field" for="sms-sender-id"><span>SMS Sender ID <b>*</b></span><input id="sms-sender-id" name="smsSenderId" type="text"></label>
-                <label class="settings-field" for="sms-working-key"><span>SMS Working Key <b>*</b></span><input id="sms-working-key" name="smsWorkingKey" type="password" autocomplete="new-password"></label>
-                <label class="settings-field" for="sms-footer"><span>SMS Footer</span><input id="sms-footer" name="smsFooter" type="text"></label>
-                <label class="settings-field" for="email-address"><span>Email Address <b>*</b></span><input id="email-address" name="emailAddress" type="email" placeholder="Enter email address"></label>
-                <label class="settings-field" for="email-password"><span>Email Password <b>*</b></span><input id="email-password" name="emailPassword" type="password" autocomplete="new-password"></label>
-                <label class="settings-field" for="host-name"><span>Host Name <b>*</b></span><input id="host-name" name="hostName" type="text" placeholder="e.g. smtp.example.com"></label>
-                <label class="settings-field" for="port-number"><span>Port No <b>*</b></span><input id="port-number" name="portNumber" type="number" min="0" value="587"></label>
-                <label class="settings-field" for="mail-description"><span>Mail General Description</span><input id="mail-description" name="mailDescription" type="text"></label>
-                <label class="settings-field" for="website"><span>Website</span><input id="website" name="website" type="text" placeholder="www.example.com"></label>
-                <label class="settings-field" for="principal-signature"><span>Principal Signature</span><input id="principal-signature" name="principalSignature" type="file" accept="image/*"></label>
-                <label class="settings-field" for="manager-signature"><span>Manager Signature</span><input id="manager-signature" name="managerSignature" type="file" accept="image/*"></label>
-              </div>
-              <div class="settings-options settings-options-compact">
-                <label class="settings-option"><input type="checkbox" name="smsActiveFlag"><span>SMS Active Flag</span></label>
+              <header class="settings-panel-header">
+                <h3 id="sms-email-title">SMS and Email Settings</h3>
+                <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="sms-email-title" aria-expanded="true" aria-controls="sms-email-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+              </header>
+              <div class="settings-panel-body" id="sms-email-panel-body">
+                <div class="settings-fields">
+                  <label class="settings-field" for="sms-domain"><span>SMS Domain <b>*</b></span><input id="sms-domain" name="smsDomain" type="text" placeholder="Enter SMS domain"></label>
+                  <label class="settings-field" for="sms-url"><span>SMS URL <b>*</b></span><input id="sms-url" name="smsUrl" type="text" placeholder="Enter SMS URL"></label>
+                  <label class="settings-field" for="sms-username"><span>SMS Username <b>*</b></span><input id="sms-username" name="smsUsername" type="text" placeholder="Enter SMS username"></label>
+                  <label class="settings-field" for="sms-password"><span>SMS Password <b>*</b></span><input id="sms-password" name="smsPassword" type="password" autocomplete="new-password"></label>
+                  <label class="settings-field" for="sms-sender-id"><span>SMS Sender ID <b>*</b></span><input id="sms-sender-id" name="smsSenderId" type="text"></label>
+                  <label class="settings-field" for="sms-working-key"><span>SMS Working Key <b>*</b></span><input id="sms-working-key" name="smsWorkingKey" type="password" autocomplete="new-password"></label>
+                  <label class="settings-field" for="sms-footer"><span>SMS Footer</span><input id="sms-footer" name="smsFooter" type="text"></label>
+                  <label class="settings-field" for="email-address"><span>Email Address <b>*</b></span><input id="email-address" name="emailAddress" type="email" placeholder="Enter email address"></label>
+                  <label class="settings-field" for="email-password"><span>Email Password <b>*</b></span><input id="email-password" name="emailPassword" type="password" autocomplete="new-password"></label>
+                  <label class="settings-field" for="host-name"><span>Host Name <b>*</b></span><input id="host-name" name="hostName" type="text" placeholder="e.g. smtp.example.com"></label>
+                  <label class="settings-field" for="port-number"><span>Port No <b>*</b></span><input id="port-number" name="portNumber" type="number" min="0" value="587"></label>
+                  <label class="settings-field" for="mail-description"><span>Mail General Description</span><input id="mail-description" name="mailDescription" type="text"></label>
+                  <label class="settings-field" for="website"><span>Website</span><input id="website" name="website" type="text" placeholder="www.example.com"></label>
+                  <label class="settings-field" for="principal-signature"><span>Principal Signature</span><input id="principal-signature" name="principalSignature" type="file" accept="image/*"></label>
+                  <label class="settings-field" for="manager-signature"><span>Manager Signature</span><input id="manager-signature" name="managerSignature" type="file" accept="image/*"></label>
+                </div>
+                <div class="settings-options settings-options-compact">
+                  <label class="settings-option"><input type="checkbox" name="smsActiveFlag"><span>SMS Active Flag</span></label>
+                </div>
               </div>
             </section>
           </div>
 
           <div class="settings-column">
             <section class="settings-panel" aria-labelledby="registration-settings-title">
-              <h3 id="registration-settings-title">General Registration Settings</h3>
-              <div class="settings-fields">
-                <label class="settings-field" for="cc-mail-id"><span>Cc Mail Id</span><input id="cc-mail-id" name="ccMailId" type="email"></label>
-                <label class="settings-field" for="bcc-mail-id"><span>Bcc Mail Id</span><input id="bcc-mail-id" name="bccMailId" type="email"></label>
-                <label class="settings-field" for="sendgrid-id"><span>SendGrid Id <b>*</b></span><input id="sendgrid-id" name="sendGridId" type="password" autocomplete="new-password"></label>
-              </div>
-              <div class="settings-options registration-options">
-                <label class="settings-option"><input type="checkbox" name="emailActiveFlag" checked><span>Email Active Flag</span></label>
-              </div>
-              <div class="settings-fields settings-numbers">
-                <label class="settings-field" for="pagination"><span>Pagination <b>*</b></span><input id="pagination" name="pagination" type="number" min="1" value="10"></label>
-                <label class="settings-field" for="page-pagination"><span>Page Pagination <b>*</b></span><input id="page-pagination" name="pagePagination" type="number" min="1" value="10"></label>
-                <label class="settings-field" for="report-pagination"><span>Report Pagination <b>*</b></span><input id="report-pagination" name="reportPagination" type="number" min="1" value="55"></label>
-                <label class="settings-field" for="reminder-days"><span>Reminder Days For Email <b>*</b></span><input id="reminder-days" name="reminderDaysForEmail" type="number" min="0" value="10"></label>
-                <label class="settings-field" for="class-capacity"><span>Class Capacity <b>*</b></span><input id="class-capacity" name="classCapacity" type="number" min="1" value="60"></label>
-                <label class="settings-field" for="section-capacity"><span>Section Capacity <b>*</b></span><input id="section-capacity" name="sectionCapacity" type="number" min="1" value="30"></label>
+              <header class="settings-panel-header">
+                <h3 id="registration-settings-title">General Registration Settings</h3>
+                <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="registration-settings-title" aria-expanded="true" aria-controls="registration-settings-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+              </header>
+              <div class="settings-panel-body" id="registration-settings-panel-body">
+                <div class="settings-fields">
+                  <label class="settings-field" for="cc-mail-id"><span>Cc Mail Id</span><input id="cc-mail-id" name="ccMailId" type="email"></label>
+                  <label class="settings-field" for="bcc-mail-id"><span>Bcc Mail Id</span><input id="bcc-mail-id" name="bccMailId" type="email"></label>
+                  <label class="settings-field" for="sendgrid-id"><span>SendGrid Id <b>*</b></span><input id="sendgrid-id" name="sendGridId" type="password" autocomplete="new-password"></label>
+                </div>
+                <div class="settings-options registration-options">
+                  <label class="settings-option"><input type="checkbox" name="emailActiveFlag" checked><span>Email Active Flag</span></label>
+                </div>
+                <div class="settings-fields settings-numbers">
+                  <label class="settings-field" for="pagination"><span>Pagination <b>*</b></span><input id="pagination" name="pagination" type="number" min="1" value="10"></label>
+                  <label class="settings-field" for="page-pagination"><span>Page Pagination <b>*</b></span><input id="page-pagination" name="pagePagination" type="number" min="1" value="10"></label>
+                  <label class="settings-field" for="report-pagination"><span>Report Pagination <b>*</b></span><input id="report-pagination" name="reportPagination" type="number" min="1" value="55"></label>
+                  <label class="settings-field" for="reminder-days"><span>Reminder Days For Email <b>*</b></span><input id="reminder-days" name="reminderDaysForEmail" type="number" min="0" value="10"></label>
+                  <label class="settings-field" for="class-capacity"><span>Class Capacity <b>*</b></span><input id="class-capacity" name="classCapacity" type="number" min="1" value="60"></label>
+                  <label class="settings-field" for="section-capacity"><span>Section Capacity <b>*</b></span><input id="section-capacity" name="sectionCapacity" type="number" min="1" value="30"></label>
+                </div>
               </div>
             </section>
 
             <section class="settings-panel" aria-labelledby="scheduling-title">
-              <h3 id="scheduling-title">General Scheduling</h3>
-              <div class="settings-fields">
-                <label class="settings-field" for="sc-locking-period"><span>SC Locking Period</span><input id="sc-locking-period" name="scLockingPeriod" type="number" min="0" value="0"></label>
-                <label class="settings-field" for="fp-locking-period"><span>FP Locking Period</span><input id="fp-locking-period" name="fpLockingPeriod" type="number" min="0" value="0"></label>
-                <label class="settings-field" for="print-footer"><span>Print Footer</span><input id="print-footer" name="printFooter" type="text"></label>
-              </div>
-              <div class="settings-option-grid">
-                <label class="settings-option"><input type="checkbox" name="commonTransactionType"><span>Common Transaction Type</span></label>
-                <label class="settings-option"><input type="checkbox" name="scActive"><span>SC Active</span></label>
-                <label class="settings-option"><input type="checkbox" name="fpActive"><span>FP Active</span></label>
-                <label class="settings-option"><input type="checkbox" name="onlineFpActive"><span>Online FP Active</span></label>
-                <label class="settings-option"><input type="checkbox" name="faceReaderActive"><span>Face Reader Active</span></label>
-                <label class="settings-option"><input type="checkbox" name="defaultStudentSelection"><span>Default Student Selection</span></label>
-                <label class="settings-option"><input type="checkbox" name="admissionNoColumnDisplay" checked><span>AdmissionNo Column Display</span></label>
-                <label class="settings-option"><input type="checkbox" name="regNoColumnDisplay"><span>RegNo Column Display</span></label>
-                <label class="settings-option"><input type="checkbox" name="categoryColumnDisplay"><span>Category Column Display</span></label>
-                <label class="settings-option"><input type="checkbox" name="rollNoColumnDisplay"><span>RollNo Column Display</span></label>
-              </div>
-              <div class="settings-fields settings-select-fields">
-                <label class="settings-field" for="classwise-payment"><span>Classwise Payment <b>*</b></span>
-                  <select id="classwise-payment" name="classwisePayment">
-                    <option value="">--Select--</option><option value="yes">Yes</option><option value="no">No</option>
-                  </select>
-                </label>
-                <label class="settings-field" for="email-type"><span>Email Type <b>*</b></span>
-                  <select id="email-type" name="emailType">
-                    <option value="">--Select--</option><option value="smtp">SMTP</option><option value="sendgrid">SendGrid</option>
-                  </select>
-                </label>
-                <label class="settings-field" for="sports-dropdown"><span>Sports Point</span>
-                  <span class="settings-inline-option"><input id="sports-dropdown" type="checkbox" name="sportsPointDropdownFlag"><span>DropDown Flag</span></span>
-                </label>
+              <header class="settings-panel-header">
+                <h3 id="scheduling-title">General Scheduling</h3>
+                <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="scheduling-title" aria-expanded="true" aria-controls="scheduling-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+              </header>
+              <div class="settings-panel-body" id="scheduling-panel-body">
+                <div class="settings-fields">
+                  <label class="settings-field" for="sc-locking-period"><span>SC Locking Period</span><input id="sc-locking-period" name="scLockingPeriod" type="number" min="0" value="0"></label>
+                  <label class="settings-field" for="fp-locking-period"><span>FP Locking Period</span><input id="fp-locking-period" name="fpLockingPeriod" type="number" min="0" value="0"></label>
+                  <label class="settings-field" for="print-footer"><span>Print Footer</span><input id="print-footer" name="printFooter" type="text"></label>
+                </div>
+                <div class="settings-option-grid">
+                  <label class="settings-option"><input type="checkbox" name="commonTransactionType"><span>Common Transaction Type</span></label>
+                  <label class="settings-option"><input type="checkbox" name="scActive"><span>SC Active</span></label>
+                  <label class="settings-option"><input type="checkbox" name="fpActive"><span>FP Active</span></label>
+                  <label class="settings-option"><input type="checkbox" name="onlineFpActive"><span>Online FP Active</span></label>
+                  <label class="settings-option"><input type="checkbox" name="faceReaderActive"><span>Face Reader Active</span></label>
+                  <label class="settings-option"><input type="checkbox" name="defaultStudentSelection"><span>Default Student Selection</span></label>
+                  <label class="settings-option"><input type="checkbox" name="admissionNoColumnDisplay" checked><span>AdmissionNo Column Display</span></label>
+                  <label class="settings-option"><input type="checkbox" name="regNoColumnDisplay"><span>RegNo Column Display</span></label>
+                  <label class="settings-option"><input type="checkbox" name="categoryColumnDisplay"><span>Category Column Display</span></label>
+                  <label class="settings-option"><input type="checkbox" name="rollNoColumnDisplay"><span>RollNo Column Display</span></label>
+                </div>
+                <div class="settings-fields settings-select-fields">
+                  <label class="settings-field" for="classwise-payment"><span>Classwise Payment <b>*</b></span>
+                    <select id="classwise-payment" name="classwisePayment">
+                      <option value="">--Select--</option><option value="yes">Yes</option><option value="no">No</option>
+                    </select>
+                  </label>
+                  <label class="settings-field" for="email-type"><span>Email Type <b>*</b></span>
+                    <select id="email-type" name="emailType">
+                      <option value="">--Select--</option><option value="smtp">SMTP</option><option value="sendgrid">SendGrid</option>
+                    </select>
+                  </label>
+                  <label class="settings-field" for="sports-dropdown"><span>Sports Point</span>
+                    <span class="settings-inline-option"><input id="sports-dropdown" type="checkbox" name="sportsPointDropdownFlag"><span>DropDown Flag</span></span>
+                  </label>
+                </div>
               </div>
             </section>
           </div>
         </div>
 
         <section class="settings-panel" aria-labelledby="combo-selection-title">
-          <h3 id="combo-selection-title">Default Combo Selection <b>*</b></h3>
-          <div class="radio-option-grid">
-            <label class="settings-option"><input type="radio" name="defaultComboSelection" value="name-admno"><span>NAME : ADMNO</span></label>
-            <label class="settings-option"><input type="radio" name="defaultComboSelection" value="regno-name"><span>REGNO : NAME</span></label>
-            <label class="settings-option"><input type="radio" name="defaultComboSelection" value="admno-name" checked><span>ADMNO : NAME</span></label>
-            <label class="settings-option"><input type="radio" name="defaultComboSelection" value="name-regno"><span>NAME : REGNO</span></label>
-            <label class="settings-option"><input type="radio" name="defaultComboSelection" value="name-rollno"><span>NAME : ROLLNO</span></label>
-            <label class="settings-option"><input type="radio" name="defaultComboSelection" value="rollno-name"><span>ROLLNO : NAME</span></label>
+          <header class="settings-panel-header">
+            <h3 id="combo-selection-title">Default Combo Selection <b>*</b></h3>
+            <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="combo-selection-title" aria-expanded="true" aria-controls="combo-selection-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+          </header>
+          <div class="settings-panel-body" id="combo-selection-panel-body">
+            <div class="radio-option-grid">
+              <label class="settings-option"><input type="radio" name="defaultComboSelection" value="name-admno"><span>NAME : ADMNO</span></label>
+              <label class="settings-option"><input type="radio" name="defaultComboSelection" value="regno-name"><span>REGNO : NAME</span></label>
+              <label class="settings-option"><input type="radio" name="defaultComboSelection" value="admno-name" checked><span>ADMNO : NAME</span></label>
+              <label class="settings-option"><input type="radio" name="defaultComboSelection" value="name-regno"><span>NAME : REGNO</span></label>
+              <label class="settings-option"><input type="radio" name="defaultComboSelection" value="name-rollno"><span>NAME : ROLLNO</span></label>
+              <label class="settings-option"><input type="radio" name="defaultComboSelection" value="rollno-name"><span>ROLLNO : NAME</span></label>
+            </div>
           </div>
         </section>
 
         <section class="settings-panel" aria-labelledby="interaction-title">
-          <h3 id="interaction-title">Interaction Configuration</h3>
-          <div class="settings-option-grid interaction-grid">
-            <label class="settings-option"><input type="checkbox" name="subjectTeacherWithStudent" checked><span>Subject Teacher Interaction with Student</span></label>
-            <label class="settings-option"><input type="checkbox" name="studentWithSubjectTeacher" checked><span>Student Interaction with the Subject Teacher</span></label>
-            <label class="settings-option"><input type="checkbox" name="classTeacherWithStudent" checked><span>Class Teacher Interaction with Student</span></label>
-            <label class="settings-option"><input type="checkbox" name="studentWithClassTeacher" checked><span>Student Interaction with the Class Teacher</span></label>
-            <label class="settings-option"><input type="checkbox" name="hodWithStudent" checked><span>HOD Interaction with Student</span></label>
-            <label class="settings-option"><input type="checkbox" name="studentWithHod" checked><span>Student Interaction with the HOD</span></label>
-            <label class="settings-option"><input type="checkbox" name="principalWithStudent" checked><span>Principal Interaction with Student</span></label>
-            <label class="settings-option"><input type="checkbox" name="studentWithPrincipal" checked><span>Student Interaction with the Principal</span></label>
-            <label class="settings-option"><input type="checkbox" name="academicSupervisorWithStudent" checked><span>Academic Supervisor Interaction with Student</span></label>
-            <label class="settings-option"><input type="checkbox" name="studentWithAcademicSupervisor" checked><span>Student Interaction with the Academic Supervisor</span></label>
-            <label class="settings-option"><input type="checkbox" name="examCoordinatorWithStudent" checked><span>Exam Co-ordinator Interaction with Student</span></label>
-            <label class="settings-option"><input type="checkbox" name="studentWithExamCoordinator" checked><span>Student Interaction with the Exam Co-ordinator</span></label>
-            <label class="settings-option"><input type="checkbox" name="displayGroupMessageResponse" checked><span>Display the response given to the group message to all in the group.</span></label>
-            <label class="settings-option"><input type="checkbox" name="staffToStaffInteraction" checked><span>Enable Staff to Staff Interaction</span></label>
+          <header class="settings-panel-header">
+            <h3 id="interaction-title">Interaction Configuration</h3>
+            <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="interaction-title" aria-expanded="true" aria-controls="interaction-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+          </header>
+          <div class="settings-panel-body" id="interaction-panel-body">
+            <div class="settings-option-grid interaction-grid">
+              <label class="settings-option"><input type="checkbox" name="subjectTeacherWithStudent" checked><span>Subject Teacher Interaction with Student</span></label>
+              <label class="settings-option"><input type="checkbox" name="studentWithSubjectTeacher" checked><span>Student Interaction with the Subject Teacher</span></label>
+              <label class="settings-option"><input type="checkbox" name="classTeacherWithStudent" checked><span>Class Teacher Interaction with Student</span></label>
+              <label class="settings-option"><input type="checkbox" name="studentWithClassTeacher" checked><span>Student Interaction with the Class Teacher</span></label>
+              <label class="settings-option"><input type="checkbox" name="hodWithStudent" checked><span>HOD Interaction with Student</span></label>
+              <label class="settings-option"><input type="checkbox" name="studentWithHod" checked><span>Student Interaction with the HOD</span></label>
+              <label class="settings-option"><input type="checkbox" name="principalWithStudent" checked><span>Principal Interaction with Student</span></label>
+              <label class="settings-option"><input type="checkbox" name="studentWithPrincipal" checked><span>Student Interaction with the Principal</span></label>
+              <label class="settings-option"><input type="checkbox" name="academicSupervisorWithStudent" checked><span>Academic Supervisor Interaction with Student</span></label>
+              <label class="settings-option"><input type="checkbox" name="studentWithAcademicSupervisor" checked><span>Student Interaction with the Academic Supervisor</span></label>
+              <label class="settings-option"><input type="checkbox" name="examCoordinatorWithStudent" checked><span>Exam Co-ordinator Interaction with Student</span></label>
+              <label class="settings-option"><input type="checkbox" name="studentWithExamCoordinator" checked><span>Student Interaction with the Exam Co-ordinator</span></label>
+              <label class="settings-option"><input type="checkbox" name="displayGroupMessageResponse" checked><span>Display the response given to the group message to all in the group.</span></label>
+              <label class="settings-option"><input type="checkbox" name="staffToStaffInteraction" checked><span>Enable Staff to Staff Interaction</span></label>
+            </div>
           </div>
         </section>
 
         <div class="settings-summary-grid">
           <section class="settings-panel" aria-labelledby="update-request-title">
-            <h3 id="update-request-title">Student Update Request</h3>
-            <label class="settings-option"><input type="checkbox" name="studentRequestChangeData"><span>Student Request for Change Data.</span></label>
+            <header class="settings-panel-header">
+              <h3 id="update-request-title">Student Update Request</h3>
+              <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="update-request-title" aria-expanded="true" aria-controls="update-request-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+            </header>
+            <div class="settings-panel-body" id="update-request-panel-body">
+              <label class="settings-option"><input type="checkbox" name="studentRequestChangeData"><span>Student Request for Change Data.</span></label>
+            </div>
           </section>
           <section class="settings-panel" aria-labelledby="password-expiry-title">
-            <h3 id="password-expiry-title">Password Expiry</h3>
-            <label class="settings-field stacked-field" for="password-expiry-days"><span>Password Expiry Days</span><input id="password-expiry-days" name="passwordExpiryDays" type="number" min="0" value="1000"></label>
+            <header class="settings-panel-header">
+              <h3 id="password-expiry-title">Password Expiry</h3>
+              <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="password-expiry-title" aria-expanded="true" aria-controls="password-expiry-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+            </header>
+            <div class="settings-panel-body" id="password-expiry-panel-body">
+              <label class="settings-field stacked-field" for="password-expiry-days"><span>Password Expiry Days</span><input id="password-expiry-days" name="passwordExpiryDays" type="number" min="0" value="1000"></label>
+            </div>
           </section>
           <section class="settings-panel" aria-labelledby="attendance-shortage-title">
-            <h3 id="attendance-shortage-title">Shortage of Attendance</h3>
-            <label class="settings-option"><input type="checkbox" name="attendanceShortageAlert"><span>Attendance Shortage Alert.</span></label>
-            <label class="settings-field stacked-field" for="attendance-alert-days"><span>Alert Days</span><input id="attendance-alert-days" name="attendanceAlertDays" type="number" min="0" value="0"></label>
+            <header class="settings-panel-header">
+              <h3 id="attendance-shortage-title">Shortage of Attendance</h3>
+              <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="attendance-shortage-title" aria-expanded="true" aria-controls="attendance-shortage-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+            </header>
+            <div class="settings-panel-body" id="attendance-shortage-panel-body">
+              <label class="settings-option"><input type="checkbox" name="attendanceShortageAlert"><span>Attendance Shortage Alert.</span></label>
+              <label class="settings-field stacked-field" for="attendance-alert-days"><span>Alert Days</span><input id="attendance-alert-days" name="attendanceAlertDays" type="number" min="0" value="0"></label>
+            </div>
           </section>
         </div>
 
         <section class="settings-panel" aria-labelledby="pagewise-content-title">
-          <h3 id="pagewise-content-title">Pagewise Content</h3>
-          <div id="pagewise-rows" class="pagewise-rows"></div>
-          <button class="pagewise-add" id="add-pagewise-row" type="button"><i data-lucide="plus"></i>Add</button>
+          <header class="settings-panel-header">
+            <h3 id="pagewise-content-title">Pagewise Content</h3>
+            <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="pagewise-content-title" aria-expanded="true" aria-controls="pagewise-content-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+          </header>
+          <div class="settings-panel-body" id="pagewise-content-panel-body">
+            <div id="pagewise-rows" class="pagewise-rows"></div>
+            <button class="pagewise-add" id="add-pagewise-row" type="button"><i data-lucide="plus"></i>Add</button>
+          </div>
         </section>
 
         <section class="settings-panel" aria-labelledby="username-settings-title">
-          <h3 id="username-settings-title">Username Custom Setting</h3>
-          <div class="username-settings-layout">
-            <div class="username-options">
-              <label class="settings-option"><input type="checkbox" name="createStudentCredential" checked><span>Create Student Credential</span></label>
-              <label class="settings-option"><input type="checkbox" name="createFatherCredential"><span>Create Father Credential</span></label>
-              <label class="settings-option"><input type="checkbox" name="createMotherCredential"><span>Create Mother Credential</span></label>
-              <label class="settings-option"><input type="checkbox" name="createGuardianCredential"><span>Create Guardian Credential</span></label>
-              <label class="settings-option"><input type="checkbox" name="autoCredential"><span>Auto Credential</span></label>
+          <header class="settings-panel-header">
+            <h3 id="username-settings-title">Username Custom Setting</h3>
+            <button class="settings-panel-toggle" type="button" aria-label="Toggle section" aria-describedby="username-settings-title" aria-expanded="true" aria-controls="username-settings-panel-body"><i data-lucide="chevron-down" aria-hidden="true"></i></button>
+          </header>
+          <div class="settings-panel-body" id="username-settings-panel-body">
+            <div class="username-settings-layout">
+              <div class="username-options">
+                <label class="settings-option"><input type="checkbox" name="createStudentCredential" checked><span>Create Student Credential</span></label>
+                <label class="settings-option"><input type="checkbox" name="createFatherCredential"><span>Create Father Credential</span></label>
+                <label class="settings-option"><input type="checkbox" name="createMotherCredential"><span>Create Mother Credential</span></label>
+                <label class="settings-option"><input type="checkbox" name="createGuardianCredential"><span>Create Guardian Credential</span></label>
+                <label class="settings-option"><input type="checkbox" name="autoCredential"><span>Auto Credential</span></label>
+              </div>
+              <label class="settings-field username-select" for="username-option"><span>User Name Options <b>*</b></span>
+                <select id="username-option" name="userNameOption">
+                  <option value="">Select</option>
+                  <option value="admno">Admission No</option>
+                  <option value="regno">Registration No</option>
+                  <option value="name">Name</option>
+                  <option value="rollno">Roll No</option>
+                </select>
+              </label>
             </div>
-            <label class="settings-field username-select" for="username-option"><span>User Name Options <b>*</b></span>
-              <select id="username-option" name="userNameOption">
-                <option value="">Select</option>
-                <option value="admno">Admission No</option>
-                <option value="regno">Registration No</option>
-                <option value="name">Name</option>
-                <option value="rollno">Roll No</option>
-              </select>
-            </label>
           </div>
         </section>
       </div>
@@ -577,6 +636,21 @@
         return index !== [...pagewiseRows.querySelectorAll(".pagewise-remove")].indexOf(button);
       }));
     });
+
+    function setSettingsPanelExpanded(button, expanded) {
+      button.setAttribute("aria-expanded", String(expanded));
+      document.getElementById(button.getAttribute("aria-controls")).hidden = !expanded;
+    }
+
+    editDialog.addEventListener("click", (event) => {
+      const button = event.target.closest(".settings-panel-toggle");
+      if (button) setSettingsPanelExpanded(button, button.getAttribute("aria-expanded") !== "true");
+    });
+
+    editForm.addEventListener("invalid", (event) => {
+      const body = event.target.closest(".settings-panel-body[hidden]");
+      if (body) setSettingsPanelExpanded(body.previousElementSibling.querySelector(".settings-panel-toggle"), true);
+    }, true);
 
     document.querySelector("#close-dialog").addEventListener("click", () => editDialog.close());
     document.querySelector("#cancel-edit").addEventListener("click", () => editDialog.close());

@@ -1,0 +1,86 @@
+body.preadmission-page {
+  color: #152235;
+  background: #f5f5f4;
+}
+
+.preadmission-page .main-area > .module-banner {
+  min-height: 156px;
+  gap: 16px;
+  margin: 12px clamp(14px, 1.5vw, 28px) 0;
+  padding: 18px clamp(18px, 3vw, 42px);
+  border: 1px solid #1d3851;
+  border-radius: 20px;
+  color: #fff9ed;
+  background: radial-gradient(ellipse at 78% 100%, #164663, #09253e 57%, #061b30);
+  box-shadow: 0 4px 12px #10263e16;
+}
+
+.preadmission-page .module-banner h1 { color: #fff9ed; letter-spacing: -.025em; }
+.preadmission-page .module-banner :is(h1 svg, [class$="-eyebrow"] span) { color: #ecd4a3; }
+.preadmission-page .module-banner p { color: #f7f1e5; line-height: 1.5; }
+
+.preadmission-page .main-area > :is(.oral-content, .marks-content, .written-content, .status-content, .count-content, .registration-content, .pmer-content, .sr-content) {
+  margin-top: 0;
+  padding: 12px clamp(14px, 1.5vw, 28px) 18px;
+}
+
+.preadmission-page :is(.oral-card, .marks-card, .written-card, .status-card, .count-card, .registration-card, .pmer-card, .sr-card, .marks-results, .sr-results) {
+  border-color: var(--school-border);
+  border-radius: 23px;
+  background: var(--school-surface);
+  box-shadow: 0 7px 22px #15223512;
+}
+
+.preadmission-page :is([class$="-card-header"], .marks-results-heading, .sr-results-heading) {
+  border-color: var(--school-border);
+}
+
+.preadmission-page :is([class$="-heading-mark"], .oral-card-marker) {
+  background: linear-gradient(#d6bc8a, #a9854e);
+}
+
+.preadmission-page :is([class$="-card-kicker"], [class$="-results-heading"] > div > p) {
+  color: var(--school-gold-dark);
+}
+
+.preadmission-page :is(.sr-filter-panel, .status-filter-panel, .count-filter-panel) {
+  border-color: var(--school-border);
+  background: var(--school-ivory);
+}
+
+.preadmission-page .main-area :is(th, td) { border-color: var(--school-border); }
+.preadmission-page .main-area th { color: var(--school-ink); background: var(--school-ivory); }
+
+.preadmission-page .main-area :is(.oral-button-primary, .oral-button-save, .marks-search-button, .written-search-button, .status-search-button, .count-search-button, .registration-report, .pmer-generate, .sr-primary) {
+  border: 1px solid var(--school-gold);
+  color: #fff9ed;
+  background: linear-gradient(155deg, #193e5d, #061b30);
+  box-shadow: 0 4px 12px #10263e24;
+}
+
+.preadmission-page .main-area :is(.oral-button-primary, .oral-button-save, .marks-search-button, .written-search-button, .status-search-button, .count-search-button, .registration-report, .pmer-generate, .sr-primary):enabled:hover {
+  background: #10263e;
+}
+
+.preadmission-page .main-area :is(main section, table) :is(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid #b88d47;
+  outline-offset: 2px;
+}
+
+.preadmission-page .main-area input:is([type="checkbox"], [type="radio"]) { accent-color: #10263e; }
+
+.preadmission-page .main-area input:is(:autofill, :-webkit-autofill) {
+  box-shadow: inset 0 0 0 100vmax #fff;
+  -webkit-text-fill-color: var(--school-ink);
+  caret-color: var(--school-ink);
+}
+
+.preadmission-page .main-area > footer {
+  border-color: var(--school-border);
+  color: #536172;
+  background: var(--school-ivory);
+}
+
+@media (max-width: 760px) {
+  .preadmission-page .main-area > .module-banner { min-height: 0; padding: 17px 18px; }
+}

@@ -24,20 +24,6 @@ body.preconfiguration-page {
   box-shadow: 0 4px 12px #10263e16;
 }
 
-.preconfiguration-page :is(.page-banner, .admission-banner, .tn-banner)::after {
-  inset: auto -5% -62px 52%;
-  z-index: -1;
-  width: auto;
-  height: 108px;
-  border: 0;
-  border-top: 2px solid #c3a16b;
-  border-radius: 65% 45% 0 0;
-  background: linear-gradient(130deg, #c3a16b1c, #c3a16b06);
-  box-shadow: 0 -5px 0 #c3a16b16, 0 -10px 0 #c3a16b0b;
-  transform: rotate(-9deg);
-  pointer-events: none;
-}
-
 .preconfiguration-page :is(.page-banner, .admission-banner, .tn-banner) h1 {
   color: #fff9ed;
   letter-spacing: -.025em;
@@ -50,12 +36,6 @@ body.preconfiguration-page {
 
 .preconfiguration-page :is(.page-banner h1 svg, .admission-banner h1 svg, .tn-banner h1 svg, .eyebrow span, .admission-eyebrow span, .tn-eyebrow span) {
   color: #ecd4a3;
-}
-
-.preconfiguration-page .banner-mark {
-  border-color: #d5a65055;
-  color: #ecd4a3;
-  background: #ffffff0f;
 }
 
 .preconfiguration-page :is(.content-area, .admission-content, .tn-content) {
@@ -134,7 +114,7 @@ body.preconfiguration-page {
   background: var(--config-surface);
 }
 
-.preconfiguration-page :is(.dialog-heading, .settings-header, .tn-dialog-header, .logo-preview-dialog header) {
+.preconfiguration-page :is(.dialog-heading, .tn-dialog-header, .logo-preview-dialog header) {
   border-color: var(--config-line);
   background: var(--config-ivory);
 }

@@ -395,26 +395,6 @@ button {
   line-height: 1.5;
 }
 
-.banner-mark {
-  width: 72px;
-  height: 72px;
-  display: grid;
-  place-items: center;
-  position: relative;
-  z-index: 1;
-  border: 1px solid #ffffff25;
-  border-radius: 22px;
-  color: #dce4ff;
-  background: #ffffff12;
-  transform: rotate(5deg);
-}
-
-.banner-mark svg {
-  width: 34px;
-  height: 34px;
-  stroke-width: 1.5;
-}
-
 .content-area {
   width: 100%;
   flex: 1;
@@ -1027,17 +1007,6 @@ select:focus-visible {
     padding: 22px;
   }
 
-  .banner-mark {
-    width: 58px;
-    height: 58px;
-    border-radius: 18px;
-  }
-
-  .banner-mark svg {
-    width: 28px;
-    height: 28px;
-  }
-
   .content-area {
     padding: 0 14px 20px;
   }
@@ -1138,17 +1107,6 @@ select:focus-visible {
     font-size: 14px;
   }
 
-  .banner-mark {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
-  }
-
-  .banner-mark svg {
-    width: 23px;
-    height: 23px;
-  }
-
   .content-area {
     padding: 0 8px 17px;
   }
@@ -1232,20 +1190,21 @@ select:focus-visible {
 }
 
 .settings-header {
-  min-height: 76px;
+  --module-wave-width: min(44%, 224px);
+  min-height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 18px;
   flex: none;
   padding: 12px 24px;
-  border-bottom: 1px solid #e7eaf2;
-  background: #fff;
+  border-bottom: 1px solid #1d3851;
+  background: radial-gradient(ellipse at 80% 100%, #164663, #09253e 57%, #061b30);
 }
 
 .settings-title h2 {
   margin: 0;
-  color: #141c30;
+  color: #fff9ed;
   font-size: 23px;
   font-weight: 600;
   letter-spacing: -.35px;
@@ -1258,16 +1217,16 @@ select:focus-visible {
   display: grid;
   place-items: center;
   padding: 0;
-  border: 1px solid #e1e5ef;
+  border: 1px solid #c3a16b88;
   border-radius: 14px;
-  color: #66738e;
-  background: #fff;
-  box-shadow: 0 3px 8px rgba(20, 35, 67, .1);
+  color: #fff9ed;
+  background: #10263e;
+  box-shadow: none;
 }
 
-.settings-close:hover {
+#record-dialog .settings-close:hover {
   border-color: #d6b273;
-  background: #f5f5f4;
+  background: #193e5d;
 }
 
 .settings-close svg {
@@ -1284,6 +1243,7 @@ select:focus-visible {
   gap: 16px;
   overflow: auto;
   padding: 18px 22px;
+  background: #f6f7f7;
   scrollbar-color: #cbd3e6 transparent;
   scrollbar-width: thin;
 }
@@ -1296,12 +1256,25 @@ select:focus-visible {
 }
 
 .settings-card {
+  --settings-card-tint: #f7f4ed;
+  --settings-card-accent: #9d793e;
   min-width: 0;
   overflow: hidden;
   border: 2px solid #e4e6f0;
   border-radius: 19px;
   background: #fff;
   box-shadow: 0 3px 8px rgba(24, 42, 84, .035);
+}
+
+.settings-column:first-child .settings-card:nth-child(2n),
+.settings-column:nth-child(2) .settings-card:nth-child(2n + 1) {
+  --settings-card-tint: #edf3f7;
+  --settings-card-accent: #4a708b;
+}
+
+.settings-column .settings-card:nth-child(3n) {
+  --settings-card-tint: #edf4f1;
+  --settings-card-accent: #4d7869;
 }
 
 .settings-card-header {
@@ -1311,10 +1284,14 @@ select:focus-visible {
   justify-content: space-between;
   gap: 14px;
   padding: 12px 20px 10px 24px;
+  border-bottom: 1px solid #e7e5df;
+  background: var(--settings-card-tint);
 }
 
 .settings-card-header h3 {
   margin: 0;
+  padding-left: 9px;
+  border-left: 3px solid var(--settings-card-accent);
   color: #182440;
   font-size: 17px;
   letter-spacing: -.2px;
@@ -1326,9 +1303,9 @@ select:focus-visible {
   flex: none;
   display: grid;
   place-items: center;
-  border: 1px solid #e9edf5;
+  border: 1px solid #e1ddd4;
   border-radius: 13px;
-  color: #7081a2;
+  color: var(--settings-card-accent);
   background: #fff;
   box-shadow: 0 2px 5px rgba(24, 42, 84, .06);
 }
@@ -1513,8 +1490,8 @@ select:focus-visible {
   justify-content: flex-end;
   gap: 12px;
   padding: 11px 22px;
-  border-top: 1px solid #e7eaf2;
-  background: #fff;
+  border-top: 1px solid #e5e0d7;
+  background: #fafafa;
   box-shadow: 0 -4px 12px rgba(24, 42, 84, .04);
 }
 
@@ -1532,8 +1509,8 @@ select:focus-visible {
 }
 
 .settings-actions .button-secondary {
-  border-color: #f0c5ca;
-  color: #c83d4b;
+  border-color: #e5e0d7;
+  color: #193e5d;
   background: #fff;
 }
 
@@ -1558,7 +1535,7 @@ select:focus-visible {
   }
 
   .settings-header {
-    min-height: 66px;
+    min-height: 72px;
     padding: 12px 16px;
   }
 

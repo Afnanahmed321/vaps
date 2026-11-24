@@ -108,7 +108,7 @@
               <span>IDENTITY PROFILE</span>
               <strong>TBHSADMIN</strong>
               <p>student@gmail.com</p>
-              <b>ADMIN</b>
+              <b id="dashboard-view-badge">ADMIN</b>
             </section>
             <fieldset class="dashboard-role-switcher">
               <legend>Dashboard view</legend>
@@ -799,13 +799,12 @@
         </button>
       </header>
       <div class="module-main">
-        <div class="module-heading">
+        <div class="module-heading module-banner">
           <div>
             <p class="module-eyebrow"><span></span><b id="module-eyebrow-label">MODULE EXPLORER</b></p>
             <h2 id="operation-tools-title">Pre Configuration</h2>
             <p class="module-description">Set up the essentials that keep your school running smoothly.</p>
           </div>
-          <div class="module-heading-art" aria-hidden="true"><i data-lucide="graduation-cap"></i></div>
         </div>
         <div class="module-section-heading">
           <div><span class="section-heading-mark"></span><strong id="module-section-label">AVAILABLE SECTIONS</strong></div>
@@ -1432,7 +1431,9 @@
             "Registrationreport": "../../Modules/Preadmission/Reports/Registration%20Report/registrationreport.html",
             "Pre Month End Report": "../../Modules/Preadmission/Reports/Pre-Month%20end%20report/PMER.html"
           };
-          const toolRoute = toolRoutes[tool];
+          const toolRoute = selectedModule === "admission" && category.title === "Masters" && tool === "Academic Year"
+            ? "../../Modules/Admission/Masters/academic-year.html"
+            : toolRoutes[tool];
           const item = document.createElement(toolRoute ? "a" : "div");
           item.className = "preadmission-tool-item";
           if (toolRoute) {

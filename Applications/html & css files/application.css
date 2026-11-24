@@ -48,15 +48,12 @@ button { cursor:pointer; }
 .profile small { font-size:12px; color:#65749a; }
 .profile > svg { width:16px; margin-left:3px; }
 .page-banner { min-height:154px; padding:28px clamp(24px,4vw,54px); display:flex; align-items:center; justify-content:space-between; overflow:hidden; position:relative; background:linear-gradient(105deg,#17234b 0%,#304c91 61%,#244762 100%); color:white; }
-.page-banner:after { content:""; position:absolute; width:420px; height:420px; border:1px solid #ffffff14; border-radius:50%; right:8%; top:-290px; box-shadow:0 0 0 42px #ffffff08,0 0 0 84px #ffffff06,0 0 0 126px #ffffff04; }
 .page-banner>div:first-child { position:relative; z-index:1; }
 .eyebrow { margin:0 0 9px; color:#d7def8; font-size:11px; font-weight:600; letter-spacing:1.2px; }
 .eyebrow span { padding:0 8px; color:#aab8ec; }
 .page-banner h1 { display:flex; align-items:center; gap:12px; margin:0; font-size:clamp(25px,3vw,35px); letter-spacing:-1px; font-weight:600; }
 .page-banner h1 svg { width:30px; height:30px; color:#c4d0ff; }
 .banner-subtitle { margin:8px 0 0; color:#dce3ff; font-size:14px; }
-.banner-mark { width:82px; height:82px; display:grid; place-items:center; color:#dce4ff; background:#ffffff12; border:1px solid #ffffff25; border-radius:25px; transform:rotate(5deg); position:relative; z-index:1; }
-.banner-mark svg { width:39px; height:39px; stroke-width:1.5; }
 .content-area { width:100%; max-width:1600px; margin:0 auto; padding:24px clamp(18px,3.5vw,48px) 30px; flex:1; }
 .register-card { background:rgba(255,255,255,.96); border:1px solid #e7eaf6; border-radius:20px; box-shadow:0 8px 28px #1b2d6110; overflow:hidden; }
 .card-heading { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; padding:23px 26px 21px; border-bottom:1px solid #edf0f8; }
@@ -146,8 +143,6 @@ button { cursor:pointer; }
   .profile .avatar { width:34px; height:34px; }
   .profile div:nth-child(2), .profile>svg { display:none; }
   .page-banner { min-height:135px; padding:23px 23px; }
-  .banner-mark { width:58px; height:58px; border-radius:18px; }
-  .banner-mark svg { width:29px; }
   .content-area { padding:17px 14px 22px; }
   .register-body { padding:18px 16px 16px; }
   .card-heading { padding:18px 17px; }
@@ -176,8 +171,6 @@ button { cursor:pointer; }
   .page-banner h1 { font-size:23px; gap:8px; }
   .page-banner h1 svg { width:23px; }
   .banner-subtitle { max-width:250px; font-size:14px; line-height:1.5; }
-  .banner-mark { width:45px; height:45px; border-radius:14px; }
-  .banner-mark svg { width:24px; }
   .content-area { padding:12px 8px 18px; }
   .register-body { padding:15px 11px; }
   .card-heading h2 { font-size:17px; }
@@ -201,18 +194,6 @@ button { cursor:pointer; }
   box-shadow: 0 4px 12px #10263e16;
 }
 
-.page-banner::after {
-  inset: auto -5% -62px 52%;
-  width: auto;
-  height: 108px;
-  border: 0;
-  border-top: 2px solid #c3a16b;
-  border-radius: 65% 45% 0 0;
-  background: linear-gradient(130deg, #c3a16b1c, #c3a16b06);
-  box-shadow: 0 -5px 0 #c3a16b16, 0 -10px 0 #c3a16b0b;
-  transform: rotate(-9deg);
-  pointer-events: none;
-}
 
 .page-banner > .banner-copy {
   max-width: 700px;
@@ -265,21 +246,7 @@ button { cursor:pointer; }
   font-weight: 600;
 }
 
-.banner-mark {
-  width: 72px;
-  height: 72px;
-  flex: none;
-  color: #ecd4a3;
-  border-color: #d5a65055;
-  border-radius: 27px;
-  background: #ffffff0f;
-  box-shadow: 0 14px 35px rgba(13, 26, 65, .12);
-}
 
-.banner-mark svg {
-  width: 35px;
-  height: 35px;
-}
 
 .content-area {
   position: relative;
@@ -624,10 +591,6 @@ button { cursor:pointer; }
     margin-top: 12px;
   }
 
-  .banner-mark {
-    width: 58px;
-    height: 58px;
-  }
 
   .content-area {
     margin-top: 0;
@@ -686,15 +649,7 @@ button { cursor:pointer; }
     padding: 0 8px;
   }
 
-  .banner-mark {
-    width: 43px;
-    height: 43px;
-    border-radius: 14px;
-  }
 
-  .banner-mark svg {
-    width: 24px;
-  }
 
   .card-heading h2 {
     font-size: 22px;
