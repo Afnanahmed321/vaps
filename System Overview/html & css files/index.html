@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../../site-assistant.css" />
   <link rel="stylesheet" href="../../gilroy.css" />
   <script defer src="../../workspace-roles.js"></script>
+  <script defer src="../../workspace-calendar.js"></script>
   <script defer src="../../workspace-whatsapp.js"></script>
   <script defer src="../../workspace-chatgpt.js"></script>
   <script defer src="../../workspace-translator.js"></script>
@@ -96,19 +97,26 @@
         </button>
 
         <div class="profile-menu-container">
-          <button class="profile profile-trigger" id="profile-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="profile-dropdown">
+          <button class="profile profile-trigger" id="profile-trigger" type="button" aria-expanded="false" aria-controls="profile-dropdown">
             <span class="avatar">T</span>
             <span class="profile-trigger-copy"><strong>TBHSADMIN</strong><small>Admin</small></span>
             <i data-lucide="chevron-down" aria-hidden="true"></i>
           </button>
-          <div class="profile-dropdown" id="profile-dropdown" role="menu" aria-labelledby="profile-trigger">
+          <div class="profile-dropdown" id="profile-dropdown" role="region" aria-label="Profile and dashboard view">
             <section class="profile-identity">
               <span>IDENTITY PROFILE</span>
               <strong>TBHSADMIN</strong>
               <p>student@gmail.com</p>
               <b>ADMIN</b>
             </section>
-            <button class="profile-signout" type="button" role="menuitem">Sign out <i data-lucide="log-out" aria-hidden="true"></i></button>
+            <fieldset class="dashboard-role-switcher">
+              <legend>Dashboard view</legend>
+              <label><input type="radio" name="dashboard-role" value="admin" checked><span>Admin</span></label>
+              <label><input type="radio" name="dashboard-role" value="principal"><span>Principal</span></label>
+              <label><input type="radio" name="dashboard-role" value="teacher"><span>Teacher</span></label>
+              <label><input type="radio" name="dashboard-role" value="accountant"><span>Accountant</span></label>
+            </fieldset>
+            <button class="profile-signout" type="button">Sign out <i data-lucide="log-out" aria-hidden="true"></i></button>
           </div>
         </div>
       </div>
@@ -126,7 +134,7 @@
           </div>
           <div class="hero-badge">
             <i data-lucide="graduation-cap" aria-hidden="true"></i>
-            <span>Academic Year: <span id="welcome-academic-year"></span></span>
+            <span>Academic Year: <span id="welcome-academic-year">2026 – 2027</span></span>
           </div>
         </div>
       </div>
@@ -135,24 +143,21 @@
       <img class="hero-laurel" src="../Assets/leaf.png" width="1536" height="1024" alt="" />
     </section>
 
-    <section class="dashboard">
-      <div class="dashboard-role-controls">
-        <fieldset class="dashboard-role-switcher">
-          <legend>Dashboard view</legend>
-          <label><input type="radio" name="dashboard-role" value="admin" checked><span>Admin</span></label>
-          <label><input type="radio" name="dashboard-role" value="principal"><span>Principal</span></label>
-          <label><input type="radio" name="dashboard-role" value="teacher"><span>Teacher</span></label>
-          <label><input type="radio" name="dashboard-role" value="accountant"><span>Accountant</span></label>
-        </fieldset>
-        <nav class="dashboard-role-links" aria-label="Dashboard shortcuts">
-          <a data-dashboard-roles="admin principal" href="../../Applications/html%20%26%20css%20files/application.html">Applications</a>
-          <a data-dashboard-roles="principal teacher" href="../../Students/html%20%26%20css%20files/students.html" hidden>Students</a>
-          <a data-dashboard-roles="admin teacher" href="../../Teachers/html%20%26%20css%20files/teachers.html">Teachers</a>
-          <a data-dashboard-roles="admin accountant" href="../../Fees/html%20%26%20css%20files/fee-collection.html">Fee Collection</a>
-          <a data-dashboard-roles="principal teacher accountant" href="../../Reports/html%20%26%20css%20files/reports.html" hidden>Reports</a>
-        </nav>
-      </div>
+    <script>
+      (() => {
+        const timeZone = "Asia/Kolkata";
+        const today = new Date();
+        const welcomeDate = document.getElementById("welcome-date");
+        welcomeDate.dateTime = today.toLocaleDateString("sv-SE", { timeZone });
+        welcomeDate.textContent = today.toLocaleDateString("en-GB", {
+          timeZone, weekday: "short", day: "numeric", month: "short", year: "numeric"
+        });
+        const academicYear = document.querySelector(".academic-year strong")?.textContent.trim();
+        if (academicYear) document.getElementById("welcome-academic-year").textContent = academicYear;
+      })();
+    </script>
 
+    <section class="dashboard">
       <div class="section-heading">
         <strong>METRICS &amp; ANALYTICS</strong>
         <span></span>
@@ -245,6 +250,70 @@
           </div>
         </article>
 
+        <article class="overview-chart staff-attendance" aria-labelledby="staff-attendance-title" data-dashboard-roles="admin">
+          <header class="overview-chart-heading">
+            <h2 id="staff-attendance-title"><i data-lucide="users-round" aria-hidden="true"></i>Staff Attendance</h2>
+            <span class="overview-chart-period">Sample data</span>
+          </header>
+          <div class="attendance-filters" role="group" aria-label="Staff attendance filters">
+            <label class="attendance-filter attendance-date-field"><span>Date</span><input type="date" id="staff-attendance-date" required></label>
+            <label class="attendance-filter"><span>Staff group</span><select id="staff-attendance-group">
+              <option>All Staff</option>
+              <option>Teaching Staff</option>
+              <option>Administrative Staff</option>
+              <option>Support Staff</option>
+            </select></label>
+          </div>
+          <div class="attendance-chart-body">
+            <div class="attendance-donut" aria-hidden="true"><div><strong>95.0%</strong><span>Overall Attendance</span></div></div>
+            <dl class="attendance-legend" aria-live="polite">
+              <div><dt>Present</dt><dd>95.0%</dd></div>
+              <div><dt>Absent</dt><dd>3.5%</dd></div>
+              <div><dt>Leave</dt><dd>1.5%</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="overview-chart important-dates" aria-labelledby="important-dates-title" data-dashboard-roles="admin">
+          <header class="overview-chart-heading">
+            <h2 id="important-dates-title"><i data-lucide="calendar-days" aria-hidden="true"></i>Important Dates</h2>
+          </header>
+          <ul class="important-dates-list" aria-live="polite"></ul>
+          <footer class="fee-overview-footer important-dates-footer">
+            <button type="button" id="view-school-calendar" aria-haspopup="dialog"><i data-lucide="calendar-days" aria-hidden="true"></i>View Calendar</button>
+          </footer>
+        </article>
+      </section>
+
+      <div class="overview-detail-grid" data-dashboard-roles="admin principal teacher">
+        <article class="overview-chart fee-overview" aria-labelledby="fee-overview-title" data-dashboard-roles="admin">
+          <header class="overview-chart-heading">
+            <h2 id="fee-overview-title"><i data-lucide="wallet-cards" aria-hidden="true"></i>Fee Collection</h2>
+            <span class="overview-chart-period">Sample data</span>
+          </header>
+          <div class="attendance-filters" role="group" aria-label="Fee collection filters">
+            <label class="attendance-filter attendance-date-field"><span>Date</span><input type="date" id="fee-overview-date" required></label>
+            <label class="attendance-filter"><span>Class</span><select id="fee-overview-class"><option>All Classes</option></select></label>
+            <label class="attendance-filter"><span>Section</span><select id="fee-overview-section"><option>All Sections</option></select></label>
+          </div>
+          <div class="attendance-chart-body fee-overview-body">
+            <div class="fee-collection-visual" aria-hidden="true">
+              <strong id="fee-overview-collected">₹36,140</strong>
+              <span>Collected</span>
+              <div class="fee-collection-funnel">
+                <div></div><div></div><div></div>
+              </div>
+            </div>
+            <dl class="attendance-legend fee-overview-legend" aria-live="polite">
+              <div><dt>Collected</dt><dd>₹36,140</dd></div>
+              <div><dt>Upcoming</dt><dd>₹6,900</dd></div>
+              <div><dt>Overdue</dt><dd>₹1,260</dd></div>
+              <div class="fee-overview-total"><dt>Total assessed</dt><dd>₹44,300</dd></div>
+            </dl>
+          </div>
+          <footer class="fee-overview-footer">
+            <a href="../../Fees/html%20%26%20css%20files/fee-collection.html">Open Fee Collection <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          </footer>
+        </article>
         <article class="overview-chart" aria-labelledby="performance-title">
           <header class="overview-chart-heading">
             <h2 id="performance-title"><i data-lucide="trending-up" aria-hidden="true"></i>Academic Performance</h2>
@@ -253,7 +322,7 @@
           <div class="performance-controls" role="group" aria-label="Academic performance controls">
             <label class="attendance-filter"><span>Class</span><select id="performance-class"><option value="">All classes</option></select></label>
             <fieldset class="performance-sort" id="performance-sort">
-              <legend>Sort by class</legend>
+              <legend>Sort by percentage</legend>
               <div class="performance-sort-toggle">
                 <label><input type="radio" name="performance-sort" value="ascending" checked><span>Ascending</span></label>
                 <label><input type="radio" name="performance-sort" value="descending"><span>Descending</span></label>
@@ -279,7 +348,7 @@
             </dl>
           </div>
         </article>
-      </section>
+      </div>
 
       <section class="query-filter-bar" aria-labelledby="query-filter-heading">
         <p class="query-filter-label" id="query-filter-heading">FILTER BY CATEGORY</p>
@@ -469,6 +538,48 @@
         <button class="assistant-answer-done" id="assistant-answer-done" type="button">Got it <i data-lucide="arrow-right" aria-hidden="true"></i></button>
       </footer>
     </div>
+  </div>
+</dialog>
+
+<dialog class="school-calendar-dialog" id="school-calendar" aria-labelledby="school-calendar-title">
+  <header class="school-calendar-header">
+    <h2 id="school-calendar-title">School Calendar</h2>
+    <form method="dialog"><button type="submit" aria-label="Close calendar">×</button></form>
+  </header>
+  <div class="school-calendar-layout">
+    <section class="school-calendar-month" aria-labelledby="calendar-month">
+      <div class="school-calendar-navigation">
+        <button type="button" id="calendar-previous" aria-label="Previous month">‹</button>
+        <h3 id="calendar-month" aria-live="polite"></h3>
+        <button type="button" id="calendar-next" aria-label="Next month">›</button>
+      </div>
+      <table aria-labelledby="calendar-month">
+        <thead><tr><th scope="col" abbr="Monday">Mon</th><th scope="col" abbr="Tuesday">Tue</th><th scope="col" abbr="Wednesday">Wed</th><th scope="col" abbr="Thursday">Thu</th><th scope="col" abbr="Friday">Fri</th><th scope="col" abbr="Saturday">Sat</th><th scope="col" abbr="Sunday">Sun</th></tr></thead>
+        <tbody id="calendar-days"></tbody>
+      </table>
+      <div class="school-calendar-month-footer">
+        <span>Select a date to add an event.</span>
+        <button type="button" id="calendar-today">Today</button>
+      </div>
+    </section>
+    <section class="school-calendar-agenda" aria-labelledby="calendar-agenda-title">
+      <div class="school-calendar-agenda-heading">
+        <h3 id="calendar-agenda-title">Events this month</h3>
+        <button type="button" class="school-calendar-primary" id="calendar-add">+ Add event</button>
+      </div>
+      <form class="school-calendar-editor" id="calendar-editor" aria-labelledby="calendar-editor-title" hidden>
+        <h4 id="calendar-editor-title">Add event</h4>
+        <label>Event name<input name="title" required maxlength="100" placeholder="e.g. Parent–teacher meeting"></label>
+        <label>Date<input name="date" type="date" required></label>
+        <label>Notes <span>(optional)</span><textarea name="notes" rows="2" maxlength="500"></textarea></label>
+        <div class="school-calendar-editor-actions">
+          <button type="button" id="calendar-cancel">Cancel</button>
+          <button type="submit" class="school-calendar-primary">Save event</button>
+        </div>
+      </form>
+      <p class="school-calendar-status" id="calendar-status" role="status"></p>
+      <ul id="calendar-events" class="school-calendar-events"></ul>
+    </section>
   </div>
 </dialog>
 
@@ -662,8 +773,10 @@
   function updatePerformance() {
     const selectedClass = performanceClass.value;
     const direction = performanceSort.querySelector("input:checked").value;
-    const entries = performanceEntries.filter(({ index }) => selectedClass === "" || String(index) === selectedClass);
-    if (direction === "descending") entries.reverse();
+    const multiplier = direction === "descending" ? -1 : 1;
+    const entries = performanceEntries
+      .filter(({ index }) => selectedClass === "" || String(index) === selectedClass)
+      .sort((a, b) => multiplier * (a.score - b.score) || a.index - b.index);
 
     entries.forEach(({ bar }, index) => bar.style.setProperty("--delay", `${index * 35}ms`));
     performanceBars.replaceChildren(...entries.map(({ bar }) => bar));
@@ -675,51 +788,95 @@
 
   performanceClass.addEventListener("change", updatePerformance);
   performanceSort.addEventListener("change", updatePerformance);
+  updatePerformance();
 
-  const today = new Date();
-  const todayDate = today.toLocaleDateString("sv-SE");
+  const todayDate = document.getElementById("welcome-date").dateTime;
   const attendanceDate = document.getElementById("attendance-date");
   const attendanceClass = document.getElementById("attendance-class");
   const attendanceSection = document.getElementById("attendance-section");
-  const attendanceDonut = document.querySelector(".attendance-donut");
-  const attendanceTotal = attendanceDonut.querySelector("strong");
-  const attendanceBreakdown = document.querySelectorAll(".attendance-legend dd");
   const formatAttendance = (value) => `${value.toFixed(1)}%`;
 
-  function updateAttendance() {
-    if (!attendanceDate.validity.valid) return;
+  function initializeAttendanceChart(dateInput, filters, baselineAbsent, baselineLeave) {
+    const card = dateInput.closest(".overview-chart");
+    const donut = card.querySelector(".attendance-donut");
+    const total = donut.querySelector("strong");
+    const breakdown = card.querySelectorAll(".attendance-legend dd");
 
-    // Generate a stable sample for each filter combination until attendance records are connected.
-    const dateOffset = (Date.parse(attendanceDate.value) - Date.parse(todayDate)) / 86400000;
-    const sampleIndex = Math.abs(dateOffset * 17 + attendanceClass.selectedIndex * 13
-      + attendanceSection.selectedIndex * 7);
-    const absent = (51 + sampleIndex % 41) / 10;
-    const leave = (25 + sampleIndex % 13) / 10;
-    const present = 100 - absent - leave;
-    const values = [present, absent, leave];
+    function update() {
+      if (!dateInput.validity.valid) return;
 
-    attendanceTotal.textContent = formatAttendance(present);
-    attendanceDonut.style.setProperty("--attendance-present", formatAttendance(present));
-    attendanceDonut.style.setProperty("--attendance-absent-end", formatAttendance(present + absent));
-    attendanceBreakdown.forEach((entry, index) => {
-      entry.textContent = formatAttendance(values[index]);
+      // Generate stable sample values until attendance records are connected.
+      const dateOffset = (Date.parse(dateInput.value) - Date.parse(todayDate)) / 86400000;
+      const filterOffset = filters.reduce((sum, filter, index) => sum + filter.selectedIndex * (13 - index * 6), 0);
+      const sample = Math.abs(dateOffset * 17 + filterOffset);
+      const absent = baselineAbsent + sample % 41 / 10;
+      const leave = baselineLeave + sample % 13 / 10;
+      const present = 100 - absent - leave;
+      const values = [present, absent, leave];
+
+      total.textContent = formatAttendance(present);
+      donut.style.setProperty("--attendance-present", formatAttendance(present));
+      donut.style.setProperty("--attendance-absent-end", formatAttendance(present + absent));
+      breakdown.forEach((entry, index) => {
+        entry.textContent = formatAttendance(values[index]);
+      });
+    }
+
+    dateInput.value = todayDate;
+    dateInput.max = todayDate;
+    [dateInput, ...filters].forEach((filter) => filter.addEventListener("change", update));
+    update();
+  }
+
+  initializeAttendanceChart(attendanceDate, [attendanceClass, attendanceSection], 5.1, 2.5);
+  initializeAttendanceChart(document.getElementById("staff-attendance-date"), [
+    document.getElementById("staff-attendance-group")
+  ], 3.5, 1.5);
+
+  const feeDate = document.getElementById("fee-overview-date");
+  const feeClass = document.getElementById("fee-overview-class");
+  const feeSection = document.getElementById("fee-overview-section");
+  const feeCollectedAmount = document.getElementById("fee-overview-collected");
+  const feeBreakdown = document.querySelectorAll(".fee-overview-legend dd");
+  const feeCurrency = new Intl.NumberFormat("en-IN", {
+    style: "currency", currency: "INR", maximumFractionDigits: 0
+  });
+
+  for (const [source, target] of [[attendanceClass, feeClass], [attendanceSection, feeSection]]) {
+    Array.from(source.options).slice(1).forEach((option) => target.add(option.cloneNode(true)));
+  }
+
+  function updateFeeOverview() {
+    if (!feeDate.validity.valid) return;
+
+    const dayOffset = Math.round((Date.parse(todayDate) - Date.parse(feeDate.value)) / 86400000);
+    const sample = dayOffset % 17;
+    const sampleTotals = [36140 - sample * 370, 6900 + sample * 272, 1260 + sample * 30];
+    const sectionCount = feeSection.options.length - 1;
+    const groupCount = (feeClass.options.length - 1) * sectionCount;
+    const amounts = sampleTotals.map((total) => {
+      let matchedTotal = 0;
+      for (let group = 0; group < groupCount; group++) {
+        const classIndex = Math.floor(group / sectionCount) + 1;
+        const sectionIndex = group % sectionCount + 1;
+        if (feeClass.selectedIndex && feeClass.selectedIndex !== classIndex) continue;
+        if (feeSection.selectedIndex && feeSection.selectedIndex !== sectionIndex) continue;
+        matchedTotal += Math.floor(total * (group + 1) / groupCount) - Math.floor(total * group / groupCount);
+      }
+      return matchedTotal;
+    });
+    const [collected] = amounts;
+    const total = amounts.reduce((sum, amount) => sum + amount, 0);
+    feeCollectedAmount.textContent = feeCurrency.format(collected);
+    [...amounts, total].forEach((amount, index) => {
+      feeBreakdown[index].textContent = feeCurrency.format(amount);
     });
   }
 
-  attendanceDate.value = todayDate;
-  attendanceDate.max = todayDate;
-  [attendanceDate, attendanceClass, attendanceSection].forEach((filter) => {
-    filter.addEventListener("change", updateAttendance);
-  });
-  updateAttendance();
-
-  const welcomeDate = document.getElementById("welcome-date");
-  welcomeDate.dateTime = todayDate;
-  welcomeDate.textContent = today.toLocaleDateString("en-GB", {
-    weekday: "short", day: "numeric", month: "short", year: "numeric"
-  });
-  document.getElementById("welcome-academic-year").textContent =
-    document.querySelector(".academic-year strong").textContent;
+  feeDate.value = todayDate;
+  feeDate.max = todayDate;
+  [feeDate, feeClass, feeSection].forEach((filter) => filter.addEventListener("change", updateFeeOverview));
+  updateFeeOverview();
 
   const appShell = document.querySelector(".app-shell");
   const sidebar = document.querySelector(".app-shell > .sidebar");
