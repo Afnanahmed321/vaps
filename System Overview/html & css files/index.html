@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../../site-assistant.css" />
   <link rel="stylesheet" href="../../gilroy.css" />
   <script defer src="../../workspace-roles.js"></script>
+  <script defer src="../../workspace-activity.js"></script>
   <script defer src="../../workspace-calendar.js"></script>
   <script defer src="../../workspace-whatsapp.js"></script>
   <script defer src="../../workspace-chatgpt.js"></script>
@@ -91,9 +92,9 @@
           <span>AI Edge</span>
         </button>
 
-        <button class="notification">
-          <i data-lucide="bell"></i>
-          <b></b>
+        <button class="notification" id="activity-notification-trigger" type="button" aria-label="View notifications" aria-controls="recent-activities">
+          <i data-lucide="bell" aria-hidden="true"></i>
+          <b hidden></b>
         </button>
 
         <div class="profile-menu-container">
@@ -161,7 +162,7 @@
       <div class="section-heading">
         <strong>METRICS &amp; ANALYTICS</strong>
         <span></span>
-        <small>Real-time school insights at a glance.</small>
+        <small>School metrics and activity.</small>
       </div>
 
       <div class="metrics-grid students-overview-grid">
@@ -194,12 +195,44 @@
           <div class="metric-ribbon" aria-hidden="true"><i data-lucide="graduation-cap"></i></div>
         </article>
 
+        <article class="metric-card overview-stat-card annual-revenue-metric" data-dashboard-roles="accountant" hidden>
+          <div class="metric-icon" aria-hidden="true"><i data-lucide="indian-rupee"></i></div>
+          <span class="metric-divider" aria-hidden="true"></span>
+          <div class="metric-content">
+            <span>Revenue for the Year</span>
+            <strong title="Example annual revenue">₹4,82,750</strong>
+            <small id="annual-revenue-year"></small>
+          </div>
+          <div class="metric-ribbon" aria-hidden="true"><i data-lucide="calendar-days"></i></div>
+        </article>
+
       </div>
 
-      <section class="overview-charts" aria-label="Student analytics" data-dashboard-roles="admin principal teacher">
-        <article class="overview-chart" aria-labelledby="attendance-title">
+      <section class="overview-chart quick-actions" aria-labelledby="quick-actions-title">
+        <header class="overview-chart-heading">
+          <h2 id="quick-actions-title"><i data-lucide="zap" aria-hidden="true"></i>Quick Actions</h2>
+        </header>
+        <ul class="quick-actions-grid">
+          <li data-dashboard-roles="admin"><a href="../../Teachers/html%20%26%20css%20files/teachers.html?open=add-employee"><i data-lucide="user-round-plus" aria-hidden="true"></i><span>Add Employee</span></a></li>
+          <li data-dashboard-roles="principal" hidden><a href="#staff-attendance-title"><i data-lucide="users-round" aria-hidden="true"></i><span>View Staff Attendance</span></a></li>
+          <li data-dashboard-roles="teacher" hidden><a href="#attendance-title"><i data-lucide="users-round" aria-hidden="true"></i><span>View Student Attendance</span></a></li>
+          <li data-dashboard-roles="principal teacher" hidden><a href="#performance-title"><i data-lucide="trending-up" aria-hidden="true"></i><span>View Academic Performance</span></a></li>
+          <li data-dashboard-roles="admin principal"><a href="../../Applications/html%20%26%20css%20files/application.html#register-form"><i data-lucide="clipboard-list" aria-hidden="true"></i><span>Build Admission Register</span></a></li>
+          <li data-dashboard-roles="admin principal teacher"><a href="../../Students/html%20%26%20css%20files/students.html#student-form"><i data-lucide="file-chart-column" aria-hidden="true"></i><span>Build Student Report</span></a></li>
+          <li data-dashboard-roles="admin"><a href="../../Fees/html%20%26%20css%20files/fee-collection.html#fee-report-form"><i data-lucide="wallet-cards" aria-hidden="true"></i><span>View Fee Collection</span></a></li>
+          <li data-dashboard-roles="accountant" hidden><a href="#fee-overview-title"><i data-lucide="wallet-cards" aria-hidden="true"></i><span>View Fee Summary</span></a></li>
+          <li data-dashboard-roles="accountant" hidden><a href="../../Fees/html%20%26%20css%20files/fee-collection.html#fee-report-form"><i data-lucide="file-chart-column" aria-hidden="true"></i><span>Build Fee Report</span></a></li>
+          <li data-dashboard-roles="admin principal"><button type="button" id="quick-add-calendar-event" aria-haspopup="dialog"><i data-lucide="calendar-plus" aria-hidden="true"></i><span>Add Calendar Event</span></button></li>
+          <li data-dashboard-roles="teacher accountant" hidden><button type="button" id="quick-view-school-calendar" aria-haspopup="dialog"><i data-lucide="calendar-days" aria-hidden="true"></i><span>View School Calendar</span></button></li>
+          <li><button type="button" id="quick-open-whatsapp" aria-haspopup="dialog"><i data-lucide="message-circle" aria-hidden="true"></i><span>Open WhatsApp Sender</span></button></li>
+          <li><a href="../../Reports/html%20%26%20css%20files/reports.html#saved-reports-title"><i data-lucide="archive" aria-hidden="true"></i><span>View Saved Reports</span></a></li>
+        </ul>
+      </section>
+
+      <section class="overview-charts" aria-label="Attendance and important dates">
+        <article class="overview-chart" aria-labelledby="attendance-title" data-dashboard-roles="admin principal teacher">
           <header class="overview-chart-heading">
-            <h2 id="attendance-title"><i data-lucide="chart-no-axes-column-increasing" aria-hidden="true"></i>Student Attendance</h2>
+            <h2 id="attendance-title" tabindex="-1"><i data-lucide="chart-no-axes-column-increasing" aria-hidden="true"></i>Student Attendance</h2>
           </header>
           <div class="attendance-filters" role="group" aria-label="Attendance filters">
             <label class="attendance-filter attendance-date-field">
@@ -250,10 +283,9 @@
           </div>
         </article>
 
-        <article class="overview-chart staff-attendance" aria-labelledby="staff-attendance-title" data-dashboard-roles="admin">
+        <article class="overview-chart staff-attendance" aria-labelledby="staff-attendance-title" data-dashboard-roles="admin principal">
           <header class="overview-chart-heading">
-            <h2 id="staff-attendance-title"><i data-lucide="users-round" aria-hidden="true"></i>Staff Attendance</h2>
-            <span class="overview-chart-period">Sample data</span>
+            <h2 id="staff-attendance-title" tabindex="-1"><i data-lucide="users-round" aria-hidden="true"></i>Staff Attendance</h2>
           </header>
           <div class="attendance-filters" role="group" aria-label="Staff attendance filters">
             <label class="attendance-filter attendance-date-field"><span>Date</span><input type="date" id="staff-attendance-date" required></label>
@@ -273,7 +305,7 @@
             </dl>
           </div>
         </article>
-        <article class="overview-chart important-dates" aria-labelledby="important-dates-title" data-dashboard-roles="admin">
+        <article class="overview-chart important-dates" aria-labelledby="important-dates-title">
           <header class="overview-chart-heading">
             <h2 id="important-dates-title"><i data-lucide="calendar-days" aria-hidden="true"></i>Important Dates</h2>
           </header>
@@ -284,11 +316,10 @@
         </article>
       </section>
 
-      <div class="overview-detail-grid" data-dashboard-roles="admin principal teacher">
-        <article class="overview-chart fee-overview" aria-labelledby="fee-overview-title" data-dashboard-roles="admin">
+      <div class="overview-detail-grid" data-dashboard-roles="admin principal">
+        <article class="overview-chart fee-overview" aria-labelledby="fee-overview-title" data-dashboard-roles="admin accountant">
           <header class="overview-chart-heading">
-            <h2 id="fee-overview-title"><i data-lucide="wallet-cards" aria-hidden="true"></i>Fee Collection</h2>
-            <span class="overview-chart-period">Sample data</span>
+            <h2 id="fee-overview-title" tabindex="-1"><i data-lucide="wallet-cards" aria-hidden="true"></i>Fee Collection</h2>
           </header>
           <div class="attendance-filters" role="group" aria-label="Fee collection filters">
             <label class="attendance-filter attendance-date-field"><span>Date</span><input type="date" id="fee-overview-date" required></label>
@@ -316,8 +347,17 @@
         </article>
         <article class="overview-chart" aria-labelledby="performance-title">
           <header class="overview-chart-heading">
-            <h2 id="performance-title"><i data-lucide="trending-up" aria-hidden="true"></i>Academic Performance</h2>
-            <span class="overview-chart-period">Term 1</span>
+            <h2 id="performance-title" tabindex="-1"><i data-lucide="trending-up" aria-hidden="true"></i>Academic Performance</h2>
+            <details class="performance-term-picker" id="performance-term-picker">
+              <summary><i data-lucide="calendar-days" aria-hidden="true"></i><span id="performance-term-label">Term 1</span><i data-lucide="chevron-down" aria-hidden="true"></i></summary>
+              <fieldset class="performance-term-panel">
+                <legend>Academic period</legend>
+                <label><input type="radio" name="performance-term" value="term1" data-label="Term 1" checked><span><strong>Term 1</strong><small>Apr 2026 – Jul 2026</small></span></label>
+                <label><input type="radio" name="performance-term" value="term2" data-label="Term 2"><span><strong>Term 2</strong><small>Aug 2026 – Dec 2026</small></span></label>
+                <label><input type="radio" name="performance-term" value="term3" data-label="Term 3"><span><strong>Term 3</strong><small>Jan 2027 – Mar 2027</small></span></label>
+                <label><input type="radio" name="performance-term" value="year" data-label="Full year"><span><strong>Full academic year</strong><small>2026–2027</small></span></label>
+              </fieldset>
+            </details>
           </header>
           <div class="performance-controls" role="group" aria-label="Academic performance controls">
             <label class="attendance-filter"><span>Class</span><select id="performance-class"><option value="">All classes</option></select></label>
@@ -348,6 +388,62 @@
             </dl>
           </div>
         </article>
+      </div>
+
+      <div class="overview-updates-grid">
+        <section class="overview-chart timetable-card" aria-labelledby="timetable-title">
+          <header class="overview-chart-heading">
+            <h2 id="timetable-title"><i data-lucide="calendar-clock" aria-hidden="true"></i>Timetable</h2>
+          </header>
+          <div class="timetable-filters" role="group" aria-label="Timetable filters">
+            <label class="attendance-filter">
+              <span>Day</span>
+              <select id="timetable-day" aria-controls="timetable-periods">
+                <option value="0">Monday</option>
+                <option value="1">Tuesday</option>
+                <option value="2">Wednesday</option>
+                <option value="3">Thursday</option>
+                <option value="4">Friday</option>
+              </select>
+            </label>
+            <label class="attendance-filter">
+              <span>Class</span>
+              <select id="timetable-class" aria-controls="timetable-periods">
+                <option value="1">Class I</option>
+                <option value="2">Class II</option>
+                <option value="3">Class III</option>
+                <option value="4">Class IV</option>
+                <option value="5">Class V</option>
+                <option value="6" selected>Class VI</option>
+                <option value="7">Class VII</option>
+                <option value="8">Class VIII</option>
+                <option value="9">Class IX</option>
+                <option value="10">Class X</option>
+                <option value="11">Class XI</option>
+                <option value="12">Class XII</option>
+              </select>
+            </label>
+          </div>
+          <table class="timetable-periods">
+            <thead><tr><th scope="col">Time</th><th scope="col">Subject</th></tr></thead>
+            <tbody id="timetable-periods" aria-live="polite"></tbody>
+          </table>
+        </section>
+        <section class="overview-chart recent-activities" id="recent-activities" aria-labelledby="recent-activities-title">
+          <header class="overview-chart-heading">
+            <h2 id="recent-activities-title"><i data-lucide="activity" aria-hidden="true"></i>Recent Activities</h2>
+          </header>
+          <div class="recent-activities-grid">
+            <section aria-labelledby="recent-updates-title">
+              <h3 id="recent-updates-title">Latest updates</h3>
+              <ol class="recent-activities-list" id="recent-updates-list" aria-live="polite"><li>No recent updates yet.</li></ol>
+            </section>
+            <section aria-labelledby="recent-notifications-title">
+              <h3 id="recent-notifications-title" tabindex="-1">System notifications</h3>
+              <ul class="recent-activities-list" id="recent-notifications-list" aria-live="polite"><li>No notifications right now.</li></ul>
+            </section>
+          </div>
+        </section>
       </div>
 
       <section class="query-filter-bar" aria-labelledby="query-filter-heading">
@@ -759,12 +855,23 @@
   const performanceClass = document.getElementById("performance-class");
   const performanceSort = document.getElementById("performance-sort");
   const performanceStatus = document.getElementById("performance-status");
+  const performanceTermPicker = document.getElementById("performance-term-picker");
+  const performanceTermTrigger = performanceTermPicker.querySelector("summary");
+  const performanceTermLabel = document.getElementById("performance-term-label");
   const performanceEntries = Array.from(performanceBars.children, (bar, index) => ({
     bar,
     index,
     label: bar.querySelector("dt").textContent.trim(),
     score: Number.parseFloat(bar.querySelector("dd").textContent)
   }));
+  // Scores for periods without connected school records are dashboard examples.
+  const performanceScores = {
+    term1: performanceEntries.map(({ score }) => score),
+    term2: [89, 91, 88, 87, 93, 90, 92, 89, 91, 94],
+    term3: [90, 92, 91, 88, 94, 91, 93, 90, 92, 95]
+  };
+  performanceScores.year = performanceScores.term1.map((score, index) =>
+    Math.round((score + performanceScores.term2[index] + performanceScores.term3[index]) / 3));
 
   performanceEntries.forEach(({ index, label }) => {
     performanceClass.add(new Option(label, String(index)));
@@ -773,24 +880,87 @@
   function updatePerformance() {
     const selectedClass = performanceClass.value;
     const direction = performanceSort.querySelector("input:checked").value;
+    const period = performanceTermPicker.querySelector("input:checked");
+    const scores = performanceScores[period.value];
     const multiplier = direction === "descending" ? -1 : 1;
     const entries = performanceEntries
       .filter(({ index }) => selectedClass === "" || String(index) === selectedClass)
+      .map((entry) => ({ ...entry, score: scores[entry.index] }))
       .sort((a, b) => multiplier * (a.score - b.score) || a.index - b.index);
 
-    entries.forEach(({ bar }, index) => bar.style.setProperty("--delay", `${index * 35}ms`));
+    entries.forEach(({ bar, score }, index) => {
+      bar.style.setProperty("--delay", `${index * 35}ms`);
+      bar.style.setProperty("--score", `${score}%`);
+      bar.querySelector("dd").textContent = `${score}%`;
+    });
     performanceBars.replaceChildren(...entries.map(({ bar }) => bar));
     performanceBars.style.setProperty("--performance-columns", entries.length);
     performanceStatus.textContent = selectedClass === ""
-      ? `Showing ${entries.length} classes in ${direction} order.`
-      : `${entries[0].label}: ${entries[0].score}%.`;
+      ? `${period.dataset.label}: showing ${entries.length} classes in ${direction} order.`
+      : `${period.dataset.label}, ${entries[0].label}: ${entries[0].score}%.`;
   }
 
   performanceClass.addEventListener("change", updatePerformance);
   performanceSort.addEventListener("change", updatePerformance);
+  performanceTermPicker.addEventListener("change", (event) => {
+    performanceTermLabel.textContent = event.target.dataset.label;
+    updatePerformance();
+  });
+  performanceTermPicker.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || !performanceTermPicker.open) return;
+    performanceTermPicker.open = false;
+    performanceTermTrigger.focus();
+  });
+  document.addEventListener("click", (event) => {
+    if (!performanceTermPicker.contains(event.target)) performanceTermPicker.open = false;
+  });
   updatePerformance();
 
   const todayDate = document.getElementById("welcome-date").dateTime;
+  document.getElementById("annual-revenue-year").textContent =
+    document.getElementById("welcome-academic-year").textContent;
+
+  const timetableDay = document.getElementById("timetable-day");
+  const timetableClass = document.getElementById("timetable-class");
+  const timetablePeriods = document.getElementById("timetable-periods");
+  const timetableTimes = [
+    ["09:00", "09:45"], ["09:45", "10:30"], ["10:45", "11:30"],
+    ["11:30", "12:15"], ["13:00", "13:45"], ["13:45", "14:30"]
+  ];
+  const timetableSubjects = [
+    ["English", "Mathematics", "Science", "Hindi", "Social Studies", "Library"],
+    ["Mathematics", "Hindi", "English", "Computer Science", "Science", "Physical Education"],
+    ["Science", "English", "Mathematics", "Social Studies", "Art", "Hindi"],
+    ["Hindi", "Science", "English", "Mathematics", "Library", "Social Studies"],
+    ["Mathematics", "Social Studies", "Science", "English", "Computer Science", "Physical Education"]
+  ];
+
+  function renderTimetable() {
+    const classIndex = Number(timetableClass.value);
+    const dayIndex = Number(timetableDay.value);
+    // Vary the sample period order by class while retaining the existing Class VI schedule.
+    const subjectOffset = (classIndex + timetableTimes.length - 6) % timetableTimes.length;
+    const weekOffset = classIndex > 6 ? 1 : 0;
+    const subjects = timetableSubjects[(dayIndex + weekOffset) % timetableSubjects.length];
+    const rows = timetableTimes.map(([start, end], index) => {
+      const row = document.createElement("tr");
+      const timeCell = row.insertCell();
+      const time = document.createElement("time");
+      time.dateTime = start;
+      time.textContent = start;
+      timeCell.append(time, ` – ${end}`);
+      row.insertCell().textContent = subjects[(index + subjectOffset) % subjects.length];
+      return row;
+    });
+    timetablePeriods.replaceChildren(...rows);
+  }
+
+  const schoolWeekday = new Date(todayDate).getUTCDay();
+  timetableDay.value = String(schoolWeekday >= 1 && schoolWeekday <= 5 ? schoolWeekday - 1 : 0);
+  timetableDay.addEventListener("change", renderTimetable);
+  timetableClass.addEventListener("change", renderTimetable);
+  renderTimetable();
+
   const attendanceDate = document.getElementById("attendance-date");
   const attendanceClass = document.getElementById("attendance-class");
   const attendanceSection = document.getElementById("attendance-section");

@@ -371,6 +371,9 @@
     selectPage.addEventListener("change", () => rows.querySelectorAll(".row-select").forEach((checkbox) => { checkbox.checked = selectPage.checked; }));
 
     render();
+    if (new URLSearchParams(window.location.search).get("open") === "add-employee") {
+      openEmployeeDialog();
+    }
   </script>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="../../site-assistant.js"></script>

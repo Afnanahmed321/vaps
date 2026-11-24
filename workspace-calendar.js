@@ -79,16 +79,20 @@
     titleInput.setCustomValidity("");
     editor.hidden = false;
     titleInput.focus();
+    editor.scrollIntoView({ block: "nearest" });
   }
 
   function closeEditor(restoreFocus = false) {
     editor.hidden = true;
     editingId = undefined;
-    if (restoreFocus) editorTrigger?.focus();
+    if (restoreFocus) (editorTrigger?.isConnected ? editorTrigger : addButton).focus();
   }
 
-  function announce(message) {
+  function announce(message, event) {
     status.textContent = saveEvents() ? message : `${message} Browser storage is unavailable. Changes last until this page is closed.`;
+    window.dispatchEvent(new CustomEvent("vaps:calendar-change", {
+      detail: { title: event.title, action: message.replace(/\.$/, "") }
+    }));
   }
 
   function renderAgenda(monthEvents) {
@@ -113,7 +117,7 @@
         if (editingId === event.id) closeEditor();
         events = events.filter(({ id }) => id !== event.id);
         render();
-        announce("Event removed.");
+        announce("Event removed.", event);
         addButton.focus();
       });
       actions.append(edit, remove);
@@ -160,11 +164,22 @@
     render();
   }
 
-  openButton.addEventListener("click", () => {
+  function openCalendar(date) {
     status.textContent = "";
     closeEditor();
-    showMonth(sorted().find(({ date }) => date >= today)?.date ?? today);
+    showMonth(date);
     calendar.showModal();
+  }
+
+  function openUpcomingCalendar() {
+    openCalendar(sorted().find(({ date }) => date >= today)?.date ?? today);
+  }
+
+  openButton.addEventListener("click", openUpcomingCalendar);
+  document.getElementById("quick-view-school-calendar")?.addEventListener("click", openUpcomingCalendar);
+  document.getElementById("quick-add-calendar-event")?.addEventListener("click", () => {
+    openCalendar(today);
+    showEditor(today, undefined, addButton);
   });
 
   document.getElementById("calendar-today").addEventListener("click", () => showMonth(today));
@@ -191,7 +206,7 @@
     }
     const edited = Boolean(editingId);
     const event = {
-      id: editingId ?? crypto.randomUUID(),
+      id: editingId ?? (globalThis.crypto?.randomUUID?.() ?? `event-${Date.now()}-${Math.random()}`),
       title,
       date: dateInput.value,
       notes: notesInput.value.trim(),
@@ -200,7 +215,7 @@
     events = edited ? events.map((item) => item.id === event.id ? event : item) : [...events, event];
     closeEditor();
     showMonth(event.date);
-    announce(edited ? "Event updated." : "Event added.");
+    announce(edited ? "Event updated." : "Event added.", event);
     addButton.focus();
   });
   renderUpcoming();

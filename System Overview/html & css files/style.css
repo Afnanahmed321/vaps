@@ -3661,15 +3661,15 @@ button {
   content: "";
   position: absolute;
   inset: auto 8% 0;
-  width: min(84%, 44px);
+  width: min(62%, 32px);
   margin-inline: auto;
   height: var(--score);
   border: 1px solid transparent;
   border-top-width: 2px;
   border-radius: 8px 8px 4px 4px;
   background:
-    var(--chart-blue-fill) padding-box,
-    linear-gradient(180deg, #ffe693 0%, #e8b23f 8%, #1f4f73 29%, #367398 100%) border-box;
+    linear-gradient(#2563eb, #2563eb) padding-box,
+    linear-gradient(180deg, #ffe693 0%, #e8b23f 8%, #2563eb 29%) border-box;
   transform-origin: bottom;
 }
 
@@ -3768,6 +3768,15 @@ button {
 .overview-stat-card.orange { --stat-tint: #f2d7a2; }
 .overview-stat-card.green { --stat-tint: #cfe3d5; }
 .overview-stat-card.purple { --stat-tint: #e2d3e5; }
+.overview-stat-card.annual-revenue-metric { --stat-tint: #d6e3df; }
+.annual-revenue-metric .metric-content small { color: #536172; font-size: 12px; }
+
+@media (min-width: 391px) {
+  .students-overview-grid:has(> .annual-revenue-metric:not([hidden])) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .overview-stat-card .metric-divider { background: #e5d9c3; }
 .overview-stat-card .metric-ribbon { background: linear-gradient(130deg, #f3d18a, #a97025); }
 .overview-stat-card .metric-content :is(strong, span) { color: var(--school-ink); }
@@ -3802,6 +3811,14 @@ button {
 }
 
 .attendance-donut { background: #ececea; }
+.overview-chart:is([aria-labelledby="attendance-title"], .staff-attendance) .attendance-donut > div {
+  inset: 8%;
+}
+.overview-chart:is([aria-labelledby="attendance-title"], .staff-attendance) .attendance-chart-body {
+  --present: #4f46e5;
+  --leave: #dc3545;
+  --chart-blue-fill: linear-gradient(#4f46e5, #4f46e5);
+}
 .attendance-donut > div { background: var(--school-surface); }
 .attendance-legend > div + div { border-color: #eee6d9; }
 
@@ -3901,6 +3918,10 @@ button {
   margin-bottom: 16px;
 }
 
+.overview-detail-grid:has(> .fee-overview[hidden]) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .staff-attendance .attendance-filters {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -3939,13 +3960,51 @@ button {
 }
 
 @media (min-width: 1200px) {
-  .overview-charts:has(.important-dates:not([hidden])) {
+  .overview-charts:has(.staff-attendance:not([hidden])):not(:has(> [aria-labelledby="performance-title"])) {
     grid-template-columns: minmax(0, 1.18fr) minmax(0, .98fr) minmax(0, .84fr);
   }
 
   .staff-attendance .attendance-chart-body {
     grid-template-columns: minmax(90px, .95fr) minmax(90px, 1.05fr);
     --attendance-gap: 12px;
+  }
+}
+
+@media (min-width: 801px) {
+  .overview-charts:has(> [aria-labelledby="performance-title"]) {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr);
+  }
+
+  .overview-charts > [aria-labelledby="performance-title"] {
+    align-self: stretch;
+  }
+
+  .overview-charts:has(> [aria-labelledby="performance-title"]) > .important-dates {
+    grid-column: 1 / -1;
+  }
+
+  .overview-charts:has(> .fee-overview:not([hidden])) {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .overview-charts:has(> .fee-overview:not([hidden])) > .important-dates {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .overview-charts:has(> .fee-overview:not([hidden])) .important-dates-footer {
+    margin-top: auto;
+  }
+}
+
+@media (min-width: 1050px) {
+  .overview-charts:has(> [aria-labelledby="performance-title"]) .important-dates-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .overview-charts:has(> [aria-labelledby="performance-title"]) .important-dates-empty {
+    grid-column: 1 / -1;
   }
 }
 
@@ -4055,56 +4114,479 @@ button {
 .school-calendar-dialog button:focus-visible { outline: 2px solid #b88d47; outline-offset: 2px; }
 
 .school-calendar-dialog {
-  width: min(410px, calc(100vw - 24px));
+  width: min(880px, calc(100vw - 24px));
+  max-width: none;
   max-height: calc(100dvh - 24px);
-  padding: 0 14px 14px;
+  padding: 0;
+  overflow: auto;
   border: 1px solid #dcc69f;
-  border-radius: 16px;
+  border-radius: 20px;
   color: #152235;
   background: #fff;
+  box-shadow: 0 24px 70px #061b303d;
 }
 
-.school-calendar-dialog::backdrop { background: #061b3066; }
+.school-calendar-dialog::backdrop { background: #061b3077; }
 
-.school-calendar-dialog header,
-.school-calendar-navigation {
+.school-calendar-header,
+.school-calendar-navigation,
+.school-calendar-agenda-heading,
+.school-calendar-month-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-.school-calendar-dialog header {
-  margin: 0 -14px 12px;
-  padding: 10px 14px;
+.school-calendar-header {
+  padding: 14px clamp(14px, 3vw, 24px);
   color: #fff9ed;
-  background: #193e5d;
+  background: linear-gradient(155deg, #193e5d, #061b30);
 }
 
-.school-calendar-dialog h2 { margin: 0; font-size: 20px; }
+.school-calendar-header h2 { margin: 0; font-size: clamp(22px, 3vw, 28px); }
+.school-calendar-header form { margin: 0; }
+
+.school-calendar-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+  padding: clamp(12px, 2.5vw, 22px);
+}
+
+.school-calendar-month,
+.school-calendar-agenda {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #e5e0d7;
+  border-radius: 14px;
+}
+
+.school-calendar-agenda { background: #fafafa; }
+.school-calendar-agenda-heading { flex-wrap: wrap; }
+.school-calendar-dialog h3 { margin: 0; font-size: 17px; }
+.school-calendar-navigation h3 { text-align: center; }
 
 .school-calendar-dialog button {
   min-width: 32px;
-  min-height: 32px;
-  border: 1px solid #d8c298;
-  border-radius: 7px;
-  color: inherit;
-  background: transparent;
-  font-size: 18px;
-  line-height: 1;
+  min-height: 34px;
+  padding: 4px 8px;
+  border: 1px solid #dcdedb;
+  border-radius: 8px;
+  color: #193e5d;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
 }
 
-.school-calendar-dialog table {
+.school-calendar-dialog button:hover { border-color: #b88d47; background: #f5f5f4; }
+.school-calendar-header button {
+  min-width: 36px;
+  border-color: #c3a16b88;
+  color: #fff9ed;
+  background: transparent;
+  font-size: 20px;
+  line-height: 1;
+}
+.school-calendar-header button:hover { background: transparent; }
+.school-calendar-navigation button { font-size: 19px; line-height: 1; }
+
+.school-calendar-dialog .school-calendar-primary {
+  border-color: #c3a16b;
+  color: #fff9ed;
+  background: #193e5d;
+}
+.school-calendar-dialog .school-calendar-primary:hover { background: #10263e; }
+
+.school-calendar-month table {
   width: 100%;
   margin-top: 10px;
-  border-spacing: 2px;
+  border-spacing: 3px;
   table-layout: fixed;
   text-align: center;
+}
+
+.school-calendar-month th { padding-block: 4px; color: #536172; font-size: 11px; }
+
+.school-calendar-month td { padding: 0; }
+
+.school-calendar-month td button {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 38px;
+  padding: 3px 0;
+  border-color: transparent;
+  background: #f8f8f7;
+}
+
+.school-calendar-month td button.has-event { color: #674719; background: #f1eee8; }
+.school-calendar-month td button.has-event::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 3px;
+  width: 4px;
+  height: 4px;
+  margin-inline: auto;
+  border-radius: 50%;
+  background: #a77a36;
+}
+.school-calendar-month td button[aria-current="date"] { border-color: #b88d47; }
+
+.school-calendar-month-footer {
+  margin-top: 10px;
+  color: #536172;
+  font-size: 12px;
+}
+
+.school-calendar-events {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.school-calendar-events li {
+  padding: 9px;
+  border: 1px solid #e5e0d7;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.school-calendar-event-copy { display: grid; gap: 3px; overflow-wrap: anywhere; }
+.school-calendar-event-copy time { color: #79521f; font-size: 12px; font-weight: 600; }
+.school-calendar-event-copy strong { font-size: 15px; }
+.school-calendar-event-copy p { margin: 2px 0 0; color: #536172; font-size: 13px; white-space: pre-wrap; }
+.school-calendar-event-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+.school-calendar-event-actions button { min-height: 29px; font-size: 12px; }
+.school-calendar-event-actions button:last-child { color: #92383e; }
+
+.school-calendar-editor:not([hidden]) {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #d8c298;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.school-calendar-editor h4 { margin: 0; font-size: 16px; }
+.school-calendar-editor label { display: grid; gap: 3px; font-size: 13px; font-weight: 600; }
+.school-calendar-editor label span { color: #536172; font-weight: 400; }
+.school-calendar-editor :is(input, textarea) {
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  padding: 6px;
+  border: 1px solid #dcdedb;
+  border-radius: 7px;
+  color: #152235;
+  background: #fff;
+  font: inherit;
+}
+.school-calendar-editor textarea { resize: vertical; }
+.school-calendar-editor :is(input, textarea):focus-visible { outline: 2px solid #b88d47; outline-offset: 1px; }
+.school-calendar-editor-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.school-calendar-status { margin: 7px 0 0; color: #536172; font-size: 13px; }
+.school-calendar-status:empty { margin: 0; }
+.school-calendar-empty { color: #536172; font-size: 13px; }
+.school-calendar-sample { display: block; color: #536172; font-size: 11px; }
+.important-dates-list .important-dates-empty { display: block; color: #536172; }
+
+@media (max-width: 670px) {
+  .school-calendar-layout { grid-template-columns: minmax(0, 1fr); }
+}
+
+.recent-activities { margin: 0 0 16px; }
+.recent-activities-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.recent-activities-grid > section {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #e5e0d7;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.recent-activities h3 { margin: 0 0 9px; color: var(--school-ink); font-size: 16px; }
+.recent-activities h3:focus-visible { outline: 2px solid #b88d47; outline-offset: 3px; }
+.recent-activities-list { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+
+.recent-activity-row {
+  display: grid;
+  grid-template-columns: minmax(0, 100px) minmax(0, 1fr);
+  align-items: start;
+  gap: 9px;
+  padding: 9px;
+  border: 1px solid #e5e0d7;
+  border-radius: 9px;
+  background: #fff;
+}
+
+#recent-updates-list .recent-activity-row {
+  grid-template-columns: 25px minmax(0, 1fr);
+}
+
+#recent-updates-list .recent-activity-row:has(.recent-activity-view) {
+  grid-template-columns: 25px minmax(0, 1fr) auto;
+}
+
+.recent-activity-view {
+  justify-self: end;
+  padding: 2px 3px;
+  border-radius: 4px;
+  color: #79521f;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.recent-activity-view:hover { background: #f5f5f4; text-decoration: underline; }
+.recent-activity-view:focus-visible { outline: 2px solid #b88d47; outline-offset: 2px; }
+
+.recent-activity-number {
+  display: grid;
+  place-items: center;
+  min-height: 24px;
+  border: 1px solid #e5d7bc;
+  border-radius: 6px;
+  color: #79521f;
+  background: #f9f8f5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.recent-activity-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  justify-self: start;
+  padding: 3px 6px;
+  border: 1px solid #e5d7bc;
+  border-radius: 6px;
+  color: #79521f;
+  background: #f9f8f5;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.recent-activity-copy { display: grid; gap: 3px; overflow-wrap: anywhere; }
+.recent-activity-copy strong { color: #193e5d; font-size: 14px; font-weight: 600; }
+.recent-activity-copy time,
+.recent-activity-empty { color: #536172; font-size: 13px; }
+.recent-activity-empty { padding-block: 4px; }
+
+@media (max-width: 660px) {
+  .recent-activities-grid { grid-template-columns: minmax(0, 360px); }
+}
+
+.quick-actions { margin-top: 12px; }
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 128px), 140px));
+  gap: 10px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quick-actions-grid li { min-width: 0; }
+
+.quick-actions-grid :is(a, button) {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 36px 1fr;
+  align-items: start;
+  justify-items: start;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  min-height: 106px;
+  padding: 12px 13px;
+  border: 1px solid #e1e2e0;
+  border-radius: 15px;
+  background: #fff;
+  color: #193e5d;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: left;
+  text-decoration: none;
+}
+
+.quick-actions-grid :is(a, button)::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  bottom: -10px;
+  z-index: -1;
+  width: 51px;
+  height: 23px;
+  border-top: 1px solid #c3a16b66;
+  border-radius: 72% 42% 0 0;
+  background: #c3a16b12;
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+.quick-actions-grid svg:first-child {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  border: 1px solid #efe5d2;
+  border-radius: 10px;
+  color: #79521f;
+  background: #faf7f0;
+}
+
+.quick-actions-grid :is(a, button):is(:hover, :focus-visible) {
+  border-color: #c3a16b;
+  color: #f1d598;
+  background: var(--school-sidebar-background);
+}
+
+.quick-actions-grid :is(a, button):is(:hover, :focus-visible) svg:first-child {
+  border-color: #c3a16b66;
+  color: inherit;
+  background: #ffffff12;
+}
+
+.quick-actions :is(a, button):focus-visible { outline: 2px solid #b88d47; outline-offset: 2px; }
+
+.overview-updates-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 330px) minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.overview-updates-grid .recent-activities {
+  container-type: inline-size;
+  margin: 0;
+}
+
+@container (max-width: 550px) {
+  .recent-activities-grid { grid-template-columns: minmax(0, 360px); }
+}
+
+.timetable-filters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  width: min(100%, 320px);
+  margin: 12px 0;
+}
+.timetable-filters select {
+  --select-chevron-padding: 32px;
+  --select-chevron-inset: 10px;
   font-size: 13px;
 }
 
-.school-calendar-dialog th { color: #536172; font-size: 11px; }
-.school-calendar-dialog td { height: 31px; border-radius: 6px; }
-.school-calendar-dialog td.has-event { background: #f1eee8; color: #79521f; font-weight: 700; }
-.school-calendar-dialog td[aria-current="date"] { box-shadow: inset 0 0 0 1px #b88d47; }
-.school-calendar-dialog ul { margin: 10px 0 0; padding-left: 19px; font-size: 13px; line-height: 1.6; }
+.timetable-periods {
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid var(--school-border);
+  border-radius: 11px;
+  overflow: hidden;
+  font-size: 14px;
+  text-align: left;
+}
+
+.timetable-periods :is(th, td) { padding: 8px 10px; }
+.timetable-periods th { color: #193e5d; background: #f5f5f4; }
+.timetable-periods td { border-top: 1px solid var(--school-border); }
+.timetable-periods td:first-child { width: 1%; color: #536172; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.timetable-periods tr:hover td { background: #fafafa; }
+
+@media (max-width: 800px) {
+  .overview-updates-grid { grid-template-columns: minmax(0, 1fr); }
+  .overview-updates-grid .timetable-card { width: min(100%, 320px); }
+}
+
+.performance-term-picker { position: relative; margin-left: auto; }
+
+.performance-term-picker summary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  border: 1px solid #e0d5c4;
+  border-radius: 9px;
+  background: #fff;
+  color: #193e5d;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  list-style: none;
+}
+
+.performance-term-picker summary::-webkit-details-marker { display: none; }
+.performance-term-picker summary svg { width: 15px; height: 15px; color: #79521f; }
+.performance-term-picker summary:focus-visible { outline: 2px solid #b88d47; outline-offset: 2px; }
+.performance-term-picker[open] summary { border-color: #b88d47; background: #f8f6f1; }
+.performance-term-picker[open] summary svg:last-child { transform: rotate(180deg); }
+
+.performance-term-panel {
+  position: absolute;
+  top: calc(100% + 7px);
+  right: 0;
+  z-index: 4;
+  display: grid;
+  gap: 3px;
+  width: min(256px, calc(100vw - 50px));
+  min-width: 0;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid #dcc69f;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 10px 24px #10263e22;
+}
+
+.performance-term-panel legend {
+  padding: 0 5px;
+  border-radius: 4px;
+  background: #fff;
+  color: #536172;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.performance-term-panel label {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #152235;
+  cursor: pointer;
+}
+
+.performance-term-panel label:hover { background: #f5f5f4; }
+.performance-term-panel label:has(:checked) { border-color: #e5d7bc; background: #f6f3ed; }
+.performance-term-panel label:focus-within { outline: 2px solid #b88d47; outline-offset: -1px; }
+.performance-term-panel input { width: 15px; height: 15px; margin: 0; accent-color: #193e5d; }
+.performance-term-panel label span { display: grid; gap: 2px; }
+.performance-term-panel strong { font-size: 13px; }
+.performance-term-panel small { color: #536172; font-size: 11px; }
+
+@media (max-width: 480px) {
+  .performance-term-panel { width: min(256px, calc(100vw - 114px)); }
+}

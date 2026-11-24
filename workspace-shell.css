@@ -1478,9 +1478,9 @@
 /* Align native dropdown chevrons consistently across the app. */
 select:not([multiple]):not(.page-size select):not(.oral-table-pagination select) {
   -webkit-appearance: none;
-  appearance: none;
+  appearance: var(--workspace-select-appearance, none);
   padding-right: var(--select-chevron-padding, 48px) !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%238491ad' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2379521f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: right var(--select-chevron-inset, 24px) center !important;
   background-size: 16px 16px !important;
@@ -1752,6 +1752,10 @@ select:not([multiple]):not(.page-size select):not(.oral-table-pagination select)
 /* Navy, gold and ivory workspace theme */
 .app-shell {
   --school-navy: #10263e;
+  --school-sidebar-background:
+    radial-gradient(ellipse at 0 8%, #113957 0%, transparent 36%),
+    radial-gradient(ellipse at 90% 100%, #143b5c 0%, transparent 48%),
+    linear-gradient(160deg, #06223c, #031b32 55%, #082b49);
   --school-ink: #152235;
   --school-gold: #d5a650;
   --school-gold-dark: #8c5d18;
@@ -1770,10 +1774,7 @@ select:not([multiple]):not(.page-size select):not(.oral-table-pagination select)
 
 .app-shell > .sidebar {
   border-color: #23425e;
-  background:
-    radial-gradient(ellipse at 0 8%, #113957 0%, transparent 36%),
-    radial-gradient(ellipse at 90% 100%, #143b5c 0%, transparent 48%),
-    linear-gradient(160deg, #06223c, #031b32 55%, #082b49);
+  background: var(--school-sidebar-background);
   box-shadow: 4px 0 16px #061a3029;
 }
 
@@ -2060,3 +2061,120 @@ select:not([multiple]):not(.page-size select):not(.oral-table-pagination select)
 .intelligent-app-dialog .workspace-chatgpt-messages {
   margin-top: 12px;
 }
+
+/* Shared selection surfaces, including native select pickers where supported. */
+:is(.app-shell, dialog) select:not([multiple]):is(:not([size]), [size="1"]) {
+  border-color: #e0d5c4;
+  color: #193e5d;
+  background-color: #fff;
+}
+
+:is(.app-shell, dialog) select:not([multiple]):is(:not([size]), [size="1"]):enabled:is(:hover, :focus-visible) {
+  border-color: #b88d47;
+}
+
+:is(.app-shell, dialog) select:not([multiple]):is(:not([size]), [size="1"]):focus-visible {
+  outline: 2px solid #b88d47;
+  outline-offset: 2px;
+}
+
+@supports (appearance: base-select) and selector(select::picker(select)) {
+  select:not([multiple]):is(:not([size]), [size="1"]) {
+    --workspace-select-appearance: base-select;
+    appearance: base-select;
+  }
+
+  select:not([multiple], [hidden]):is(:not([size]), [size="1"]) {
+    display: inline-flex;
+    align-items: center;
+    padding-block: 0;
+  }
+
+  select:not([multiple]):is(:not([size]), [size="1"])::picker(select) {
+    appearance: base-select;
+    min-inline-size: anchor-size(width);
+    max-inline-size: min(26rem, calc(100vw - 24px));
+    max-block-size: min(320px, 60dvh);
+    padding: 6px;
+    overflow: auto;
+    border: 1px solid #dcc69f;
+    border-radius: 13px;
+    color: #152235;
+    background: #fff;
+    box-shadow: 0 10px 24px #10263e22;
+  }
+
+  select:not([multiple]):not(.page-size select):not(.oral-table-pagination select)::picker-icon {
+    display: none;
+  }
+
+  select:not([multiple]):is(:not([size]), [size="1"]) option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-block-size: 36px;
+    padding: 6px 8px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+  }
+
+  select:not([multiple]):is(:not([size]), [size="1"]) option::checkmark { display: none; }
+
+  select:not([multiple]):is(:not([size]), [size="1"]) option::before {
+    content: "";
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    flex: none;
+    border: 1px solid #a0a8b1;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  select:not([multiple]):is(:not([size]), [size="1"]) option:enabled:is(:hover, :focus-visible) {
+    border-color: #d8c298;
+    background: #f5f5f4;
+  }
+
+  select:not([multiple]):is(:not([size]), [size="1"]) option:checked {
+    border-color: #e5d7bc;
+    color: #193e5d;
+    background: #f6f3ed;
+    font-weight: 600;
+  }
+
+  select:not([multiple]):is(:not([size]), [size="1"]) option:checked::before {
+    border-color: #193e5d;
+    background: #193e5d;
+    box-shadow: inset 0 0 0 3px #fff;
+  }
+
+  select:not([multiple]):is(:not([size]), [size="1"]) option:disabled { color: #6e7883; }
+}
+
+.app-shell :is(.picker-menu, .filter-menu, .intelligent-apps-menu-panel, .profile-dropdown) {
+  border: 1px solid #dcc69f;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 10px 24px #10263e22;
+}
+
+.app-shell .picker-trigger { border-color: #e0d5c4; color: #193e5d; }
+.app-shell .picker-trigger:is(:hover, [aria-expanded="true"]) { border-color: #b88d47; }
+
+.app-shell :is(.picker-menu .picker-option, .filter-menu label, .intelligent-apps-menu-panel button) {
+  border-radius: 8px;
+}
+
+.app-shell :is(.picker-menu .picker-option, .filter-menu label, .intelligent-apps-menu-panel button):is(:hover, :focus-within) {
+  color: #193e5d;
+  background: #f5f5f4;
+}
+
+.app-shell :is(.picker-menu .picker-option, .filter-menu label):has(input:checked) {
+  color: #193e5d;
+  background: #f6f3ed;
+}
+
+.app-shell :is(.picker-menu, .filter-menu) input { accent-color: #193e5d; }

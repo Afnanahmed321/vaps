@@ -4,6 +4,12 @@
 
   const roles = [...switcher.querySelectorAll('input[name="dashboard-role"]')];
   const roleContent = document.querySelectorAll(".dashboard [data-dashboard-roles]");
+  const overviewCharts = document.querySelector(".overview-charts");
+  const detailGrid = document.querySelector(".overview-detail-grid");
+  const staffAttendance = document.querySelector(".staff-attendance");
+  const performance = document.querySelector('[aria-labelledby="performance-title"]');
+  const importantDates = document.querySelector(".important-dates");
+  const feeCollection = document.querySelector(".fee-overview");
   const storageKey = "vaps-dashboard-role";
 
   function showRole(value) {
@@ -12,6 +18,16 @@
     roleContent.forEach((item) => {
       item.hidden = !item.dataset.dashboardRoles.split(" ").includes(selected.value);
     });
+    if (selected.value === "teacher") {
+      overviewCharts.insertBefore(performance, staffAttendance);
+    } else if (performance.parentElement !== detailGrid) {
+      detailGrid.append(performance);
+    }
+    if (selected.value === "accountant") {
+      overviewCharts.insertBefore(feeCollection, importantDates);
+    } else if (feeCollection.parentElement !== detailGrid) {
+      detailGrid.prepend(feeCollection);
+    }
   }
 
   let savedRole;

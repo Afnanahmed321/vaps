@@ -93,17 +93,22 @@
     if (window.lucide) window.lucide.createIcons();
   }
 
-  modeButtons.forEach((button) => button.addEventListener("click", () => setMode(button.dataset.whatsappMode)));
-  appsMenu.addEventListener("click", (event) => {
-    const item = event.target.closest('[role="menuitem"]');
-    if (item?.textContent.trim().toLowerCase() !== "whatsapp") return;
-    event.preventDefault();
+  function openWhatsApp() {
     dialog.showModal();
     setMode("single");
     const dropdown = document.querySelector(".intelligent-apps-dropdown");
     dropdown?.setAttribute("data-open", "false");
     dropdown?.querySelector(".top-pill")?.setAttribute("aria-expanded", "false");
+  }
+
+  modeButtons.forEach((button) => button.addEventListener("click", () => setMode(button.dataset.whatsappMode)));
+  appsMenu.addEventListener("click", (event) => {
+    const item = event.target.closest('[role="menuitem"]');
+    if (item?.textContent.trim().toLowerCase() !== "whatsapp") return;
+    event.preventDefault();
+    openWhatsApp();
   });
+  document.getElementById("quick-open-whatsapp")?.addEventListener("click", openWhatsApp);
 
   closeButton.addEventListener("click", () => dialog.close());
   dialog.addEventListener("click", (event) => {

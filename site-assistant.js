@@ -406,6 +406,7 @@
         report,
         ...existing.filter((item) => item && item.id !== report.id)
       ]));
+      window.dispatchEvent(new Event("vaps:report-saved"));
       return true;
     } catch (error) {
       console.error("Assistant report storage error:", error);
