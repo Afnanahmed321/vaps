@@ -4317,6 +4317,17 @@ button {
   background: #fafafa;
 }
 
+.recent-activities-grid > section[aria-labelledby="recent-updates-title"] {
+  background: #f8f7fb;
+}
+
+.recent-activities-grid > section[aria-labelledby="recent-notifications-title"] {
+  border-color: #d8e6e1;
+  background: #f3f8f6;
+}
+
+#recent-notifications-title { color: #27594d; }
+
 .recent-activities h3 { margin: 0 0 9px; color: var(--school-ink); font-size: 16px; }
 .recent-activities h3:focus-visible { outline: 2px solid #b88d47; outline-offset: 3px; }
 .recent-activities-list { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
@@ -4359,10 +4370,29 @@ button {
   min-height: 24px;
   border: 1px solid #e5d7bc;
   border-radius: 6px;
-  color: #79521f;
-  background: #f9f8f5;
+  color: #294c79;
+  background: #eaf1fb;
+  border-color: #d3e1f4;
   font-size: 12px;
   font-weight: 600;
+}
+
+#recent-updates-list li:nth-child(4n + 2) .recent-activity-number {
+  color: #60477d;
+  background: #f1ebf8;
+  border-color: #e3d7ef;
+}
+
+#recent-updates-list li:nth-child(4n + 3) .recent-activity-number {
+  color: #276253;
+  background: #e7f3ee;
+  border-color: #cfe5db;
+}
+
+#recent-updates-list li:nth-child(4n + 4) .recent-activity-number {
+  color: #79521f;
+  background: #f7efe1;
+  border-color: #ead9b9;
 }
 
 .recent-activity-category {
@@ -4507,10 +4537,23 @@ button {
 }
 
 .timetable-periods :is(th, td) { padding: 8px 10px; }
-.timetable-periods th { color: #193e5d; background: #f5f5f4; }
+.timetable-periods th { color: #193e5d; background: #eaf1f7; }
 .timetable-periods td { border-top: 1px solid var(--school-border); }
 .timetable-periods td:first-child { width: 1%; color: #536172; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.timetable-periods tr:hover td { background: #fafafa; }
+.timetable-periods tbody tr:nth-child(even) { background: #f7f9fb; }
+.timetable-periods tbody tr:hover td { background: #eff4f8; }
+.timetable-periods td:nth-child(2)::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--timetable-period-accent, #6489b4);
+  vertical-align: .12em;
+}
+.timetable-periods tbody tr:nth-child(3n + 2) { --timetable-period-accent: #65988a; }
+.timetable-periods tbody tr:nth-child(3n + 3) { --timetable-period-accent: #9a83b5; }
 
 @media (max-width: 800px) {
   .overview-updates-grid { grid-template-columns: minmax(0, 1fr); }

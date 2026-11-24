@@ -3,6 +3,7 @@
   if (!switcher) return;
 
   const roles = [...switcher.querySelectorAll('input[name="dashboard-role"]')];
+  const viewLabel = document.getElementById("dashboard-view-label");
   const roleContent = document.querySelectorAll(".dashboard [data-dashboard-roles]");
   const overviewCharts = document.querySelector(".overview-charts");
   const detailGrid = document.querySelector(".overview-detail-grid");
@@ -15,6 +16,7 @@
   function showRole(value) {
     const selected = roles.find((role) => role.value === value) ?? roles[0];
     selected.checked = true;
+    viewLabel.textContent = selected.labels[0].textContent.trim();
     roleContent.forEach((item) => {
       item.hidden = !item.dataset.dashboardRoles.split(" ").includes(selected.value);
     });
