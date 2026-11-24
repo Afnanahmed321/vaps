@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: light;
-  --status-blue: #4268ff;
-  --status-blue-dark: #3554c6;
+  --status-blue: #244762;
+  --status-blue-dark: #244762;
   --status-ink: #17213a;
   --status-muted: #78839a;
   --status-line: #e4e9f4;
@@ -59,7 +59,7 @@ button {
   color: #fff;
   background:
     radial-gradient(circle at 78% 12%, rgba(196, 211, 255, .16), transparent 25%),
-    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #4968b3 100%);
+    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #244762 100%);
 }
 
 .status-banner::after {
@@ -136,7 +136,7 @@ button {
 
 .status-breadcrumbs span {
   color: #fff;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .status-breadcrumbs svg {
@@ -178,7 +178,7 @@ button {
   height: 54px;
   flex: none;
   border-radius: 4px;
-  background: linear-gradient(#526cff, #3554c6);
+  background: linear-gradient(#244762, #244762);
 }
 
 .status-heading-copy h2 {
@@ -219,7 +219,7 @@ button {
   margin: 0;
   color: #24395f;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .status-collapse {
@@ -236,9 +236,9 @@ button {
 }
 
 .status-collapse:hover {
-  border-color: #c8d5e8;
-  color: var(--status-blue-dark);
-  background: #f7f9fd;
+  border-color: #d6b273;
+  color: #79521f;
+  background: #f5f5f4;
 }
 
 .status-collapse svg {
@@ -266,7 +266,7 @@ button {
   gap: 8px;
   color: #344967;
   font-size: 13px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .status-field b {
@@ -289,8 +289,8 @@ button {
 }
 
 .status-field select:focus {
-  border-color: #91a7f4;
-  box-shadow: 0 0 0 3px rgba(66, 104, 255, .1);
+  border-color: #244762;
+  box-shadow: 0 0 0 3px rgba(36, 71, 98, .1);
 }
 
 .status-field select:disabled {
@@ -317,7 +317,7 @@ button {
   border: 1px solid transparent;
   border-radius: 10px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   transition: background .16s ease, box-shadow .16s ease, transform .16s ease;
 }
 
@@ -332,12 +332,12 @@ button {
 
 .status-search-button {
   color: #fff;
-  background: linear-gradient(110deg, #526cff, #3554c6);
-  box-shadow: 0 5px 13px rgba(66, 104, 255, .2);
+  background: linear-gradient(110deg, #244762, #244762);
+  box-shadow: 0 5px 13px rgba(36, 71, 98, .2);
 }
 
 .status-search-button:hover {
-  background: linear-gradient(110deg, #4260ed, #2e49b9);
+  background: #55432e;
 }
 
 .status-cancel-button {
@@ -348,8 +348,8 @@ button {
 }
 
 .status-cancel-button:hover {
-  border-color: #c8d5e8;
-  background: #f8faff;
+  border-color: #d6b273;
+  background: #f5f5f4;
 }
 
 .status-results {
@@ -375,8 +375,8 @@ button {
 .status-results-eyebrow {
   margin: 0 0 4px;
   color: #78839a;
-  font-size: 10px;
-  font-weight: 750;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: .9px;
 }
 
@@ -389,10 +389,10 @@ button {
 .status-results-heading > span {
   padding: 7px 11px;
   border-radius: 16px;
-  color: #3554c6;
+  color: #244762;
   background: #eef2ff;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   white-space: nowrap;
 }
 
@@ -420,8 +420,8 @@ button {
 .status-table th {
   color: #52617b;
   background: #f8faff;
-  font-size: 11px;
-  font-weight: 750;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: .25px;
 }
 
@@ -435,7 +435,7 @@ button {
   margin: 12px 2px 0;
   color: #357650;
   font-size: 12px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .status-status.is-error {
@@ -476,7 +476,7 @@ button {
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 3px solid rgba(66, 104, 255, .22);
+  outline: 3px solid rgba(36, 71, 98, .22);
   outline-offset: 2px;
 }
 
@@ -555,7 +555,7 @@ select:focus-visible {
   margin: 0;
   color: #24395f;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .status-search-body[hidden] { display:none; }
@@ -584,16 +584,16 @@ select:focus-visible {
   border-radius:999px;
   color:#465574;
   font-size:13px;
-  font-weight:700;
+  font-weight:600;
   white-space:nowrap;
   transition:color .16s ease, background .16s ease, box-shadow .16s ease;
 }
 .status-type-switch input:checked+span {
   color:#fff;
-  background:linear-gradient(110deg,#526cff,#3554c6);
-  box-shadow:0 4px 10px rgba(66,104,255,.2);
+  background:linear-gradient(110deg,#244762,#244762);
+  box-shadow:0 4px 10px rgba(36, 71, 98, .2);
 }
-.status-type-switch input:focus-visible+span { outline:3px solid rgba(66,104,255,.22); outline-offset:2px; }
+.status-type-switch input:focus-visible+span { outline:3px solid rgba(36, 71, 98, .22); outline-offset:2px; }
 .status-filter-panel {
   width:min(670px,calc(100% - 32px));
   margin:8px auto 18px;
@@ -613,7 +613,7 @@ select:focus-visible {
   gap:14px;
   color:#344967;
   font-size:13px;
-  font-weight:650;
+  font-weight:600;
 }
 .status-field b { color:#d95363; }
 .status-field select {
@@ -630,7 +630,7 @@ select:focus-visible {
   font-size:13px;
   transition:border-color .16s ease,box-shadow .16s ease;
 }
-.status-field select:focus { border-color:#91a7f4; box-shadow:0 0 0 3px rgba(66,104,255,.1); }
+.status-field select:focus { border-color:#244762; box-shadow:0 0 0 3px rgba(36, 71, 98, .1); }
 .status-actions { width:min(100%,460px); grid-column:1 / -1; justify-self:end; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:6px; }
 .status-button {
   min-height:38px;
@@ -642,16 +642,16 @@ select:focus-visible {
   border:1px solid transparent;
   border-radius:11px;
   font-size:12px;
-  font-weight:700;
+  font-weight:600;
   transition:transform .16s ease,background .16s ease,box-shadow .16s ease;
 }
 .status-button:hover { transform:translateY(-1px); }
 .status-button svg { width:16px; height:16px; }
-.status-search-button { color:#fff; background:linear-gradient(110deg,#526cff,#3554c6); box-shadow:0 5px 13px rgba(66,104,255,.2); }
-.status-search-button:hover { background:linear-gradient(110deg,#4260ed,#2e49b9); }
+.status-search-button { color:#fff; background:linear-gradient(110deg,#244762,#244762); box-shadow:0 5px 13px rgba(36, 71, 98, .2); }
+.status-search-button:hover { background:#55432e; }
 .status-cancel-button { border-color:#dfe4ef; color:#52617b; background:#fff; box-shadow:0 2px 5px rgba(24,42,84,.06); }
-.status-cancel-button:hover { border-color:#c8d5e8; background:#f8faff; }
-.status-message { display:none; width:min(720px,100%); margin:12px auto 0; color:#357650; font-size:12px; font-weight:650; }
+.status-cancel-button:hover { border-color:#d6b273; background:#f5f5f4; }
+.status-message { display:none; width:min(720px,100%); margin:12px auto 0; color:#357650; font-size:12px; font-weight:600; }
 .status-message:not(:empty) { display:block; }
 .status-banner .status-banner-copy>p:last-child { max-width:550px; }
 
@@ -665,7 +665,7 @@ select:focus-visible {
 @media(max-width:460px) {
   .status-type-switch { width:100%; }
   .status-type-switch label { flex:1; }
-  .status-type-switch label span { padding:0 8px; font-size:11px; }
+  .status-type-switch label span { padding:0 8px; font-size:12px; }
   .status-filter-panel { padding:15px 12px; }
   .status-actions { gap:8px; }
   .status-button { padding:0 10px; font-size:12px; }

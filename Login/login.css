@@ -3,7 +3,7 @@
   --navy: #111b3b;
   --navy-soft: #24345f;
   --muted: #687796;
-  --blue: #4268ff;
+  --blue: #244762;
   --purple: #7045d8;
   --orange: #ff8a22;
   --line: #e5eaf5;
@@ -80,7 +80,7 @@ a { color: inherit; }
   height: 380px;
   left: -240px;
   bottom: -200px;
-  background: radial-gradient(circle, rgba(66,104,255,.11), transparent 70%);
+  background: radial-gradient(circle, rgba(36, 71, 98, .11), transparent 70%);
 }
 
 .brand-lockup { display: flex; align-items: center; gap: 13px; }
@@ -110,7 +110,7 @@ a { color: inherit; }
   background: #f3efff;
   color: #6439c4;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 1.15px;
 }
 .eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--purple); box-shadow: 0 0 0 4px #e4dcfa; }
@@ -121,7 +121,7 @@ a { color: inherit; }
   font-size: clamp(36px, 4.15vw, 58px);
   line-height: 1.07;
   letter-spacing: -2.5px;
-  font-weight: 800;
+  font-weight: 600;
 }
 .welcome-copy h1 em { color: var(--blue); font-style: normal; }
 .welcome-copy p { max-width: 540px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.75; }
@@ -157,7 +157,7 @@ a { color: inherit; }
   background: rgba(255,255,255,.94);
   box-shadow: 0 8px 20px rgba(17,27,59,.12);
 }
-.stat-mark { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 9px; background: #e6f8f1; color: #15976d; font-size: 13px; font-weight: 800; }
+.stat-mark { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 9px; background: #e6f8f1; color: #15976d; font-size: 13px; font-weight: 600; }
 .campus-stat strong { color: var(--navy); font-size: 11px; }
 .campus-stat small { color: var(--muted); font-size: 10px; }
 .welcome-foot { display: flex; align-items: center; gap: 11px; margin-top: 23px; color: #7d88a2; font-size: 11px; letter-spacing: .15px; }
@@ -168,38 +168,41 @@ a { color: inherit; }
 .signin-heading { text-align: center; }
 .key-icon { width: 58px; height: 58px; margin: 0 auto 21px; display: grid; place-items: center; border-radius: 18px; background: #fff1e5; color: #e8781b; }
 .key-icon svg { width: 26px; height: 26px; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.signin-kicker { margin: 0 0 9px; color: #7853d4; font-size: 10px; font-weight: 800; letter-spacing: 1.8px; }
+.signin-kicker { margin: 0 0 9px; color: #7853d4; font-size: 10px; font-weight: 600; letter-spacing: 1.8px; }
 .signin-heading h2 { margin: 0; font-size: 35px; line-height: 1.15; letter-spacing: -1.1px; }
 .signin-subtitle { margin: 11px 0 35px; color: var(--muted); font-size: 14px; line-height: 1.6; }
 .signin-form { display: flex; flex-direction: column; }
-.field-label { display: block; margin: 0 0 9px; color: #334263; font-size: 12px; font-weight: 700; }
+.field-label { display: block; margin: 0 0 9px; color: #334263; font-size: 12px; font-weight: 600; }
 .input-wrap { min-height: 56px; display: flex; align-items: center; gap: 12px; padding: 0 15px; border: 1px solid #dfe5f1; border-radius: 13px; background: #fbfcff; transition: border-color .18s ease, box-shadow .18s ease, background .18s ease; }
-.input-wrap:focus-within { border-color: #8da1ff; background: #fff; box-shadow: 0 0 0 4px rgba(66,104,255,.10); }
+.input-wrap:focus-within { border-color: #244762; background: #fff; box-shadow: 0 0 0 4px rgba(36, 71, 98, .10); }
 .input-wrap > svg { width: 19px; height: 19px; flex: none; stroke: #8995ad; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .input-wrap input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--navy); font-size: 14px; }
 .input-wrap input::placeholder { color: #9aa4b8; }
 .password-label-row { display: flex; align-items: center; justify-content: space-between; margin-top: 22px; }
 .password-label-row .field-label { margin-bottom: 9px; }
-.password-label-row a { margin: 0 0 9px; color: #4c69d8; font-size: 11px; font-weight: 700; text-decoration: none; }
+.password-label-row a { margin: 0 0 9px; color: #244762; font-size: 11px; font-weight: 600; text-decoration: none; }
 .password-label-row a:hover, .signin-help a:hover { text-decoration: underline; }
 .show-password { width: 28px; height: 32px; display: grid; flex: none; place-items: center; padding: 0; border: 0; border-radius: 7px; background: transparent; color: #8793aa; cursor: pointer; }
-.show-password:hover { background: #eef1fa; color: var(--navy-soft); }
+.show-password:hover { background: #f5f5f4; color: #79521f; }
 .show-password svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .remember-row { display: flex; align-items: center; gap: 9px; margin: 17px 0 24px; color: #66738d; font-size: 12px; cursor: pointer; }
 .remember-row input { position: absolute; width: 1px; height: 1px; opacity: 0; }
 .custom-check { width: 16px; height: 16px; display: grid; place-items: center; border: 1px solid #cdd5e5; border-radius: 5px; background: #fff; }
 .remember-row input:checked + .custom-check { border-color: var(--blue); background: var(--blue); }
 .remember-row input:checked + .custom-check::after { content: ""; width: 7px; height: 4px; border: solid #fff; border-width: 0 0 2px 2px; transform: rotate(-45deg) translate(1px,-1px); }
-.remember-row input:focus-visible + .custom-check { outline: 3px solid rgba(66,104,255,.22); }
-.sign-in-button { min-height: 56px; display: flex; align-items: center; justify-content: center; gap: 11px; border: 0; border-radius: 13px; background: linear-gradient(100deg, #ff871d, #ff9d12); color: #fff; box-shadow: 0 10px 22px rgba(255,137,31,.22); font-size: 15px; font-weight: 800; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease; }
+.remember-row input:focus-visible + .custom-check { outline: 3px solid rgba(36, 71, 98, .22); }
+.sign-in-button { min-height: 56px; display: flex; align-items: center; justify-content: center; gap: 11px; border: 0; border-radius: 13px; background: linear-gradient(100deg, #ff871d, #ff9d12); color: #fff; box-shadow: 0 10px 22px rgba(255,137,31,.22); font-size: 15px; font-weight: 600; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease; }
 .sign-in-button:hover { transform: translateY(-1px); box-shadow: 0 13px 26px rgba(255,137,31,.3); }
 .sign-in-button:active { transform: translateY(0); }
 .sign-in-button svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 .secure-note { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 28px; color: #75819a; font-size: 11px; }
 .secure-indicator { width: 8px; height: 8px; border-radius: 50%; background: #15b889; box-shadow: 0 0 0 4px #e4f8f1; }
 .signin-help { margin: 28px 0 0; text-align: center; color: #8993a8; font-size: 11px; line-height: 1.6; }
-.signin-help a { color: #4c69d8; font-weight: 700; text-decoration: none; }
-.page-footer { position: absolute; right: 3px; bottom: -22px; left: 3px; display: flex; justify-content: space-between; color: #8a94aa; font-size: 10px; }
+.signin-help a { color: #244762; font-weight: 600; text-decoration: none; }
+.page-footer { position: absolute; right: 3px; bottom: -24px; left: 3px; display: flex; align-items: center; justify-content: center; color: #657286; font-size: 10px; }
+.page-footer span { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.page-footer span + span { margin-left: 18px; padding-left: 18px; border-left: 1px solid #d8deea; }
+.page-footer svg { width: 14px; height: 14px; fill: none; stroke: #456887; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
 
 @media (max-width: 1000px) {
   .login-page { width: min(760px, calc(100% - 40px)); min-height: auto; grid-template-columns: 1fr; gap: 16px; margin: 20px auto 40px; }
@@ -236,7 +239,9 @@ a { color: inherit; }
   .input-wrap { min-height: 53px; }
   .secure-note { font-size: 10px; }
   .signin-help { margin-top: 22px; }
-  .page-footer { bottom: -21px; }
+  .page-footer { bottom: -21px; font-size: 9px; }
+  .page-footer span + span { margin-left: 8px; padding-left: 8px; }
+  .page-footer svg { width: 12px; height: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

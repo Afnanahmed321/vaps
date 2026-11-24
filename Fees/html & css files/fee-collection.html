@@ -18,7 +18,7 @@
   <script defer src="../../workspace-media-compressor.js"></script>
 </head>
 <body>
-  <div class="app-shell">
+  <div class="app-shell report-builder-shell">
     <aside class="sidebar">
       <a class="brand" href="../../System%20Overview/html%20%26%20css%20files/index.html">
         <img class="brand-logo" src="../../assets/logo.jpg" alt="Tunbridge High School" />
@@ -48,13 +48,15 @@
       </header>
 
       <section class="fee-hero">
-        <div><p class="fee-kicker">SCHOOL FINANCE</p><h1>Fee Collection</h1><p class="fee-description">Choose the students and class details for your fee report.</p></div>
+        <div><h1>Fee Collection</h1><p class="fee-description">Choose the students and class details for your fee report.</p></div>
         <span class="fee-hero-icon" aria-hidden="true"><i data-lucide="wallet-cards"></i></span>
       </section>
 
       <section class="fee-content">
-        <form class="fee-form-card" id="fee-report-form">
-          <fieldset class="collection-mode" aria-label="Collection scope">
+        <form class="fee-form-card" id="fee-report-form" aria-labelledby="fee-filters-title">
+          <h2 id="fee-filters-title">Fee report filters</h2>
+          <fieldset class="collection-mode">
+            <legend>Collection scope</legend>
             <label><input type="radio" name="scope" value="all" checked /><span>All</span></label>
             <label><input type="radio" name="scope" value="individual" /><span>Individual</span></label>
           </fieldset>

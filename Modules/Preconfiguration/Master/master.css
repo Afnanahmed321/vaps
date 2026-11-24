@@ -7,7 +7,7 @@
   --ink: #17213a;
   --muted: #78839a;
   --line: #e7eaf3;
-  --blue: #4268ff;
+  --blue: #244762;
 }
 
 html,
@@ -142,7 +142,7 @@ button {
 }
 
 .nav-item:hover {
-  background: #f3f5ff;
+  background: #f5f5f4;
 }
 
 .academic-year {
@@ -312,7 +312,7 @@ button {
   place-items: center;
   border: 1px solid #e2e8ff;
   border-radius: 50%;
-  color: #526bc0;
+  color: #244762;
   background: #f0f3ff;
   font-size: 16px;
 }
@@ -350,7 +350,7 @@ button {
   color: #fff;
   background:
     radial-gradient(circle at 78% 12%, rgba(196, 211, 255, .16), transparent 25%),
-    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #4968b3 100%);
+    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #244762 100%);
 }
 
 .page-banner::after {
@@ -453,7 +453,7 @@ button {
   height: 42px;
   flex: none;
   border-radius: 4px;
-  background: linear-gradient(#526cff, #3554c6);
+  background: linear-gradient(#244762, #244762);
 }
 
 .card-heading h2 {
@@ -466,7 +466,7 @@ button {
 .card-heading p {
   margin: 5px 0 0;
   color: #78839a;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .toolbar-actions {
@@ -491,7 +491,7 @@ button {
 
 .record-search:focus-within {
   border-color: #aabcfb;
-  box-shadow: 0 0 0 3px rgba(66, 104, 255, .1);
+  box-shadow: 0 0 0 3px rgba(36, 71, 98, .1);
 }
 
 .record-search svg {
@@ -508,7 +508,7 @@ button {
   outline: 0;
   color: #273453;
   background: transparent;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .record-search input::placeholder {
@@ -526,14 +526,14 @@ button {
   border-radius: 12px;
   color: #303c58;
   background: #fff;
-  font-size: 12px;
+  font-size: 14px;
   white-space: nowrap;
   transition: transform .16s, box-shadow .16s, background .16s;
 }
 
 .button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(24, 39, 68, .08);
+  box-shadow: 0 4px 10px rgba(82, 59, 29, 0.08);
 }
 
 .button svg {
@@ -542,18 +542,18 @@ button {
 }
 
 .button-primary {
-  border-color: #3554c6;
+  border-color: #244762;
   color: #fff;
-  background: linear-gradient(110deg,#526cff,#3554c6);
-  box-shadow: 0 5px 13px rgba(66, 104, 255, .23);
+  background: linear-gradient(110deg,#244762,#244762);
+  box-shadow: 0 5px 13px rgba(36, 71, 98, .23);
 }
 
 .button-primary:hover {
-  background: linear-gradient(110deg,#4260ed,#2e49b9);
+  background: #55432e;
 }
 
 .button-secondary:hover {
-  background: #f8f9ff;
+  background: #f5f5f4;
 }
 
 .table-scroll {
@@ -577,7 +577,7 @@ button {
   border-bottom: 1px solid #e9ecf4;
   color: #56617a;
   background: #fafbfe;
-  font-size: 12px;
+  font-size: 14px;
   text-align: left;
   white-space: nowrap;
 }
@@ -599,7 +599,7 @@ button {
 }
 
 .sort-button:hover {
-  color: #3554c6;
+  color: #79521f;
 }
 
 .master-table .actions-heading {
@@ -612,7 +612,7 @@ button {
   padding: 10px 18px;
   border-bottom: 1px solid #edf0f5;
   color: #34405d;
-  font-size: 13px;
+  font-size: 14px;
   white-space: nowrap;
 }
 
@@ -621,7 +621,7 @@ button {
 }
 
 .master-table tbody tr:hover {
-  background: #fbfcff;
+  background: #f5f5f4;
 }
 
 .master-table .serial-cell {
@@ -648,9 +648,9 @@ button {
 }
 
 .icon-button:hover {
-  border-color: #cbd6fb;
-  color: #3554c6;
-  background: #f5f7ff;
+  border-color: #d6b273;
+  color: #79521f;
+  background: #f5f5f4;
 }
 
 .icon-button svg {
@@ -685,7 +685,7 @@ button {
   place-items: center;
   margin-bottom: 9px;
   border-radius: 14px;
-  color: #6179c5;
+  color: #244762;
   background: #f0f3ff;
 }
 
@@ -702,7 +702,7 @@ button {
 .empty-state p {
   margin: 5px 0 0;
   color: #78839a;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .table-footer {
@@ -713,7 +713,7 @@ button {
   padding: 10px 19px;
   border-top: 1px solid #edf0f6;
   color: #76819a;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .page-size {
@@ -757,9 +757,9 @@ button {
 }
 
 .page-button:hover:not(:disabled) {
-  border-color: #c8d3f7;
-  color: #3554c6;
-  background: #f7f8ff;
+  border-color: #d6b273;
+  color: #79521f;
+  background: #f5f5f4;
 }
 
 .page-button:disabled {
@@ -832,8 +832,8 @@ button {
 
 .dialog-eyebrow {
   margin: 0 0 5px;
-  color: #6075bb;
-  font-size: 10px;
+  color: #244762;
+  font-size: 12px;
   letter-spacing: 1.2px;
 }
 
@@ -846,7 +846,7 @@ button {
 .dialog-heading p:last-child {
   margin: 6px 0 0;
   color: #78839a;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .dialog-close {
@@ -872,7 +872,7 @@ button {
   gap: 7px;
   margin-top: 14px;
   color: #394663;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .form-field input {
@@ -884,12 +884,12 @@ button {
   outline: 0;
   color: #26334e;
   background: #fff;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .form-field input:focus {
-  border-color: #91a7f4;
-  box-shadow: 0 0 0 3px rgba(66, 104, 255, .1);
+  border-color: #244762;
+  box-shadow: 0 0 0 3px rgba(36, 71, 98, .1);
 }
 
 .form-field input::placeholder {
@@ -931,7 +931,7 @@ button {
 button:focus-visible,
 a:focus-visible,
 select:focus-visible {
-  outline: 3px solid rgba(66, 104, 255, .28);
+  outline: 3px solid rgba(36, 71, 98, .28);
   outline-offset: 2px;
 }
 
@@ -1135,7 +1135,7 @@ select:focus-visible {
 
   .banner-subtitle {
     max-width: 240px;
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .banner-mark {
@@ -1158,7 +1158,7 @@ select:focus-visible {
   }
 
   .card-heading p {
-    font-size: 11px;
+    font-size: 14px;
     line-height: 1.45;
   }
 
@@ -1168,7 +1168,7 @@ select:focus-visible {
 
   .table-footer {
     gap: 9px;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .record-range {
@@ -1191,7 +1191,7 @@ select:focus-visible {
 
   .dialog-actions .button {
     padding: 0 11px;
-    font-size: 11px;
+    font-size: 14px;
   }
 
   .toast {
@@ -1266,8 +1266,8 @@ select:focus-visible {
 }
 
 .settings-close:hover {
-  border-color: #c9d4f7;
-  background: #f8faff;
+  border-color: #d6b273;
+  background: #f5f5f4;
 }
 
 .settings-close svg {
@@ -1334,9 +1334,9 @@ select:focus-visible {
 }
 
 .settings-toggle:hover {
-  border-color: #cbd6fb;
-  color: #3554c6;
-  background: #f8faff;
+  border-color: #d6b273;
+  color: #79521f;
+  background: #f5f5f4;
 }
 
 .settings-toggle svg {
@@ -1369,7 +1369,7 @@ select:focus-visible {
   flex-direction: column;
   gap: 7px;
   color: #34415d;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .form-field:last-child {
@@ -1386,13 +1386,13 @@ select:focus-visible {
   outline: 0;
   color: #273453;
   background: #fff;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .form-field input:focus,
 .form-field select:focus {
-  border-color: #91a7f4;
-  box-shadow: 0 0 0 3px rgba(66, 104, 255, .1);
+  border-color: #244762;
+  box-shadow: 0 0 0 3px rgba(36, 71, 98, .1);
 }
 
 .form-field input::placeholder {
@@ -1429,15 +1429,15 @@ select:focus-visible {
   margin: 1px 0 0;
   display: grid;
   place-items: center;
-  border: 1.5px solid #4268ff;
+  border: 1.5px solid #737b82;
   border-radius: 4px;
   background: #fff;
   cursor: pointer;
 }
 
 .setting-option input:checked {
-  border-color: #3554c6;
-  background: #4268ff;
+  border-color: #244762;
+  background: #244762;
 }
 
 .setting-option input:checked::after {
@@ -1450,7 +1450,7 @@ select:focus-visible {
 }
 
 .setting-option input:focus-visible {
-  outline: 3px solid rgba(66, 104, 255, .2);
+  outline: 3px solid rgba(36, 71, 98, .2);
   outline-offset: 2px;
 }
 
@@ -1502,8 +1502,8 @@ select:focus-visible {
 }
 
 .number-setting input:focus {
-  border-color: #91a7f4;
-  box-shadow: 0 0 0 3px rgba(66, 104, 255, .1);
+  border-color: #244762;
+  box-shadow: 0 0 0 3px rgba(36, 71, 98, .1);
 }
 
 .settings-actions {
@@ -1526,9 +1526,9 @@ select:focus-visible {
 }
 
 .settings-actions .button-primary {
-  border-color: #3554c6;
-  background: linear-gradient(110deg,#526cff,#3554c6);
-  box-shadow: 0 4px 10px rgba(66, 104, 255, .2);
+  border-color: #244762;
+  background: linear-gradient(110deg,#244762,#244762);
+  box-shadow: 0 4px 10px rgba(36, 71, 98, .2);
 }
 
 .settings-actions .button-secondary {
@@ -1611,7 +1611,7 @@ select:focus-visible {
   }
 
   .setting-option {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .number-setting {
@@ -1636,6 +1636,6 @@ select:focus-visible {
     width: 100%;
     min-width: 0;
     min-height: 42px;
-    font-size: 12px;
+    font-size: 14px;
   }
 }

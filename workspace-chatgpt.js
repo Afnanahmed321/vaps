@@ -4,7 +4,7 @@
   const artworkUrl = new URL("assets/chatgpt.png", document.currentScript.src).href;
 
   const dialog = document.createElement("dialog");
-  dialog.className = "workspace-chatgpt-dialog";
+  dialog.className = "workspace-chatgpt-dialog intelligent-app-dialog";
   dialog.setAttribute("aria-labelledby", "workspace-chatgpt-title");
   dialog.innerHTML = `
     <section class="workspace-chatgpt-window">
@@ -15,16 +15,16 @@
         <img class="workspace-chatgpt-art" src="${artworkUrl}" alt="" />
       </aside>
       <div class="workspace-chatgpt-main">
-        <header class="workspace-chatgpt-header">
+        <header class="workspace-chatgpt-header intelligent-app-header">
           <div><p><i data-lucide="sparkles" aria-hidden="true"></i> INTELLIGENT APPS</p><h2 id="workspace-chatgpt-title">AIVRM ChatGPT</h2><small>Ask a question and explore an idea.</small></div>
-          <button class="workspace-chatgpt-close" type="button" aria-label="Close ChatGPT"><i data-lucide="x" aria-hidden="true"></i></button>
+          <button class="workspace-chatgpt-close intelligent-app-close" type="button" aria-label="Close ChatGPT"><i data-lucide="x" aria-hidden="true"></i></button>
         </header>
         <div class="workspace-chatgpt-messages" id="workspace-chatgpt-messages" aria-live="polite">
           <article class="workspace-chatgpt-message assistant"><span class="workspace-chatgpt-message-icon"><i data-lucide="sparkles" aria-hidden="true"></i></span><p>Hi, welcome to ChatGPT! You can ask anything.</p></article>
         </div>
         <form class="workspace-chatgpt-composer" id="workspace-chatgpt-form">
           <label class="workspace-chatgpt-input-wrap" for="workspace-chatgpt-input"><span class="sr-only">Message ChatGPT</span><textarea id="workspace-chatgpt-input" rows="2" placeholder="Message ChatGPT..."></textarea></label>
-          <button class="workspace-chatgpt-send" type="submit" aria-label="Send message"><i data-lucide="arrow-up" aria-hidden="true"></i></button>
+          <button class="workspace-chatgpt-send intelligent-app-primary" type="submit" aria-label="Send message"><i data-lucide="arrow-up" aria-hidden="true"></i></button>
           <p class="workspace-chatgpt-status" id="workspace-chatgpt-status">ChatGPT can make mistakes. Check important information.</p>
         </form>
       </div>

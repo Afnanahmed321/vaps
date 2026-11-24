@@ -1,0 +1,176 @@
+body.preconfiguration-page {
+  --config-ink: #152235;
+  --config-muted: #536172;
+  --config-ivory: #f5f5f4;
+  --config-surface: #ffffff;
+  --config-line: #e5e0d7;
+  --config-gold: #d5a650;
+  --config-accent: #79521f;
+  --config-navy: linear-gradient(155deg, #193e5d, #061b30);
+  color: var(--config-ink);
+  background: var(--config-ivory);
+}
+
+.preconfiguration-page :is(.page-banner, .admission-banner, .tn-banner) {
+  min-height: 156px;
+  gap: 16px;
+  margin: 12px clamp(14px, 1.5vw, 28px) 0;
+  padding: 18px clamp(18px, 3vw, 42px);
+  isolation: isolate;
+  border: 1px solid #1d3851;
+  border-radius: 20px;
+  color: #fff9ed;
+  background: radial-gradient(ellipse at 78% 100%, #164663, #09253e 57%, #061b30);
+  box-shadow: 0 4px 12px #10263e16;
+}
+
+.preconfiguration-page :is(.page-banner, .admission-banner, .tn-banner)::after {
+  inset: auto -5% -62px 52%;
+  z-index: -1;
+  width: auto;
+  height: 108px;
+  border: 0;
+  border-top: 2px solid #c3a16b;
+  border-radius: 65% 45% 0 0;
+  background: linear-gradient(130deg, #c3a16b1c, #c3a16b06);
+  box-shadow: 0 -5px 0 #c3a16b16, 0 -10px 0 #c3a16b0b;
+  transform: rotate(-9deg);
+  pointer-events: none;
+}
+
+.preconfiguration-page :is(.page-banner, .admission-banner, .tn-banner) h1 {
+  color: #fff9ed;
+  letter-spacing: -.025em;
+}
+
+.preconfiguration-page :is(.banner-copy, .admission-banner-copy, .tn-banner-copy) p {
+  color: #f7f1e5;
+  line-height: 1.5;
+}
+
+.preconfiguration-page :is(.page-banner h1 svg, .admission-banner h1 svg, .tn-banner h1 svg, .eyebrow span, .admission-eyebrow span, .tn-eyebrow span) {
+  color: #ecd4a3;
+}
+
+.preconfiguration-page .banner-mark {
+  border-color: #d5a65055;
+  color: #ecd4a3;
+  background: #ffffff0f;
+}
+
+.preconfiguration-page :is(.content-area, .admission-content, .tn-content) {
+  margin-top: 0;
+  padding: 12px clamp(14px, 1.5vw, 28px) 18px;
+}
+
+.preconfiguration-page :is(.configuration-card, .master-card, .admission-card, .tn-card) {
+  border-color: var(--config-line);
+  border-radius: 23px;
+  background: var(--config-surface);
+  box-shadow: 0 7px 22px #15223512;
+}
+
+.preconfiguration-page :is(.card-topline, .card-toolbar, .admission-card-header, .tn-card-header, .tn-voucher-editor-header, .table-footer) {
+  border-color: var(--config-line);
+}
+
+.preconfiguration-page :is(.heading-mark, .admission-heading-mark) {
+  background: linear-gradient(#d6bc8a, #a9854e);
+}
+
+.preconfiguration-page :is(.settings-panel, .settings-card, .admission-box) {
+  border-color: var(--config-line);
+  background: #ffffff;
+}
+
+.preconfiguration-page .tn-tabs {
+  border-color: var(--config-line);
+  background: var(--config-ivory);
+}
+
+.preconfiguration-page :is(.institute-table, .master-table, .tn-table) :is(th, td) {
+  border-color: var(--config-line);
+}
+
+.preconfiguration-page :is(.institute-table, .master-table, .tn-table) th {
+  color: var(--config-ink);
+  background: var(--config-ivory);
+}
+
+.preconfiguration-page :is(.institute-table, .master-table, .tn-table) tbody tr:hover {
+  background: var(--config-ivory);
+}
+
+.preconfiguration-page :is(.settings-option, .admission-option) input {
+  accent-color: #10263e;
+}
+
+.preconfiguration-page .setting-option input:checked {
+  border-color: #10263e;
+  background: #10263e;
+}
+
+.preconfiguration-page .tn-radio-option input:checked + .tn-radio-indicator {
+  border-color: #10263e;
+}
+
+.preconfiguration-page .tn-radio-option input:checked + .tn-radio-indicator::after {
+  background: #10263e;
+}
+
+.preconfiguration-page :is(.button-primary, .pagewise-add, .admission-save, .tn-button-primary, .tn-tab.is-active) {
+  border: 1px solid var(--config-gold);
+  color: #fff9ed;
+  background: var(--config-navy);
+  box-shadow: 0 4px 12px #10263e24;
+}
+
+.preconfiguration-page :is(.button-primary, .pagewise-add, .admission-save, .tn-button-primary, .tn-tab.is-active):hover {
+  background: #10263e;
+}
+
+.preconfiguration-page :is(.edit-dialog, .record-dialog, .tn-edit-dialog, .logo-preview-dialog) {
+  border-color: var(--config-line);
+  background: var(--config-surface);
+}
+
+.preconfiguration-page :is(.dialog-heading, .settings-header, .tn-dialog-header, .logo-preview-dialog header) {
+  border-color: var(--config-line);
+  background: var(--config-ivory);
+}
+
+.preconfiguration-page :is(.dialog-close, .settings-close, .tn-dialog-close, .logo-preview-close):hover {
+  border-color: #b88d47;
+  background: transparent;
+}
+
+.preconfiguration-page :is(.page-footer, .admission-footer, .tn-footer) {
+  border-color: var(--config-line);
+  color: var(--config-muted);
+  background: var(--config-ivory);
+}
+
+.preconfiguration-page :is(.content-area, .admission-content, .tn-content, dialog) :is(a, button, input, select, textarea):focus-visible {
+  outline: 2px solid #b88d47;
+  outline-offset: 2px;
+}
+
+.preconfiguration-page :is(.content-area, .admission-content, .tn-content, dialog) input:is(:autofill, :-webkit-autofill) {
+  box-shadow: inset 0 0 0 100vmax #fff;
+  -webkit-text-fill-color: var(--config-ink);
+  caret-color: var(--config-ink);
+}
+
+.preconfiguration-page .configuration-placeholder {
+  padding: clamp(18px, 3vw, 30px);
+}
+
+.configuration-placeholder h2 { margin: 0 0 8px; font-size: 24px; }
+.configuration-placeholder p { margin: 0; color: var(--config-muted); font-size: 15px; line-height: 1.5; }
+
+@media (max-width: 760px) {
+  .preconfiguration-page :is(.page-banner, .admission-banner, .tn-banner) {
+    min-height: 0;
+    padding: 17px 18px;
+  }
+}

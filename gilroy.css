@@ -1,34 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap");
 
-@font-face {
-  font-family: "Gilroy";
-  src: url("./assets/fonts/Gilroy-Medium.woff2") format("woff2"), local("Gilroy-Medium"), local("Gilroy Medium");
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Gilroy Main";
-  src: url("./assets/fonts/Gilroy-Medium.woff2") format("woff2"), local("Gilroy-Medium"), local("Gilroy Medium");
-  font-style: normal;
-  font-weight: 600;
-  size-adjust: 112%;
-  font-display: swap;
+:root {
+  --site-font: "Newsreader", Georgia, "Times New Roman", serif;
 }
 
 body,
 body * {
-  font-family: "Gilroy", "Poppins", Arial, sans-serif !important;
-  font-weight: 600 !important;
+  font-family: var(--site-font) !important;
 }
 
-body main > :not(.topbar),
-body main > :not(.topbar) * {
-  font-family: "Gilroy Main", "Poppins", Arial, sans-serif !important;
-}
-
-body.teachers-page main > :not(.topbar),
-body.teachers-page main > :not(.topbar) * {
-  font-family: "Gilroy", "Poppins", Arial, sans-serif !important;
+:where(b, strong, th, h1, h2, h3, h4, h5, h6) {
+  font-weight: 600;
 }

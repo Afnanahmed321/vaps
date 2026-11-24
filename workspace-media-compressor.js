@@ -3,14 +3,14 @@
   if (!menu) return;
 
   const dialog = document.createElement("dialog");
-  dialog.className = "workspace-media-dialog";
+  dialog.className = "workspace-media-dialog intelligent-app-dialog";
   dialog.setAttribute("aria-labelledby", "workspace-media-title");
   dialog.innerHTML = `
     <section class="workspace-media-window">
-      <header class="workspace-media-header">
+      <header class="workspace-media-header intelligent-app-header">
         <span class="workspace-media-mark"><i data-lucide="images" aria-hidden="true"></i></span>
         <div><p>INTELLIGENT APPS</p><h2 id="workspace-media-title">Media Compressor</h2><small>Make image files smaller while keeping them clear.</small></div>
-        <button class="workspace-media-close" type="button" aria-label="Close Media Compressor"><i data-lucide="x" aria-hidden="true"></i></button>
+        <button class="workspace-media-close intelligent-app-close" type="button" aria-label="Close Media Compressor"><i data-lucide="x" aria-hidden="true"></i></button>
       </header>
       <div class="workspace-media-body">
         <label class="workspace-media-drop" for="workspace-media-file" tabindex="0">
@@ -33,7 +33,7 @@
       </div>
       <footer class="workspace-media-footer">
         <button class="workspace-media-cancel" type="button">Cancel</button>
-        <button class="workspace-media-compress" type="button" disabled><i data-lucide="minimize-2" aria-hidden="true"></i><span>Compress Media</span></button>
+        <button class="workspace-media-compress intelligent-app-primary" type="button" disabled><i data-lucide="minimize-2" aria-hidden="true"></i><span>Compress Media</span></button>
       </footer>
     </section>`;
   document.body.append(dialog);

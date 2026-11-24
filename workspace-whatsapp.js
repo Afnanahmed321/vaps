@@ -4,7 +4,7 @@
   const artworkUrl = new URL("assets/whatsapp-sender.png", document.currentScript.src).href;
 
   const dialog = document.createElement("dialog");
-  dialog.className = "whatsapp-dialog";
+  dialog.className = "whatsapp-dialog intelligent-app-dialog";
   dialog.setAttribute("aria-labelledby", "whatsapp-dialog-title");
   dialog.innerHTML = `
     <form class="whatsapp-window" id="whatsapp-form">
@@ -15,13 +15,13 @@
         <div class="whatsapp-side-art"><img src="${artworkUrl}" alt="WhatsApp message on a phone" /></div>
       </aside>
       <div class="whatsapp-main">
-        <header class="whatsapp-header">
+        <header class="whatsapp-header intelligent-app-header">
           <div class="whatsapp-heading-copy">
             <p><i data-lucide="message-circle" aria-hidden="true"></i> INTELLIGENT APPS</p>
             <h2 id="whatsapp-dialog-title">WhatsApp Sender</h2>
             <span>Send template messages to your school community.</span>
           </div>
-          <button class="whatsapp-close" type="button" aria-label="Close WhatsApp Sender"><i data-lucide="x" aria-hidden="true"></i></button>
+          <button class="whatsapp-close intelligent-app-close" type="button" aria-label="Close WhatsApp Sender"><i data-lucide="x" aria-hidden="true"></i></button>
         </header>
       <div class="whatsapp-body">
         <div class="whatsapp-mode-switch" role="tablist" aria-label="Message type">
@@ -56,7 +56,7 @@
         <p class="whatsapp-feedback" id="whatsapp-feedback" role="status" aria-live="polite" hidden></p>
       </div>
       <footer class="whatsapp-footer">
-        <button class="whatsapp-send" type="submit">Send Message <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+        <button class="whatsapp-send intelligent-app-primary" type="submit">Send Message <i data-lucide="arrow-right" aria-hidden="true"></i></button>
       </footer>
       </div>
     </form>`;

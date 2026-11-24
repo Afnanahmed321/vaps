@@ -18,7 +18,7 @@
   <script defer src="../../workspace-media-compressor.js"></script>
 </head>
 <body>
-  <div class="app-shell">
+  <div class="app-shell report-builder-shell">
     <aside class="sidebar">
       <a class="brand" href="../../System%20Overview/html%20%26%20css%20files/index.html"><img class="brand-logo" src="../../assets/logo.jpg" alt="Tunbridge High School" /></a>
       <nav class="side-nav" aria-label="Main navigation">
@@ -39,7 +39,6 @@
       </header>
       <section class="page-banner">
         <div class="student-hero-content"><div><h1>Class Wise Student Details</h1><p>Choose classes, student fields, and report options to create your report.</p></div></div>
-        <div class="banner-mark" aria-hidden="true"><i data-lucide="contact-round"></i></div>
       </section>
       <section class="content-area">
         <form class="student-card" id="student-form">
@@ -65,8 +64,8 @@
               </section>
             </div>
             <div class="report-options">
-              <fieldset class="radio-block report-type-block"><span class="option-group-icon"><i data-lucide="chart-no-axes-column-increasing"></i></span><legend>Report Type</legend><div class="radio-options report-types"><label><input type="radio" name="report-type" value="new" checked><span>New Admission</span></label><label><input type="radio" name="report-type" value="total"><span>Total Students</span></label><label><input type="radio" name="report-type" value="promoted"><span>Promoted</span></label><label><input type="radio" name="report-type" value="year-loss"><span>Year Loss</span></label><label><input type="radio" name="report-type" value="deactivated"><span>Deactivated</span></label></div></fieldset>
-              <fieldset class="radio-block format-block"><span class="option-group-icon"><i data-lucide="monitor"></i></span><legend>Display Format</legend><div class="radio-options"><label><input type="radio" name="format" value="table" checked><span>Table Format</span></label><label><input type="radio" name="format" value="kendo"><span>Kendo Format</span></label></div></fieldset>
+              <fieldset class="radio-block report-type-block"><legend>Report Type</legend><div class="radio-options report-types"><label><input type="radio" name="report-type" value="new" checked><span>New Admission</span></label><label><input type="radio" name="report-type" value="total"><span>Total Students</span></label><label><input type="radio" name="report-type" value="promoted"><span>Promoted</span></label><label><input type="radio" name="report-type" value="year-loss"><span>Year Loss</span></label><label><input type="radio" name="report-type" value="deactivated"><span>Deactivated</span></label></div></fieldset>
+              <fieldset class="radio-block format-block"><legend>Display Format</legend><div class="radio-options"><label><input type="radio" name="format" value="table" checked><span>Table Format</span></label><label><input type="radio" name="format" value="kendo"><span>Kendo Format</span></label></div></fieldset>
             </div>
             <div class="form-actions"><p class="form-note"><i data-lucide="info"></i> Choose a year, class, section, and at least one field.</p><div class="action-buttons"><button class="btn btn-primary" type="submit"><i data-lucide="file-text"></i> Generate Report</button><button class="btn btn-accent" id="export-button" type="button"><i data-lucide="file-spreadsheet"></i> Export to Excel</button><button class="btn" id="print-button" type="button"><i data-lucide="printer"></i> Print</button><button class="btn" type="reset"><i data-lucide="rotate-ccw"></i> Reset</button><a class="btn" href="../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="x"></i> Cancel</a></div></div>
             <p class="form-message" id="form-message" role="status" aria-live="polite"></p>

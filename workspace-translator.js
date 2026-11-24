@@ -4,7 +4,7 @@
   const artworkUrl = new URL("assets/translation.png", document.currentScript.src).href;
 
   const dialog = document.createElement("dialog");
-  dialog.className = "workspace-translator-dialog";
+  dialog.className = "workspace-translator-dialog intelligent-app-dialog";
   dialog.setAttribute("aria-labelledby", "workspace-translator-title");
   dialog.innerHTML = `
     <section class="workspace-translator-window">
@@ -15,9 +15,9 @@
         <img class="workspace-translator-art" src="${artworkUrl}" alt="" />
       </aside>
       <form class="workspace-translator-main" id="workspace-translator-form">
-        <header class="workspace-translator-header">
+        <header class="workspace-translator-header intelligent-app-header">
           <div><p><i data-lucide="languages" aria-hidden="true"></i> INTELLIGENT APPS</p><h2 id="workspace-translator-title">Language Translator</h2><small>Translate text between languages.</small></div>
-          <button class="workspace-translator-close" type="button" aria-label="Close Language Translator"><i data-lucide="x" aria-hidden="true"></i></button>
+          <button class="workspace-translator-close intelligent-app-close" type="button" aria-label="Close Language Translator"><i data-lucide="x" aria-hidden="true"></i></button>
         </header>
         <div class="workspace-translator-body">
           <label class="workspace-translator-field"><span><i data-lucide="file-text" aria-hidden="true"></i> Text to translate</span><textarea id="workspace-translator-source" placeholder="Enter text here..."></textarea></label>
@@ -29,7 +29,7 @@
           </div>
           <p class="workspace-translator-status" id="workspace-translator-status" role="status" aria-live="polite" hidden></p>
         </div>
-        <footer class="workspace-translator-footer"><button class="workspace-translator-submit" type="submit">Translate <i data-lucide="arrow-right" aria-hidden="true"></i></button></footer>
+        <footer class="workspace-translator-footer"><button class="workspace-translator-submit intelligent-app-primary" type="submit">Translate <i data-lucide="arrow-right" aria-hidden="true"></i></button></footer>
       </form>
     </section>`;
   document.body.append(dialog);

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../../workspace-shell.css" />
   <link rel="stylesheet" href="../../site-assistant.css" />
   <link rel="stylesheet" href="../../gilroy.css" />
+  <script defer src="../../workspace-roles.js"></script>
   <script defer src="../../workspace-whatsapp.js"></script>
   <script defer src="../../workspace-chatgpt.js"></script>
   <script defer src="../../workspace-translator.js"></script>
@@ -29,7 +30,7 @@
 
     <nav class="side-nav">
       <a class="nav-item active" href="index.html" aria-current="page"><i data-lucide="house"></i><span>System Overview</span></a>
-      <a class="nav-item" href="../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+      <a class="nav-item" href="../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="layout-grid"></i><span>Applications</span></a>
       <a class="nav-item" href="../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
       <a class="nav-item" href="../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
       <a class="nav-item" href="../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
@@ -37,7 +38,7 @@
     </nav>
 
     <button class="academic-year">
-      <i data-lucide="graduation-cap"></i>
+      <i data-lucide="calendar-days"></i>
       <span>
         <small>Academic Year</small>
         <strong>2026 – 2027</strong>
@@ -45,7 +46,7 @@
       <i class="year-chevron" data-lucide="chevron-down"></i>
     </button>
 
-    <div class="sidebar-waves"><span></span><span></span></div>
+    <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
   </aside>
 
   <main class="main-area">
@@ -129,10 +130,28 @@
           </div>
         </div>
       </div>
+      <div class="hero-ribbon" aria-hidden="true"></div>
       <div class="hero-building" role="img" aria-label="Tunbridge High School campus"></div>
+      <img class="hero-laurel" src="../Assets/leaf.png" width="1536" height="1024" alt="" />
     </section>
 
     <section class="dashboard">
+      <div class="dashboard-role-controls">
+        <fieldset class="dashboard-role-switcher">
+          <legend>Dashboard view</legend>
+          <label><input type="radio" name="dashboard-role" value="admin" checked><span>Admin</span></label>
+          <label><input type="radio" name="dashboard-role" value="principal"><span>Principal</span></label>
+          <label><input type="radio" name="dashboard-role" value="teacher"><span>Teacher</span></label>
+          <label><input type="radio" name="dashboard-role" value="accountant"><span>Accountant</span></label>
+        </fieldset>
+        <nav class="dashboard-role-links" aria-label="Dashboard shortcuts">
+          <a data-dashboard-roles="admin principal" href="../../Applications/html%20%26%20css%20files/application.html">Applications</a>
+          <a data-dashboard-roles="principal teacher" href="../../Students/html%20%26%20css%20files/students.html" hidden>Students</a>
+          <a data-dashboard-roles="admin teacher" href="../../Teachers/html%20%26%20css%20files/teachers.html">Teachers</a>
+          <a data-dashboard-roles="admin accountant" href="../../Fees/html%20%26%20css%20files/fee-collection.html">Fee Collection</a>
+          <a data-dashboard-roles="principal teacher accountant" href="../../Reports/html%20%26%20css%20files/reports.html" hidden>Reports</a>
+        </nav>
+      </div>
 
       <div class="section-heading">
         <strong>METRICS &amp; ANALYTICS</strong>
@@ -142,28 +161,28 @@
 
       <div class="metrics-grid students-overview-grid">
 
-        <article class="metric-card overview-stat-card blue">
+        <article class="metric-card overview-stat-card blue" data-dashboard-roles="admin principal">
           <div class="metric-icon"><img src="../../assets/application.png" alt="" aria-hidden="true" /></div>
           <span class="metric-divider" aria-hidden="true"></span>
           <div class="metric-content"><span>Applications</span><strong>6,183</strong></div>
           <div class="metric-ribbon" aria-hidden="true"><i data-lucide="graduation-cap"></i></div>
         </article>
 
-        <article class="metric-card overview-stat-card orange">
+        <article class="metric-card overview-stat-card orange" data-dashboard-roles="admin principal teacher">
           <div class="metric-icon"><img src="../../assets/students.png" alt="" aria-hidden="true" /></div>
           <span class="metric-divider" aria-hidden="true"></span>
           <div class="metric-content"><span>Students</span><strong>104</strong></div>
           <div class="metric-ribbon" aria-hidden="true"><i data-lucide="graduation-cap"></i></div>
         </article>
 
-        <article class="metric-card overview-stat-card green">
+        <article class="metric-card overview-stat-card green" data-dashboard-roles="admin principal">
           <div class="metric-icon"><img src="../../assets/teachers.png" alt="" aria-hidden="true" /></div>
           <span class="metric-divider" aria-hidden="true"></span>
           <div class="metric-content"><span>Teachers</span><strong>80</strong></div>
           <div class="metric-ribbon" aria-hidden="true"><i data-lucide="graduation-cap"></i></div>
         </article>
 
-        <article class="metric-card overview-stat-card purple">
+        <article class="metric-card overview-stat-card purple" data-dashboard-roles="admin principal accountant">
           <div class="metric-icon"><img src="../../assets/fee-collection.png" alt="" aria-hidden="true" /></div>
           <span class="metric-divider" aria-hidden="true"></span>
           <div class="metric-content"><span>Fee Collection</span><strong>₹36,140</strong></div>
@@ -172,7 +191,7 @@
 
       </div>
 
-      <section class="overview-charts" aria-label="Student analytics" aria-describedby="overview-charts-source">
+      <section class="overview-charts" aria-label="Student analytics" data-dashboard-roles="admin principal teacher">
         <article class="overview-chart" aria-labelledby="attendance-title">
           <header class="overview-chart-heading">
             <h2 id="attendance-title"><i data-lucide="chart-no-axes-column-increasing" aria-hidden="true"></i>Student Attendance</h2>
@@ -231,6 +250,17 @@
             <h2 id="performance-title"><i data-lucide="trending-up" aria-hidden="true"></i>Academic Performance</h2>
             <span class="overview-chart-period">Term 1</span>
           </header>
+          <div class="performance-controls" role="group" aria-label="Academic performance controls">
+            <label class="attendance-filter"><span>Class</span><select id="performance-class"><option value="">All classes</option></select></label>
+            <fieldset class="performance-sort" id="performance-sort">
+              <legend>Sort by class</legend>
+              <div class="performance-sort-toggle">
+                <label><input type="radio" name="performance-sort" value="ascending" checked><span>Ascending</span></label>
+                <label><input type="radio" name="performance-sort" value="descending"><span>Descending</span></label>
+              </div>
+            </fieldset>
+          </div>
+          <p id="performance-status" class="sr-only" role="status"></p>
           <div class="performance-chart">
             <div class="performance-axis" aria-hidden="true">
               <span>100%</span><span>80%</span><span>60%</span><span>40%</span><span>20%</span><span>0%</span>
@@ -249,7 +279,6 @@
             </dl>
           </div>
         </article>
-        <p class="overview-charts-source" id="overview-charts-source">Sample data</p>
       </section>
 
       <section class="query-filter-bar" aria-labelledby="query-filter-heading">
@@ -569,7 +598,7 @@
             <h2 id="operation-tools-title">Pre Configuration</h2>
             <p class="module-description">Set up the essentials that keep your school running smoothly.</p>
           </div>
-          <div class="module-heading-art"><img src="../../assets/ai-preview-image.png" alt="" /></div>
+          <div class="module-heading-art" aria-hidden="true"><i data-lucide="graduation-cap"></i></div>
         </div>
         <div class="module-section-heading">
           <div><span class="section-heading-mark"></span><strong id="module-section-label">AVAILABLE SECTIONS</strong></div>
@@ -614,6 +643,38 @@
   if (window.lucide) {
     lucide.createIcons();
   }
+
+  const performanceBars = document.querySelector(".performance-bars");
+  const performanceClass = document.getElementById("performance-class");
+  const performanceSort = document.getElementById("performance-sort");
+  const performanceStatus = document.getElementById("performance-status");
+  const performanceEntries = Array.from(performanceBars.children, (bar, index) => ({
+    bar,
+    index,
+    label: bar.querySelector("dt").textContent.trim(),
+    score: Number.parseFloat(bar.querySelector("dd").textContent)
+  }));
+
+  performanceEntries.forEach(({ index, label }) => {
+    performanceClass.add(new Option(label, String(index)));
+  });
+
+  function updatePerformance() {
+    const selectedClass = performanceClass.value;
+    const direction = performanceSort.querySelector("input:checked").value;
+    const entries = performanceEntries.filter(({ index }) => selectedClass === "" || String(index) === selectedClass);
+    if (direction === "descending") entries.reverse();
+
+    entries.forEach(({ bar }, index) => bar.style.setProperty("--delay", `${index * 35}ms`));
+    performanceBars.replaceChildren(...entries.map(({ bar }) => bar));
+    performanceBars.style.setProperty("--performance-columns", entries.length);
+    performanceStatus.textContent = selectedClass === ""
+      ? `Showing ${entries.length} classes in ${direction} order.`
+      : `${entries[0].label}: ${entries[0].score}%.`;
+  }
+
+  performanceClass.addEventListener("change", updatePerformance);
+  performanceSort.addEventListener("change", updatePerformance);
 
   const today = new Date();
   const todayDate = today.toLocaleDateString("sv-SE");
@@ -1081,23 +1142,22 @@
 
     toolCount.hidden = false;
     const tools = module.tools.filter((tool) => tool.toLocaleLowerCase().includes(query));
-    tools.forEach((tool, index) => {
-      const isMasterConfiguration = selectedModule === "pre-configuration" && tool === "Master Configuration";
-      const isGeneralConfiguration = selectedModule === "pre-configuration" && tool === "General Configuration";
-      const isTransactionNumbering = selectedModule === "pre-configuration" && tool === "Transaction Numbering";
-      const isAdmissionStandard = selectedModule === "pre-configuration" && tool === "Admission Standard";
-      const isConfigurationPage = isMasterConfiguration || isGeneralConfiguration || isTransactionNumbering || isAdmissionStandard;
-      const item = document.createElement(isConfigurationPage ? "a" : "div");
+    const configurationPages = {
+      "Master Configuration": "Master/master.html",
+      "General Configuration": "General/general.html",
+      "Transaction Numbering": "Transaction%20Numbering/TN.html",
+      "Admission Standard": "Admission%20Standard/admission.html",
+      "Fee Standard": "Fee%20Standard/fee.html",
+      "Exam Standard": "Exam%20Standard/exam.html",
+      "Payroll Standard": "Payroll/payroll.html"
+    };
+    tools.forEach((tool) => {
+      const page = selectedModule === "pre-configuration" ? configurationPages[tool] : undefined;
+      const item = document.createElement(page ? "a" : "div");
       item.className = "module-tool-item";
-      if (isConfigurationPage) {
+      if (page) {
         item.classList.add("module-tool-link");
-        item.href = isMasterConfiguration
-          ? "../../Modules/Preconfiguration/Master/master.html"
-          : isGeneralConfiguration
-            ? "../../Modules/Preconfiguration/General/general.html"
-            : isTransactionNumbering
-              ? "../../Modules/Preconfiguration/Transaction%20Numbering/TN.html"
-              : "../../Modules/Preconfiguration/Admission%20Standard/admission.html";
+        item.href = "../../Modules/Preconfiguration/" + page;
         item.setAttribute("aria-label", `Open ${tool}`);
       }
       const toolIcons = {

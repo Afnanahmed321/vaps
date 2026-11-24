@@ -10,7 +10,7 @@
 
 :root {
   color-scheme: light;
-  --admission-blue: #4268ff;
+  --admission-blue: #244762;
   --admission-ink: #17213a;
   --admission-muted: #78839a;
   --admission-border: #e4e9f4;
@@ -54,7 +54,7 @@ button {
   color: #fff;
   background:
     radial-gradient(circle at 78% 12%, rgba(196, 211, 255, .16), transparent 25%),
-    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #4968b3 100%);
+    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #244762 100%);
 }
 
 .admission-banner::after {
@@ -127,7 +127,7 @@ button {
 
 .admission-breadcrumbs strong {
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .admission-breadcrumbs svg {
@@ -174,7 +174,7 @@ button {
   height: 42px;
   flex: none;
   border-radius: 4px;
-  background: linear-gradient(#526cff, #3554c6);
+  background: linear-gradient(#244762, #244762);
 }
 
 .admission-card-header h2 {
@@ -188,7 +188,7 @@ button {
 .admission-card-heading > div > p {
   margin: 5px 0 0;
   color: #78839a;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .admission-status {
@@ -324,7 +324,7 @@ button {
   border-radius: 11px;
   color: #273453;
   background: #fff;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .logo-file-wrap input::file-selector-button {
@@ -343,16 +343,16 @@ button {
   min-height: 40px;
   border: 1px solid #dfe4ef;
   border-radius: 11px;
-  color: #3554c6;
+  color: #244762;
   background: #fff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   box-shadow: 0 2px 4px rgba(28, 40, 74, .06);
 }
 
 .logo-view-button:hover {
-  background: #f5f7ff;
-  border-color: #cbd6fb;
+  background: #f5f5f4;
+  border-color: #d6b273;
 }
 
 .logo-file-name {
@@ -397,7 +397,7 @@ button {
 
 .admission-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(24, 39, 68, .08);
+  box-shadow: 0 4px 10px rgba(82, 59, 29, 0.08);
 }
 
 .admission-button svg {
@@ -406,14 +406,14 @@ button {
 }
 
 .admission-save {
-  border-color: #3554c6;
+  border-color: #244762;
   color: #fff;
-  background: linear-gradient(110deg, #526cff, #3554c6);
-  box-shadow: 0 4px 10px rgba(66, 104, 255, .2);
+  background: linear-gradient(110deg, #244762, #244762);
+  box-shadow: 0 4px 10px rgba(36, 71, 98, .2);
 }
 
 .admission-clear {
-  color: #3554c6;
+  color: #244762;
 }
 
 .admission-reset {
@@ -448,7 +448,7 @@ button {
 .admission-footer svg {
   width: 15px;
   height: 15px;
-  color: #4268ff;
+  color: #244762;
 }
 
 .admission-footer strong {
@@ -519,7 +519,7 @@ button {
 .admission-button:focus-visible,
 .logo-view-button:focus-visible,
 .logo-preview-close:focus-visible {
-  outline: 3px solid rgba(66, 104, 255, .22);
+  outline: 3px solid rgba(36, 71, 98, .22);
   outline-offset: 3px;
 }
 
@@ -575,7 +575,7 @@ button {
   }
 
   .admission-option {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .admission-choice-row {

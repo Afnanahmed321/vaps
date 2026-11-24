@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: light;
-  --marks-blue: #4268ff;
-  --marks-blue-dark: #3554c6;
+  --marks-blue: #244762;
+  --marks-blue-dark: #244762;
   --marks-ink: #17213a;
   --marks-muted: #78839a;
   --marks-line: #e4e9f4;
@@ -59,7 +59,7 @@ button {
   color: #fff;
   background:
     radial-gradient(circle at 78% 12%, rgba(196, 211, 255, .16), transparent 25%),
-    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #4968b3 100%);
+    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #244762 100%);
 }
 
 .marks-banner::after {
@@ -136,7 +136,7 @@ button {
 
 .marks-breadcrumbs span {
   color: #fff;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .marks-breadcrumbs svg {
@@ -178,7 +178,7 @@ button {
   height: 54px;
   flex: none;
   border-radius: 4px;
-  background: linear-gradient(#526cff, #3554c6);
+  background: linear-gradient(#244762, #244762);
 }
 
 .marks-heading-copy h2 {
@@ -192,7 +192,7 @@ button {
 .marks-heading-copy p {
   margin: 5px 0 0;
   color: var(--marks-muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.55;
 }
 
@@ -219,7 +219,7 @@ button {
   margin: 0;
   color: #24395f;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .marks-collapse {
@@ -236,9 +236,9 @@ button {
 }
 
 .marks-collapse:hover {
-  border-color: #c8d5e8;
-  color: var(--marks-blue-dark);
-  background: #f7f9fd;
+  border-color: #d6b273;
+  color: #79521f;
+  background: #f5f5f4;
 }
 
 .marks-collapse svg {
@@ -265,8 +265,8 @@ button {
   flex-direction: column;
   gap: 8px;
   color: #344967;
-  font-size: 13px;
-  font-weight: 650;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .marks-field b {
@@ -284,13 +284,13 @@ button {
   color: #273453;
   background: #fff;
   box-shadow: 0 2px 5px rgba(28, 40, 74, .05);
-  font-size: 13px;
+  font-size: 14px;
   transition: border-color .16s ease, box-shadow .16s ease;
 }
 
 .marks-field select:focus {
-  border-color: #91a7f4;
-  box-shadow: 0 0 0 3px rgba(66, 104, 255, .1);
+  border-color: #244762;
+  box-shadow: 0 0 0 3px rgba(36, 71, 98, .1);
 }
 
 .marks-field select:disabled {
@@ -316,8 +316,8 @@ button {
   padding: 0 17px;
   border: 1px solid transparent;
   border-radius: 10px;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   transition: background .16s ease, box-shadow .16s ease, transform .16s ease;
 }
 
@@ -332,12 +332,12 @@ button {
 
 .marks-search-button {
   color: #fff;
-  background: linear-gradient(110deg, #526cff, #3554c6);
-  box-shadow: 0 5px 13px rgba(66, 104, 255, .2);
+  background: linear-gradient(110deg, #244762, #244762);
+  box-shadow: 0 5px 13px rgba(36, 71, 98, .2);
 }
 
 .marks-search-button:hover {
-  background: linear-gradient(110deg, #4260ed, #2e49b9);
+  background: #55432e;
 }
 
 .marks-cancel-button {
@@ -348,8 +348,8 @@ button {
 }
 
 .marks-cancel-button:hover {
-  border-color: #c8d5e8;
-  background: #f8faff;
+  border-color: #d6b273;
+  background: #f5f5f4;
 }
 
 .marks-results {
@@ -375,8 +375,8 @@ button {
 .marks-results-eyebrow {
   margin: 0 0 4px;
   color: #78839a;
-  font-size: 10px;
-  font-weight: 750;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: .9px;
 }
 
@@ -389,10 +389,10 @@ button {
 .marks-results-heading > span {
   padding: 7px 11px;
   border-radius: 16px;
-  color: #3554c6;
+  color: #244762;
   background: #eef2ff;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   white-space: nowrap;
 }
 
@@ -414,14 +414,14 @@ button {
   padding: 13px 16px;
   border-bottom: 1px solid #edf1f6;
   color: #4a5e7d;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .marks-table th {
   color: #52617b;
   background: #f8faff;
-  font-size: 11px;
-  font-weight: 750;
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: .25px;
 }
 
@@ -435,7 +435,7 @@ button {
   margin: 12px 2px 0;
   color: #357650;
   font-size: 12px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .marks-status.is-error {
@@ -476,7 +476,7 @@ button {
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 3px solid rgba(66, 104, 255, .22);
+  outline: 3px solid rgba(36, 71, 98, .22);
   outline-offset: 2px;
 }
 

@@ -3,14 +3,14 @@
   if (!appsMenu) return;
 
   const dialog = document.createElement("dialog");
-  dialog.className = "workspace-tts-dialog";
+  dialog.className = "workspace-tts-dialog intelligent-app-dialog";
   dialog.setAttribute("aria-labelledby", "workspace-tts-title");
   dialog.innerHTML = `
     <form class="workspace-tts-window" id="workspace-tts-form">
-      <header class="workspace-tts-header">
+      <header class="workspace-tts-header intelligent-app-header">
         <span class="workspace-tts-mark"><i data-lucide="audio-lines" aria-hidden="true"></i></span>
         <div><p>INTELLIGENT APPS</p><h2 id="workspace-tts-title">Text to Speech</h2><small>Convert your text into natural sounding speech.</small></div>
-        <button class="workspace-tts-close" type="button" aria-label="Close Text to Speech"><i data-lucide="x" aria-hidden="true"></i></button>
+        <button class="workspace-tts-close intelligent-app-close" type="button" aria-label="Close Text to Speech"><i data-lucide="x" aria-hidden="true"></i></button>
       </header>
       <div class="workspace-tts-body">
         <label for="workspace-tts-text">Text to read</label>
@@ -18,7 +18,7 @@
         <p class="workspace-tts-status" id="workspace-tts-status" role="status" aria-live="polite" hidden></p>
       </div>
       <footer class="workspace-tts-footer">
-        <button class="workspace-tts-listen" type="submit"><i data-lucide="play" aria-hidden="true"></i><span>Listen</span></button>
+        <button class="workspace-tts-listen intelligent-app-primary" type="submit"><i data-lucide="play" aria-hidden="true"></i><span>Listen</span></button>
         <button class="workspace-tts-stop" type="button"><i data-lucide="square" aria-hidden="true"></i><span>Stop</span></button>
       </footer>
     </form>`;

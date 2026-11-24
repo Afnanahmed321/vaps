@@ -4,8 +4,8 @@
 
 :root {
   color-scheme: light;
-  --written-blue: #4268ff;
-  --written-blue-dark: #3554c6;
+  --written-blue: #244762;
+  --written-blue-dark: #244762;
   --written-ink: #17213a;
   --written-muted: #78839a;
   --written-line: #e4e9f4;
@@ -59,7 +59,7 @@ button {
   color: #fff;
   background:
     radial-gradient(circle at 78% 12%, rgba(196, 211, 255, .16), transparent 25%),
-    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #4968b3 100%);
+    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #244762 100%);
 }
 
 .written-banner::after {
@@ -136,7 +136,7 @@ button {
 
 .written-breadcrumbs strong {
   color: #fff;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .written-breadcrumbs svg {
@@ -178,7 +178,7 @@ button {
   height: 54px;
   flex: none;
   border-radius: 4px;
-  background: linear-gradient(#526cff, #3554c6);
+  background: linear-gradient(#244762, #244762);
 }
 
 .written-page-heading h2 {
@@ -192,7 +192,7 @@ button {
 .written-page-heading p {
   margin: 5px 0 0;
   color: var(--written-muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.55;
 }
 
@@ -218,7 +218,7 @@ button {
   margin: 0;
   color: #24395f;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .written-collapse {
@@ -235,9 +235,9 @@ button {
 }
 
 .written-collapse:hover {
-  border-color: #c8d5e8;
-  color: var(--written-blue-dark);
-  background: #f7f9fd;
+  border-color: #d6b273;
+  color: #79521f;
+  background: #f5f5f4;
 }
 
 .written-collapse svg {
@@ -269,8 +269,8 @@ button {
   gap: 8px;
   padding-top: 0;
   color: #344967;
-  font-size: 13px;
-  font-weight: 650;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .written-subject-field > span {
@@ -292,13 +292,13 @@ button {
   color: #273453;
   background: #fff;
   box-shadow: 0 2px 5px rgba(28, 40, 74, .05);
-  font-size: 13px;
+  font-size: 14px;
   transition: border-color .16s ease, box-shadow .16s ease;
 }
 
 .written-subject-field select:focus {
-  border-color: #91a7f4;
-  box-shadow: 0 0 0 3px rgba(66, 104, 255, .1);
+  border-color: #244762;
+  box-shadow: 0 0 0 3px rgba(36, 71, 98, .1);
 }
 
 .written-student-picker {
@@ -343,7 +343,7 @@ button {
   border-radius: 9px;
   color: #263757;
   background: #f8faff;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .written-student-list {
@@ -359,7 +359,7 @@ button {
 }
 
 .written-student-list .written-student:hover {
-  background: #f5f7ff;
+  background: #f5f5f4;
 }
 
 .written-actions {
@@ -380,8 +380,8 @@ button {
   padding: 0 18px;
   border: 1px solid transparent;
   border-radius: 10px;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   transition: background .16s ease, box-shadow .16s ease, transform .16s ease;
 }
 
@@ -396,12 +396,12 @@ button {
 
 .written-search-button {
   color: #fff;
-  background: linear-gradient(110deg, #526cff, #3554c6);
-  box-shadow: 0 5px 13px rgba(66, 104, 255, .2);
+  background: linear-gradient(110deg, #244762, #244762);
+  box-shadow: 0 5px 13px rgba(36, 71, 98, .2);
 }
 
 .written-search-button:hover {
-  background: linear-gradient(110deg, #4260ed, #2e49b9);
+  background: #55432e;
 }
 
 .written-cancel-button {
@@ -412,8 +412,8 @@ button {
 }
 
 .written-cancel-button:hover {
-  border-color: #c8d5e8;
-  background: #f8faff;
+  border-color: #d6b273;
+  background: #f5f5f4;
 }
 
 .written-status {
@@ -421,7 +421,7 @@ button {
   margin: 12px 2px 0;
   color: #357650;
   font-size: 12px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .written-status.is-visible {
@@ -465,7 +465,7 @@ button {
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 3px solid rgba(66, 104, 255, .22);
+  outline: 3px solid rgba(36, 71, 98, .22);
   outline-offset: 2px;
 }
 

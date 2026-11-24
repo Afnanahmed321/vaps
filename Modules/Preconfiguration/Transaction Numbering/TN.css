@@ -53,7 +53,7 @@ button {
   color: #fff;
   background:
     radial-gradient(circle at 78% 12%, rgba(196, 211, 255, .16), transparent 25%),
-    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #4968b3 100%);
+    linear-gradient(112deg, #17234b 0%, #2d4786 56%, #244762 100%);
 }
 
 .tn-banner::after {
@@ -93,7 +93,7 @@ button {
   gap: 10px;
   margin: 0;
   font-size: clamp(27px, 3vw, 37px);
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: -.7px;
 }
 
@@ -138,7 +138,7 @@ button {
 
 .tn-breadcrumbs span {
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .tn-content {
@@ -183,14 +183,14 @@ button {
   color: #687791;
   background: transparent;
   font-size: 12px;
-  font-weight: 650;
+  font-weight: 600;
   white-space: nowrap;
   transition: color .16s ease, background .16s ease, box-shadow .16s ease;
 }
 
 .tn-tab:hover {
-  color: #294779;
-  background: #f0f4fb;
+  color: #79521f;
+  background: #f5f5f4;
 }
 
 .tn-tab.is-active {
@@ -225,7 +225,7 @@ button {
   margin: 0;
   color: #24395f;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .tn-voucher-form-content {
@@ -266,7 +266,7 @@ button {
   margin-right: 4px;
   color: #536782;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .tn-card-header {
@@ -282,8 +282,8 @@ button {
 .tn-card-eyebrow {
   margin: 0 0 4px;
   color: #7d8ba4;
-  font-size: 9px;
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: 1.1px;
 }
 
@@ -291,7 +291,7 @@ button {
   margin: 0;
   color: #24395f;
   font-size: 17px;
-  font-weight: 750;
+  font-weight: 600;
   letter-spacing: -.3px;
   text-transform: capitalize;
 }
@@ -307,7 +307,7 @@ button {
   margin: 0;
   color: #347652;
   font-size: 11px;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .tn-status.is-visible {
@@ -332,9 +332,9 @@ button {
 }
 
 .tn-collapse:hover {
-  border-color: #c8d5e8;
-  color: #35598f;
-  background: #f7f9fd;
+  border-color: #d6b273;
+  color: #79521f;
+  background: #f5f5f4;
 }
 
 .tn-collapse svg {
@@ -372,15 +372,15 @@ button {
   padding: 14px 13px;
   border-bottom: 1px solid #edf1f6;
   color: #4a5e7d;
-  font-size: 12px;
+  font-size: 14px;
   white-space: nowrap;
 }
 
 .tn-table th {
   color: #647592;
   background: #f7f9fd;
-  font-size: 10px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: .35px;
 }
 
@@ -407,7 +407,7 @@ button {
 }
 
 .tn-table tbody tr:hover {
-  background: #fafcff;
+  background: #f5f5f4;
 }
 
 .tn-empty-state {
@@ -438,9 +438,9 @@ button {
 
 .tn-edit-button:hover {
   transform: translateY(-1px);
-  border-color: #c6d5e9;
-  color: #243d73;
-  background: #e2ebf8;
+  border-color: #d6b273;
+  color: #79521f;
+  background: #f5f5f4;
 }
 
 .tn-edit-button svg {
@@ -538,8 +538,8 @@ button {
 .tn-dialog-header p {
   margin: 0 0 5px;
   color: #7285a5;
-  font-size: 10px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
@@ -547,7 +547,7 @@ button {
   margin: 0;
   color: #172342;
   font-size: 23px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -.4px;
 }
 
@@ -565,8 +565,8 @@ button {
 }
 
 .tn-dialog-close:hover {
-  color: #263f76;
-  background: #f2f6fc;
+  color: #79521f;
+  background: #f5f5f4;
 }
 
 .tn-dialog-close svg {
@@ -610,7 +610,7 @@ button {
   margin: 0;
   color: #35598f;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .tn-choice-group legend span {
@@ -655,7 +655,7 @@ button {
   padding: 0 5px;
   color: #345b99;
   font-size: 20px;
-  font-weight: 750;
+  font-weight: 600;
   letter-spacing: -.3px;
 }
 
@@ -671,8 +671,8 @@ button {
 
 .tn-field-label {
   color: #536782;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .tn-field-label span {
@@ -689,7 +689,7 @@ button {
 
 .tn-registration-choice-row .tn-radio-option {
   gap: 8px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .tn-registration-choice-row .tn-radio-indicator {
@@ -740,8 +740,8 @@ button {
 .tn-registration-option-group legend {
   margin-bottom: 9px;
   color: #536782;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .tn-radio-option {
@@ -818,8 +818,8 @@ button {
   padding: 0 18px;
   border: 1px solid transparent;
   border-radius: 12px;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 
@@ -839,7 +839,7 @@ button {
 }
 
 .tn-button-secondary:hover {
-  background: #f3f6fb;
+  background: #f5f5f4;
 }
 
 .tn-button-primary {
@@ -849,7 +849,7 @@ button {
 }
 
 .tn-button-primary:hover {
-  box-shadow: 0 8px 18px rgba(35, 60, 114, .26);
+  box-shadow: 0 8px 18px rgba(82, 59, 29, 0.26);
 }
 
 .tn-collapse:focus-visible,
@@ -1033,7 +1033,7 @@ button {
   }
 
   .tn-radio-option {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .tn-dialog-actions {
@@ -1045,7 +1045,7 @@ button {
   .tn-button {
     min-height: 42px;
     padding: 0 12px;
-    font-size: 11px;
+    font-size: 14px;
   }
 }
 

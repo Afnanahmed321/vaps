@@ -3,14 +3,14 @@
   if (!appsMenu) return;
 
   const dialog = document.createElement("dialog");
-  dialog.className = "workspace-pdf-dialog";
+  dialog.className = "workspace-pdf-dialog intelligent-app-dialog";
   dialog.setAttribute("aria-labelledby", "workspace-pdf-title");
   dialog.innerHTML = `
     <section class="workspace-pdf-window">
-      <header class="workspace-pdf-header">
+      <header class="workspace-pdf-header intelligent-app-header">
         <span class="workspace-pdf-mark"><i data-lucide="file-text" aria-hidden="true"></i></span>
         <div><p>INTELLIGENT APPS</p><h2 id="workspace-pdf-title">PDF Converter</h2><small>Turn an image or text file into a PDF.</small></div>
-        <button class="workspace-pdf-close" type="button" aria-label="Close PDF Converter"><i data-lucide="x" aria-hidden="true"></i></button>
+        <button class="workspace-pdf-close intelligent-app-close" type="button" aria-label="Close PDF Converter"><i data-lucide="x" aria-hidden="true"></i></button>
       </header>
       <div class="workspace-pdf-body">
         <label class="workspace-pdf-drop" for="workspace-pdf-file" tabindex="0">
@@ -28,7 +28,7 @@
       </div>
       <footer class="workspace-pdf-footer">
         <span>Files are converted in your browser.</span>
-        <button class="workspace-pdf-convert" type="button" disabled><i data-lucide="file-down" aria-hidden="true"></i><span>Convert to PDF</span></button>
+        <button class="workspace-pdf-convert intelligent-app-primary" type="button" disabled><i data-lucide="file-down" aria-hidden="true"></i><span>Convert to PDF</span></button>
       </footer>
     </section>`;
   document.body.append(dialog);
