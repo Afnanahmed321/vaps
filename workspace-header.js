@@ -6,6 +6,9 @@
   if (!topbar) return;
 
   topbar.innerHTML = `
+    <button class="sidebar-toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true" aria-controls="app-sidebar" title="Collapse sidebar">
+      <i data-lucide="panel-left-close" aria-hidden="true"></i>
+    </button>
     <label class="global-search">
       <i data-lucide="search" aria-hidden="true"></i>
       <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search pages, students, teachers, and reports" />
@@ -48,6 +51,34 @@
     </div>`;
 
   if (window.lucide) window.lucide.createIcons();
+
+  const appShell = document.querySelector(".app-shell");
+  const sidebar = document.querySelector(".app-shell > .sidebar");
+  const sidebarToggle = topbar.querySelector(".sidebar-toggle");
+  const sidebarStorageKey = "vaps-sidebar-collapsed";
+  const setSidebarCollapsed = (collapsed) => {
+    appShell?.classList.toggle("sidebar-collapsed", collapsed);
+    sidebarToggle.setAttribute("aria-expanded", String(!collapsed));
+    sidebarToggle.setAttribute("aria-label", collapsed ? "Expand sidebar" : "Collapse sidebar");
+    sidebarToggle.title = collapsed ? "Expand sidebar" : "Collapse sidebar";
+    sidebarToggle.innerHTML = `<i data-lucide="${collapsed ? "panel-left-open" : "panel-left-close"}" aria-hidden="true"></i>`;
+    if (window.lucide) window.lucide.createIcons({ root: sidebarToggle });
+    try { localStorage.setItem(sidebarStorageKey, String(collapsed)); } catch {}
+  };
+  let savedSidebarState = false;
+  try { savedSidebarState = localStorage.getItem(sidebarStorageKey) === "true"; } catch {}
+  setSidebarCollapsed(savedSidebarState);
+  sidebarToggle.addEventListener("click", () => {
+    setSidebarCollapsed(!appShell?.classList.contains("sidebar-collapsed"));
+  });
+  sidebar?.setAttribute("id", "app-sidebar");
+  sidebar?.querySelectorAll(".nav-item").forEach((item) => {
+    const label = item.querySelector("span")?.textContent.trim();
+    if (label) {
+      item.setAttribute("aria-label", label);
+      item.title = label;
+    }
+  });
 
   const goToSystemDialog = (name) => {
     const destination = new URL(systemOverviewUrl);

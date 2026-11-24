@@ -1,36 +1,43 @@
 (() => {
   const appsMenu = document.querySelector(".intelligent-apps-menu");
   if (!appsMenu) return;
+  const artworkUrl = new URL("assets/whatsapp-sender.png", document.currentScript.src).href;
 
   const dialog = document.createElement("dialog");
   dialog.className = "whatsapp-dialog";
   dialog.setAttribute("aria-labelledby", "whatsapp-dialog-title");
   dialog.innerHTML = `
     <form class="whatsapp-window" id="whatsapp-form">
-      <header class="whatsapp-header">
-        <div class="whatsapp-brand-mark"><i data-lucide="message-circle" aria-hidden="true"></i></div>
-        <div class="whatsapp-heading-copy">
-          <p>INTELLIGENT APPS</p>
-          <h2 id="whatsapp-dialog-title">WhatsApp Sender</h2>
-          <span>Send template messages to your school community.</span>
-        </div>
-        <button class="whatsapp-close" type="button" aria-label="Close WhatsApp Sender"><i data-lucide="x" aria-hidden="true"></i></button>
-      </header>
+      <aside class="whatsapp-side" aria-hidden="true">
+        <div class="whatsapp-side-brand">YOUR SCHOOL<br>ASSISTANT</div>
+        <span class="whatsapp-side-accent"></span>
+        <h3>WhatsApp<br>Sender</h3>
+        <div class="whatsapp-side-art"><img src="${artworkUrl}" alt="WhatsApp message on a phone" /></div>
+      </aside>
+      <div class="whatsapp-main">
+        <header class="whatsapp-header">
+          <div class="whatsapp-heading-copy">
+            <p><i data-lucide="message-circle" aria-hidden="true"></i> INTELLIGENT APPS</p>
+            <h2 id="whatsapp-dialog-title">WhatsApp Sender</h2>
+            <span>Send template messages to your school community.</span>
+          </div>
+          <button class="whatsapp-close" type="button" aria-label="Close WhatsApp Sender"><i data-lucide="x" aria-hidden="true"></i></button>
+        </header>
       <div class="whatsapp-body">
         <div class="whatsapp-mode-switch" role="tablist" aria-label="Message type">
           <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="whatsapp-single" data-whatsapp-mode="single">Single Message</button>
           <button type="button" role="tab" aria-selected="false" aria-controls="whatsapp-bulk" data-whatsapp-mode="bulk">Bulk Messaging</button>
         </div>
         <div class="whatsapp-type-field">
-          <label for="whatsapp-type">Type</label>
+          <label for="whatsapp-type"><i data-lucide="tag" aria-hidden="true"></i> Type</label>
           <select id="whatsapp-type" name="type">
             <option>Birthday</option><option>Attendance</option><option>Fee Due</option><option>General</option>
           </select>
         </div>
         <section class="whatsapp-fields" id="whatsapp-single" role="tabpanel">
-          <label class="whatsapp-field"><span>Mobile</span><input name="mobile" type="tel" placeholder="Number (e.g. 9199...)" autocomplete="tel" /></label>
-          <label class="whatsapp-field"><span>Name</span><input name="name" type="text" autocomplete="name" /></label>
-          <label class="whatsapp-field"><span>Institute</span><input name="institute" type="text" /></label>
+          <label class="whatsapp-field"><span><i data-lucide="smartphone" aria-hidden="true"></i> Mobile</span><input name="mobile" type="tel" placeholder="Number (e.g. 9199...)" autocomplete="tel" /></label>
+          <label class="whatsapp-field"><span><i data-lucide="user-round" aria-hidden="true"></i> Name</span><input name="name" type="text" autocomplete="name" /></label>
+          <label class="whatsapp-field"><span><i data-lucide="landmark" aria-hidden="true"></i> Institute</span><input name="institute" type="text" /></label>
         </section>
         <section class="whatsapp-bulk" id="whatsapp-bulk" role="tabpanel" hidden>
           <label class="whatsapp-section-label" for="whatsapp-file">Upload Excel sheet</label>
@@ -51,6 +58,7 @@
       <footer class="whatsapp-footer">
         <button class="whatsapp-send" type="submit">Send Message <i data-lucide="arrow-right" aria-hidden="true"></i></button>
       </footer>
+      </div>
     </form>`;
   document.body.append(dialog);
 

@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: local("Gilroy-Medium"), local("Gilroy Medium");
+  src: url("./assets/fonts/Gilroy-Medium.woff2") format("woff2"), local("Gilroy-Medium"), local("Gilroy Medium");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "Gilroy Main";
-  src: local("Gilroy-Medium"), local("Gilroy Medium");
+  src: url("./assets/fonts/Gilroy-Medium.woff2") format("woff2"), local("Gilroy-Medium"), local("Gilroy Medium");
   font-style: normal;
   font-weight: 600;
   size-adjust: 112%;
