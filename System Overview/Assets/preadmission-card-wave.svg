@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1430 228" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2=".32" gradientUnits="objectBoundingBox">
+      <stop stop-color="#a45d09"/>
+      <stop offset=".4" stop-color="#ecaa29"/>
+      <stop offset=".57" stop-color="#ffbe35"/>
+      <stop offset=".75" stop-color="#ce7713"/>
+      <stop offset="1" stop-color="#fcaf23"/>
+    </linearGradient>
+    <linearGradient id="fold" x1=".55" y1="0" x2=".48" y2="1">
+      <stop stop-color="#fff19c"/>
+      <stop offset=".29" stop-color="#ffc845"/>
+      <stop offset=".57" stop-color="#e9941a"/>
+      <stop offset=".84" stop-color="#ffe16f"/>
+      <stop offset="1" stop-color="#d98716"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#fff9e9"/>
+      <stop offset=".5" stop-color="#eed9c1"/>
+      <stop offset="1" stop-color="#fff0de"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#gold)" d="M0 79C149 183 322 155 445 119C616 69 749 12 883 22C1041 33 1126 127 1250 127C1333 127 1397 98 1430 58C1390 129 1303 174 1191 189C1038 211 887 126 727 105C568 84 426 158 287 167C165 175 61 131 0 79Z"/>
+  <path fill="url(#fold)" d="M0 79C144 178 303 161 454 118C617 72 780 47 920 79C1048 108 1142 158 1259 153C1340 150 1396 106 1430 58C1390 129 1303 174 1191 189C1038 211 887 126 727 105C568 84 426 158 287 167C165 175 61 131 0 79Z"/>
+  <path fill="#fffaf3" d="M0 79C78 151 173 183 286 174C421 163 560 99 699 117C851 135 999 226 1140 216C1279 207 1380 138 1430 58V228H0Z"/>
+  <path fill="url(#cream)" d="M0 79C144 180 304 161 455 119C617 72 691 73 815 110C956 152 1051 206 1192 183C1303 169 1389 124 1430 58C1380 138 1279 207 1140 216C999 226 851 135 699 117C560 99 421 163 286 174C173 183 78 151 0 79Z"/>
+  <path fill="none" stroke="#fff9e9" stroke-width="4" d="M0 79C144 180 304 161 455 119C617 72 691 73 815 110C956 152 1051 206 1192 183C1303 169 1389 124 1430 58"/>
+</svg>

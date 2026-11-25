@@ -5,6 +5,9 @@
   const today = document.getElementById("welcome-date").dateTime;
   const openButton = document.getElementById("view-school-calendar");
   const addButton = document.getElementById("calendar-add");
+  const importInput = document.getElementById("calendar-import");
+  const importTrigger = document.getElementById("calendar-import-trigger");
+  const eventTypes = { holiday: "Holiday", exam: "Exam", ptm: "Parent–teacher meeting", "fee-due": "Fee due" };
   const editor = document.getElementById("calendar-editor");
   const editorTitle = document.getElementById("calendar-editor-title");
   const titleInput = editor.elements.namedItem("title");
@@ -56,14 +59,15 @@
   }
 
   function renderUpcoming() {
-    const next = sorted().filter(({ date }) => date >= today).slice(0, 3);
+    const next = sorted().filter(({ date }) => date >= today).slice(0, 5);
     upcoming.replaceChildren(...next.map((event) => {
       const item = element("li");
       const date = element("time", dateLabel(event.date));
       date.dateTime = event.date;
       const label = element("span", event.title);
-      if (event.sample) label.append(element("small", "Sample", "school-calendar-sample"));
+      if (event.sample || event.type) label.append(element("small", event.sample ? "Demo" : eventTypes[event.type], "school-calendar-sample"));
       item.append(date, label);
+      if (!event.sample) item.append(announcementButton(event));
       return item;
     }));
     if (!next.length) upcoming.append(element("li", "No upcoming events.", "important-dates-empty"));
@@ -95,6 +99,88 @@
     }));
   }
 
+  function announcementButton(event) {
+    const button = element("button", "Announce", "calendar-announce");
+    button.type = "button";
+    button.setAttribute("aria-label", `Announce ${event.title} to a parent`);
+    button.setAttribute("aria-haspopup", "dialog");
+    button.addEventListener("click", () => {
+      const date = new Intl.DateTimeFormat("en-IN", { dateStyle: "long", timeZone: "UTC" }).format(new Date(event.date));
+      window.WorkspaceOperations.openMessageDraft("Event announcement",
+        `Dear Parent, please note that ${event.title} is scheduled for ${date}. — Tunbridge High School`);
+    });
+    return button;
+  }
+
+  function addSchedule(records) {
+    if (!Array.isArray(records) || !records.length) throw new Error();
+    const imported = records.map((record) => {
+      if (!record || !Object.hasOwn(eventTypes, record.type) ||
+          typeof record.title !== "string" || !record.title.trim() || record.title.length > 120 ||
+          typeof record.date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(record.date) ||
+          !Number.isFinite(Date.parse(record.date)) || isoDate(new Date(record.date)) !== record.date ||
+          (record.notes != null && (typeof record.notes !== "string" || record.notes.length > 500))) throw new Error();
+      return { title: record.title.trim(), date: record.date, type: record.type, notes: record.notes?.trim() ?? "", sample: false };
+    });
+    const eventKey = ({ date, title }) => `${date}|${title.toLocaleLowerCase()}`;
+    const existingKeys = new Set(events.filter((event) => !event.sample).map(eventKey));
+    const additions = imported.filter((event) => {
+      const key = eventKey(event);
+      if (existingKeys.has(key)) return false;
+      existingKeys.add(key);
+      return true;
+    });
+    if (!additions.length) return additions;
+    const addedKeys = new Set(additions.map(eventKey));
+    events = [
+      ...events.filter((event) => !event.sample || !addedKeys.has(eventKey(event))),
+      ...additions.map((event) => ({ ...event, id: `schedule-${eventKey(event)}` }))
+    ];
+    return additions;
+  }
+
+  importTrigger?.addEventListener("click", () => importInput.click());
+  importInput?.addEventListener("change", async () => {
+    const file = importInput.files[0];
+    importInput.value = "";
+    if (!file) return;
+
+    try {
+      if (file.size > 1000000) throw new Error("Choose a JSON schedule smaller than 1 MB.");
+      const additions = addSchedule(JSON.parse(await file.text()));
+      if (!additions.length) {
+        status.textContent = "These events are already on the calendar.";
+        return;
+      }
+      const dates = additions.map(({ date }) => date).sort();
+      showMonth(dates.find((date) => date >= today) ?? dates[0]);
+      const saved = saveEvents();
+      status.textContent = `${additions.length} schedule ${additions.length === 1 ? "event added" : "events added"}.${saved ? "" : " Browser storage is unavailable."}`;
+      window.dispatchEvent(new CustomEvent("vaps:calendar-change", {
+        detail: { title: "School schedule", action: "Schedule imported" }
+      }));
+    } catch (error) {
+      status.textContent = error.message.startsWith("Choose") ? error.message
+        : 'Use a JSON list such as [{"type":"holiday","title":"School holiday","date":"2027-01-15"}]. Accepted types are holiday, exam, ptm, and fee-due.';
+    }
+  });
+
+  async function syncSchoolSchedule() {
+    if (!calendar.dataset.scheduleUrl) return;
+    try {
+      const url = new URL(calendar.dataset.scheduleUrl, document.baseURI);
+      if (!/^https?:$/.test(url.protocol) || url.origin !== window.location.origin) throw new Error();
+      const response = await fetch(url, { redirect: "error" });
+      if (!response.ok) throw new Error();
+      if (!addSchedule(await response.json()).length) return;
+      saveEvents();
+      if (calendar.open) render();
+      else renderUpcoming();
+    } catch {
+      status.textContent = "School schedule could not be loaded.";
+    }
+  }
+
   function renderAgenda(monthEvents) {
     agenda.replaceChildren(...monthEvents.map((event) => {
       const item = element("li");
@@ -102,7 +188,7 @@
       const time = element("time", dateLabel(event.date));
       time.dateTime = event.date;
       details.append(time, element("strong", event.title));
-      if (event.sample) details.append(element("small", "Sample event", "school-calendar-sample"));
+      if (event.sample || event.type) details.append(element("small", event.sample ? "Demo event" : eventTypes[event.type], "school-calendar-sample"));
       if (event.notes) details.append(element("p", event.notes));
 
       const actions = element("div", "", "school-calendar-event-actions");
@@ -120,6 +206,7 @@
         announce("Event removed.", event);
         addButton.focus();
       });
+      if (!event.sample) actions.append(announcementButton(event));
       actions.append(edit, remove);
       item.append(details, actions);
       return item;
@@ -175,6 +262,9 @@
     openCalendar(sorted().find(({ date }) => date >= today)?.date ?? today);
   }
 
+  window.addEventListener("vaps:calendar-open-event", ({ detail }) => {
+    if (events.some(({ date, title }) => date === detail.date && title === detail.title)) openCalendar(detail.date);
+  });
   openButton.addEventListener("click", openUpcomingCalendar);
   document.getElementById("quick-view-school-calendar")?.addEventListener("click", openUpcomingCalendar);
   document.getElementById("quick-add-calendar-event")?.addEventListener("click", () => {
@@ -210,6 +300,7 @@
       title,
       date: dateInput.value,
       notes: notesInput.value.trim(),
+      type: events.find(({ id }) => id === editingId)?.type,
       sample: false
     };
     events = edited ? events.map((item) => item.id === event.id ? event : item) : [...events, event];
@@ -219,4 +310,5 @@
     addButton.focus();
   });
   renderUpcoming();
+  syncSchoolSchedule();
 })();

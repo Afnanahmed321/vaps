@@ -17,6 +17,9 @@
   <script defer src="../../workspace-text-to-speech.js"></script>
   <script defer src="../../workspace-pdf-converter.js"></script>
   <script defer src="../../workspace-media-compressor.js"></script>
+  <link rel="stylesheet" href="../../workspace-operations.css" />
+  <script defer src="../../workspace-operations.js"></script>
+  <script defer src="fee-operations.js"></script>
 </head>
 <body>
   <div class="app-shell report-builder-shell">
@@ -49,10 +52,45 @@
       </header>
 
       <section class="fee-hero module-banner">
-        <div><h1>Fee Collection</h1><p class="fee-description">Choose the students and class details for your fee report.</p></div>
+        <div><h1>Fee Collection</h1><p class="fee-description">Review collections, follow up on overdue fees, and build fee reports.</p></div>
       </section>
 
       <section class="fee-content">
+        <section class="operations-panel fee-operations" id="fee-operations" aria-labelledby="fee-operations-title" data-payment-url="">
+          <header class="fee-operations-header">
+            <div><h2 id="fee-operations-title">Collection overview</h2><p class="operations-note">Demo data</p></div>
+            <div><a class="operations-button" id="fee-payment-link" target="_blank" rel="noopener noreferrer" hidden>Open online payment</a><span class="operations-note" id="fee-payment-note">Online payment requires a school payment link.</span></div>
+          </header>
+          <div class="fee-insights">
+            <section class="fee-insight" aria-labelledby="monthly-fees-title">
+              <h3 id="monthly-fees-title">Monthly collections</h3>
+              <ol class="operations-bars" id="monthly-fees-chart"></ol>
+            </section>
+            <section class="fee-insight" aria-labelledby="fee-payment-split-title">
+              <h3 id="fee-payment-split-title">Today’s payment split</h3>
+              <dl id="fee-payment-split"></dl>
+            </section>
+          </div>
+          <section class="fee-insight" aria-labelledby="overdue-fees-title">
+            <h3 id="overdue-fees-title">Overdue fees</h3>
+            <div class="fee-table-wrap" tabindex="0" role="region" aria-label="Overdue fee records">
+              <table class="fee-operations-table">
+                <thead><tr><th scope="col">Student</th><th scope="col">Class</th><th scope="col">Due date</th><th scope="col">Balance</th><th scope="col">Action</th></tr></thead>
+                <tbody id="overdue-fees-list"></tbody>
+              </table>
+            </div>
+            <p class="operations-note" id="fee-reminder-status" role="status"></p>
+          </section>
+          <section class="fee-insight" aria-labelledby="fee-receipts-title">
+            <h3 id="fee-receipts-title">Receipts</h3>
+            <div class="fee-table-wrap" tabindex="0" role="region" aria-label="Fee receipts">
+              <table class="fee-operations-table">
+                <thead><tr><th scope="col">Receipt</th><th scope="col">Date</th><th scope="col">Method</th><th scope="col">Amount</th><th scope="col">Action</th></tr></thead>
+                <tbody id="fee-receipt-list"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
         <form class="fee-form-card" id="fee-report-form" aria-labelledby="fee-filters-title">
           <h2 id="fee-filters-title">Fee report filters</h2>
           <fieldset class="collection-mode">

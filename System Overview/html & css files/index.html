@@ -7,7 +7,7 @@
   <title>Tunbridge High School | System Overview</title>
 
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=preadmission-card-fit" />
   <link rel="stylesheet" href="../../workspace-shell.css" />
   <link rel="stylesheet" href="../../site-assistant.css" />
   <link rel="stylesheet" href="../../gilroy.css" />
@@ -15,12 +15,15 @@
   <script defer src="../../workspace-mobile-nav.js"></script>
   <script defer src="../../workspace-activity.js"></script>
   <script defer src="../../workspace-calendar.js"></script>
+  <script defer src="../../workspace-record-assistant.js"></script>
   <script defer src="../../workspace-whatsapp.js"></script>
   <script defer src="../../workspace-chatgpt.js"></script>
   <script defer src="../../workspace-translator.js"></script>
   <script defer src="../../workspace-text-to-speech.js"></script>
   <script defer src="../../workspace-pdf-converter.js"></script>
   <script defer src="../../workspace-media-compressor.js"></script>
+  <link rel="stylesheet" href="../../workspace-operations.css" />
+  <script src="../../workspace-operations.js"></script>
 </head>
 <body>
 
@@ -38,6 +41,10 @@
       <a class="nav-item" href="../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
       <a class="nav-item" href="../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
       <a class="nav-item" href="../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      <button class="nav-item sidebar-modules-toggle" type="button" aria-expanded="false" aria-controls="sidebar-modules">
+        <i data-lucide="layout-grid" aria-hidden="true"></i><span>Modules</span><i class="chevron" data-lucide="chevron-down" aria-hidden="true"></i>
+      </button>
+      <div class="sidebar-modules" id="sidebar-modules" hidden></div>
     </nav>
 
     <button class="academic-year">
@@ -124,6 +131,21 @@
       </div>
     </header>
 
+    <section class="configuration-view" id="workspace-module-view" aria-labelledby="configuration-title" hidden>
+      <div class="welcome-hero">
+        <div class="hero-copy">
+          <p class="configuration-eyebrow"><i data-lucide="layers" aria-hidden="true"></i>Module Explorer</p>
+          <h1 id="configuration-title" tabindex="-1"></h1>
+          <p class="hero-description">Set up the essentials that keep your school running smoothly and efficiently.</p>
+        </div>
+        <div class="configuration-hero-lines" aria-hidden="true"></div>
+        <div class="hero-ribbon" aria-hidden="true"></div>
+        <div class="hero-building" aria-hidden="true"></div>
+        <img class="hero-laurel" src="../Assets/leaf.png" width="1536" height="1024" alt="" />
+      </div>
+      <div class="module-tool-list"></div>
+    </section>
+
     <section class="welcome-hero" aria-labelledby="welcome-title">
       <div class="hero-copy">
         <p class="hero-greeting">Welcome back, Admin <span aria-hidden="true">👋</span></p>
@@ -163,49 +185,49 @@
       <div class="section-heading">
         <strong>METRICS &amp; ANALYTICS</strong>
         <span></span>
-        <small>School metrics and activity.</small>
+        <small>Illustrative metrics and activity.</small>
       </div>
 
       <div class="metrics-grid students-overview-grid">
 
-        <article class="metric-card overview-stat-card blue" data-dashboard-roles="admin principal">
+        <a href="../../Applications/html%20%26%20css%20files/application.html#register-form" class="metric-card overview-stat-card blue" data-dashboard-roles="admin principal">
           <div class="metric-icon"><img src="../../assets/application.png" alt="" aria-hidden="true" /></div>
           <span class="metric-divider" aria-hidden="true"></span>
-          <div class="metric-content"><span>Applications</span><strong>6,183</strong></div>
+          <div class="metric-content"><span>Applications</span><strong>6,183</strong><small class="operations-kpi-trend" data-current="6183" data-previous="5945"></small></div>
           <div class="metric-ribbon" aria-hidden="true"><i data-lucide="graduation-cap"></i></div>
-        </article>
+        </a>
 
-        <article class="metric-card overview-stat-card orange" data-dashboard-roles="admin principal teacher">
+        <a href="../../Students/html%20%26%20css%20files/students.html#student-form" class="metric-card overview-stat-card orange" data-dashboard-roles="admin principal teacher">
           <div class="metric-icon"><img src="../../assets/students.png" alt="" aria-hidden="true" /></div>
           <span class="metric-divider" aria-hidden="true"></span>
-          <div class="metric-content"><span>Students</span><strong>104</strong></div>
+          <div class="metric-content"><span>Students</span><strong>104</strong><small class="operations-kpi-trend" data-current="104" data-previous="100"></small></div>
           <div class="metric-ribbon" aria-hidden="true"><i data-lucide="graduation-cap"></i></div>
-        </article>
+        </a>
 
-        <article class="metric-card overview-stat-card green" data-dashboard-roles="admin principal">
+        <a href="../../Teachers/html%20%26%20css%20files/teachers.html" class="metric-card overview-stat-card green" data-dashboard-roles="admin principal">
           <div class="metric-icon"><img src="../../assets/teachers.png" alt="" aria-hidden="true" /></div>
           <span class="metric-divider" aria-hidden="true"></span>
-          <div class="metric-content"><span>Teachers</span><strong>80</strong></div>
+          <div class="metric-content"><span>Teachers</span><strong>80</strong><small class="operations-kpi-trend" data-current="80" data-previous="81"></small></div>
           <div class="metric-ribbon" aria-hidden="true"><i data-lucide="graduation-cap"></i></div>
-        </article>
+        </a>
 
-        <article class="metric-card overview-stat-card purple" data-dashboard-roles="admin principal accountant">
+        <a href="../../Fees/html%20%26%20css%20files/fee-collection.html#fee-operations" class="metric-card overview-stat-card purple" data-dashboard-roles="admin principal accountant">
           <div class="metric-icon"><img src="../../assets/fee-collection.png" alt="" aria-hidden="true" /></div>
           <span class="metric-divider" aria-hidden="true"></span>
-          <div class="metric-content"><span>Fee Collection</span><strong>₹36,140</strong></div>
+          <div class="metric-content"><span>Fee Collection</span><strong>₹36,140</strong><small class="operations-kpi-trend" data-current="36140" data-previous="34750"></small><progress class="operations-fee-progress" value="36140" max="44300" aria-label="Fees collected against target"></progress><small class="operations-fee-caption" id="operations-fee-caption"></small></div>
           <div class="metric-ribbon" aria-hidden="true"><i data-lucide="graduation-cap"></i></div>
-        </article>
+        </a>
 
-        <article class="metric-card overview-stat-card annual-revenue-metric" data-dashboard-roles="accountant" hidden>
+        <a href="../../Fees/html%20%26%20css%20files/fee-collection.html#fee-operations" class="metric-card overview-stat-card annual-revenue-metric" data-dashboard-roles="accountant" hidden>
           <div class="metric-icon" aria-hidden="true"><i data-lucide="indian-rupee"></i></div>
           <span class="metric-divider" aria-hidden="true"></span>
           <div class="metric-content">
             <span>Revenue for the Year</span>
             <strong title="Example annual revenue">₹4,82,750</strong>
-            <small id="annual-revenue-year"></small>
+            <small class="operations-kpi-trend" data-current="482750" data-previous="466350"></small><small id="annual-revenue-year"></small>
           </div>
           <div class="metric-ribbon" aria-hidden="true"><i data-lucide="calendar-days"></i></div>
-        </article>
+        </a>
 
       </div>
 
@@ -272,16 +294,35 @@
               </select>
             </label>
           </div>
-          <div class="attendance-chart-body">
-            <div class="attendance-donut" aria-hidden="true">
-              <div><strong>92.4%</strong><span>Overall Attendance</span></div>
-            </div>
+          <div class="attendance-summary">
+            <div class="attendance-summary-value" aria-hidden="true"><strong>92.4%</strong><span>Present</span></div>
+            <div class="attendance-meter" aria-hidden="true"></div>
             <dl class="attendance-legend" aria-live="polite">
               <div><dt>Present</dt><dd>92.4%</dd></div>
               <div><dt>Absent</dt><dd>5.1%</dd></div>
               <div><dt>Leave</dt><dd>2.5%</dd></div>
             </dl>
           </div>
+          <section class="operations-attendance" aria-labelledby="attendance-trend-title">
+            <div class="operations-trend-heading">
+              <div><h3 id="attendance-trend-title">Attendance trend</h3><p class="operations-note">Daily attendance · Demo data</p></div>
+              <select id="attendance-range" aria-label="Attendance trend range"><option value="7">7 days</option><option value="30">30 days</option></select>
+            </div>
+            <div class="attendance-trend-plot" aria-hidden="true">
+              <div class="attendance-trend-scale"><span>100%</span><span>85%</span><span>75%</span></div>
+              <svg viewBox="0 0 500 100" preserveAspectRatio="none">
+                <path class="attendance-trend-threshold" d="M0 60H500" />
+                <path class="attendance-trend-area" />
+                <polyline class="attendance-trend-line" />
+              </svg>
+              <div class="attendance-trend-dates"><span id="attendance-first-day"></span><span id="attendance-last-day"></span></div>
+            </div>
+            <details class="attendance-values"><summary>View daily values</summary><ul id="attendance-trend"></ul></details>
+            <div class="attendance-follow-up">
+              <span id="attendance-low-classes" role="status"></span>
+              <button class="operations-button secondary" type="button" id="attendance-alert" aria-haspopup="dialog"><i data-lucide="message-circle" aria-hidden="true"></i>Alert parent</button>
+            </div>
+          </section>
         </article>
 
         <article class="overview-chart staff-attendance" aria-labelledby="staff-attendance-title" data-dashboard-roles="admin principal">
@@ -297,23 +338,33 @@
               <option>Support Staff</option>
             </select></label>
           </div>
-          <div class="attendance-chart-body">
-            <div class="attendance-donut" aria-hidden="true"><div><strong>95.0%</strong><span>Overall Attendance</span></div></div>
+          <div class="attendance-summary">
+            <div class="attendance-summary-value" aria-hidden="true"><strong>95.0%</strong><span>Present</span></div>
+            <div class="attendance-meter" aria-hidden="true"></div>
             <dl class="attendance-legend" aria-live="polite">
               <div><dt>Present</dt><dd>95.0%</dd></div>
               <div><dt>Absent</dt><dd>3.5%</dd></div>
               <div><dt>Leave</dt><dd>1.5%</dd></div>
             </dl>
           </div>
+          <details class="staff-substitutes">
+            <summary><i data-lucide="user-round-search" aria-hidden="true"></i>Find a substitute <i class="staff-substitute-chevron" data-lucide="chevron-down" aria-hidden="true"></i></summary>
+            <div class="staff-substitutes-body">
+              <p class="operations-note">Demo teaching roster</p>
+              <div class="operations-actions">
+                <label>Subject <select id="substitute-subject"><option>English</option><option>Mathematics</option><option>Science</option></select></label>
+                <label>Period <select id="substitute-period"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+              </div>
+              <p class="operations-note" id="substitute-result" role="status"></p>
+            </div>
+          </details>
         </article>
         <article class="overview-chart important-dates" aria-labelledby="important-dates-title">
           <header class="overview-chart-heading">
             <h2 id="important-dates-title"><i data-lucide="calendar-days" aria-hidden="true"></i>Important Dates</h2>
+            <button class="important-dates-calendar" type="button" id="view-school-calendar" aria-haspopup="dialog" aria-controls="school-calendar">View Calendar</button>
           </header>
           <ul class="important-dates-list" aria-live="polite"></ul>
-          <footer class="fee-overview-footer important-dates-footer">
-            <button type="button" id="view-school-calendar" aria-haspopup="dialog"><i data-lucide="calendar-days" aria-hidden="true"></i>View Calendar</button>
-          </footer>
         </article>
       </section>
 
@@ -327,13 +378,13 @@
             <label class="attendance-filter"><span>Class</span><select id="fee-overview-class"><option>All Classes</option></select></label>
             <label class="attendance-filter"><span>Section</span><select id="fee-overview-section"><option>All Sections</option></select></label>
           </div>
-          <div class="attendance-chart-body fee-overview-body">
-            <div class="fee-collection-visual" aria-hidden="true">
-              <strong id="fee-overview-collected">₹36,140</strong>
-              <span>Collected</span>
-              <div class="fee-collection-funnel">
-                <div></div><div></div><div></div>
+          <div class="fee-overview-body">
+            <div class="fee-collection-visual">
+              <div class="fee-collection-summary">
+                <div><span>Collected</span><strong id="fee-overview-collected">₹36,140</strong></div>
+                <span id="fee-overview-percentage">82% of assessed fees</span>
               </div>
+              <div class="fee-collection-meter" id="fee-overview-meter" aria-hidden="true"></div>
             </div>
             <dl class="attendance-legend fee-overview-legend" aria-live="polite">
               <div><dt>Collected</dt><dd>₹36,140</dd></div>
@@ -362,13 +413,20 @@
           </header>
           <div class="performance-controls" role="group" aria-label="Academic performance controls">
             <label class="attendance-filter"><span>Class</span><select id="performance-class"><option value="">All classes</option></select></label>
+            <label class="attendance-filter"><span>Subject</span><select id="performance-subject"><option value="">All subjects</option><option>English</option><option>Mathematics</option><option>Science</option><option>Hindi</option><option>Social Studies</option></select></label>
+            <label class="attendance-filter"><span>Compare with</span><select id="performance-compare"><option value="">No comparison</option><option value="term1">Term 1</option><option value="term2">Term 2</option><option value="term3">Term 3</option></select></label>
             <fieldset class="performance-sort" id="performance-sort">
-              <legend>Sort by percentage</legend>
+              <legend>Sort by score</legend>
               <div class="performance-sort-toggle">
                 <label><input type="radio" name="performance-sort" value="ascending" checked><span>Ascending</span></label>
                 <label><input type="radio" name="performance-sort" value="descending"><span>Descending</span></label>
               </div>
             </fieldset>
+          </div>
+          <div class="performance-key"><span>Demo scores</span><span class="score-key low">Below 75%</span><span class="score-key mid">75–85%</span><span class="score-key high">Above 85%</span></div>
+          <div class="performance-comparison" id="performance-comparison" hidden>
+            <p id="performance-comparison-summary"></p>
+            <span class="performance-marker-key" id="performance-marker-key"></span>
           </div>
           <p id="performance-status" class="sr-only" role="status"></p>
           <div class="performance-chart">
@@ -388,6 +446,21 @@
               <div style="--score:93%; --delay:315ms"><dt><span>Class</span> 10</dt><dd>93%</dd></div>
             </dl>
           </div>
+          <details class="performance-comparison-details" id="performance-comparison-details" hidden>
+            <summary>View scores by class</summary>
+            <table>
+              <thead><tr><th scope="col">Class</th><th scope="col" id="performance-current-column"></th><th scope="col" id="performance-compare-column"></th></tr></thead>
+              <tbody id="performance-comparison-rows"></tbody>
+            </table>
+          </details>
+          <section class="performance-students" aria-labelledby="performance-students-title">
+            <h3 id="performance-students-title">Student results</h3>
+            <p class="operations-note" id="performance-student-note">Select a class to see example student results.</p>
+            <div class="performance-student-lists" id="performance-student-lists" hidden>
+              <div><h4>Top scores</h4><ol id="performance-top"></ol></div>
+              <div><h4>Needs support</h4><ol id="performance-support"></ol></div>
+            </div>
+          </section>
         </article>
       </div>
 
@@ -405,6 +478,8 @@
                 <option value="2">Wednesday</option>
                 <option value="3">Thursday</option>
                 <option value="4">Friday</option>
+                <option value="5">Saturday</option>
+                <option value="6">Sunday</option>
               </select>
             </label>
             <label class="attendance-filter">
@@ -425,10 +500,14 @@
               </select>
             </label>
           </div>
-          <table class="timetable-periods">
-            <thead><tr><th scope="col">Time</th><th scope="col">Subject</th></tr></thead>
-            <tbody id="timetable-periods" aria-live="polite"></tbody>
-          </table>
+          <div class="timetable-view-controls"><p class="operations-note">Demo timetable</p><label><input type="checkbox" id="timetable-substitutions"> Substitutions only</label></div>
+          <div class="timetable-table">
+            <table class="timetable-periods" aria-labelledby="timetable-title">
+              <colgroup><col class="timetable-time-column"><col><col class="timetable-coverage-column"></colgroup>
+              <thead><tr><th scope="col">Time</th><th scope="col">Subject</th><th scope="col">Coverage</th></tr></thead>
+              <tbody id="timetable-periods" aria-live="polite"></tbody>
+            </table>
+          </div>
         </section>
         <section class="overview-chart recent-activities" id="recent-activities" aria-labelledby="recent-activities-title">
           <header class="overview-chart-heading">
@@ -446,6 +525,16 @@
           </div>
         </section>
       </div>
+
+      <section class="operations-panel record-assistant" aria-labelledby="record-assistant-title">
+        <div><h2 id="record-assistant-title">School Assistant</h2><p class="operations-note">Search saved calendar events, reports, and academic year records.</p></div>
+        <form id="record-assistant-form">
+          <label class="sr-only" for="record-assistant-question">Ask a question</label>
+          <input id="record-assistant-question" type="search" placeholder="e.g. When is the next parent meeting?" required maxlength="250">
+          <button class="operations-button" type="submit">Ask</button>
+        </form>
+        <details id="record-assistant-pinned"><summary>Pinned answers</summary><ul id="record-assistant-pins"></ul></details>
+      </section>
 
       <section class="query-filter-bar" aria-labelledby="query-filter-heading">
         <p class="query-filter-label" id="query-filter-heading">FILTER BY CATEGORY</p>
@@ -603,7 +692,7 @@
     </aside>
     <div class="assistant-answer-main">
       <header class="assistant-answer-header">
-        <span class="assistant-answer-badge"><i data-lucide="sparkles" aria-hidden="true"></i> AI PREVIEW</span>
+        <span class="assistant-answer-badge"><i data-lucide="sparkles" aria-hidden="true"></i> WORKSPACE RECORDS</span>
         <button class="assistant-answer-close" id="assistant-answer-close" type="button" aria-label="Close assistant response">
           <i data-lucide="x" aria-hidden="true"></i>
         </button>
@@ -616,29 +705,28 @@
           </div>
           <p class="assistant-answer-question" id="assistant-answer-question"></p>
         </div>
-        <div class="assistant-thinking" id="assistant-thinking" role="status" aria-live="polite">
-          <span class="assistant-thinking-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span>Preparing a helpful response…</span>
-        </div>
         <section class="assistant-response" id="assistant-response" aria-labelledby="assistant-response-title" aria-live="polite" hidden>
           <span class="assistant-response-icon"><i data-lucide="sparkles" aria-hidden="true"></i></span>
           <div>
             <div class="assistant-response-heading">
-              <h3 id="assistant-response-title">Suggested insight</h3>
-              <span>PREVIEW</span>
+              <h3 id="assistant-response-title">Answer</h3>
             </div>
             <p id="assistant-response-text"></p>
+            <ul id="assistant-response-sources" aria-label="Source records"></ul>
           </div>
         </section>
       </div>
       <footer class="assistant-answer-footer">
+        <p class="operations-note" id="record-assistant-status" role="status"></p>
+        <button class="operations-button secondary" id="record-assistant-pin" type="button">Pin answer</button>
+        <button class="operations-button secondary" id="record-assistant-export" type="button">Export answer</button>
         <button class="assistant-answer-done" id="assistant-answer-done" type="button">Got it <i data-lucide="arrow-right" aria-hidden="true"></i></button>
       </footer>
     </div>
   </div>
 </dialog>
 
-<dialog class="school-calendar-dialog" id="school-calendar" aria-labelledby="school-calendar-title">
+<dialog class="school-calendar-dialog" id="school-calendar" data-schedule-url="" aria-labelledby="school-calendar-title">
   <header class="school-calendar-header">
     <h2 id="school-calendar-title">School Calendar</h2>
     <form method="dialog"><button type="submit" aria-label="Close calendar">×</button></form>
@@ -662,7 +750,8 @@
     <section class="school-calendar-agenda" aria-labelledby="calendar-agenda-title">
       <div class="school-calendar-agenda-heading">
         <h3 id="calendar-agenda-title">Events this month</h3>
-        <button type="button" class="school-calendar-primary" id="calendar-add">+ Add event</button>
+        <div class="operations-actions"><button type="button" id="calendar-import-trigger">Import schedule</button><button type="button" class="school-calendar-primary" id="calendar-add">+ Add event</button></div>
+        <input id="calendar-import" type="file" accept=".json,application/json" hidden>
       </div>
       <form class="school-calendar-editor" id="calendar-editor" aria-labelledby="calendar-editor-title" hidden>
         <h4 id="calendar-editor-title">Add event</h4>
@@ -696,101 +785,97 @@
           <input id="module-search-input" type="search" placeholder="Search sections..." autocomplete="off" aria-label="Search school modules and sections" />
           <kbd>⌘ K</kbd>
         </label>
-        <label class="module-mobile-picker">
-          <select id="module-mobile-picker" aria-label="Choose a module"></select>
-        </label>
-        <p class="module-empty module-mobile-empty" id="mobile-module-empty" hidden>No matching modules</p>
       </div>
       <nav class="module-nav" id="module-nav" aria-label="School modules">
         <button class="module-nav-item is-active" type="button" data-module="pre-configuration" aria-current="page">
           <span class="module-nav-icon"><i data-lucide="settings-2"></i></span>
           <span class="module-nav-copy"><strong>Pre Configuration</strong><small>1 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="preadmission">
           <span class="module-nav-icon"><i data-lucide="user-round-search"></i></span>
           <span class="module-nav-copy"><strong>Preadmission</strong><small>6 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="admission">
           <span class="module-nav-icon"><i data-lucide="graduation-cap"></i></span>
           <span class="module-nav-copy"><strong>Admission</strong><small>6 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="fees">
           <span class="module-nav-icon"><i data-lucide="wallet"></i></span>
           <span class="module-nav-copy"><strong>Fees</strong><small>3 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="exam">
           <span class="module-nav-icon"><i data-lucide="book-open-check"></i></span>
           <span class="module-nav-copy"><strong>Exam</strong><small>4 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="hrms">
           <span class="module-nav-icon"><i data-lucide="users-round"></i></span>
           <span class="module-nav-copy"><strong>HRMS</strong><small>4 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="front-office">
           <span class="module-nav-icon"><i data-lucide="panels-top-left"></i></span>
           <span class="module-nav-copy"><strong>Front Office</strong><small>2 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="leave-management">
           <span class="module-nav-icon"><i data-lucide="mail"></i></span>
           <span class="module-nav-copy"><strong>Leave Management</strong><small>1 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="upload">
           <span class="module-nav-icon"><i data-lucide="upload"></i></span>
           <span class="module-nav-copy"><strong>Upload</strong><small>1 section</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="time-table">
           <span class="module-nav-icon"><i data-lucide="calendar-days"></i></span>
           <span class="module-nav-copy"><strong>Time Table</strong><small>4 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="coe">
           <span class="module-nav-icon"><i data-lucide="calendar-clock"></i></span>
           <span class="module-nav-copy"><strong>COE</strong><small>2 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="birthday">
           <span class="module-nav-icon"><i data-lucide="cake"></i></span>
           <span class="module-nav-copy"><strong>Birthday</strong><small>1 section</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="sports">
           <span class="module-nav-icon"><i data-lucide="trophy"></i></span>
           <span class="module-nav-copy"><strong>Sports</strong><small>1 section</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="online-exam">
           <span class="module-nav-icon"><i data-lucide="monitor"></i></span>
           <span class="module-nav-copy"><strong>Online Exam</strong><small>3 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="library">
           <span class="module-nav-icon"><i data-lucide="book-open"></i></span>
           <span class="module-nav-copy"><strong>Library</strong><small>3 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="transport">
           <span class="module-nav-icon"><i data-lucide="bus"></i></span>
           <span class="module-nav-copy"><strong>Transport</strong><small>3 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="lms">
           <span class="module-nav-icon"><i data-lucide="presentation"></i></span>
           <span class="module-nav-copy"><strong>LMS</strong><small>1 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="ai-edge">
           <span class="module-nav-icon"><i data-lucide="sparkles"></i></span>
           <span class="module-nav-copy"><strong>AI Edge</strong><small>1 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="arrow-right"></i>
+          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
         </button>
         <p class="module-empty" id="module-empty" hidden>No matching modules</p>
       </nav>
@@ -858,6 +943,13 @@
 
   const performanceBars = document.querySelector(".performance-bars");
   const performanceClass = document.getElementById("performance-class");
+  const performanceSubject = document.getElementById("performance-subject");
+  const performanceCompare = document.getElementById("performance-compare");
+  const performanceComparison = document.getElementById("performance-comparison");
+  const performanceComparisonDetails = document.getElementById("performance-comparison-details");
+  const performanceComparisonRows = document.getElementById("performance-comparison-rows");
+  const performanceStudentLists = document.getElementById("performance-student-lists");
+  const performanceStudentNote = document.getElementById("performance-student-note");
   const performanceSort = document.getElementById("performance-sort");
   const performanceStatus = document.getElementById("performance-status");
   const performanceTermPicker = document.getElementById("performance-term-picker");
@@ -882,30 +974,93 @@
     performanceClass.add(new Option(label, String(index)));
   });
 
+  const subjectOffsets = new Map([["English", 1], ["Mathematics", -3], ["Science", -12], ["Hindi", 8], ["Social Studies", 6]]);
+  const scoreFor = (term, index) => {
+    const offset = subjectOffsets.get(performanceSubject.value) ?? 0;
+    const variation = offset ? (index % 3 - 1) * 2 : 0;
+    return Math.min(100, Math.max(0, performanceScores[term][index] + offset + variation));
+  };
+
+  function renderStudentScores(entry) {
+    performanceStudentLists.hidden = !entry;
+    performanceStudentNote.textContent = entry
+      ? `${entry.label} · ${performanceSubject.value || "All subjects"} · Demo student IDs`
+      : "Select a class to see example student results.";
+    if (!entry) return;
+    const students = [12, 7, 2, -2, -7, -12].map((offset, index) => ({
+      label: `Student ${String(entry.index + 1).padStart(2, "0")}-${String(index + 1).padStart(2, "0")}`,
+      score: Math.min(100, Math.max(0, entry.score + offset))
+    }));
+    for (const [id, entries] of [["performance-top", students.slice(0, 3)], ["performance-support", students.slice(-3).reverse()]]) {
+      document.getElementById(id).replaceChildren(...entries.map(({ label, score }) => {
+        const item = document.createElement("li");
+        item.textContent = `${label} · ${score}%`;
+        return item;
+      }));
+    }
+  }
+
   function updatePerformance() {
     const selectedClass = performanceClass.value;
     const direction = performanceSort.querySelector("input:checked").value;
     const period = performanceTermPicker.querySelector("input:checked");
-    const scores = performanceScores[period.value];
+    for (const option of performanceCompare.options) option.disabled = option.value === period.value;
+    if (performanceCompare.value === period.value) performanceCompare.value = "";
+    const compare = performanceCompare.value;
     const multiplier = direction === "descending" ? -1 : 1;
     const entries = performanceEntries
       .filter(({ index }) => selectedClass === "" || String(index) === selectedClass)
-      .map((entry) => ({ ...entry, score: scores[entry.index] }))
+      .map((entry) => ({ ...entry, score: scoreFor(period.value, entry.index) }))
       .sort((a, b) => multiplier * (a.score - b.score) || a.index - b.index);
 
-    entries.forEach(({ bar, score }, index) => {
+    entries.forEach(({ bar, score, index: classIndex }, index) => {
       bar.style.setProperty("--delay", `${index * 35}ms`);
       bar.style.setProperty("--score", `${score}%`);
-      bar.querySelector("dd").textContent = `${score}%`;
+      bar.dataset.band = score < 75 ? "low" : score <= 85 ? "mid" : "high";
+      const result = bar.querySelector("dd");
+      result.textContent = `${score}%`;
+      if (compare) {
+        const comparisonScore = scoreFor(compare, classIndex);
+        bar.style.setProperty("--comparison-score", `${comparisonScore}%`);
+      } else {
+        bar.style.removeProperty("--comparison-score");
+      }
     });
     performanceBars.replaceChildren(...entries.map(({ bar }) => bar));
     performanceBars.style.setProperty("--performance-columns", entries.length);
+    performanceBars.classList.toggle("has-comparison", Boolean(compare));
+    performanceComparison.hidden = !compare;
+    performanceComparisonDetails.hidden = !compare;
+    if (compare) {
+      const currentLabel = period.dataset.label;
+      const compareLabel = performanceCompare.selectedOptions[0].text;
+      const average = (values) => (values.reduce((sum, value) => sum + value, 0) / values.length).toFixed(1);
+      document.getElementById("performance-comparison-summary").textContent =
+        `${currentLabel} ${average(entries.map(({ score }) => score))}% vs ${compareLabel} ${average(entries.map(({ index }) => scoreFor(compare, index)))}%`;
+      document.getElementById("performance-marker-key").textContent = `${compareLabel} marker`;
+      document.getElementById("performance-current-column").textContent = currentLabel;
+      document.getElementById("performance-compare-column").textContent = compareLabel;
+      performanceComparisonRows.replaceChildren(...entries.map(({ label, score, index }) => {
+        const row = document.createElement("tr");
+        const name = document.createElement("th");
+        name.scope = "row";
+        name.textContent = label;
+        row.append(name);
+        row.insertCell().textContent = `${score}%`;
+        row.insertCell().textContent = `${scoreFor(compare, index)}%`;
+        return row;
+      }));
+    } else {
+      performanceComparisonDetails.open = false;
+      performanceComparisonRows.replaceChildren();
+    }
+    renderStudentScores(selectedClass === "" ? undefined : entries[0]);
     performanceStatus.textContent = selectedClass === ""
       ? `${period.dataset.label}: showing ${entries.length} classes in ${direction} order.`
       : `${period.dataset.label}, ${entries[0].label}: ${entries[0].score}%.`;
   }
 
-  performanceClass.addEventListener("change", updatePerformance);
+  [performanceClass, performanceSubject, performanceCompare].forEach((filter) => filter.addEventListener("change", updatePerformance));
   performanceSort.addEventListener("change", updatePerformance);
   performanceTermPicker.addEventListener("change", (event) => {
     performanceTermLabel.textContent = event.target.dataset.label;
@@ -940,58 +1095,158 @@
     ["Mathematics", "Social Studies", "Science", "English", "Computer Science", "Physical Education"]
   ];
 
+  const substitutionFilter = document.getElementById("timetable-substitutions");
+  const schoolWeekday = (new Date(todayDate).getUTCDay() + 6) % 7;
+  const timetableClock = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+  });
+  const sampleCoverage = [
+    { day: 0, classIndex: 6, period: 1, teacher: "T-027" },
+    { day: 2, classIndex: 6, period: 0, teacher: "T-038" },
+    { day: 4, classIndex: 7, period: 3, teacher: "T-014" }
+  ];
+
+  let timetableSignature;
   function renderTimetable() {
     const classIndex = Number(timetableClass.value);
     const dayIndex = Number(timetableDay.value);
-    // Vary the sample period order by class while retaining the existing Class VI schedule.
+    const now = new Date();
+    const clock = timetableClock.format(now);
+    const localDate = now.toLocaleDateString("sv-SE", { timeZone: "Asia/Kolkata" });
+    const currentDay = (new Date(localDate).getUTCDay() + 6) % 7;
+    const currentPeriod = dayIndex === currentDay && dayIndex < 5
+      ? timetableTimes.findIndex(([start, end]) => start <= clock && clock < end)
+      : -1;
+    const signature = `${classIndex}/${dayIndex}/${substitutionFilter.checked}/${currentPeriod}`;
+    if (signature === timetableSignature) return;
+    timetableSignature = signature;
     const subjectOffset = (classIndex + timetableTimes.length - 6) % timetableTimes.length;
     const weekOffset = classIndex > 6 ? 1 : 0;
     const subjects = timetableSubjects[(dayIndex + weekOffset) % timetableSubjects.length];
-    const rows = timetableTimes.map(([start, end], index) => {
+    const rows = [];
+    if (dayIndex < 5) timetableTimes.forEach(([start, end], index) => {
+      const substitute = sampleCoverage.find((record) =>
+        record.day === dayIndex && record.classIndex === classIndex && record.period === index);
+      if (substitutionFilter.checked && !substitute) return;
       const row = document.createElement("tr");
       const timeCell = row.insertCell();
       const time = document.createElement("time");
       time.dateTime = start;
       time.textContent = start;
       timeCell.append(time, ` – ${end}`);
+      if (index === currentPeriod) {
+        row.classList.add("timetable-current");
+        row.setAttribute("aria-current", "time");
+        const badge = document.createElement("span");
+        badge.className = "timetable-now";
+        badge.textContent = "Now";
+        timeCell.append(badge);
+      }
       row.insertCell().textContent = subjects[(index + subjectOffset) % subjects.length];
-      return row;
+      const coverage = row.insertCell();
+      if (substitute) {
+        const badge = document.createElement("span");
+        badge.className = "timetable-coverage";
+        badge.textContent = substitute.teacher;
+        badge.setAttribute("aria-label", `Substitute ${substitute.teacher}`);
+        coverage.append(badge);
+      } else {
+        coverage.textContent = "—";
+      }
+      rows.push(row);
     });
+
+    if (!rows.length) {
+      const row = document.createElement("tr");
+      const cell = row.insertCell();
+      cell.colSpan = 3;
+      cell.textContent = dayIndex >= 5 ? "No periods scheduled for this day." : "No substitutions for this class and day.";
+      rows.push(row);
+    }
     timetablePeriods.replaceChildren(...rows);
   }
 
-  const schoolWeekday = new Date(todayDate).getUTCDay();
-  timetableDay.value = String(schoolWeekday >= 1 && schoolWeekday <= 5 ? schoolWeekday - 1 : 0);
-  timetableDay.addEventListener("change", renderTimetable);
-  timetableClass.addEventListener("change", renderTimetable);
+  timetableDay.value = String(schoolWeekday);
+  [timetableDay, timetableClass, substitutionFilter].forEach((input) => input.addEventListener("change", renderTimetable));
   renderTimetable();
+  window.setInterval(renderTimetable, 60000);
 
   const attendanceDate = document.getElementById("attendance-date");
   const attendanceClass = document.getElementById("attendance-class");
   const attendanceSection = document.getElementById("attendance-section");
   const formatAttendance = (value) => `${value.toFixed(1)}%`;
 
+  const operations = window.WorkspaceOperations;
+  const attendanceRange = document.getElementById("attendance-range");
+
+  function getAttendance(date, filterOffset, baselineAbsent, baselineLeave, classIndex = 0) {
+    const dateOffset = (Date.parse(date) - Date.parse(todayDate)) / 86400000;
+    const sample = Math.abs(dateOffset * 17 + filterOffset);
+    const classAdjustment = [6, 12].includes(classIndex) ? 12 : 0;
+    const absent = baselineAbsent + sample % 41 / 10 + classAdjustment;
+    const leave = baselineLeave + sample % 13 / 10;
+    return [100 - absent - leave, absent, leave];
+  }
+
+  function renderAttendanceTrend(points) {
+    const chart = document.querySelector(".attendance-trend-plot");
+    const coordinates = points.map(({ value }, index) => {
+      const x = 500 * index / (points.length - 1);
+      const y = 4 * (100 - value);
+      return `${x},${y}`;
+    });
+    chart.querySelector(".attendance-trend-line").setAttribute("points", coordinates.join(" "));
+    chart.querySelector(".attendance-trend-area").setAttribute("d", `M0,100 L${coordinates.join(" L")} L500,100 Z`);
+    document.getElementById("attendance-first-day").textContent = points[0].label;
+    document.getElementById("attendance-last-day").textContent = points.at(-1).label;
+
+    const entries = points.map(({ label, value }) => {
+      const row = document.createElement("li");
+      const day = document.createElement("span");
+      day.textContent = label;
+      const percentage = document.createElement("strong");
+      percentage.textContent = formatAttendance(value);
+      row.append(day, percentage);
+      return row;
+    });
+    document.getElementById("attendance-trend").replaceChildren(...entries);
+  }
+
   function initializeAttendanceChart(dateInput, filters, baselineAbsent, baselineLeave) {
     const card = dateInput.closest(".overview-chart");
-    const donut = card.querySelector(".attendance-donut");
-    const total = donut.querySelector("strong");
+    const summary = card.querySelector(".attendance-summary");
+    const total = summary.querySelector("strong");
     const breakdown = card.querySelectorAll(".attendance-legend dd");
 
     function update() {
       if (!dateInput.validity.valid) return;
 
-      // Generate stable sample values until attendance records are connected.
-      const dateOffset = (Date.parse(dateInput.value) - Date.parse(todayDate)) / 86400000;
       const filterOffset = filters.reduce((sum, filter, index) => sum + filter.selectedIndex * (13 - index * 6), 0);
-      const sample = Math.abs(dateOffset * 17 + filterOffset);
-      const absent = baselineAbsent + sample % 41 / 10;
-      const leave = baselineLeave + sample % 13 / 10;
-      const present = 100 - absent - leave;
-      const values = [present, absent, leave];
+      const isStudent = dateInput === attendanceDate;
+      const classIndex = isStudent ? attendanceClass.selectedIndex : 0;
+      const values = getAttendance(dateInput.value, filterOffset, baselineAbsent, baselineLeave, classIndex);
+      const [present, absent] = values;
+
+      if (isStudent) {
+        const range = Number(attendanceRange.value);
+        const points = Array.from({ length: range }, (_, index) => {
+          const date = operations.daysBefore(dateInput.value, range - index - 1);
+          return { label: operations.dateLabel(date), value: getAttendance(date, filterOffset, baselineAbsent, baselineLeave, classIndex)[0] };
+        });
+        renderAttendanceTrend(points);
+        const flagged = [...attendanceClass.options].slice(1).filter((option, index) => {
+          const classNumber = index + 1;
+          const offset = classNumber * 13 + attendanceSection.selectedIndex * 7;
+          return getAttendance(dateInput.value, offset, baselineAbsent, baselineLeave, classNumber)[0] < 85;
+        });
+        document.getElementById("attendance-low-classes").textContent = flagged.length
+          ? `Below 85% · ${flagged.map((option) => option.text).join(", ")}`
+          : "No classes below 85%";
+      }
 
       total.textContent = formatAttendance(present);
-      donut.style.setProperty("--attendance-present", formatAttendance(present));
-      donut.style.setProperty("--attendance-absent-end", formatAttendance(present + absent));
+      summary.style.setProperty("--attendance-present", formatAttendance(present));
+      summary.style.setProperty("--attendance-absent-end", formatAttendance(present + absent));
       breakdown.forEach((entry, index) => {
         entry.textContent = formatAttendance(values[index]);
       });
@@ -999,6 +1254,7 @@
 
     dateInput.value = todayDate;
     dateInput.max = todayDate;
+    if (dateInput === attendanceDate) attendanceRange.addEventListener("change", update);
     [dateInput, ...filters].forEach((filter) => filter.addEventListener("change", update));
     update();
   }
@@ -1008,10 +1264,46 @@
     document.getElementById("staff-attendance-group")
   ], 3.5, 1.5);
 
+  document.querySelectorAll(".operations-kpi-trend").forEach((trend) => {
+    const rate = (Number(trend.dataset.current) / Number(trend.dataset.previous) - 1) * 100;
+    trend.classList.toggle("is-down", rate < 0);
+    trend.textContent = `${rate < 0 ? "▼" : "▲"} ${Math.abs(rate).toFixed(1)}% vs last month`;
+  });
+
+  const feeProgress = document.querySelector(".operations-fee-progress");
+  document.getElementById("operations-fee-caption").textContent =
+    `${Math.round(feeProgress.value / feeProgress.max * 100)}% of ${operations.formatMoney(feeProgress.max)} target`;
+
+  document.getElementById("attendance-alert").addEventListener("click", () => {
+    if (!attendanceDate.reportValidity()) return;
+    operations.openMessageDraft("Absence alert",
+      `Dear Parent, our attendance record shows that your child was absent on ${operations.dateLabel(attendanceDate.value)}. Please contact the school office if this is incorrect. — Tunbridge High School`);
+  });
+
+  const substituteSubject = document.getElementById("substitute-subject");
+  const substitutePeriod = document.getElementById("substitute-period");
+  const substituteResult = document.getElementById("substitute-result");
+  const sampleTeachingRoster = [
+    { code: "T-014", subject: "English", periods: ["1", "3"] },
+    { code: "T-027", subject: "Mathematics", periods: ["2", "4"] },
+    { code: "T-038", subject: "Science", periods: ["1", "4"] }
+  ];
+  function updateSubstitutes() {
+    const matches = sampleTeachingRoster.filter(({ subject, periods }) =>
+      subject === substituteSubject.value && periods.includes(substitutePeriod.value));
+    substituteResult.textContent = matches.length
+      ? `${matches.map(({ code }) => code).join(", ")} available for period ${substitutePeriod.value} in the demo roster.`
+      : "No matching teacher is free in the demo roster.";
+  }
+  [substituteSubject, substitutePeriod].forEach((select) => select.addEventListener("change", updateSubstitutes));
+  updateSubstitutes();
+
   const feeDate = document.getElementById("fee-overview-date");
   const feeClass = document.getElementById("fee-overview-class");
   const feeSection = document.getElementById("fee-overview-section");
   const feeCollectedAmount = document.getElementById("fee-overview-collected");
+  const feeOverviewPercentage = document.getElementById("fee-overview-percentage");
+  const feeOverviewMeter = document.getElementById("fee-overview-meter");
   const feeBreakdown = document.querySelectorAll(".fee-overview-legend dd");
   const feeCurrency = new Intl.NumberFormat("en-IN", {
     style: "currency", currency: "INR", maximumFractionDigits: 0
@@ -1040,9 +1332,15 @@
       }
       return matchedTotal;
     });
-    const [collected] = amounts;
+    const [collected, upcoming] = amounts;
     const total = amounts.reduce((sum, amount) => sum + amount, 0);
+    const collectedShare = total ? 100 * collected / total : 0;
+    const upcomingEnd = total ? 100 * (collected + upcoming) / total : 0;
     feeCollectedAmount.textContent = feeCurrency.format(collected);
+    feeOverviewPercentage.textContent = total ? `${Math.round(collectedShare)}% of assessed fees` : "No assessed fees";
+    feeOverviewMeter.style.setProperty("--fee-collected", `${collectedShare}%`);
+    feeOverviewMeter.style.setProperty("--fee-upcoming-end", `${upcomingEnd}%`);
+    feeOverviewMeter.hidden = !total;
     [...amounts, total].forEach((amount, index) => {
       feeBreakdown[index].textContent = feeCurrency.format(amount);
     });
@@ -1068,6 +1366,10 @@
     sidebarToggle.title = collapsed ? "Expand sidebar" : "Collapse sidebar";
     sidebarToggle.innerHTML = `<i data-lucide="${collapsed ? "panel-left-open" : "panel-left-close"}" aria-hidden="true"></i>`;
     if (window.lucide) lucide.createIcons({ root: sidebarToggle });
+    if (collapsed) {
+      const modulesToggle = sidebar.querySelector(".sidebar-modules-toggle");
+      setModuleMenuOpen(modulesToggle, false);
+    }
     try { localStorage.setItem("vaps-sidebar-collapsed", String(collapsed)); } catch {}
   };
   let sidebarIsCollapsed = false;
@@ -1088,44 +1390,18 @@
   const moduleSearch = document.querySelector("#module-search-input");
   const moduleNav = document.querySelector("#module-nav");
   const moduleButtons = [...moduleNav.querySelectorAll(".module-nav-item")];
-  const mobileModulePicker = document.querySelector("#module-mobile-picker");
-  const mobileModuleOptions = new Map(moduleButtons.map((button) => {
-    const option = document.createElement("option");
-    option.value = button.dataset.module;
-    option.textContent = button.querySelector(".module-nav-copy strong").textContent.trim();
-    mobileModulePicker.append(option);
-    return [button.dataset.module, option];
-  }));
+  const sidebarModules = document.querySelector("#sidebar-modules");
+  const sidebarModulesToggle = document.querySelector(".sidebar-modules-toggle");
   const toolList = document.querySelector("#module-tool-list");
   const toolCount = document.querySelector("#tool-count");
   const toolEmpty = document.querySelector("#tool-empty");
   const moduleEmpty = document.querySelector("#module-empty");
-  const mobileModuleEmpty = document.querySelector("#mobile-module-empty");
   const queriesToggle = document.querySelector(".collapse-btn");
   const queryGrid = document.querySelector("#administrative-queries-grid");
   const queryFilterButtons = [...document.querySelectorAll("[data-query-filter]")];
   const queryItems = [...queryGrid.querySelectorAll(".query-item")];
   const queryColumns = [...queryGrid.querySelectorAll(".query-column")];
   const queryCount = document.querySelector("#queries-count");
-  const assistantDialog = document.querySelector("#assistant-answer-dialog");
-  const assistantDialogClose = document.querySelector("#assistant-answer-close");
-  const assistantDialogDone = document.querySelector("#assistant-answer-done");
-  const assistantQuestion = document.querySelector("#assistant-answer-question");
-  const assistantThinking = document.querySelector("#assistant-thinking");
-  const assistantResponse = document.querySelector("#assistant-response");
-  const assistantResponseText = document.querySelector("#assistant-response-text");
-  let assistantAnswerTimer;
-
-  const assistantSampleResponses = {
-    operations: "I would review the relevant operational records and summarize upcoming actions.",
-    overview: "I would combine key operational, academic, and finance indicators into a concise overview.",
-    academics: "I would review the academic records and highlight students or subjects that may need attention.",
-    attendance: "I would summarize attendance patterns and identify classes that may need follow-up.",
-    finance: "I would summarize fee activity and highlight items that may need follow-up.",
-    staff: "I would review staff records and summarize relevant workload or attendance patterns.",
-    admissions: "I would review the admissions pipeline and highlight items that may need follow-up."
-  };
-
   const moduleContent = {
     "pre-configuration": {
       title: "Pre Configuration",
@@ -1356,6 +1632,118 @@
     }
   };
 
+  const preadmissionPages = {
+    "Oral Test Schedule": "../../Modules/Preadmission/Interview%20Schedule/Oral/oral.html",
+    "Oral Test Marks": "../../Modules/Preadmission/Marks%20entry/oral/oral.html",
+    "Written Test Marks": "../../Modules/Preadmission/Marks%20entry/written/written.html",
+    "Status": "../../Modules/Preadmission/Preadmission%20Status/status.html",
+    "Student Count Report": "../../Modules/Preadmission/Student%20Count/studentcount.html",
+    "Schedule Report": "../../Modules/Preadmission/Reports/Schedule%20Reports/SR.html",
+    "Registrationreport": "../../Modules/Preadmission/Reports/Registration%20Report/registrationreport.html",
+    "Pre Month End Report": "../../Modules/Preadmission/Reports/Pre-Month%20end%20report/PMER.html"
+  };
+  const configurationPages = {
+    "Master Configuration": "Master/master.html",
+    "General Configuration": "General/general.html",
+    "Transaction Numbering": "Transaction%20Numbering/TN.html",
+    "Admission Standard": "Admission%20Standard/admission.html",
+    "Fee Standard": "Fee%20Standard/fee.html",
+    "Exam Standard": "Exam%20Standard/exam.html",
+    "Payroll Standard": "Payroll/payroll.html"
+  };
+
+  function getToolRoute(moduleKey, tool) {
+    if (moduleKey === "pre-configuration" && configurationPages[tool]) {
+      return "../../Modules/Preconfiguration/" + configurationPages[tool];
+    }
+    if (moduleKey === "preadmission") return preadmissionPages[tool];
+    if (moduleKey === "admission" && tool === "Academic Year") {
+      return "../../Modules/Admission/Masters/academic-year.html";
+    }
+  }
+
+  function createModuleMenu(moduleKey, id) {
+    const module = moduleContent[moduleKey];
+    const menu = document.createElement("div");
+    menu.className = "module-submenu";
+    menu.id = id;
+    menu.hidden = true;
+
+    function appendTools(container, tools) {
+      tools.forEach((tool) => {
+        const route = getToolRoute(moduleKey, tool);
+        const item = document.createElement(route ? "a" : "span");
+        item.className = "module-submenu-tool";
+        item.textContent = tool;
+        if (route) item.href = route;
+        else item.title = "Page unavailable";
+        container.append(item);
+      });
+    }
+
+    if (module.categories) {
+      module.categories.forEach(({ title, tools }) => {
+        const group = document.createElement("details");
+        const label = document.createElement("summary");
+        label.textContent = title;
+        group.append(label);
+        appendTools(group, tools);
+        menu.append(group);
+      });
+    } else {
+      appendTools(menu, module.tools);
+    }
+    return menu;
+  }
+
+  function setModuleMenuOpen(button, open) {
+    button.setAttribute("aria-expanded", String(open));
+    document.getElementById(button.getAttribute("aria-controls")).hidden = !open;
+  }
+
+  function toggleModuleMenu(buttons, selected, open) {
+    buttons.forEach((button) => setModuleMenuOpen(button, button === selected && open));
+  }
+
+  moduleButtons.forEach((button) => {
+    const key = button.dataset.module;
+    const inPage = key === "pre-configuration" || key === "preadmission";
+    const sidebarButton = inPage ? document.createElement("a") : button.cloneNode(true);
+    if (inPage) {
+      sidebarButton.append(...Array.from(button.children, (child) => child.cloneNode(true)));
+      sidebarButton.href = `#${key}`;
+      sidebarButton.dataset.workspacePage = key;
+    }
+    sidebarButton.className = "sidebar-module-button";
+    sidebarButton.removeAttribute("aria-current");
+    if (!inPage) {
+      sidebarButton.setAttribute("aria-haspopup", "dialog");
+      sidebarButton.setAttribute("aria-controls", operationDialog.id);
+      sidebarButton.addEventListener("click", () => openOperationTools(button));
+    }
+    sidebarButton.querySelector("small").remove();
+    sidebarButton.querySelector(".module-nav-arrow").remove();
+    sidebarModules.append(sidebarButton);
+
+    const explorerMenu = createModuleMenu(key, `explorer-module-${key}`);
+    button.setAttribute("aria-controls", explorerMenu.id);
+    button.setAttribute("aria-expanded", "false");
+    const count = moduleContent[key].categories?.length ?? moduleContent[key].tools.length;
+    button.querySelector("small").textContent = `${count} ${count === 1 ? "section" : "sections"}`;
+    button.after(explorerMenu);
+    button.addEventListener("click", () => {
+      toggleModuleMenu(moduleButtons, button, explorerMenu.hidden);
+      renderModule(key);
+    });
+  });
+
+  sidebarModulesToggle.addEventListener("click", () => {
+    const collapsed = appShell.classList.contains("sidebar-collapsed")
+      && !appShell.hasAttribute("data-mobile-menu-open");
+    if (collapsed) setSidebarCollapsed(false);
+    setModuleMenuOpen(sidebarModulesToggle, collapsed || sidebarModules.hidden);
+  });
+
   let selectedModule = "pre-configuration";
 
   function renderModule(moduleKey) {
@@ -1374,7 +1762,6 @@
         if (active) button.setAttribute("aria-current", "page");
         else button.removeAttribute("aria-current");
       });
-      mobileModulePicker.value = moduleKey;
       toolList.replaceChildren();
       toolCount.hidden = true;
       toolEmpty.textContent = "Section details will appear here.";
@@ -1412,8 +1799,81 @@
       else button.removeAttribute("aria-current");
     });
 
-    mobileModulePicker.value = moduleKey;
     renderTools();
+  }
+
+  const preadmissionCategoryIcons = {
+    "Interview Schedule": "calendar-days",
+    "Marks Entry": "chart-no-axes-column-increasing",
+    "Preadmission Status": "clipboard-check",
+    "Reports": "file-chart-column",
+    "Application Form": "file-pen-line",
+    "Document View": "folder-open"
+  };
+
+  function renderModuleCategories(moduleKey, list, query = "", inWorkspace = false) {
+    const themedPreadmission = inWorkspace && moduleKey === "preadmission";
+    let visibleTools = 0;
+    moduleContent[moduleKey].categories.forEach((category) => {
+      const categoryMatches = category.title.toLocaleLowerCase().includes(query);
+      const matchingTools = category.tools.filter((tool) => !query || categoryMatches || tool.toLocaleLowerCase().includes(query));
+      if (matchingTools.length === 0) return;
+
+      const categoryCard = document.createElement("section");
+      categoryCard.className = "preadmission-category";
+      const categoryTitle = document.createElement("h3");
+      categoryTitle.textContent = category.title;
+      const categoryTools = document.createElement("div");
+      categoryTools.className = "preadmission-category-tools";
+      let serialNumber = 0;
+
+      matchingTools.forEach((tool) => {
+        serialNumber += 1;
+        const toolRoute = getToolRoute(moduleKey, tool);
+        const item = document.createElement(toolRoute ? "a" : "div");
+        item.className = "preadmission-tool-item";
+        if (toolRoute) {
+          item.href = toolRoute;
+          item.setAttribute("aria-label", `Open ${tool}`);
+        }
+        const number = document.createElement("span");
+        number.className = "module-tool-number preadmission-tool-number";
+        number.textContent = String(serialNumber).padStart(2, "0");
+        const label = document.createElement("span");
+        label.className = "preadmission-tool-label";
+        label.textContent = tool;
+        item.append(number, label);
+        if (themedPreadmission && toolRoute) {
+          const arrow = document.createElement("i");
+          arrow.className = "preadmission-tool-chevron";
+          arrow.dataset.lucide = "chevron-right";
+          arrow.setAttribute("aria-hidden", "true");
+          item.append(arrow);
+        }
+        categoryTools.append(item);
+      });
+
+      visibleTools += matchingTools.length;
+      if (themedPreadmission) {
+        const header = document.createElement("header");
+        header.className = "preadmission-card-heading";
+        const icon = document.createElement("i");
+        icon.dataset.lucide = preadmissionCategoryIcons[category.title] || "layout-grid";
+        icon.setAttribute("aria-hidden", "true");
+        header.append(icon, categoryTitle);
+        categoryCard.append(header, categoryTools);
+      } else {
+        categoryCard.append(categoryTitle, categoryTools);
+      }
+      if (matchingTools.length > 7) {
+        const scrollHint = document.createElement("p");
+        scrollHint.className = "category-scroll-hint";
+        scrollHint.textContent = "Scroll for more ↓";
+        categoryCard.append(scrollHint);
+      }
+      list.append(categoryCard);
+    });
+    return visibleTools;
   }
 
   function renderTools() {
@@ -1422,61 +1882,7 @@
     toolList.replaceChildren();
 
     if (module.categories) {
-      let visibleTools = 0;
-      module.categories.forEach((category) => {
-        const categoryMatches = category.title.toLocaleLowerCase().includes(query);
-        const matchingTools = category.tools.filter((tool) => !query || categoryMatches || tool.toLocaleLowerCase().includes(query));
-        if (matchingTools.length === 0) return;
-
-        const categoryCard = document.createElement("section");
-        categoryCard.className = "preadmission-category";
-        const categoryTitle = document.createElement("h3");
-        categoryTitle.textContent = category.title;
-        const categoryTools = document.createElement("div");
-        categoryTools.className = "preadmission-category-tools";
-        let serialNumber = 0;
-
-        matchingTools.forEach((tool) => {
-          serialNumber += 1;
-          const toolRoutes = {
-            "Oral Test Schedule": "../../Modules/Preadmission/Interview%20Schedule/Oral/oral.html",
-            "Oral Test Marks": "../../Modules/Preadmission/Marks%20entry/oral/oral.html",
-            "Written Test Marks": "../../Modules/Preadmission/Marks%20entry/written/written.html",
-            "Status": "../../Modules/Preadmission/Preadmission%20Status/status.html",
-            "Student Count Report": "../../Modules/Preadmission/Student%20Count/studentcount.html",
-            "Schedule Report": "../../Modules/Preadmission/Reports/Schedule%20Reports/SR.html",
-            "Registrationreport": "../../Modules/Preadmission/Reports/Registration%20Report/registrationreport.html",
-            "Pre Month End Report": "../../Modules/Preadmission/Reports/Pre-Month%20end%20report/PMER.html"
-          };
-          const toolRoute = selectedModule === "admission" && category.title === "Masters" && tool === "Academic Year"
-            ? "../../Modules/Admission/Masters/academic-year.html"
-            : toolRoutes[tool];
-          const item = document.createElement(toolRoute ? "a" : "div");
-          item.className = "preadmission-tool-item";
-          if (toolRoute) {
-            item.href = toolRoute;
-            item.setAttribute("aria-label", `Open ${tool}`);
-          }
-          const number = document.createElement("span");
-          number.className = "module-tool-number preadmission-tool-number";
-          number.textContent = String(serialNumber).padStart(2, "0");
-          const label = document.createElement("span");
-          label.className = "preadmission-tool-label";
-          label.textContent = tool;
-          item.append(number, label);
-          categoryTools.append(item);
-        });
-
-        visibleTools += matchingTools.length;
-        categoryCard.append(categoryTitle, categoryTools);
-        if (matchingTools.length > 7) {
-          const scrollHint = document.createElement("p");
-          scrollHint.className = "category-scroll-hint";
-          scrollHint.textContent = "Scroll for more ↓";
-          categoryCard.append(scrollHint);
-        }
-        toolList.append(categoryCard);
-      });
+      const visibleTools = renderModuleCategories(selectedModule, toolList, query);
 
       toolCount.textContent = `${visibleTools} ${visibleTools === 1 ? "section" : "sections"}`;
       toolCount.hidden = false;
@@ -1487,52 +1893,113 @@
 
     toolCount.hidden = false;
     const tools = module.tools.filter((tool) => tool.toLocaleLowerCase().includes(query));
-    const configurationPages = {
-      "Master Configuration": "Master/master.html",
-      "General Configuration": "General/general.html",
-      "Transaction Numbering": "Transaction%20Numbering/TN.html",
-      "Admission Standard": "Admission%20Standard/admission.html",
-      "Fee Standard": "Fee%20Standard/fee.html",
-      "Exam Standard": "Exam%20Standard/exam.html",
-      "Payroll Standard": "Payroll/payroll.html"
-    };
-    tools.forEach((tool) => {
-      const page = selectedModule === "pre-configuration" ? configurationPages[tool] : undefined;
-      const item = document.createElement(page ? "a" : "div");
-      item.className = "module-tool-item";
-      if (page) {
-        item.classList.add("module-tool-link");
-        item.href = "../../Modules/Preconfiguration/" + page;
-        item.setAttribute("aria-label", `Open ${tool}`);
-      }
-      const toolIcons = {
-        "Master Configuration": "settings",
-        "General Configuration": "sliders-horizontal",
-        "Transaction Numbering": "file-text",
-        "Admission Standard": "graduation-cap",
-        "Fee Standard": "wallet-cards",
-        "Exam Standard": "book-open",
-        "Payroll Standard": "users-round"
-      };
-      const number = document.createElement("span");
-      number.className = "module-tool-number";
-      const icon = document.createElement("i");
-      icon.dataset.lucide = toolIcons[tool] || "layout-grid";
-      number.append(icon);
-      const label = document.createElement("span");
-      label.className = "module-tool-label";
-      label.textContent = tool;
-      const arrow = document.createElement("i");
-      arrow.className = "module-tool-arrow";
-      arrow.dataset.lucide = "arrow-up-right";
-      item.append(number, label, arrow);
-      toolList.append(item);
-    });
+    toolList.replaceChildren(...tools.map((tool) => createToolCard(selectedModule, tool)));
 
     toolCount.textContent = `${tools.length} ${tools.length === 1 ? "section" : "sections"}`;
     toolEmpty.hidden = tools.length !== 0;
     if (window.lucide) lucide.createIcons();
   }
+
+  const configurationCardDetails = {
+    "Master Configuration": { description: "Configure academic, organizational and core master data.", icon: "settings", tone: "lavender" },
+    "General Configuration": { description: "Manage system preferences, rules and default settings.", icon: "sliders-horizontal", tone: "blue" },
+    "Transaction Numbering": { description: "Define and automate unique numbering formats.", icon: "file-text", tone: "amber" },
+    "Admission Standard": { description: "Set admission policies, criteria and applicant standards.", icon: "graduation-cap", tone: "mint" },
+    "Fee Standard": { description: "Configure fee heads, structures and payment rules.", icon: "coins", tone: "gold" },
+    "Exam Standard": { description: "Define exam patterns, grading and evaluation rules.", icon: "clipboard-check", tone: "rose" },
+    "Payroll Standard": { description: "Manage employee payroll rules, salary structure and benefits.", icon: "users-round", tone: "cobalt" }
+  };
+
+  function createToolCard(moduleKey, tool, showDescription = false) {
+    const details = moduleKey === "pre-configuration" ? configurationCardDetails[tool] : undefined;
+    const page = getToolRoute(moduleKey, tool);
+    const item = document.createElement(page ? "a" : "div");
+    item.className = "module-tool-item";
+    if (page) {
+      item.classList.add("module-tool-link");
+      item.href = page;
+      item.setAttribute("aria-label", `Open ${tool}`);
+    }
+    const number = document.createElement("span");
+    number.className = "module-tool-number";
+    const icon = document.createElement("i");
+    icon.dataset.lucide = details?.icon || "layout-grid";
+    number.setAttribute("aria-hidden", "true");
+    number.append(icon);
+    const label = document.createElement("span");
+    label.className = "module-tool-label";
+    label.textContent = tool;
+    const arrow = document.createElement("i");
+    arrow.className = "module-tool-arrow";
+    arrow.dataset.lucide = showDescription ? "arrow-right" : "arrow-up-right";
+    arrow.setAttribute("aria-hidden", "true");
+    if (showDescription && details) {
+      const copy = document.createElement("span");
+      copy.className = "configuration-card-copy";
+      const description = document.createElement("span");
+      description.className = "configuration-card-description";
+      description.textContent = details.description;
+      copy.append(label, description);
+      number.dataset.tone = details.tone;
+      item.removeAttribute("aria-label");
+      item.append(number, copy, arrow);
+    } else {
+      item.append(number, label, arrow);
+    }
+    return item;
+  }
+
+  const moduleView = document.querySelector("#workspace-module-view");
+  const moduleViewTitle = moduleView.querySelector("h1");
+  const moduleViewDescription = moduleView.querySelector(".hero-description");
+  const moduleViewTools = moduleView.querySelector(".module-tool-list");
+  const configurationDescription = moduleViewDescription.textContent;
+  const modulePageLinks = [...sidebarModules.querySelectorAll("[data-workspace-page]")];
+  const overviewLink = sidebar.querySelector(".nav-item[href='index.html']");
+
+  function syncModuleView(focusHeading = false) {
+    const activeLink = modulePageLinks.find((link) => link.hash === window.location.hash);
+    const active = Boolean(activeLink);
+    moduleView.hidden = !active;
+    moduleView.parentElement.classList.toggle("show-configuration", active);
+    overviewLink.classList.toggle("active", !active);
+    modulePageLinks.forEach((link) => {
+      if (link === activeLink) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+
+    if (!active) {
+      overviewLink.setAttribute("aria-current", "page");
+      return;
+    }
+
+    overviewLink.removeAttribute("aria-current");
+    const key = activeLink.dataset.workspacePage;
+    if (moduleView.dataset.module !== key) {
+      const module = moduleContent[key];
+      moduleView.dataset.module = key;
+      moduleViewTitle.textContent = module.title;
+      moduleViewDescription.textContent = key === "pre-configuration" ? configurationDescription : module.description;
+      moduleViewTools.replaceChildren();
+      if (module.categories) {
+        renderModuleCategories(key, moduleViewTools, "", true);
+      } else {
+        moduleViewTools.append(...module.tools.map((tool) => createToolCard(key, tool, true)));
+      }
+      if (window.lucide) lucide.createIcons();
+    }
+
+    if (appShell.classList.contains("sidebar-collapsed")) setSidebarCollapsed(false);
+    setModuleMenuOpen(sidebarModulesToggle, true);
+    if (focusHeading) moduleViewTitle.focus({ preventScroll: true });
+    window.scrollTo(0, 0);
+  }
+
+  window.addEventListener("hashchange", () => syncModuleView(true));
+  modulePageLinks.forEach((link) => link.addEventListener("click", () => {
+    if (window.location.hash === link.hash) requestAnimationFrame(() => syncModuleView(true));
+  }));
+  syncModuleView();
 
   function filterModules() {
     const query = moduleSearch.value.trim().toLocaleLowerCase();
@@ -1544,7 +2011,6 @@
         const title = button.querySelector(".module-nav-copy strong").textContent;
         const matches = title.toLocaleLowerCase().includes(query);
         button.hidden = !matches;
-        mobileModuleOptions.get(button.dataset.module).hidden = !matches;
         if (matches) visibleModules += 1;
         return;
       }
@@ -1552,13 +2018,10 @@
       const moduleItems = module.tools || module.categories?.flatMap((category) => category.tools) || [];
       const matches = `${module.title} ${moduleItems.join(" ")} ${categories}`.toLocaleLowerCase().includes(query);
       button.hidden = !matches;
-      mobileModuleOptions.get(button.dataset.module).hidden = !matches;
       if (matches) visibleModules += 1;
     });
 
     moduleEmpty.hidden = visibleModules !== 0;
-    mobileModuleEmpty.hidden = visibleModules !== 0;
-    mobileModulePicker.disabled = visibleModules === 0;
     if (query && !moduleButtons.find((button) => button.dataset.module === selectedModule && !button.hidden)) {
       const firstVisible = moduleButtons.find((button) => !button.hidden);
       if (firstVisible) renderModule(firstVisible.dataset.module);
@@ -1589,30 +2052,22 @@
     });
   }
 
-  function showAssistantResponse(card) {
-    window.clearTimeout(assistantAnswerTimer);
-
-    const question = card.querySelector("span").textContent.trim();
-    const category = card.querySelector("b").textContent.trim().toLocaleLowerCase();
-
-    assistantQuestion.textContent = question;
-    assistantResponseText.textContent = assistantSampleResponses[category] || "I would review the relevant school records and summarize the key findings.";
-    assistantThinking.hidden = false;
-    assistantResponse.hidden = true;
-    assistantDialog.showModal();
-
-    assistantAnswerTimer = window.setTimeout(() => {
-      assistantThinking.hidden = true;
-      assistantResponse.hidden = false;
-    }, 1400);
-  }
-
-  operationTrigger.addEventListener("click", () => {
+  function openOperationTools(moduleButton) {
     operationDialog.showModal();
     moduleSearch.value = "";
+    if (moduleButton) {
+      toggleModuleMenu(moduleButtons, moduleButton, true);
+      renderModule(moduleButton.dataset.module);
+    }
     filterModules();
-    if (window.matchMedia("(min-width: 701px)").matches) moduleSearch.focus();
-  });
+    if (moduleButton) {
+      moduleButton.focus();
+    } else if (window.matchMedia("(min-width: 701px)").matches) {
+      moduleSearch.focus();
+    }
+  }
+
+  operationTrigger.addEventListener("click", () => openOperationTools());
 
   aiEdgeTrigger.addEventListener("click", () => aiEdgeDialog.showModal());
   aiEdgeClose.addEventListener("click", () => aiEdgeDialog.close());
@@ -1664,10 +2119,6 @@
   operationDialog.addEventListener("click", (event) => {
     if (event.target === operationDialog) operationDialog.close();
   });
-  moduleButtons.forEach((button) => {
-    button.addEventListener("click", () => renderModule(button.dataset.module));
-  });
-  mobileModulePicker.addEventListener("change", () => renderModule(mobileModulePicker.value));
   moduleSearch.addEventListener("input", filterModules);
   moduleSearch.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
@@ -1689,14 +2140,8 @@
     const card = event.target.closest(".query-item");
     if (!card) return;
     event.preventDefault();
-    showAssistantResponse(card);
+    window.WorkspaceRecordAssistant.ask(card.querySelector("span").textContent.trim());
   });
-  assistantDialogClose.addEventListener("click", () => assistantDialog.close());
-  assistantDialogDone.addEventListener("click", () => assistantDialog.close());
-  assistantDialog.addEventListener("click", (event) => {
-    if (event.target === assistantDialog) assistantDialog.close();
-  });
-  assistantDialog.addEventListener("close", () => window.clearTimeout(assistantAnswerTimer));
 
   filterQueries("all");
   renderModule(selectedModule);

@@ -114,7 +114,7 @@ function openReport(report, trigger = document.activeElement) {
   report.columns.forEach((column) => {
     const heading = document.createElement("th");
     heading.scope = "col";
-    heading.textContent = column;
+    heading.textContent = column === "Sample value" ? "Demo value" : column;
     headingRow.append(heading);
   });
   const amountColumnIndex = report.columns.findIndex((column) => /amount|total|fee|collection|balance/i.test(column));

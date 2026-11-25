@@ -1,0 +1,66 @@
+:root {
+  --operations-indigo: #4f46e5;
+  --operations-indigo-dark: #3730a3;
+  --operations-indigo-soft: #e0e7ff;
+}
+
+.operations-panel {
+  min-width: 0;
+  padding: clamp(14px, 2vw, 22px);
+  border: 1px solid #e9dfd0;
+  border-radius: 17px;
+  color: #15263b;
+  background: linear-gradient(145deg, #fff, #fcf9f4);
+  box-shadow: 0 4px 13px #1629410b;
+}
+
+.operations-panel h2,
+.operations-panel h3 { margin: 0; color: #173652; }
+.operations-panel h2 { font-size: 21px; }
+.operations-panel h3 { font-size: 15px; }
+.operations-note { margin: 5px 0 0; color: #576779; font-size: 13px; }
+.operations-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.operations-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 11px;
+  min-height: 36px;
+  border: 1px solid #254967;
+  border-radius: 9px;
+  color: #fff;
+  background: #173652;
+  line-height: 1.3;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.operations-button.secondary,
+.operations-button:disabled { border-color: #e5d7c3; color: #654716; background: #fbf5ea; }
+.operations-button:disabled { opacity: .75; cursor: default; }
+.operations-button:focus-visible,
+.operations-dialog :is(input, textarea):focus-visible { outline: 2px solid #ac7931; outline-offset: 2px; }
+
+.operations-bars {
+  display: grid;
+  grid-template-columns: repeat(var(--bar-count, 1), minmax(0, 1fr));
+  gap: clamp(3px, 1vw, 10px);
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.operations-bars li { min-width: 0; display: grid; grid-template-rows: auto 60px auto; align-items: end; gap: 4px; text-align: center; }
+.operations-bar { display: block; height: var(--bar-height); margin-inline: auto; width: min(72%, 29px); border-radius: 4px 4px 1px 1px; background: linear-gradient(var(--operations-indigo), var(--operations-indigo-dark)); }
+.operations-bar.is-low { background: #b47437; }
+.operations-bar-label,
+.operations-bar-value { color: #536475; font: 600 10px/1.2 system-ui, sans-serif; overflow-wrap: anywhere; }
+.operations-dialog { width: min(440px, calc(100% - 32px)); padding: 22px; border: 1px solid #d9c69e; border-radius: 17px; color: #162a41; background: #fffdf8; }
+.operations-dialog::backdrop { background: #03182e99; }
+.operations-dialog h2 { margin: 0; }
+.operations-dialog label { display: grid; gap: 5px; margin-top: 12px; font-weight: 600; }
+.operations-dialog :is(input, textarea) { width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #cabda8; border-radius: 7px; font: inherit; }
+.operations-dialog p { font-size: 13px; }

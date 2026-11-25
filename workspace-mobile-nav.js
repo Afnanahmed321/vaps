@@ -85,10 +85,10 @@
   close.addEventListener("click", () => setDrawer(false, true));
   backdrop.addEventListener("click", () => setDrawer(false, true));
   sidebar.addEventListener("click", (event) => {
-    if (event.target.closest(".nav-item[href]")) setDrawer(false);
+    if (event.target.closest(".nav-item[href], a[data-workspace-page]")) setDrawer(false);
   });
   document.addEventListener("keydown", (event) => {
-    if (!open) return;
+    if (!open || event.target.closest?.("dialog:modal")) return;
 
     if (event.key === "Escape") {
       event.preventDefault();

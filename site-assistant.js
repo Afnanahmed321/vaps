@@ -221,7 +221,7 @@
 
   function makeStudentStatusResponse() {
     return makeResponse([
-      "Student status summary — sample data only. These figures are not connected to live school records or individual student profiles."
+      "Student status summary — demo data only. These figures are not connected to live school records or individual student profiles."
     ], [{ key: "students", label: "Open Students" }], [], [
       { label: "Enrolled", value: "104" },
       { label: "Present today", value: "98" },
@@ -232,7 +232,7 @@
 
   function makeApplicationStatusResponse() {
     return makeResponse([
-      "Application status summary — sample data only. These figures are not connected to live application records."
+      "Application status summary — demo data only. These figures are not connected to live application records."
     ], [{ key: "applications", label: "Open Applications" }], [], [
       { label: "Applications", value: "18" },
       { label: "Reviewed", value: "12" },
@@ -242,7 +242,7 @@
 
   function makeTeacherStatusResponse() {
     return makeResponse([
-      "Teacher status summary — sample data only. These figures are not connected to live staff records."
+      "Teacher status summary — demo data only. These figures are not connected to live staff records."
     ], [{ key: "teachers", label: "Open Teachers" }], [], [
       { label: "Teachers", value: "80" },
       { label: "Present today", value: "76" },
@@ -280,101 +280,101 @@
         categoryLabel: "Fee Collection",
         icon: "wallet",
         metrics: [
-          { label: "Collected today", value: "₹36,140", detail: "Sample figures" },
-          { label: "Transactions", value: "42", detail: "Sample payments" },
-          { label: "Outstanding", value: "₹12,800", detail: "Sample pending dues" }
+          { label: "Collected today", value: "₹36,140", detail: "Demo figures" },
+          { label: "Transactions", value: "42", detail: "Demo payments" },
+          { label: "Outstanding", value: "₹12,800", detail: "Demo pending dues" }
         ],
         columns: ["Payment method", "Transactions", "Amount"],
         rows: [["UPI", "23", "₹17,200"], ["Card", "12", "₹11,700"], ["Cash", "7", "₹7,240"]],
-        summary: "UPI is the leading payment method in this sample. Review pending dues and follow up on unpaid balances."
+        summary: "UPI is the leading payment method in this example. Review pending dues and follow up on unpaid balances."
       },
       attendance: {
         categoryLabel: "Attendance",
         icon: "calendar-check",
         metrics: [
-          { label: "Attendance rate", value: "94.2%", detail: "Sample period" },
-          { label: "Present", value: "98", detail: "Sample students" },
-          { label: "Absent", value: "6", detail: "Sample students" }
+          { label: "Attendance rate", value: "94.2%", detail: "Demo period" },
+          { label: "Present", value: "98", detail: "Demo students" },
+          { label: "Absent", value: "6", detail: "Demo students" }
         ],
         columns: ["Class group", "Present", "Absent", "Rate"],
         rows: [["Primary", "36", "2", "94.7%"], ["Middle", "34", "2", "94.4%"], ["Senior", "28", "2", "93.3%"]],
-        summary: "Attendance is steady in this sample. Check repeated absences and contact families where follow-up is needed."
+        summary: "Attendance is steady in this example. Check repeated absences and contact families where follow-up is needed."
       },
       academics: {
         categoryLabel: "Academic Performance",
         icon: "book-open-check",
         metrics: [
-          { label: "Average score", value: "82%", detail: "Sample assessments" },
-          { label: "Top subject", value: "Mathematics", detail: "Sample average: 88%" },
-          { label: "Needs support", value: "7", detail: "Sample students" }
+          { label: "Average score", value: "82%", detail: "Demo assessments" },
+          { label: "Top subject", value: "Mathematics", detail: "Demo average: 88%" },
+          { label: "Needs support", value: "7", detail: "Demo students" }
         ],
         columns: ["Subject", "Average score", "Students assessed", "Status"],
         rows: [["Mathematics", "88%", "34", "Strong"], ["Science", "83%", "35", "On track"], ["English", "76%", "35", "Review"]],
-        summary: "Mathematics leads this sample. English may benefit from targeted revision and additional student support."
+        summary: "Mathematics leads this example. English may benefit from targeted revision and additional student support."
       },
       admissions: {
         categoryLabel: "Admissions",
         icon: "user-round-plus",
         metrics: [
-          { label: "Applications", value: "18", detail: "Sample this week" },
-          { label: "Reviewed", value: "12", detail: "Sample applications" },
-          { label: "Awaiting action", value: "6", detail: "Sample applications" }
+          { label: "Applications", value: "18", detail: "Demo figures for this week" },
+          { label: "Reviewed", value: "12", detail: "Demo applications" },
+          { label: "Awaiting action", value: "6", detail: "Demo applications" }
         ],
         columns: ["Application stage", "Applications", "Next step"],
         rows: [["Under review", "6", "Complete document checks"], ["Assessment", "4", "Schedule assessment"], ["Offer sent", "2", "Follow up with families"]],
-        summary: "Six sample applications are awaiting action. Prioritize document checks and assessment scheduling."
+        summary: "Six demo applications are awaiting action. Prioritize document checks and assessment scheduling."
       },
       staff: {
         categoryLabel: "Staff Overview",
         icon: "users-round",
         metrics: [
-          { label: "Staff members", value: "80", detail: "In the sample" },
-          { label: "Present", value: "76", detail: "Sample today" },
-          { label: "On leave", value: "4", detail: "Sample today" }
+          { label: "Staff members", value: "80", detail: "Demo figures" },
+          { label: "Present", value: "76", detail: "Demo figures for today" },
+          { label: "On leave", value: "4", detail: "Demo figures for today" }
         ],
         columns: ["Department", "Staff", "Present", "On leave"],
         rows: [["Teaching", "52", "50", "2"], ["Administration", "16", "15", "1"], ["Support", "12", "11", "1"]],
-        summary: "Most staff are present in this sample. Review cover arrangements for teams with leave today."
+        summary: "Most staff are present in this example. Review cover arrangements for teams with leave today."
       },
       students: {
         categoryLabel: "Student Enrollment",
         icon: "graduation-cap",
         metrics: [
-          { label: "Students", value: "104", detail: "Across the school sample" },
-          { label: "New this term", value: "6", detail: "Sample enrollments" },
-          { label: "Class groups", value: "12", detail: "In this sample" }
+          { label: "Students", value: "104", detail: "Across the demo school" },
+          { label: "New this term", value: "6", detail: "Demo enrollments" },
+          { label: "Class groups", value: "12", detail: "Demo figures" }
         ],
         columns: ["Class group", "Students", "New enrollments", "Change"],
         rows: [["Primary", "38", "3", "+2"], ["Middle", "36", "2", "+1"], ["Senior", "30", "1", "0"]],
-        summary: "Enrollment is distributed across all three class groups in this sample. Review class capacity before the next intake."
+        summary: "Enrollment is distributed across all three class groups in this example. Review class capacity before the next intake."
       },
       operations: {
         categoryLabel: "Operations",
         icon: "building-2",
         metrics: [
-          { label: "Open items", value: "8", detail: "Sample operations" },
-          { label: "Completed", value: "24", detail: "Sample this week" },
-          { label: "Needs attention", value: "3", detail: "Sample follow-up" }
+          { label: "Open items", value: "8", detail: "Demo operations" },
+          { label: "Completed", value: "24", detail: "Demo figures for this week" },
+          { label: "Needs attention", value: "3", detail: "Demo follow-up" }
         ],
         columns: ["Area", "Open items", "Status"],
         rows: [["Transport", "2", "On track"], ["Facilities", "3", "Review"], ["Library & supplies", "3", "On track"]],
-        summary: "Three sample operational items may need follow-up. Review facilities requests and assign an owner to each open item."
+        summary: "Three demo operational items may need follow-up. Review facilities requests and assign an owner to each open item."
       },
       overview: {
         categoryLabel: "School Overview",
         icon: "chart-no-axes-column-increasing",
         metrics: [
-          { label: "Students", value: "104", detail: "Illustrative sample" },
-          { label: "Teachers", value: "80", detail: "Illustrative sample" },
-          { label: "Fee collection", value: "₹36,140", detail: "Illustrative sample" }
+          { label: "Students", value: "104", detail: "Illustrative figure" },
+          { label: "Teachers", value: "80", detail: "Illustrative figure" },
+          { label: "Fee collection", value: "₹36,140", detail: "Illustrative figure" }
         ],
-        columns: ["Area", "Indicator", "Sample value"],
+        columns: ["Area", "Indicator", "Demo value"],
         rows: [["Students", "Enrolled", "104"], ["Attendance", "Present today", "98"], ["Finance", "Collected today", "₹36,140"]],
-        summary: "This overview combines sample enrollment, attendance, and finance indicators. Connect live school data for verified results."
+        summary: "This overview combines demo enrollment, attendance, and finance indicators. Connect live school data for verified results."
       }
     };
     const template = templates[category];
-    let period = { title: "Current", label: "Current sample period" };
+    let period = { title: "Current", label: "Current demo period" };
     if (/\b(today|today's|todays)\b/.test(text)) period = { title: "Today's", label: "Today" };
     else if (/\b(yesterday|yesterday's)\b/.test(text)) period = { title: "Yesterday's", label: "Yesterday" };
     else if (/\b(this week|weekly|week)\b/.test(text)) period = { title: "This week's", label: "This week" };
@@ -435,7 +435,7 @@
     }
     return makeResponse([
       `Report is ready: ${report.title} has been saved in Reports.`,
-      "This report uses illustrative sample figures, not live school records."
+      "This report uses illustrative figures, not live school records."
     ], [{ key: "reports", label: "View report", reportId: report.id }]);
   }
 
@@ -473,14 +473,14 @@
     if (/\b(save|saved|saving|store|stored)\b/.test(text) && /\breport(s)?\b/.test(text)) {
       return makeResponse([
         "After a report is generated, select “Save report”. It will appear in the Saved Reports list and remain available in this browser on the Reports page.",
-        "Reports currently use illustrative sample figures; live school data is not connected."
+        "Reports currently use illustrative figures; live school data is not connected."
       ], [reportsLink], ["How do I create a report?"]);
     }
 
     if (/\b(report|reports|\/report|generate|create)\b/.test(text)) {
       return makeResponse([
         "In Principal Assistant, type /reports followed by your question—for example, “/reports fee collection today”—to generate and save a report automatically. You can also create a report on the Reports page and choose Save report.",
-        "This preview builds reports from sample figures. It does not retrieve live school records."
+        "This preview builds reports from demo figures. It does not retrieve live school records."
       ], [reportsLink], ["What is the fee collection today?", "Show this week's attendance"]);
     }
 
@@ -500,7 +500,7 @@
 
     if (/\b(attendance|absent|absence|present|late|tardy)\b/.test(text)) {
       return makeResponse([
-        "Ask for an attendance report on the Reports page—for example, “Show this week's attendance”. The generated view includes sample attendance indicators and a breakdown.",
+        "Ask for an attendance report on the Reports page—for example, “Show this week's attendance”. The generated view includes demo attendance indicators and a breakdown.",
         "Attendance figures are illustrative until the school data source is connected."
       ], [reportsLink], ["Show this week's attendance"]);
     }
@@ -519,7 +519,7 @@
 
     if (/\b(exam|exams|marks|grades|results|academic|academics|subject|subjects|performance|top student)\b/.test(text)) {
       return makeResponse([
-        "Ask for academic results or performance on the Reports page. Exam setup tools are available from Operation Tools → Exam; report figures in this preview are sample data."
+        "Ask for academic results or performance on the Reports page. Exam setup tools are available from Operation Tools → Exam; report figures in this preview are demo data."
       ], [reportsLink, overviewLink], ["Summarize student performance"]);
     }
 
