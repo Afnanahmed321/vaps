@@ -1289,8 +1289,8 @@ button {
 @media (max-width: 700px) {
   .edit-dialog {
     width: calc(100vw - 16px);
-    height: calc(100dvh - 16px);
-    max-height: calc(100dvh - 16px);
+    height: calc(100dvh - 48px);
+    max-height: calc(100dvh - 48px);
   }
 
   .edit-dialog form {
@@ -1374,8 +1374,8 @@ button {
 @media (max-width: 440px) {
   .edit-dialog {
     width: calc(100vw - 8px);
-    height: calc(100dvh - 8px);
-    max-height: calc(100dvh - 8px);
+    height: calc(100dvh - 48px);
+    max-height: calc(100dvh - 48px);
     border-radius: 13px;
   }
 

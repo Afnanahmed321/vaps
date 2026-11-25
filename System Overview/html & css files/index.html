@@ -596,9 +596,9 @@
 <dialog class="assistant-answer-dialog" id="assistant-answer-dialog" aria-labelledby="assistant-answer-title">
   <div class="assistant-answer-window">
     <aside class="assistant-answer-sidebar">
-      <div class="assistant-sidebar-brand"><span>YOUR SCHOOL<br />ASSISTANT</span></div>
+      <div class="assistant-sidebar-brand"><span>YOUR SCHOOL <br />ASSISTANT</span></div>
       <span class="assistant-sidebar-rule"></span>
-      <h2 id="assistant-answer-title">Principal<br />Assistant</h2>
+      <h2 id="assistant-answer-title">Principal <br />Assistant</h2>
       <img class="assistant-preview-image" src="../../assets/ai-preview-image.png" alt="" />
     </aside>
     <div class="assistant-answer-main">
@@ -696,6 +696,10 @@
           <input id="module-search-input" type="search" placeholder="Search sections..." autocomplete="off" aria-label="Search school modules and sections" />
           <kbd>⌘ K</kbd>
         </label>
+        <label class="module-mobile-picker">
+          <select id="module-mobile-picker" aria-label="Choose a module"></select>
+        </label>
+        <p class="module-empty module-mobile-empty" id="mobile-module-empty" hidden>No matching modules</p>
       </div>
       <nav class="module-nav" id="module-nav" aria-label="School modules">
         <button class="module-nav-item is-active" type="button" data-module="pre-configuration" aria-current="page">
@@ -792,12 +796,13 @@
       </nav>
     </aside>
 
+    <button class="module-close" type="button" aria-label="Close modules">
+      <i data-lucide="x"></i>
+    </button>
+
     <section class="module-content">
       <header class="module-toolbar">
         <span class="module-toolbar-title">MODULE EXPLORER</span>
-        <button class="module-close" type="button" aria-label="Close modules">
-          <i data-lucide="x"></i>
-        </button>
       </header>
       <div class="module-main">
         <div class="module-heading module-banner">
@@ -1083,10 +1088,19 @@
   const moduleSearch = document.querySelector("#module-search-input");
   const moduleNav = document.querySelector("#module-nav");
   const moduleButtons = [...moduleNav.querySelectorAll(".module-nav-item")];
+  const mobileModulePicker = document.querySelector("#module-mobile-picker");
+  const mobileModuleOptions = new Map(moduleButtons.map((button) => {
+    const option = document.createElement("option");
+    option.value = button.dataset.module;
+    option.textContent = button.querySelector(".module-nav-copy strong").textContent.trim();
+    mobileModulePicker.append(option);
+    return [button.dataset.module, option];
+  }));
   const toolList = document.querySelector("#module-tool-list");
   const toolCount = document.querySelector("#tool-count");
   const toolEmpty = document.querySelector("#tool-empty");
   const moduleEmpty = document.querySelector("#module-empty");
+  const mobileModuleEmpty = document.querySelector("#mobile-module-empty");
   const queriesToggle = document.querySelector(".collapse-btn");
   const queryGrid = document.querySelector("#administrative-queries-grid");
   const queryFilterButtons = [...document.querySelectorAll("[data-query-filter]")];
@@ -1360,6 +1374,7 @@
         if (active) button.setAttribute("aria-current", "page");
         else button.removeAttribute("aria-current");
       });
+      mobileModulePicker.value = moduleKey;
       toolList.replaceChildren();
       toolCount.hidden = true;
       toolEmpty.textContent = "Section details will appear here.";
@@ -1397,6 +1412,7 @@
       else button.removeAttribute("aria-current");
     });
 
+    mobileModulePicker.value = moduleKey;
     renderTools();
   }
 
@@ -1528,6 +1544,7 @@
         const title = button.querySelector(".module-nav-copy strong").textContent;
         const matches = title.toLocaleLowerCase().includes(query);
         button.hidden = !matches;
+        mobileModuleOptions.get(button.dataset.module).hidden = !matches;
         if (matches) visibleModules += 1;
         return;
       }
@@ -1535,10 +1552,13 @@
       const moduleItems = module.tools || module.categories?.flatMap((category) => category.tools) || [];
       const matches = `${module.title} ${moduleItems.join(" ")} ${categories}`.toLocaleLowerCase().includes(query);
       button.hidden = !matches;
+      mobileModuleOptions.get(button.dataset.module).hidden = !matches;
       if (matches) visibleModules += 1;
     });
 
     moduleEmpty.hidden = visibleModules !== 0;
+    mobileModuleEmpty.hidden = visibleModules !== 0;
+    mobileModulePicker.disabled = visibleModules === 0;
     if (query && !moduleButtons.find((button) => button.dataset.module === selectedModule && !button.hidden)) {
       const firstVisible = moduleButtons.find((button) => !button.hidden);
       if (firstVisible) renderModule(firstVisible.dataset.module);
@@ -1591,7 +1611,7 @@
     operationDialog.showModal();
     moduleSearch.value = "";
     filterModules();
-    moduleSearch.focus();
+    if (window.matchMedia("(min-width: 701px)").matches) moduleSearch.focus();
   });
 
   aiEdgeTrigger.addEventListener("click", () => aiEdgeDialog.showModal());
@@ -1647,6 +1667,7 @@
   moduleButtons.forEach((button) => {
     button.addEventListener("click", () => renderModule(button.dataset.module));
   });
+  mobileModulePicker.addEventListener("change", () => renderModule(mobileModulePicker.value));
   moduleSearch.addEventListener("input", filterModules);
   moduleSearch.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {

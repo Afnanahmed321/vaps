@@ -604,6 +604,15 @@ button {
   scrollbar-width: thin;
 }
 
+.oral-table-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.oral-table-scroll::-webkit-scrollbar-thumb {
+  border-radius: 99px;
+  background: #cbd3e6;
+}
+
 .oral-table {
   width: 100%;
   min-width: 850px;
@@ -1107,7 +1116,88 @@ textarea:focus-visible {
   }
 
   .oral-table-title {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+    gap: 8px 10px;
+  }
+
+  .oral-table-title h3 {
+    grid-column: 1 / -1;
+  }
+
+  .oral-table-title > span {
+    min-width: 0;
+    gap: 5px;
+    font-size: 12px;
+  }
+
+  .oral-list-toolbar {
+    gap: 9px;
+    padding: 10px 12px;
+  }
+
+  .oral-list-toolbar > strong {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .oral-list-toolbar > label {
+    gap: 5px;
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .oral-list-filters {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .oral-list-filters > span {
+    min-width: 0;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .oral-list-tools {
+    grid-column: 1 / -1;
+    width: auto;
+    margin: 0;
+  }
+
+  .oral-table-scroll:has(.oral-empty-cell) {
+    overflow-x: hidden;
+  }
+
+  .oral-table-scroll:has(.oral-empty-cell) .oral-table {
+    min-width: 100%;
+    table-layout: fixed;
+  }
+
+  .oral-table-scroll:has(.oral-empty-cell) thead {
+    display: none;
+  }
+
+  .oral-table-scroll:has(.oral-empty-cell) .oral-empty-cell {
+    white-space: normal;
+  }
+
+  .oral-table-pagination {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 12px;
+    padding: 10px 12px;
+  }
+
+  .oral-table-pagination > label {
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  .oral-pagination-buttons {
+    grid-column: 1 / -1;
+    justify-self: center;
   }
 
   .oral-selected-count {

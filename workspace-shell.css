@@ -1622,6 +1622,7 @@ select:not([multiple]):not(.page-size select):not(.oral-table-pagination select)
   .workspace-chatgpt-dialog[open] { width:min(620px,calc(100vw - 24px)); max-height:calc(100dvh - 24px); }
   .workspace-chatgpt-window { height:min(600px,calc(100dvh - 26px)); min-height:420px; display:flex; flex-direction:column; }
   .workspace-chatgpt-side { display:none; }
+  .workspace-chatgpt-main { flex:1; min-height:0; }
   .workspace-chatgpt-header { min-height:108px; padding:17px 20px 10px; }
   .workspace-chatgpt-header h2 { font-size:24px; }
   .workspace-chatgpt-messages { margin:3px 20px 10px; }
