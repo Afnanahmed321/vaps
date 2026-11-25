@@ -5030,8 +5030,17 @@ a.sidebar-module-button { text-decoration: none; }
   margin: 0 0 12px;
 }
 .module-popup-hero .hero-copy { width: 62%; }
+.module-popup-hero .hero-building,
+.app-shell[data-mobile-navigation] .module-popup-hero .hero-building {
+  background-image:
+    linear-gradient(90deg, #061e34e8, #061e34bd 40%, #061e3426 78%, transparent),
+    url("../../assets/school-image.png");
+}
 .module-popup-hero h2 { font-size: clamp(23px, 6cqw, 46px); }
-.module-popup-hero .hero-description { font-size: clamp(13px, 2.3cqw, 16px); }
+.module-popup-hero .hero-description {
+  font-size: clamp(13px, 2.3cqw, 16px);
+  text-shadow: 0 1px 4px #02172c;
+}
 .module-popup-hero .configuration-hero-lines { opacity: .45; }
 #operation-tools-dialog .module-tool-list {
   display: grid;
