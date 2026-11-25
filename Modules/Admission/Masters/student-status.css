@@ -1,0 +1,27 @@
+.student-status-card > summary {
+  min-height: 0;
+  padding: 16px clamp(14px, 2vw, 24px);
+  list-style: none;
+  cursor: pointer;
+}
+.student-status-card > summary::-webkit-details-marker { display: none; }
+.student-status-card > summary strong { display: block; font-size: 1.25rem; }
+.student-status-card > summary small { display: block; margin-top: 4px; color: var(--config-muted); }
+.student-status-card > summary svg { width: 19px; height: 19px; flex: none; color: var(--config-accent); }
+.student-status-card:not([open]) > summary svg { transform: rotate(-90deg); }
+
+.student-status-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(235px, 100%), 1fr));
+  gap: 18px;
+  padding: clamp(14px, 2vw, 24px);
+}
+.student-status-filters fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+.student-status-filters legend { margin-bottom: 10px; padding: 0; font-weight: 600; }
+.student-status-filters :is(legend, .workspace-dialog-field label) > span { color: #a32929; }
+.student-status-options { display: flex; flex-wrap: wrap; gap: 8px 12px; }
+.student-status-options label { display: flex; align-items: center; gap: 6px; }
+.student-status-options input { accent-color: #193e5d; }
+.student-status-filters select:disabled { opacity: .6; cursor: default; }
+#student-status-feedback { grid-column: 1 / -1; margin: 0; color: var(--config-muted); }
+#student-status-feedback:empty { display: none; }

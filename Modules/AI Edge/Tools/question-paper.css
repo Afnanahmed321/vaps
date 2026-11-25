@@ -1,0 +1,26 @@
+.paper-settings { display: grid; min-width: 0; gap: 16px; }
+
+.paper-table-wrap { overflow-x: auto; border: 1px solid var(--config-line); border-radius: 12px; }
+.paper-table.master-table { min-width: 430px; }
+.paper-table.master-table :is(th, td) { position: static; padding: 9px 12px; }
+.paper-table input[type="number"] { min-width: 64px; }
+.paper-table .paper-type { display: flex; align-items: center; gap: 6px; margin: 0; }
+.paper-subtotal { font-weight: 700; color: var(--config-accent); }
+.paper-table .paper-remove { min-width: 34px; min-height: 34px; padding: 5px; color: #a32929; }
+.paper-remove:disabled { opacity: .45; cursor: default; }
+
+.paper-add { width: 100%; margin-top: 12px; }
+.ai-tool-actions span { color: var(--config-muted); font-size: .875rem; font-weight: 700; }
+#paper-total { font-size: 1.75rem; font-weight: 800; }
+#paper-feedback { margin: 12px 0 0; color: #a32929; }
+#paper-mix-total { margin: 10px 0 0; font-weight: 700; }
+#paper-preview-sections ol { padding-inline-start: 22px; }
+#paper-preview-source { overflow-wrap: anywhere; }
+
+.paper-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}

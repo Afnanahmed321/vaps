@@ -1,0 +1,19 @@
+.daily-attendance-mode { grid-column: 1 / -1; }
+.daily-attendance-mode legend { padding-inline: 4px; font-weight: 700; }
+.daily-attendance-mode input { accent-color: #193e5d; }
+
+#daily-export-hint {
+  flex: 1 1 200px;
+  margin: 0;
+  color: var(--config-muted);
+}
+
+.daily-attendance-results [hidden] { display: none; }
+#daily-result {
+  border-top: 1px solid var(--config-line);
+  padding: 16px clamp(16px, 3vw, 24px);
+  color: var(--config-muted);
+}
+#daily-result p { margin: 0; overflow-wrap: anywhere; }
+#daily-selection { color: #193e5d; font-weight: 700; }
+#daily-selection + p { margin-top: 6px; }

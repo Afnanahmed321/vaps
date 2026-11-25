@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10263e" />
+  <title>Transport Schedule | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="../../Preconfiguration/Master/master.css" />
+  <link rel="stylesheet" href="../../../workspace-shell.css?v=module-dialogs" />
+  <link rel="stylesheet" href="../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../gilroy.css" />
+  <link rel="stylesheet" href="../../Preconfiguration/preconfiguration.css?v=records-toolbar" />
+  <link rel="stylesheet" href="transport-master.css?v=shared-records" />
+  <script defer src="transport-master.js?v=records-toolbar"></script>
+  <script defer src="../../../workspace-header.js?v=overview-shell-parity"></script>
+  <script defer src="../../../workspace-mobile-nav.js"></script>
+  <script defer src="../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../workspace-translator.js"></script>
+  <script defer src="../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../workspace-media-compressor.js"></script>
+</head>
+<body class="preconfiguration-page transport-master-page">
+  <div class="app-shell report-builder-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button">
+        <i data-lucide="graduation-cap"></i>
+        <span><small>Academic Year</small><strong>2026 – 2027</strong></span>
+        <i class="year-chevron" data-lucide="chevron-down"></i>
+      </button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search">
+          <i data-lucide="search"></i>
+          <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" />
+        </label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile">
+            <div class="avatar">T</div>
+            <div><strong>TBHSADMIN</strong><small>Admin</small></div>
+            <i data-lucide="chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-banner module-banner">
+        <div class="banner-copy">
+          <h1>Transport Schedule</h1>
+          <p class="banner-subtitle">Manage route schedule names and status.</p>
+        </div>
+      </section>
+
+      <section class="content-area">
+        <section class="master-card area-card" id="area-card" aria-labelledby="area-records-title">
+          <header class="card-toolbar records-toolbar">
+            <div class="card-heading">
+              <span class="heading-mark" aria-hidden="true"></span>
+              <div>
+                <h2 id="area-records-title">Master Route Schedule List</h2>
+                <p>Manage route schedule names and status.</p>
+              </div>
+            </div>
+            <div class="toolbar-actions">
+              <div class="record-search area-search">
+                <i data-lucide="search" aria-hidden="true"></i>
+                <input id="area-search" type="search" placeholder="Search route schedules…" aria-label="Search route schedules">
+                <button class="page-button" id="area-dictate" type="button" aria-label="Dictate search" aria-pressed="false"><i data-lucide="mic" aria-hidden="true"></i></button>
+              </div>
+              <button class="button button-primary" id="area-add" type="button" aria-haspopup="dialog"><i data-lucide="plus" aria-hidden="true"></i>Add Route Schedule</button>
+            </div>
+          </header>
+          <div class="area-body">
+            <p id="area-feedback" role="status"></p>
+            <div class="area-table-wrap" tabindex="0" role="region" aria-label="Master Route Schedule table">
+              <table class="master-table area-table">
+                <thead><tr><th scope="col" data-column="serial">SL.No.</th><th scope="col"><button class="sort-button" data-sort="name" type="button">Schedule Name <i data-lucide="arrow-up-down" aria-hidden="true"></i></button></th><th scope="col"><button class="sort-button" data-sort="status" type="button">Status <i data-lucide="arrow-up-down" aria-hidden="true"></i></button></th><th scope="col">Action</th></tr></thead>
+                <tbody id="area-rows"><tr><td colspan="4" class="area-empty">No results.</td></tr></tbody>
+              </table>
+            </div>
+            <div class="table-footer area-pagination">
+              <span id="area-range" aria-live="polite">No entries found</span>
+              <label class="page-size">Rows per page
+                <select id="area-page-size"><option>5</option><option selected>10</option><option>20</option><option>50</option></select>
+              </label>
+              <nav class="pagination" aria-label="Route schedule pages"><button class="page-button" data-page="first" type="button" aria-label="First page" disabled><i data-lucide="chevrons-left" aria-hidden="true"></i></button><button class="page-button" data-page="prev" type="button" aria-label="Previous page" disabled><i data-lucide="chevron-left" aria-hidden="true"></i></button><button class="page-button" data-page="next" type="button" aria-label="Next page" disabled><i data-lucide="chevron-right" aria-hidden="true"></i></button><button class="page-button" data-page="last" type="button" aria-label="Last page" disabled><i data-lucide="chevrons-right" aria-hidden="true"></i></button></nav>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <span><i data-lucide="shield"></i> © Tunbridge High School</span>
+        <span>VAPS Digital Campus</span>
+        <span><i data-lucide="phone"></i> School ERP</span>
+      </footer>
+    </main>
+  </div>
+
+  <dialog class="workspace-module-dialog" id="area-dialog" aria-labelledby="area-dialog-title">
+    <form id="area-form" data-record-label="Route Schedule" data-storage-key="vaps.transport.routeSchedules">
+      <header class="workspace-dialog-header module-banner">
+        <h2 id="area-dialog-title">Add Route Schedule</h2>
+        <button class="workspace-dialog-close" id="area-close" type="button" aria-label="Close"><i data-lucide="x" aria-hidden="true"></i></button>
+      </header>
+      <div class="workspace-dialog-body">
+        <details class="workspace-dialog-section" open>
+          <summary>Route Schedule Details <i data-lucide="chevron-down" aria-hidden="true"></i></summary>
+          <div class="workspace-dialog-fields">
+              <div class="workspace-dialog-field">
+                <label for="area-name">Schedule Name</label>
+                <input id="area-name" name="name" required maxlength="120" autofocus>
+              </div>
+              <div class="workspace-dialog-field">
+                <label for="area-status">Status</label>
+                <select id="area-status" name="status"><option>Active</option><option>Inactive</option></select>
+              </div>
+          </div>
+        </details>
+        <p id="area-error" role="alert" hidden></p>
+      </div>
+      <footer class="workspace-dialog-actions">
+        <button class="button button-primary" type="submit"><i data-lucide="save" aria-hidden="true"></i>Save</button>
+        <button class="button button-secondary" id="area-cancel" type="button">Cancel</button>
+      </footer>
+    </form>
+  </dialog>
+  <script src="../../../site-assistant.js"></script>
+</body>
+</html>

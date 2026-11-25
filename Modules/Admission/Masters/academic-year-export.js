@@ -64,7 +64,7 @@
   const xml = '<?xml version="1.0" encoding="UTF-8"?>';
   const escapeXml = value => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
-  window.createAcademicYearWorkbook = rows => {
+  window.createAcademicYearWorkbook = (rows, sheetName = "Academic Years") => {
     const sheetRows = rows.map((fields, index) => {
       const row = index + 1;
       const cells = fields.map((value, column) => {
@@ -79,7 +79,7 @@
     return zip({
       "[Content_Types].xml": `${xml}<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>`,
       "_rels/.rels": `${xml}<Relationships xmlns="${packageRelationship}"><Relationship Id="rId1" Type="${relationship}/officeDocument" Target="xl/workbook.xml"/></Relationships>`,
-      "xl/workbook.xml": `${xml}<workbook xmlns="${spreadsheet}" xmlns:r="${relationship}"><sheets><sheet name="Academic Years" sheetId="1" r:id="rId1"/></sheets></workbook>`,
+      "xl/workbook.xml": `${xml}<workbook xmlns="${spreadsheet}" xmlns:r="${relationship}"><sheets><sheet name="${escapeXml(sheetName).replaceAll('"', "&quot;")}" sheetId="1" r:id="rId1"/></sheets></workbook>`,
       "xl/_rels/workbook.xml.rels": `${xml}<Relationships xmlns="${packageRelationship}"><Relationship Id="rId1" Type="${relationship}/worksheet" Target="worksheets/sheet1.xml"/></Relationships>`,
       "xl/worksheets/sheet1.xml": `${xml}<worksheet xmlns="${spreadsheet}"><cols><col min="1" max="1" width="9" customWidth="1"/><col min="2" max="4" width="18" customWidth="1"/></cols><sheetData>${sheetRows}</sheetData></worksheet>`
     });

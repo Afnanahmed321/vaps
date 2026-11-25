@@ -1,0 +1,77 @@
+.student-admission-page [hidden] { display: none; }
+.admission-record-table.master-table { min-width: 1120px; }
+.admission-empty { text-align: center; height: 100px; color: var(--config-muted); }
+.admission-pagination { justify-content: space-between; flex-wrap: wrap; }
+.admission-record-table img { width: 36px; height: 36px; object-fit: cover; border-radius: 8px; }
+#admission-list-status { margin: 10px 16px; }
+#admission-list-status:empty { display: none; }
+.admission-editor-layout { display: grid; grid-template-columns: 205px minmax(0, 1fr); gap: clamp(16px, 3vw, 32px); max-width: 1160px; margin-inline: auto; padding: clamp(14px, 3vw, 28px); }
+.admission-steps { list-style: none; margin: 0; padding: 0; display: grid; align-content: start; gap: 8px; }
+.admission-steps button {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px;
+  border: 1px solid transparent; border-radius: 10px; background: transparent;
+  color: var(--config-ink); text-align: left; font: inherit; cursor: pointer;
+}
+.admission-steps button[aria-current="step"] { border-color: #d6bc8a; background: #f6f1e7; }
+.admission-steps svg { width: 20px; height: 20px; flex: none; color: var(--config-accent); }
+.admission-steps small { display: block; color: var(--config-muted); }
+.admission-step { min-width: 0; }
+.admission-step h3 { margin: 0 0 14px; font-size: 1.25rem; }
+.admission-fields { display: grid; align-content: start; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 16px; }
+.admission-fields label span { color: #a32929; }
+.admission-fields textarea { width: 100%; padding: 8px; border: 1px solid var(--config-line); border-radius: 10px; resize: vertical; font: inherit; }
+.admission-photo, .admission-checks { grid-column: 1 / -1; }
+.admission-photo { margin: 14px 0; padding: 14px 16px; border: 1px dashed #c4b28e; border-radius: 12px; background: #faf7ef; }
+.admission-photo small { display: block; margin-bottom: 7px; color: var(--config-muted); }
+.admission-photo input { max-width: 430px; }
+.admission-photo img { display: block; width: 95px; height: 110px; margin-top: 8px; border-radius: 8px; object-fit: cover; }
+.admission-checks { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 12px; }
+.admission-form-actions { align-items: center; flex-wrap: wrap; }
+.admission-form-actions .button { width: auto; }
+#admission-form-status { flex: 1; margin: 0; color: #a32929; }
+#admission-form-status:empty { display: none; }
+.admission-form-actions button:disabled { opacity: .5; cursor: default; }
+@media (max-width: 900px) {
+  .admission-editor-layout { grid-template-columns: minmax(0, 1fr); }
+  .admission-steps { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+}
+.admission-profile-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; margin: 0; }
+.admission-profile-fields dt { font-weight: 700; }
+.admission-profile-fields dd { margin: 4px 0 0; overflow-wrap: anywhere; }
+
+
+.student-admission-page #admission-editor > .card-toolbar { min-height: 0; padding-block: 14px; }
+#admission-step-progress { color: var(--config-muted); margin-inline-end: auto; }
+
+.admission-group,
+.admission-optional {
+  min-width: 0;
+  margin: 0 0 14px;
+  border: 1px solid var(--config-line);
+  border-radius: 12px;
+}
+.admission-group { padding: 12px 14px 15px; }
+.admission-group legend { padding: 0 6px; color: #193e5d; font-weight: 700; }
+.admission-optional { background: #faf9f6; }
+.admission-optional summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 12px 14px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.admission-optional summary::-webkit-details-marker { display: none; }
+.admission-optional summary svg { width: 18px; height: 18px; color: var(--config-accent); }
+.admission-optional[open] summary svg { transform: rotate(180deg); }
+.admission-optional > .admission-fields { padding: 0 14px 14px; }
+.admission-fields .workspace-dialog-field { min-width: 0; }
+.admission-fields .workspace-dialog-field :is(input, select) { min-height: 44px; }
+.admission-fields .workspace-dialog-field input[readonly] { background: var(--config-ivory); }
+.admission-fields :is(input, select, textarea):focus-visible { outline: 2px solid #92703a; outline-offset: -2px; }
+
+@media (max-width: 530px) {
+  .admission-fields { grid-template-columns: minmax(0, 1fr); }
+}

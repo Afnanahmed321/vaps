@@ -1,7 +1,7 @@
 (() => {
   const form = document.getElementById("record-assistant-form");
-  if (!form) return;
   const dialog = document.getElementById("assistant-answer-dialog");
+  if (!dialog) return;
   const status = document.getElementById("record-assistant-status");
   const sources = document.getElementById("assistant-response-sources");
   const pins = document.getElementById("record-assistant-pins");
@@ -119,6 +119,7 @@
       typeof record.label === "string" && typeof record.detail === "string"));
 
   function renderPins() {
+    if (!pins) return;
     const entries = savedPins();
     pins.replaceChildren(...entries.map((entry) => {
       const row = document.createElement("li");
@@ -147,7 +148,7 @@
     }
   }
 
-  form.addEventListener("submit", (event) => {
+  form?.addEventListener("submit", (event) => {
     event.preventDefault();
     ask(document.getElementById("record-assistant-question").value);
   });

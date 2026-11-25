@@ -17,17 +17,22 @@
     { label: "Cheque", amount: 4500 }
   ];
   const total = modes.reduce((sum, { amount }) => sum + amount, 0);
+  document.getElementById("fee-payment-total").textContent = formatMoney(total);
+  const percent = new Intl.NumberFormat("en-IN", { style: "percent" });
   document.getElementById("fee-payment-split").replaceChildren(...modes.map(({ label, amount }) => {
     const row = document.createElement("div");
     const name = document.createElement("dt");
     name.textContent = label;
     const value = document.createElement("dd");
-    value.textContent = formatMoney(amount);
-    const progress = document.createElement("progress");
-    progress.value = amount;
-    progress.max = total;
-    progress.setAttribute("aria-label", `${label} share of today’s receipts`);
-    value.append(progress);
+    const money = document.createElement("strong");
+    money.textContent = formatMoney(amount);
+    const share = document.createElement("span");
+    share.textContent = percent.format(amount / total);
+    const track = document.createElement("div");
+    track.className = "fee-payment-track";
+    track.setAttribute("aria-hidden", "true");
+    track.style.setProperty("--payment-share", `${amount / total * 100}%`);
+    value.append(money, share, track);
     row.append(name, value);
     return row;
   }));

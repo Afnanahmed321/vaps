@@ -1,10 +1,6 @@
-.academic-years-toolbar { align-items: center; flex-wrap: wrap; }
-.academic-years-toolbar h2 { margin: 0; color: var(--school-ink); font-size: 21px; }
 .academic-year-note { display: flex; align-items: center; gap: 7px; margin: 6px 0 0; color: #79521f; font-size: 14px; }
 .academic-year-note svg { width: 16px; height: 16px; flex: none; }
-.academic-years-search { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; padding: 12px 17px; }
-.academic-years-search .record-search { margin: 0; }
-#year-feedback { margin: 0; color: #536172; font-size: 13px; }
+#year-feedback { margin: 10px 16px; color: #536172; font-size: 13px; }
 #year-feedback:empty { display: none; }
 .academic-year-table { min-width: 970px; }
 .academic-year-table td { white-space: nowrap; }

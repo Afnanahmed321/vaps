@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10263e" />
+  <title>AI Doubt Resolver | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="../../Preconfiguration/Master/master.css" />
+  <link rel="stylesheet" href="../../../workspace-shell.css?v=overview-shell-parity-2" />
+  <link rel="stylesheet" href="../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../gilroy.css" />
+  <link rel="stylesheet" href="../../Preconfiguration/preconfiguration.css" />
+  <link rel="stylesheet" href="ai-tool.css" />
+  <link rel="stylesheet" href="doubt-resolver.css" />
+  <script defer src="doubt-resolver.js"></script>
+  <script defer src="../../../workspace-header.js?v=overview-shell-parity"></script>
+  <script defer src="../../../workspace-mobile-nav.js"></script>
+  <script defer src="../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../workspace-translator.js"></script>
+  <script defer src="../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../workspace-media-compressor.js"></script>
+</head>
+<body class="preconfiguration-page ai-tool-page">
+  <div class="app-shell report-builder-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button">
+        <i data-lucide="graduation-cap"></i>
+        <span><small>Academic Year</small><strong>2026 – 2027</strong></span>
+        <i class="year-chevron" data-lucide="chevron-down"></i>
+      </button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search">
+          <i data-lucide="search"></i>
+          <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" />
+        </label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile">
+            <div class="avatar">T</div>
+            <div><strong>TBHSADMIN</strong><small>Admin</small></div>
+            <i data-lucide="chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-banner module-banner">
+        <div class="banner-copy">
+          <h1>AI Doubt Resolver</h1>
+          <p class="banner-subtitle">Resolve academic doubts using AI.</p>
+        </div>
+      </section>
+
+      <section class="content-area">
+        <section class="doubt-workspace" aria-labelledby="doubt-heading">
+          <div class="doubt-emblem"><i data-lucide="sparkles" aria-hidden="true"></i></div>
+          <h2 id="doubt-heading">What would you like to resolve today?</h2>
+          <p class="doubt-intro">Ask an academic question, solve a mathematical equation, or get help understanding a complex concept.</p>
+
+          <div class="doubt-examples" aria-label="Example questions">
+            <button class="master-card doubt-example" type="button" data-example="photosynthesis">
+              <strong>Explain photosynthesis</strong><small>In simple biological terms</small>
+            </button>
+            <button class="master-card doubt-example" type="button" data-example="equation">
+              <strong>Solve for x</strong><small>In 3x + 7 = 19, step by step</small>
+            </button>
+          </div>
+
+          <form class="master-card doubt-composer" id="doubt-form">
+            <input id="doubt-question" type="text" placeholder="Type a query or ask a doubt…" aria-label="Academic question" autocomplete="off" required>
+            <button class="button button-secondary doubt-icon-button" id="doubt-voice" type="button" aria-label="Dictate question" aria-pressed="false" title="Dictate question"><i data-lucide="mic" aria-hidden="true"></i></button>
+            <button class="button button-secondary doubt-icon-button" id="doubt-math" type="button" aria-label="Math symbols" aria-expanded="false" aria-controls="doubt-symbols" title="Math symbols"><i data-lucide="calculator" aria-hidden="true"></i></button>
+            <button class="button button-primary doubt-icon-button" id="doubt-send" type="submit" aria-label="Send question" title="Send question" disabled><i data-lucide="send" aria-hidden="true"></i></button>
+          </form>
+          <div id="doubt-symbols" class="doubt-symbols" role="group" aria-label="Insert math symbol" hidden>
+            <button class="button button-secondary" type="button">+</button>
+            <button class="button button-secondary" type="button">−</button>
+            <button class="button button-secondary" type="button">×</button>
+            <button class="button button-secondary" type="button">÷</button>
+            <button class="button button-secondary" type="button">=</button>
+            <button class="button button-secondary" type="button">√</button>
+            <button class="button button-secondary" type="button">²</button>
+          </div>
+          <p id="doubt-feedback" role="status"></p>
+          <section class="master-card ai-tool-card doubt-answer" id="doubt-answer" aria-labelledby="doubt-answer-title" hidden>
+            <h2 id="doubt-answer-title" tabindex="-1">Example answer</h2>
+            <p id="doubt-answer-text"></p>
+          </section>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <span><i data-lucide="shield"></i> © Tunbridge High School</span>
+        <span>VAPS Digital Campus</span>
+        <span><i data-lucide="phone"></i> School ERP</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../../../site-assistant.js"></script>
+</body>
+</html>

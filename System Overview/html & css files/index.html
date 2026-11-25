@@ -7,15 +7,15 @@
   <title>Tunbridge High School | System Overview</title>
 
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-  <link rel="stylesheet" href="style.css?v=preadmission-card-fit" />
-  <link rel="stylesheet" href="../../workspace-shell.css" />
+  <link rel="stylesheet" href="style.css?v=module-dialogs" />
+  <link rel="stylesheet" href="../../workspace-shell.css?v=module-dialogs" />
   <link rel="stylesheet" href="../../site-assistant.css" />
   <link rel="stylesheet" href="../../gilroy.css" />
   <script defer src="../../workspace-roles.js"></script>
   <script defer src="../../workspace-mobile-nav.js"></script>
   <script defer src="../../workspace-activity.js"></script>
   <script defer src="../../workspace-calendar.js"></script>
-  <script defer src="../../workspace-record-assistant.js"></script>
+  <script defer src="../../workspace-record-assistant.js?v=query-cards"></script>
   <script defer src="../../workspace-whatsapp.js"></script>
   <script defer src="../../workspace-chatgpt.js"></script>
   <script defer src="../../workspace-translator.js"></script>
@@ -71,11 +71,6 @@
       </label>
 
       <div class="top-actions">
-        <button class="top-pill" id="operation-tools-trigger" type="button" aria-haspopup="dialog" aria-controls="operation-tools-dialog">
-          <i data-lucide="layout-grid"></i>
-          <span>Modules</span>
-        </button>
-
         <div class="intelligent-apps-dropdown">
           <button class="top-pill" id="intelligent-apps-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="intelligent-apps-menu">
             <i data-lucide="sparkles"></i>
@@ -143,7 +138,14 @@
         <div class="hero-building" aria-hidden="true"></div>
         <img class="hero-laurel" src="../Assets/leaf.png" width="1536" height="1024" alt="" />
       </div>
-      <div class="module-tool-list"></div>
+      <div class="configuration-content-grid">
+        <div class="module-tool-list"></div>
+      </div>
+      <footer class="page-footer">
+        <span><i data-lucide="shield"></i> © Tunbridge High School</span>
+        <span>VAPS Digital Campus</span>
+        <span><i data-lucide="phone"></i> School ERP</span>
+      </footer>
     </section>
 
     <section class="welcome-hero" aria-labelledby="welcome-title">
@@ -526,16 +528,6 @@
         </section>
       </div>
 
-      <section class="operations-panel record-assistant" aria-labelledby="record-assistant-title">
-        <div><h2 id="record-assistant-title">School Assistant</h2><p class="operations-note">Search saved calendar events, reports, and academic year records.</p></div>
-        <form id="record-assistant-form">
-          <label class="sr-only" for="record-assistant-question">Ask a question</label>
-          <input id="record-assistant-question" type="search" placeholder="e.g. When is the next parent meeting?" required maxlength="250">
-          <button class="operations-button" type="submit">Ask</button>
-        </form>
-        <details id="record-assistant-pinned"><summary>Pinned answers</summary><ul id="record-assistant-pins"></ul></details>
-      </section>
-
       <section class="query-filter-bar" aria-labelledby="query-filter-heading">
         <p class="query-filter-label" id="query-filter-heading">FILTER BY CATEGORY</p>
         <div class="topic-pills" role="group" aria-label="Filter administrative queries">
@@ -790,92 +782,92 @@
         <button class="module-nav-item is-active" type="button" data-module="pre-configuration" aria-current="page">
           <span class="module-nav-icon"><i data-lucide="settings-2"></i></span>
           <span class="module-nav-copy"><strong>Pre Configuration</strong><small>1 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="preadmission">
           <span class="module-nav-icon"><i data-lucide="user-round-search"></i></span>
           <span class="module-nav-copy"><strong>Preadmission</strong><small>6 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="admission">
           <span class="module-nav-icon"><i data-lucide="graduation-cap"></i></span>
           <span class="module-nav-copy"><strong>Admission</strong><small>6 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="fees">
           <span class="module-nav-icon"><i data-lucide="wallet"></i></span>
           <span class="module-nav-copy"><strong>Fees</strong><small>3 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="exam">
           <span class="module-nav-icon"><i data-lucide="book-open-check"></i></span>
           <span class="module-nav-copy"><strong>Exam</strong><small>4 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="hrms">
           <span class="module-nav-icon"><i data-lucide="users-round"></i></span>
           <span class="module-nav-copy"><strong>HRMS</strong><small>4 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="front-office">
           <span class="module-nav-icon"><i data-lucide="panels-top-left"></i></span>
           <span class="module-nav-copy"><strong>Front Office</strong><small>2 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="leave-management">
           <span class="module-nav-icon"><i data-lucide="mail"></i></span>
           <span class="module-nav-copy"><strong>Leave Management</strong><small>1 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="upload">
           <span class="module-nav-icon"><i data-lucide="upload"></i></span>
           <span class="module-nav-copy"><strong>Upload</strong><small>1 section</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="time-table">
           <span class="module-nav-icon"><i data-lucide="calendar-days"></i></span>
           <span class="module-nav-copy"><strong>Time Table</strong><small>4 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="coe">
           <span class="module-nav-icon"><i data-lucide="calendar-clock"></i></span>
           <span class="module-nav-copy"><strong>COE</strong><small>2 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="birthday">
           <span class="module-nav-icon"><i data-lucide="cake"></i></span>
           <span class="module-nav-copy"><strong>Birthday</strong><small>1 section</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="sports">
           <span class="module-nav-icon"><i data-lucide="trophy"></i></span>
           <span class="module-nav-copy"><strong>Sports</strong><small>1 section</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="online-exam">
           <span class="module-nav-icon"><i data-lucide="monitor"></i></span>
           <span class="module-nav-copy"><strong>Online Exam</strong><small>3 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="library">
           <span class="module-nav-icon"><i data-lucide="book-open"></i></span>
           <span class="module-nav-copy"><strong>Library</strong><small>3 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="transport">
           <span class="module-nav-icon"><i data-lucide="bus"></i></span>
           <span class="module-nav-copy"><strong>Transport</strong><small>3 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="lms">
           <span class="module-nav-icon"><i data-lucide="presentation"></i></span>
           <span class="module-nav-copy"><strong>LMS</strong><small>1 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <button class="module-nav-item" type="button" data-module="ai-edge">
           <span class="module-nav-icon"><i data-lucide="sparkles"></i></span>
           <span class="module-nav-copy"><strong>AI Edge</strong><small>1 sections</small></span>
-          <i class="module-nav-arrow" data-lucide="chevron-down" aria-hidden="true"></i>
+          <i class="module-nav-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
         </button>
         <p class="module-empty" id="module-empty" hidden>No matching modules</p>
       </nav>
@@ -904,11 +896,20 @@
         <div class="module-tool-list" id="module-tool-list"></div>
         <p class="tool-empty" id="tool-empty" hidden>No sections match your search.</p>
       </div>
+      <footer class="page-footer">
+        <span><i data-lucide="shield"></i> © Tunbridge High School</span>
+        <span>VAPS Digital Campus</span>
+        <span><i data-lucide="phone"></i> School ERP</span>
+      </footer>
     </section>
   </div>
 </dialog>
 
-<dialog class="ai-edge-dialog" id="ai-edge-dialog" aria-labelledby="ai-edge-title">
+<dialog class="ai-edge-dialog workspace-ai-dialog" id="ai-edge-dialog" aria-labelledby="ai-edge-title">
+  <header class="workspace-dialog-header module-banner">
+    <h2 id="ai-edge-title">AI Tools</h2>
+    <button class="workspace-dialog-close" id="ai-edge-close" type="button" aria-label="Close AI Edge"><i data-lucide="x" aria-hidden="true"></i></button>
+  </header>
   <div class="ai-edge-window">
     <aside class="ai-edge-sidebar">
       <div class="ai-edge-brand">
@@ -920,17 +921,11 @@
       </button>
     </aside>
     <section class="ai-edge-main">
-      <header class="ai-edge-header">
-        <div><span class="ai-edge-eyebrow">QUICK ACCESS</span><h2 id="ai-edge-title">AI Tools</h2></div>
-        <button class="ai-edge-close" id="ai-edge-close" type="button" aria-label="Close AI Edge">
-          <i data-lucide="x" aria-hidden="true"></i>
-        </button>
-      </header>
       <div class="ai-edge-app-list" aria-label="AI tools">
-        <article class="ai-edge-app"><span class="ai-edge-app-icon"><i data-lucide="file-text" aria-hidden="true"></i></span><span>AI Question Paper Generator</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></article>
-        <article class="ai-edge-app"><span class="ai-edge-app-icon"><i data-lucide="notebook-pen" aria-hidden="true"></i></span><span>AI Notemaker</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></article>
-        <article class="ai-edge-app"><span class="ai-edge-app-icon"><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i></span><span>AI Performance Analysis</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></article>
-        <article class="ai-edge-app"><span class="ai-edge-app-icon"><i data-lucide="messages-square" aria-hidden="true"></i></span><span>AI Doubt Resolver</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></article>
+        <a class="ai-edge-app" href="../../Modules/AI%20Edge/Tools/question-paper.html"><span class="ai-edge-app-icon"><i data-lucide="file-text" aria-hidden="true"></i></span><span>AI Question Paper Generator</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        <a class="ai-edge-app" href="../../Modules/AI%20Edge/Tools/notemaker.html"><span class="ai-edge-app-icon"><i data-lucide="notebook-pen" aria-hidden="true"></i></span><span>AI Notemaker</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        <a class="ai-edge-app" href="../../Modules/AI%20Edge/Tools/performance-analysis.html"><span class="ai-edge-app-icon"><i data-lucide="chart-no-axes-combined" aria-hidden="true"></i></span><span>AI Performance Analysis</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+        <a class="ai-edge-app" href="../../Modules/AI%20Edge/Tools/doubt-resolver.html"><span class="ai-edge-app-icon"><i data-lucide="messages-square" aria-hidden="true"></i></span><span>AI Doubt Resolver</span><i class="ai-edge-app-arrow" data-lucide="arrow-up-right" aria-hidden="true"></i></a>
       </div>
     </section>
   </div>
@@ -1378,7 +1373,6 @@
   sidebarToggle.addEventListener("click", () => setSidebarCollapsed(!appShell.classList.contains("sidebar-collapsed")));
 
   const operationDialog = document.querySelector("#operation-tools-dialog");
-  const operationTrigger = document.querySelector("#operation-tools-trigger");
   const operationClose = operationDialog.querySelector(".module-close");
   const aiEdgeTrigger = document.querySelector("#ai-edge-trigger");
   const aiEdgeDialog = document.querySelector("#ai-edge-dialog");
@@ -1653,47 +1647,142 @@
   };
 
   function getToolRoute(moduleKey, tool) {
+    if (moduleKey === "transport" && tool === "Transport Schedule") {
+      return "../../Modules/Transport/Master/transport-schedule.html";
+    }
+    if (moduleKey === "transport" && tool === "Transport Master Session") {
+      return "../../Modules/Transport/Master/master-session.html";
+    }
+    if (moduleKey === "transport" && tool === "Transport Master Vehicle Type") {
+      return "../../Modules/Transport/Master/master-vehicle-type.html";
+    }
+    if (moduleKey === "transport" && tool === "Transport Master Vehicle") {
+      return "../../Modules/Transport/Master/master-vehicle.html";
+    }
+    if (moduleKey === "transport" && tool === "Transport Master Route") {
+      return "../../Modules/Transport/Master/master-route.html";
+    }
+    if (moduleKey === "transport" && tool === "Transport Master Location") {
+      return "../../Modules/Transport/Master/master-location.html";
+    }
+    if (moduleKey === "transport" && tool === "Transport Master Fuel Type") {
+      return "../../Modules/Transport/Master/master-fuel-type.html";
+    }
+    if (moduleKey === "transport" && tool === "Transport Master Driver") {
+      return "../../Modules/Transport/Master/master-driver.html";
+    }
+    if (moduleKey === "transport" && tool === "Transport Master Area") {
+      return "../../Modules/Transport/Master/master-area.html";
+    }
+    if (moduleKey === "ai-edge" && tool === "AI Doubt Resolver") {
+      return "../../Modules/AI%20Edge/Tools/doubt-resolver.html";
+    }
+    if (moduleKey === "ai-edge" && tool === "AI Performance Analysis") {
+      return "../../Modules/AI%20Edge/Tools/performance-analysis.html";
+    }
+    if (moduleKey === "ai-edge" && tool === "AI Notemaker") {
+      return "../../Modules/AI%20Edge/Tools/notemaker.html";
+    }
+    if (moduleKey === "ai-edge" && tool === "AI Question Paper Generator") {
+      return "../../Modules/AI%20Edge/Tools/question-paper.html";
+    }
     if (moduleKey === "pre-configuration" && configurationPages[tool]) {
       return "../../Modules/Preconfiguration/" + configurationPages[tool];
     }
     if (moduleKey === "preadmission") return preadmissionPages[tool];
+    if (moduleKey === "admission" && tool === "Master Class Category") {
+      return "../../Modules/Admission/Masters/master-class-category.html";
+    }
+    if (moduleKey === "admission" && tool === "Master Section") {
+      return "../../Modules/Admission/Masters/master-section.html";
+    }
+    if (moduleKey === "admission" && tool === "Class Teacher Mapping") {
+      return "../../Modules/Admission/Masters/class-teacher-mapping.html";
+    }
+    if (moduleKey === "admission" && tool === "Section Allotment") {
+      return "../../Modules/Admission/Masters/section-allotment.html";
+    }
+    if (moduleKey === "admission" && tool === "Active Deactive Students") {
+      return "../../Modules/Admission/Masters/active-deactive-students.html";
+    }
+    if (moduleKey === "admission" && tool === "Import") {
+      return "../../Modules/Admission/Masters/import.html";
+    }
+    if (moduleKey === "admission" && tool === "Master Document") {
+      return "../../Modules/Admission/Masters/master-document.html";
+    }
+    if (moduleKey === "admission" && tool === "Master Category") {
+      return "../../Modules/Admission/Masters/master-category.html";
+    }
+    if (moduleKey === "admission" && tool === "Class Wise Student Details") {
+      return "../../Modules/Admission/Reports/class-wise-student-details.html";
+    }
+    if (moduleKey === "admission" && tool === "Categorywise Attendance") {
+      return "../../Modules/Admission/Reports/categorywise-attendance.html";
+    }
+    if (moduleKey === "admission" && tool === "Overall Daily Attendance") {
+      return "../../Modules/Admission/Reports/overall-daily-attendance.html";
+    }
+    if (moduleKey === "admission" && tool === "100% Attendance Report") {
+      return "../../Modules/Admission/Reports/percentage-attendance.html";
+    }
+    if (moduleKey === "admission" && tool === "Student Yearly Attendance") {
+      return "../../Modules/Admission/Reports/student-yearly-attendance.html";
+    }
+    if (moduleKey === "admission" && tool === "Student Attendance Report") {
+      return "../../Modules/Admission/Reports/student-attendance-report.html";
+    }
+    if (moduleKey === "admission" && tool === "Study Certificate") {
+      return "../../Modules/Admission/Reports/study-certificate.html";
+    }
+    if (moduleKey === "admission" && tool === "Date Of Birth Certificate") {
+      return "../../Modules/Admission/Reports/date-of-birth-certificate.html";
+    }
+    if (moduleKey === "admission" && tool === "Student Birthday") {
+      return "../../Modules/Admission/Reports/student-birthday.html";
+    }
+    if (moduleKey === "admission" && tool === "Student Search") {
+      return "../../Modules/Admission/Reports/student-search.html";
+    }
+    if (moduleKey === "admission" && tool === "Student TC Cancel") {
+      return "../../Modules/Admission/StudentTC/student-tc-cancel.html";
+    }
+    if (moduleKey === "admission" && tool === "Student TC") {
+      return "../../Modules/Admission/StudentTC/student-tc.html";
+    }
+    if (moduleKey === "admission" && tool === "Attendance Login Privileges") {
+      return "../../Modules/Admission/Attendance/attendance-login-privileges.html";
+    }
+    if (moduleKey === "admission" && tool === "Attendance Entry Type") {
+      return "../../Modules/Admission/Attendance/attendance-entry-type.html";
+    }
+    if (moduleKey === "admission" && tool === "Student Admission Form") {
+      return "../../Modules/Admission/Forms/student-admission.html";
+    }
+    if (moduleKey === "admission" && tool === "Master Religion") {
+      return "../../Modules/Admission/Masters/master-religion.html";
+    }
+    if (moduleKey === "admission" && tool === "Master Caste") {
+      return "../../Modules/Admission/Masters/master-caste.html";
+    }
+    if (moduleKey === "admission" && tool === "Caste Category") {
+      return "../../Modules/Admission/Masters/caste-category.html";
+    }
+    if (moduleKey === "admission" && tool === "Master Activities") {
+      return "../../Modules/Admission/Masters/master-activities.html";
+    }
+    if (moduleKey === "admission" && tool === "Master Reference") {
+      return "../../Modules/Admission/Masters/master-reference.html";
+    }
+    if (moduleKey === "admission" && tool === "Master Source") {
+      return "../../Modules/Admission/Masters/master-source.html";
+    }
+    if (moduleKey === "admission" && tool === "Master Class") {
+      return "../../Modules/Admission/Masters/master-class.html";
+    }
     if (moduleKey === "admission" && tool === "Academic Year") {
       return "../../Modules/Admission/Masters/academic-year.html";
     }
-  }
-
-  function createModuleMenu(moduleKey, id) {
-    const module = moduleContent[moduleKey];
-    const menu = document.createElement("div");
-    menu.className = "module-submenu";
-    menu.id = id;
-    menu.hidden = true;
-
-    function appendTools(container, tools) {
-      tools.forEach((tool) => {
-        const route = getToolRoute(moduleKey, tool);
-        const item = document.createElement(route ? "a" : "span");
-        item.className = "module-submenu-tool";
-        item.textContent = tool;
-        if (route) item.href = route;
-        else item.title = "Page unavailable";
-        container.append(item);
-      });
-    }
-
-    if (module.categories) {
-      module.categories.forEach(({ title, tools }) => {
-        const group = document.createElement("details");
-        const label = document.createElement("summary");
-        label.textContent = title;
-        group.append(label);
-        appendTools(group, tools);
-        menu.append(group);
-      });
-    } else {
-      appendTools(menu, module.tools);
-    }
-    return menu;
   }
 
   function setModuleMenuOpen(button, open) {
@@ -1701,40 +1790,20 @@
     document.getElementById(button.getAttribute("aria-controls")).hidden = !open;
   }
 
-  function toggleModuleMenu(buttons, selected, open) {
-    buttons.forEach((button) => setModuleMenuOpen(button, button === selected && open));
-  }
-
   moduleButtons.forEach((button) => {
     const key = button.dataset.module;
-    const inPage = key === "pre-configuration" || key === "preadmission";
-    const sidebarButton = inPage ? document.createElement("a") : button.cloneNode(true);
-    if (inPage) {
-      sidebarButton.append(...Array.from(button.children, (child) => child.cloneNode(true)));
-      sidebarButton.href = `#${key}`;
-      sidebarButton.dataset.workspacePage = key;
-    }
+    const sidebarButton = document.createElement("a");
+    sidebarButton.append(...Array.from(button.children, (child) => child.cloneNode(true)));
+    sidebarButton.href = `#${key}`;
+    sidebarButton.dataset.workspacePage = key;
     sidebarButton.className = "sidebar-module-button";
-    sidebarButton.removeAttribute("aria-current");
-    if (!inPage) {
-      sidebarButton.setAttribute("aria-haspopup", "dialog");
-      sidebarButton.setAttribute("aria-controls", operationDialog.id);
-      sidebarButton.addEventListener("click", () => openOperationTools(button));
-    }
     sidebarButton.querySelector("small").remove();
     sidebarButton.querySelector(".module-nav-arrow").remove();
     sidebarModules.append(sidebarButton);
 
-    const explorerMenu = createModuleMenu(key, `explorer-module-${key}`);
-    button.setAttribute("aria-controls", explorerMenu.id);
-    button.setAttribute("aria-expanded", "false");
     const count = moduleContent[key].categories?.length ?? moduleContent[key].tools.length;
     button.querySelector("small").textContent = `${count} ${count === 1 ? "section" : "sections"}`;
-    button.after(explorerMenu);
-    button.addEventListener("click", () => {
-      toggleModuleMenu(moduleButtons, button, explorerMenu.hidden);
-      renderModule(key);
-    });
+    button.addEventListener("click", () => openModulePage(key));
   });
 
   sidebarModulesToggle.addEventListener("click", () => {
@@ -1748,6 +1817,7 @@
 
   function renderModule(moduleKey) {
     selectedModule = moduleKey;
+    operationDialog.dataset.module = moduleKey;
     const module = moduleContent[moduleKey];
     if (!module) {
       const selectedButton = moduleButtons.find((button) => button.dataset.module === moduleKey);
@@ -1802,17 +1872,28 @@
     renderTools();
   }
 
-  const preadmissionCategoryIcons = {
+  const moduleCategoryIcons = {
     "Interview Schedule": "calendar-days",
     "Marks Entry": "chart-no-axes-column-increasing",
     "Preadmission Status": "clipboard-check",
     "Reports": "file-chart-column",
     "Application Form": "file-pen-line",
-    "Document View": "folder-open"
+    "Document View": "folder-open",
+    "Masters": "database",
+    "Master": "database",
+    "Configuration": "settings-2",
+    "Admission Form": "file-pen-line",
+    "Attendance Entry": "list-checks",
+    "Schedule": "calendar-clock",
+    "Employee Register": "users-round",
+    "Transaction": "receipt",
+    "Report": "file-chart-column",
+    "Exam Mapping": "book-open-check",
+    "Marks Calculation": "calculator",
+    "AI Tools": "sparkles"
   };
 
   function renderModuleCategories(moduleKey, list, query = "", inWorkspace = false) {
-    const themedPreadmission = inWorkspace && moduleKey === "preadmission";
     let visibleTools = 0;
     moduleContent[moduleKey].categories.forEach((category) => {
       const categoryMatches = category.title.toLocaleLowerCase().includes(query);
@@ -1843,7 +1924,7 @@
         label.className = "preadmission-tool-label";
         label.textContent = tool;
         item.append(number, label);
-        if (themedPreadmission && toolRoute) {
+        if (inWorkspace) {
           const arrow = document.createElement("i");
           arrow.className = "preadmission-tool-chevron";
           arrow.dataset.lucide = "chevron-right";
@@ -1854,18 +1935,28 @@
       });
 
       visibleTools += matchingTools.length;
-      if (themedPreadmission) {
+      if (inWorkspace) {
         const header = document.createElement("header");
         header.className = "preadmission-card-heading";
         const icon = document.createElement("i");
-        icon.dataset.lucide = preadmissionCategoryIcons[category.title] || "layout-grid";
+        icon.dataset.lucide = moduleCategoryIcons[category.title] || "layout-grid";
         icon.setAttribute("aria-hidden", "true");
         header.append(icon, categoryTitle);
         categoryCard.append(header, categoryTools);
       } else {
         categoryCard.append(categoryTitle, categoryTools);
       }
-      if (matchingTools.length > 7) {
+      if (inWorkspace && matchingTools.length > 6) {
+        categoryTools.classList.add("is-scrollable");
+        categoryTools.tabIndex = 0;
+        categoryTools.setAttribute("role", "region");
+        categoryTools.setAttribute("aria-label", `${category.title} options`);
+
+        const footer = document.createElement("p");
+        footer.className = "module-list-scroll-note";
+        footer.textContent = `${matchingTools.length} options · Scroll for more`;
+        categoryCard.append(footer);
+      } else if (!inWorkspace && matchingTools.length > 7) {
         const scrollHint = document.createElement("p");
         scrollHint.className = "category-scroll-hint";
         scrollHint.textContent = "Scroll for more ↓";
@@ -1876,6 +1967,69 @@
     return visibleTools;
   }
 
+  function arrangeCategoryColumns(list, moduleKey) {
+    const cards = [...list.children].flatMap((child) =>
+      child.classList?.contains("preadmission-masonry-column")
+        ? [...child.children]
+        : [child]
+    );
+    if (cards.length < 2) return;
+
+    const columnCount = window.innerWidth >= 1100 ? 4 : window.innerWidth >= 701 ? 2 : 1;
+    const columns = Array.from({ length: columnCount }, () => {
+      const column = document.createElement("div");
+      column.className = "preadmission-masonry-column";
+      return column;
+    });
+
+    if (columnCount === 4 && moduleKey === "preadmission") {
+      const columnTitles = [
+        ["Reports"],
+        ["Application Form"],
+        ["Interview Schedule", "Preadmission Status"],
+        ["Marks Entry", "Document View"]
+      ];
+
+      columnTitles.forEach((titles, columnIndex) => {
+        titles.forEach((title) => {
+          const card = cards.find((item) =>
+            item.querySelector(".preadmission-card-heading h3")?.textContent.trim() === title ||
+            item.querySelector("h3")?.textContent.trim() === title
+          );
+          if (card) columns[columnIndex].append(card);
+        });
+      });
+
+      const placedCards = new Set(columns.flatMap((column) => [...column.children]));
+      cards.filter((card) => !placedCards.has(card)).forEach((card, index) => {
+        columns[index % 4].append(card);
+      });
+
+      list.replaceChildren(...columns);
+      return;
+    }
+
+    const rankedCards = cards
+      .map((card, originalIndex) => ({
+        card,
+        originalIndex,
+        height: card.querySelectorAll(".preadmission-tool-item").length
+      }))
+      .sort((a, b) => b.height - a.height || a.originalIndex - b.originalIndex);
+    const columnHeights = Array(columnCount).fill(0);
+
+    rankedCards.forEach(({ card, height }) => {
+      let shortestIndex = 0;
+      columnHeights.forEach((columnHeight, index) => {
+        if (columnHeight < columnHeights[shortestIndex]) shortestIndex = index;
+      });
+      columns[shortestIndex].append(card);
+      columnHeights[shortestIndex] += height * 38 + 86;
+    });
+
+    list.replaceChildren(...columns);
+  }
+
   function renderTools() {
     const query = moduleSearch.value.trim().toLocaleLowerCase();
     const module = moduleContent[selectedModule];
@@ -1883,6 +2037,7 @@
 
     if (module.categories) {
       const visibleTools = renderModuleCategories(selectedModule, toolList, query);
+      arrangeCategoryColumns(toolList, selectedModule);
 
       toolCount.textContent = `${visibleTools} ${visibleTools === 1 ? "section" : "sections"}`;
       toolCount.hidden = false;
@@ -1925,7 +2080,6 @@
     const icon = document.createElement("i");
     icon.dataset.lucide = details?.icon || "layout-grid";
     number.setAttribute("aria-hidden", "true");
-    number.append(icon);
     const label = document.createElement("span");
     label.className = "module-tool-label";
     label.textContent = tool;
@@ -1942,8 +2096,27 @@
       copy.append(label, description);
       number.dataset.tone = details.tone;
       item.removeAttribute("aria-label");
-      item.append(number, copy, arrow);
+      if (moduleKey === "pre-configuration") {
+        const header = document.createElement("span");
+        header.className = "configuration-card-header";
+        const mark = document.createElement("span");
+        mark.className = "configuration-card-mark";
+        mark.setAttribute("aria-hidden", "true");
+        mark.append(icon);
+        header.append(mark, label);
+
+        copy.replaceChildren(description);
+        const view = document.createElement("span");
+        view.className = "configuration-card-view";
+        view.append("View", arrow);
+        item.append(header, copy, view);
+      } else {
+        number.dataset.tone = details.tone;
+        number.append(icon);
+        item.append(number, copy, arrow);
+      }
     } else {
+      number.append(icon);
       item.append(number, label, arrow);
     }
     return item;
@@ -1983,6 +2156,7 @@
       moduleViewTools.replaceChildren();
       if (module.categories) {
         renderModuleCategories(key, moduleViewTools, "", true);
+        arrangeCategoryColumns(moduleViewTools, key);
       } else {
         moduleViewTools.append(...module.tools.map((tool) => createToolCard(key, tool, true)));
       }
@@ -1995,9 +2169,26 @@
     window.scrollTo(0, 0);
   }
 
+  function openModulePage(key) {
+    if (operationDialog.open) operationDialog.close();
+    const hash = `#${key}`;
+    const destination = new URL(window.location.href);
+    if (destination.searchParams.get("open") === "operation-tools") {
+      destination.searchParams.delete("open");
+      destination.hash = hash;
+      window.location.replace(destination.href);
+    } else if (window.location.hash === hash) {
+      requestAnimationFrame(() => syncModuleView(true));
+    } else {
+      window.location.hash = hash;
+    }
+  }
+
   window.addEventListener("hashchange", () => syncModuleView(true));
-  modulePageLinks.forEach((link) => link.addEventListener("click", () => {
-    if (window.location.hash === link.hash) requestAnimationFrame(() => syncModuleView(true));
+  modulePageLinks.forEach((link) => link.addEventListener("click", (event) => {
+    if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    openModulePage(link.dataset.workspacePage);
   }));
   syncModuleView();
 
@@ -2051,23 +2242,6 @@
       button.setAttribute("aria-pressed", String(selected));
     });
   }
-
-  function openOperationTools(moduleButton) {
-    operationDialog.showModal();
-    moduleSearch.value = "";
-    if (moduleButton) {
-      toggleModuleMenu(moduleButtons, moduleButton, true);
-      renderModule(moduleButton.dataset.module);
-    }
-    filterModules();
-    if (moduleButton) {
-      moduleButton.focus();
-    } else if (window.matchMedia("(min-width: 701px)").matches) {
-      moduleSearch.focus();
-    }
-  }
-
-  operationTrigger.addEventListener("click", () => openOperationTools());
 
   aiEdgeTrigger.addEventListener("click", () => aiEdgeDialog.showModal());
   aiEdgeClose.addEventListener("click", () => aiEdgeDialog.close());
@@ -2146,8 +2320,17 @@
   filterQueries("all");
   renderModule(selectedModule);
 
+  let preadmissionResizeTimer;
+  window.addEventListener("resize", () => {
+    window.clearTimeout(preadmissionResizeTimer);
+    preadmissionResizeTimer = window.setTimeout(() => {
+      if (!moduleView.hidden) arrangeCategoryColumns(moduleViewTools, selectedModule);
+      else if (moduleContent[selectedModule]?.categories) arrangeCategoryColumns(toolList, selectedModule);
+    }, 120);
+  });
+
   const requestedDialog = new URLSearchParams(window.location.search).get("open");
-  if (requestedDialog === "operation-tools") {
+  if (requestedDialog === "operation-tools" && moduleView.hidden) {
     operationDialog.showModal();
     moduleSearch.focus();
   } else if (requestedDialog === "ai-edge") {

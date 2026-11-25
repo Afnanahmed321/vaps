@@ -29,17 +29,17 @@ button { cursor: pointer; }
   content:""; width:330px; height:330px; position:absolute; top:-250px; right:12%;
   border:1px solid #ffffff20; border-radius:50%; box-shadow:0 0 0 40px #ffffff08,0 0 0 80px #ffffff06,0 0 0 120px #ffffff04; pointer-events:none;
 }
-.pmer-banner-copy, .pmer-breadcrumbs { position:relative; z-index:1; }
+.pmer-banner-copy { position:relative; z-index:1; }
 .pmer-eyebrow { margin:0 0 8px; color:#d7def8; font-size:11px; letter-spacing:1.2px; }
 .pmer-eyebrow span { padding:0 7px; color:#aab8ec; }
 .pmer-banner h1 { display:flex; align-items:center; gap:10px; margin:0; font-size:clamp(27px,3vw,37px); font-weight:600; letter-spacing:-.7px; }
 .pmer-banner h1 svg { width:25px; height:25px; }
 .pmer-banner-copy > p:last-child { margin:8px 0 0; color:#dce3ff; font-size:14px; }
-.pmer-breadcrumbs { display:flex; align-items:center; gap:9px; color:#e5eaff; font-size:12px; white-space:nowrap; }
-.pmer-breadcrumbs a { color:inherit; text-decoration:none; }
-.pmer-breadcrumbs a:hover { color:#fff; text-decoration:underline; text-underline-offset:3px; }
-.pmer-breadcrumbs strong { color:#fff; font-weight:600; }
-.pmer-breadcrumbs svg { width:15px; height:15px; opacity:.7; }
+
+
+
+
+
 
 /* The report panel deliberately overlaps the navy banner, matching the other reports. */
 .pmer-content { width:100%; flex:1; position:relative; z-index:2; margin-top:-28px; padding:0 clamp(14px,2.5vw,32px) 26px; }
@@ -76,7 +76,6 @@ button { cursor: pointer; }
 .pmer-footer b { margin:0 4px; color:#aab4c4; }
 button:focus-visible, input:focus-visible, select:focus-visible { outline:3px solid rgba(36, 71, 98, .22); outline-offset:2px; }
 
-@media (max-width:1150px) { .pmer-breadcrumbs { display:none; } }
 @media (max-width:900px) { .pmer-fields { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:760px) {
   .pmer-banner { min-height:150px; padding:22px; }

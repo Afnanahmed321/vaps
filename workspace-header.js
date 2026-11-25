@@ -14,9 +14,6 @@
       <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search pages, students, teachers, and reports" />
     </label>
     <div class="top-actions">
-      <button class="top-pill" type="button" data-workspace-dialog="operation-tools" aria-haspopup="dialog">
-        <i data-lucide="layout-grid" aria-hidden="true"></i><span>Modules</span>
-      </button>
       <div class="intelligent-apps-dropdown">
         <button class="top-pill" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="intelligent-apps-menu">
           <i data-lucide="sparkles" aria-hidden="true"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron" aria-hidden="true"></i>
@@ -33,10 +30,10 @@
           </div>
         </div>
       </div>
-      <button class="top-pill" type="button" data-workspace-dialog="ai-edge" aria-haspopup="dialog">
+      <button class="top-pill" id="ai-edge-trigger" type="button" data-workspace-dialog="ai-edge" aria-haspopup="dialog">
         <i data-lucide="bot" aria-hidden="true"></i><span>AI Edge</span>
       </button>
-      <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell" aria-hidden="true"></i><b></b></button>
+      <button class="notification" type="button" aria-label="View notifications"><i data-lucide="bell" aria-hidden="true"></i><b hidden></b></button>
       <div class="profile-menu-container">
         <button class="profile profile-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="profile-dropdown">
           <span class="avatar">T</span>
@@ -58,6 +55,14 @@
   const sidebarStorageKey = "vaps-sidebar-collapsed";
   const setSidebarCollapsed = (collapsed) => {
     appShell?.classList.toggle("sidebar-collapsed", collapsed);
+    if (collapsed) {
+      const modulesToggle = sidebar?.querySelector(".sidebar-modules-toggle");
+      const modules = sidebar?.querySelector("#sidebar-modules");
+      if (modulesToggle && modules) {
+        modulesToggle.setAttribute("aria-expanded", "false");
+        modules.hidden = true;
+      }
+    }
     sidebarToggle.setAttribute("aria-expanded", String(!collapsed));
     sidebarToggle.setAttribute("aria-label", collapsed ? "Expand sidebar" : "Collapse sidebar");
     sidebarToggle.title = collapsed ? "Expand sidebar" : "Collapse sidebar";
@@ -72,6 +77,73 @@
     setSidebarCollapsed(!appShell?.classList.contains("sidebar-collapsed"));
   });
   sidebar?.setAttribute("id", "app-sidebar");
+
+  const moduleGroups = [
+    { key: "pre-configuration", title: "Pre Configuration", icon: "settings-2", path: "/modules/preconfiguration/" },
+    { key: "preadmission", title: "Preadmission", icon: "user-round-search", path: "/modules/preadmission/" },
+    { key: "admission", title: "Admission", icon: "graduation-cap", path: "/modules/admission/" },
+    { key: "fees", title: "Fees", icon: "wallet" },
+    { key: "exam", title: "Exam", icon: "book-open-check" },
+    { key: "hrms", title: "HRMS", icon: "users-round" },
+    { key: "front-office", title: "Front Office", icon: "panels-top-left" },
+    { key: "leave-management", title: "Leave Management", icon: "mail" },
+    { key: "upload", title: "Upload", icon: "upload" },
+    { key: "time-table", title: "Time Table", icon: "calendar-days" },
+    { key: "coe", title: "COE", icon: "calendar-clock" },
+    { key: "birthday", title: "Birthday", icon: "cake" },
+    { key: "sports", title: "Sports", icon: "trophy" },
+    { key: "online-exam", title: "Online Exam", icon: "monitor" },
+    { key: "library", title: "Library", icon: "book-open" },
+    { key: "transport", title: "Transport", icon: "bus" },
+    { key: "lms", title: "LMS", icon: "presentation" },
+    { key: "ai-edge", title: "AI Edge", icon: "sparkles" }
+  ];
+  const sidebarNav = sidebar?.querySelector(".side-nav");
+  let sidebarModulesToggle;
+  let sidebarModules;
+
+  if (sidebarNav && !sidebarNav.querySelector(".sidebar-modules-toggle")) {
+    const currentPath = window.location.pathname.toLocaleLowerCase();
+    const activeModule = moduleGroups.find((group) => group.path && currentPath.includes(group.path));
+    sidebarModulesToggle = document.createElement("button");
+    sidebarModulesToggle.className = "nav-item sidebar-modules-toggle";
+    sidebarModulesToggle.type = "button";
+    sidebarModulesToggle.setAttribute("aria-expanded", String(Boolean(activeModule)));
+    sidebarModulesToggle.setAttribute("aria-controls", "sidebar-modules");
+    sidebarModulesToggle.innerHTML = '<i data-lucide="layout-grid" aria-hidden="true"></i><span>Modules</span><i class="chevron" data-lucide="chevron-down" aria-hidden="true"></i>';
+
+    sidebarModules = document.createElement("div");
+    sidebarModules.className = "sidebar-modules";
+    sidebarModules.id = "sidebar-modules";
+    sidebarModules.hidden = !activeModule;
+    moduleGroups.forEach((group) => {
+      const link = document.createElement("a");
+      link.className = "sidebar-module-button";
+      link.href = new URL(`#${group.key}`, systemOverviewUrl).href;
+      link.dataset.workspacePage = group.key;
+      link.innerHTML = `<span class="module-nav-icon"><i data-lucide="${group.icon}" aria-hidden="true"></i></span><span class="module-nav-copy"><strong>${group.title}</strong></span>`;
+      if (group === activeModule) link.setAttribute("aria-current", "page");
+      sidebarModules.append(link);
+    });
+    sidebarNav.append(sidebarModulesToggle, sidebarModules);
+
+    const setModulesOpen = (open) => {
+      sidebarModulesToggle.setAttribute("aria-expanded", String(open));
+      sidebarModules.hidden = !open;
+    };
+    sidebarModulesToggle.addEventListener("click", () => {
+      const collapsed = appShell.classList.contains("sidebar-collapsed")
+        && !appShell.hasAttribute("data-mobile-menu-open");
+      if (collapsed) setSidebarCollapsed(false);
+      setModulesOpen(collapsed || sidebarModules.hidden);
+    });
+    if (activeModule) {
+      setSidebarCollapsed(false);
+      setModulesOpen(true);
+    }
+    if (window.lucide) window.lucide.createIcons({ root: sidebarNav });
+  }
+
   sidebar?.querySelectorAll(".nav-item").forEach((item) => {
     const label = item.querySelector("span")?.textContent.trim();
     if (label) {
@@ -88,6 +160,9 @@
 
   topbar.querySelectorAll("[data-workspace-dialog]").forEach((button) => {
     button.addEventListener("click", () => goToSystemDialog(button.dataset.workspaceDialog));
+  });
+  topbar.querySelector(".notification").addEventListener("click", () => {
+    window.location.assign(new URL("#recent-activities", systemOverviewUrl).href);
   });
 
   const appDropdown = topbar.querySelector(".intelligent-apps-dropdown");

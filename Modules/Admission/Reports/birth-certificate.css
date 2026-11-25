@@ -1,0 +1,51 @@
+.birth-certificate-content > .master-card { max-width: 1000px; margin-inline: auto; }
+.birth-certificate-content .card-toolbar { min-height: 0; padding: 16px clamp(16px, 3vw, 24px); }
+.birth-certificate-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 18px clamp(16px, 3vw, 24px); }
+.birth-certificate-fields label span { color: #a32929; }
+.birth-certificate-fields label small { color: var(--config-muted); font-weight: 400; }
+.birth-certificate-fields select:disabled { opacity: .6; }
+.birth-certificate-purpose { grid-column: 1 / -1; }
+.birth-certificate-actions { flex-wrap: wrap; align-items: center; }
+.birth-certificate-actions .button { width: auto; }
+.birth-certificate-actions .button:disabled { opacity: .5; cursor: default; transform: none; }
+:is(#birth-certificate-feedback, #study-feedback) { flex: 1 1 200px; margin: 0; color: var(--config-muted); }
+.birth-certificate-document header { padding-bottom: 12px; border-bottom: 1px solid var(--config-line); text-align: center; }
+.birth-certificate-document img { display: block; width: min(390px, 100%); margin-inline: auto; }
+.birth-certificate-document h3 { margin: 12px 0 4px; font-size: 1.25rem; }
+.birth-certificate-document p { margin: 0; color: var(--config-muted); }
+.birth-certificate-document dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 14px 0 0; }
+.birth-certificate-document dt { font-weight: 700; }
+.birth-certificate-document dd { margin: 5px 0 0; overflow-wrap: anywhere; }
+@media (max-width: 520px) {
+  .birth-certificate-fields, .birth-certificate-document dl { grid-template-columns: minmax(0, 1fr); }
+}
+@media print {
+  :is(.birth-certificate-page, .study-certificate-page):has(.workspace-module-dialog[open]) > :not(.workspace-module-dialog[open]) { display: none !important; }
+  :is(#birth-certificate-preview, #study-certificate-preview)[open] { position: static; width: 100%; max-width: none; max-height: none; margin: 0; overflow: visible; border: 0; box-shadow: none; background: #fff; }
+  :is(#birth-certificate-preview, #study-certificate-preview)::backdrop { display: none; }
+  :is(#birth-certificate-preview, #study-certificate-preview)[open] > form { display: block; max-height: none; }
+  :is(#birth-certificate-preview, #study-certificate-preview) :is(.workspace-dialog-header, .workspace-dialog-actions) { display: none; }
+  .birth-certificate-document { overflow: visible; }
+}
+
+
+.study-certificate-page [hidden] { display: none; }
+.study-options, .study-student-field { grid-column: 1 / -1; display: grid; gap: 12px; }
+.study-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.study-student-field { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.study-options fieldset, .study-address {
+  min-width: 0;
+  margin: 0;
+  padding: 8px 11px 11px;
+  border: 1px solid var(--config-line);
+  border-radius: 10px;
+  background: #faf9f6;
+}
+.study-certificate-page legend { padding-inline: 4px; font-weight: 700; }
+.study-options label, .study-address label { display: inline-flex; align-items: center; gap: 5px; margin: 4px 8px 4px 0; }
+.study-certificate-page input[type="radio"] { accent-color: #193e5d; }
+#study-certificate-details section { padding-block: 12px; border-bottom: 1px solid var(--config-line); }
+#study-certificate-details section:last-child { border-bottom: 0; }
+#study-certificate-details h4 { margin: 0; }
+@media (max-width: 680px) { .study-options, .study-student-field { grid-template-columns: minmax(0, 1fr); } }
+@media print { #study-certificate-details section { break-inside: avoid; } }

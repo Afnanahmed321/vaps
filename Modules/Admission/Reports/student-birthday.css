@@ -1,0 +1,29 @@
+.student-birthday-page [hidden] { display: none; }
+.birthday-content { display: grid; align-content: start; gap: 16px; }
+.birthday-content .card-toolbar { min-height: 0; padding: 14px clamp(14px, 3vw, 24px); }
+.birthday-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 16px clamp(14px, 3vw, 24px); }
+.birthday-options {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  min-width: 0;
+  margin: 0;
+  padding: 8px 12px 12px;
+  border: 1px solid var(--config-line);
+  border-radius: 12px;
+  background: #faf9f6;
+}
+.birthday-options legend { padding: 0 5px; font-weight: 700; }
+.birthday-options label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.birthday-options input { accent-color: #193e5d; }
+.birthday-fields label span { color: #a32929; }
+.birthday-actions { flex-wrap: wrap; align-items: center; }
+.birthday-actions .button { width: auto; }
+#birthday-feedback { flex: 1 1 180px; margin: 0; color: var(--config-muted); }
+#birthday-feedback:empty { display: none; }
+.birthday-table.master-table { min-width: 550px; }
+.birthday-table .birthday-empty { text-align: center; color: var(--config-muted); }
+@media (max-width: 600px) {
+  .birthday-fields { grid-template-columns: minmax(0, 1fr); }
+}

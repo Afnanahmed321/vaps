@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10263e" />
+  <title>Student Yearly Attendance | Tunbridge High School</title>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="../../Preconfiguration/Master/master.css" />
+  <link rel="stylesheet" href="../../../workspace-shell.css?v=module-dialogs" />
+  <link rel="stylesheet" href="../../../site-assistant.css" />
+  <link rel="stylesheet" href="../../../gilroy.css" />
+  <link rel="stylesheet" href="../../Preconfiguration/preconfiguration.css?v=records-toolbar" />
+  <link rel="stylesheet" href="birth-certificate.css" />
+  <script defer src="../Masters/admission-options.js"></script>
+  <link rel="stylesheet" href="student-yearly-attendance.css" />
+  <script defer src="student-yearly-attendance.js"></script>
+  <script defer src="../../../workspace-header.js?v=overview-shell-parity"></script>
+  <script defer src="../../../workspace-mobile-nav.js"></script>
+  <script defer src="../../../workspace-whatsapp.js"></script>
+  <script defer src="../../../workspace-chatgpt.js"></script>
+  <script defer src="../../../workspace-translator.js"></script>
+  <script defer src="../../../workspace-text-to-speech.js"></script>
+  <script defer src="../../../workspace-pdf-converter.js"></script>
+  <script defer src="../../../workspace-media-compressor.js"></script>
+</head>
+<body class="preconfiguration-page yearly-attendance-page">
+  <div class="app-shell report-builder-shell">
+    <aside class="sidebar">
+      <a class="brand" href="../../../System%20Overview/html%20%26%20css%20files/index.html">
+        <img class="brand-logo" src="../../../assets/logo.jpg" alt="Tunbridge High School" />
+      </a>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-item" href="../../../System%20Overview/html%20%26%20css%20files/index.html"><i data-lucide="house"></i><span>System Overview</span></a>
+        <a class="nav-item" href="../../../Applications/html%20%26%20css%20files/application.html"><i data-lucide="file-text"></i><span>Applications</span></a>
+        <a class="nav-item" href="../../../Students/html%20%26%20css%20files/students.html"><i data-lucide="users-round"></i><span>Students</span></a>
+        <a class="nav-item" href="../../../Teachers/html%20%26%20css%20files/teachers.html"><i data-lucide="graduation-cap"></i><span>Teachers</span></a>
+        <a class="nav-item" href="../../../Reports/html%20%26%20css%20files/reports.html"><i data-lucide="chart-no-axes-column-increasing"></i><span>Reports</span></a>
+        <a class="nav-item" href="../../../Fees/html%20%26%20css%20files/fee-collection.html"><i data-lucide="wallet"></i><span>Fee Collection</span></a>
+      </nav>
+      <button class="academic-year" type="button">
+        <i data-lucide="graduation-cap"></i>
+        <span><small>Academic Year</small><strong>2026 – 2027</strong></span>
+        <i class="year-chevron" data-lucide="chevron-down"></i>
+      </button>
+      <div class="sidebar-waves" aria-hidden="true"><span></span><span></span></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <label class="global-search">
+          <i data-lucide="search"></i>
+          <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search the school workspace" />
+        </label>
+        <div class="top-actions">
+          <a class="top-pill" href="../../../System%20Overview/html%20%26%20css%20files/index.html?open=operation-tools"><i data-lucide="layout-grid"></i><span>Operation Tools</span></a>
+          <button class="top-pill" type="button"><i data-lucide="sparkles"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron"></i></button>
+          <button class="top-pill" type="button"><i data-lucide="bot"></i><span>AI Edge</span></button>
+          <button class="notification" type="button" aria-label="Notifications"><i data-lucide="bell"></i><b></b></button>
+          <div class="profile">
+            <div class="avatar">T</div>
+            <div><strong>TBHSADMIN</strong><small>Admin</small></div>
+            <i data-lucide="chevron-down"></i>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-banner module-banner">
+        <div class="banner-copy">
+          <h1>Student Yearly Attendance</h1>
+          <p class="banner-subtitle">Review attendance for a full academic year.</p>
+        </div>
+      </section>
+
+      <section class="content-area birth-certificate-content">
+        <section class="master-card" aria-labelledby="yearly-filters">
+          <header class="card-toolbar">
+            <div class="card-heading">
+              <span class="heading-mark" aria-hidden="true"></span>
+              <h2 id="yearly-filters">Report Filters</h2>
+            </div>
+          </header>
+          <form id="yearly-attendance-form">
+            <div class="birth-certificate-fields yearly-attendance-fields">
+              <div class="workspace-dialog-field">
+                <label for="yearly-year">Academic Year <span aria-hidden="true">*</span></label>
+                <select id="yearly-year" name="academicYear" required><option value="">Select academic year</option></select>
+              </div>
+              <div class="workspace-dialog-field">
+                <label for="yearly-class">Class <span aria-hidden="true">*</span></label>
+                <select id="yearly-class" name="className" required><option value="">Select class</option></select>
+              </div>
+              <div class="workspace-dialog-field">
+                <label for="yearly-section">Section <span aria-hidden="true">*</span></label>
+                <select id="yearly-section" name="section" aria-describedby="yearly-section-hint" required disabled><option value="">Select section</option></select>
+                <small id="yearly-section-hint">Choose a class to enable section selection.</small>
+              </div>
+            </div>
+            <footer class="workspace-dialog-actions birth-certificate-actions">
+              <button class="button button-secondary" type="reset"><i data-lucide="x" aria-hidden="true"></i>Cancel</button>
+              <button class="button button-primary" type="submit"><i data-lucide="file-text" aria-hidden="true"></i>Run Report</button>
+            </footer>
+          </form>
+        </section>
+        <div id="yearly-results" role="status" aria-atomic="true"></div>
+      </section>
+
+      <footer class="page-footer">
+        <span><i data-lucide="shield"></i> © Tunbridge High School</span>
+        <span>VAPS Digital Campus</span>
+        <span><i data-lucide="phone"></i> School ERP</span>
+      </footer>
+    </main>
+  </div>
+
+  <script src="../../../site-assistant.js"></script>
+</body>
+</html>

@@ -69,8 +69,7 @@ button {
   pointer-events: none;
 }
 
-.tn-banner-copy,
-.tn-breadcrumbs {
+.tn-banner-copy {
   position: relative;
   z-index: 1;
 }
@@ -110,36 +109,15 @@ button {
   font-size: 14px;
 }
 
-.tn-breadcrumbs {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #e5eaff;
-  font-size: 12px;
-  white-space: nowrap;
-}
 
-.tn-breadcrumbs a {
-  color: inherit;
-  text-decoration: none;
-}
 
-.tn-breadcrumbs a:hover {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
 
-.tn-breadcrumbs svg {
-  width: 14px;
-  height: 14px;
-  opacity: .75;
-}
 
-.tn-breadcrumbs span {
-  color: #fff;
-  font-weight: 600;
-}
+
+
+
+
+
 
 .tn-content {
   width: 100%;
@@ -872,11 +850,6 @@ button {
   }
 }
 
-@media(max-width:1050px) {
-  .tn-breadcrumbs {
-    display: none;
-  }
-}
 
 @media(max-width:700px) {
   .tn-banner {

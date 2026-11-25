@@ -1,0 +1,33 @@
+.tc-cancel-content { display: grid; align-content: start; gap: 16px; }
+.tc-cancel-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 16px clamp(14px, 3vw, 24px); }
+.tc-cancel-table.master-table { min-width: 850px; }
+.tc-cancel-table th { white-space: nowrap; }
+.tc-cancel-table td { padding-block: 12px; }
+.tc-cancel-table td:nth-child(2) { font-weight: 700; }
+.tc-cancel-table td:last-child { white-space: nowrap; }
+.tc-cancel-table .tc-cancel-empty { text-align: center; color: var(--config-muted); }
+.tc-cancel-pagination { justify-content: space-between; flex-wrap: wrap; }
+#tc-cancel-print:disabled { opacity: .5; cursor: default; }
+@media (max-width: 650px) {
+  .tc-cancel-fields { grid-template-columns: minmax(0, 1fr); }
+}
+@media print {
+  .tc-cancel-page > :not(.app-shell),
+  .tc-cancel-page .app-shell > :not(.main-area),
+  .tc-cancel-page .main-area > :not(.tc-cancel-content),
+  .tc-cancel-filters,
+  .tc-cancel-report :is(.toolbar-actions, .table-footer) { display: none !important; }
+  .tc-cancel-page :is(.app-shell, .main-area, .tc-cancel-content) {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    overflow: visible;
+  }
+  .tc-cancel-report.master-card { border: 0; box-shadow: none; overflow: visible; }
+  .tc-cancel-report .table-scroll { overflow: visible; }
+  .tc-cancel-table.master-table { min-width: 0; }
+  .tc-cancel-table :is(th, td) { position: static; padding: 6px; }
+  .tc-cancel-table .sort-button svg { display: none; }
+  .tc-cancel-table tr { break-inside: avoid; }
+}

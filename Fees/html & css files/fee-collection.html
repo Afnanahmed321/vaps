@@ -6,10 +6,10 @@
   <title>Fee Collection | Tunbridge High School</title>
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <link rel="stylesheet" href="fee-collection.css" />
-  <link rel="stylesheet" href="../../workspace-shell.css" />
+  <link rel="stylesheet" href="../../workspace-shell.css?v=overview-shell-parity-2" />
   <link rel="stylesheet" href="../../site-assistant.css" />
   <link rel="stylesheet" href="../../gilroy.css" />
-  <script defer src="../../workspace-header.js"></script>
+  <script defer src="../../workspace-header.js?v=overview-shell-parity"></script>
   <script defer src="../../workspace-mobile-nav.js"></script>
   <script defer src="../../workspace-whatsapp.js"></script>
   <script defer src="../../workspace-chatgpt.js"></script>
@@ -63,11 +63,15 @@
           </header>
           <div class="fee-insights">
             <section class="fee-insight" aria-labelledby="monthly-fees-title">
-              <h3 id="monthly-fees-title">Monthly collections</h3>
+              <div class="fee-insight-heading">
+                <h3 id="monthly-fees-title">Monthly collections</h3>
+                <span>Last 6 months</span>
+              </div>
               <ol class="operations-bars" id="monthly-fees-chart"></ol>
             </section>
             <section class="fee-insight" aria-labelledby="fee-payment-split-title">
-              <h3 id="fee-payment-split-title">Today’s payment split</h3>
+              <h3 id="fee-payment-split-title">Today’s payments</h3>
+              <div class="fee-payment-total"><span>Total collected</span><strong id="fee-payment-total"></strong></div>
               <dl id="fee-payment-split"></dl>
             </section>
           </div>

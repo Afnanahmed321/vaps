@@ -1,0 +1,36 @@
+.caste-report-school {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--config-line);
+  text-align: center;
+}
+.caste-report-school img { display: block; width: min(100%, 460px); height: auto; }
+.caste-report-school h3 { margin: 0; color: #193e5d; font-size: 1.2rem; }
+.caste-report-table.master-table { min-width: 410px; }
+.caste-report-table :is(th, td) { padding-inline: 12px; }
+.caste-report-actions { flex-wrap: wrap; }
+.caste-report-actions .button { width: auto; }
+
+@media print {
+  .master-caste-page:has(.caste-report[open]) > :not(.caste-report) { display: none !important; }
+  .master-caste-page .caste-report[open] {
+    position: static;
+    width: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    overflow: visible;
+    border: 0;
+    box-shadow: none;
+    background: #fff;
+  }
+  .caste-report::backdrop { display: none; }
+  .caste-report[open] > form { display: block; max-height: none; }
+  .caste-report :is(.workspace-dialog-header, .workspace-dialog-actions) { display: none; }
+  .caste-report :is(.workspace-dialog-body, .area-table-wrap) { overflow: visible; }
+  .caste-report-table.master-table { min-width: 0; }
+  .caste-report-table tr { break-inside: avoid; }
+}

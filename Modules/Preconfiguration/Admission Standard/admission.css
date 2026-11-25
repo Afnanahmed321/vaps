@@ -2,11 +2,7 @@
   box-sizing: border-box;
 }
 
-.admission-breadcrumbs a:hover {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
+
 
 :root {
   color-scheme: light;
@@ -70,8 +66,7 @@ button {
   pointer-events: none;
 }
 
-.admission-banner-copy,
-.admission-breadcrumbs {
+.admission-banner-copy {
   position: relative;
   z-index: 1;
 }
@@ -109,32 +104,13 @@ button {
   color: #aab8ec;
 }
 
-.admission-breadcrumbs {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  position: relative;
-  z-index: 1;
-  color: #e5eaff;
-  font-size: 12px;
-  white-space: nowrap;
-}
 
-.admission-breadcrumbs a {
-  color: inherit;
-  text-decoration: none;
-}
 
-.admission-breadcrumbs strong {
-  color: #fff;
-  font-weight: 600;
-}
 
-.admission-breadcrumbs svg {
-  width: 14px;
-  height: 14px;
-  opacity: .8;
-}
+
+
+
+
 
 .admission-content {
   width: 100%;
@@ -523,11 +499,6 @@ button {
   outline-offset: 3px;
 }
 
-@media (max-width: 1150px) {
-  .admission-breadcrumbs {
-    display: none;
-  }
-}
 
 @media (max-width: 760px) {
   .admission-banner {

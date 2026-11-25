@@ -1,0 +1,28 @@
+.notes-required,
+#notes-feedback { color: #a32929; }
+
+.ai-tool-card .notes-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 12px 0 0;
+  padding: 14px 16px;
+  border: 1px solid var(--config-line);
+  border-radius: 12px;
+  background: var(--config-ivory);
+  cursor: pointer;
+}
+
+.notes-option:has(input:checked) { border-color: #d6bc8a; }
+.notes-option input { margin: 3px 0 0; flex: none; }
+.notes-option strong { display: flex; align-items: center; gap: 8px; }
+.notes-option svg { width: 17px; height: 17px; flex: none; color: var(--config-accent); }
+.notes-option small { font-weight: 400; }
+.notes-generate { width: 100%; }
+#notes-feedback { margin: 12px 0 0; }
+#notes-preview-source { overflow-wrap: anywhere; }
+#notes-preview-formats { padding-inline-start: 22px; }
+
+@media (min-width: 1101px) {
+  .notes-grid { grid-template-columns: minmax(240px, 5fr) minmax(0, 7fr); }
+}

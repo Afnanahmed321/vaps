@@ -1,0 +1,34 @@
+.yearly-attendance-fields {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.yearly-attendance-fields small {
+  color: var(--config-muted);
+}
+
+#yearly-results {
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+#yearly-results .master-card {
+  margin-top: 16px;
+  padding: 16px clamp(16px, 3vw, 24px);
+}
+
+#yearly-results h2 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+#yearly-results p {
+  margin: 8px 0 0;
+  color: var(--config-muted);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 680px) {
+  .yearly-attendance-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

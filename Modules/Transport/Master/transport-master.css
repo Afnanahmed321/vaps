@@ -1,0 +1,75 @@
+
+
+
+
+.area-toolbar { display: flex; justify-content: flex-end; margin-bottom: 14px; }
+.area-card > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px clamp(14px, 2vw, 24px);
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.area-card > summary::-webkit-details-marker { display: none; }
+.area-card > summary svg { width: 20px; height: 20px; color: var(--config-accent); }
+.area-card[open] > summary svg { transform: rotate(180deg); }
+.area-body { padding: 6px clamp(14px, 2vw, 24px) 12px; }
+.area-search.record-search { width: min(100%, 310px); margin-bottom: 12px; }
+.area-search .page-button { flex: none; }
+#area-feedback:empty { display: none; }
+
+.area-table-wrap { overflow-x: auto; border: 1px solid var(--config-line); border-radius: 12px; }
+.area-table.master-table { min-width: 550px; }
+.area-table.master-table :is(th, td) { position: static; overflow-wrap: anywhere; }
+.area-table .area-empty { height: 96px; text-align: center; color: var(--config-muted); }
+.area-pagination.table-footer { justify-content: space-between; flex-wrap: wrap; padding-inline: 0; border-top: 0; }
+
+#area-error { color: #a32929; }
+
+.driver-table.master-table { min-width: 760px; }
+
+.vehicle-table.master-table { min-width: 1120px; }
+.vehicle-table input[type="checkbox"] { accent-color: #244762; }
+.vehicle-table td a { color: var(--config-accent); text-decoration: underline; }
+
+.preconfiguration-page .workspace-module-dialog .workspace-dialog-field :is(input, select):focus-visible {
+  outline: 2px solid #92703a;
+  outline-offset: -2px;
+  border-color: #92703a;
+}
+
+.transport-master-page .area-body { padding-top: 12px; }
+
+.record-delete-button { margin-inline-start: 6px; color: #a32929; }
+
+.record-status-actions,
+.record-status-switch { display: flex; align-items: center; gap: 8px; }
+.record-status-switch { flex-direction: row-reverse; white-space: nowrap; }
+.record-status-switch input {
+  appearance: none;
+  width: 32px;
+  height: 18px;
+  flex: none;
+  margin: 0;
+  border-radius: 999px;
+  background: radial-gradient(circle at 8px center, #fff 5px, transparent 6px), #a32929;
+  cursor: pointer;
+}
+.record-status-switch input:checked {
+  background: radial-gradient(circle at 24px center, #fff 5px, transparent 6px), #167346;
+}
+.record-status-switch input + span { color: #a32929; }
+.record-status-switch input:checked + span { color: #167346; }
+
+.record-mandatory-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #a32929;
+  background: #fbe9e7;
+  font-weight: 600;
+}
+.record-mandatory-badge[data-mandatory="Yes"] { color: #167346; background: #e1f4e9; }

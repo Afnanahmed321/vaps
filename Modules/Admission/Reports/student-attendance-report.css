@@ -1,0 +1,13 @@
+.attendance-report-page [hidden] { display: none; }
+.attendance-report-page input:is([type="radio"], [type="checkbox"]) { accent-color: #193e5d; }
+.attendance-report-page legend { padding-inline: 4px; font-weight: 700; }
+.attendance-report-page fieldset:disabled { color: var(--config-muted); }
+.attendance-report-page :is(select, input, button):focus-visible { outline: 2px solid #91652d; outline-offset: 2px; }
+.attendance-detail { display: flex; align-items: center; gap: 8px; align-self: end; min-height: 42px; }
+.attendance-message { grid-column: 1 / -1; margin: 0; color: var(--config-muted); }
+.attendance-message:empty { display: none; }
+.attendance-results { margin-top: 16px; }
+.attendance-results-body { padding: 16px clamp(16px, 3vw, 24px); color: var(--config-muted); }
+.attendance-results-body p { margin: 0; overflow-wrap: anywhere; }
+#attendance-summary { margin-bottom: 8px; color: #193e5d; font-weight: 700; }
+.attendance-actions { gap: 8px; }

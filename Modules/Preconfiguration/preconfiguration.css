@@ -154,3 +154,40 @@ body.preconfiguration-page {
     padding: 17px 18px;
   }
 }
+
+.records-toolbar.card-toolbar {
+  min-height: 0;
+  flex-wrap: wrap;
+  padding: 16px clamp(14px, 2vw, 24px);
+}
+
+.records-toolbar .toolbar-actions {
+  flex-flow: row wrap;
+  align-items: center;
+  flex: 1 1 420px;
+}
+
+.records-toolbar.card-toolbar .record-search {
+  flex: 1 1 220px;
+  max-width: 340px;
+  margin: 0;
+  padding-inline: 11px 5px;
+}
+
+.records-toolbar .record-search input:focus-visible { outline: none; }
+.records-toolbar .record-search:focus-within {
+  outline: 2px solid #92703a;
+  outline-offset: -2px;
+  box-shadow: none;
+}
+.records-toolbar .record-search .page-button {
+  border-color: transparent;
+  background: transparent;
+}
+.records-toolbar .record-search .page-button:hover,
+.records-toolbar .record-search .page-button[aria-pressed="true"] { background: var(--config-ivory); }
+.records-toolbar .button { width: auto; min-height: 42px; }
+@media (max-width: 600px) {
+  .records-toolbar .toolbar-actions { justify-content: flex-start; }
+  .records-toolbar.card-toolbar .record-search { flex-basis: 100%; max-width: none; }
+}

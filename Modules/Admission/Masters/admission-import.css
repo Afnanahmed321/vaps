@@ -1,0 +1,56 @@
+.admission-import-page .card-toolbar { min-height: 0; }
+
+.admission-import-body {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: clamp(16px, 3vw, 30px);
+}
+
+.admission-import-mode {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+  min-width: 0;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid var(--config-line);
+  border-radius: 12px;
+  background: var(--config-ivory);
+}
+
+.admission-import-mode label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.admission-import-mode input { accent-color: #193e5d; }
+
+.admission-import-hint {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  color: #236348;
+  font-size: .9rem;
+}
+.admission-import-hint svg { width: 16px; height: 16px; flex: none; }
+
+.admission-import-drop {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  width: min(100%, 420px);
+  padding: 20px 14px;
+  border: 2px dashed #c9b797;
+  border-radius: 14px;
+  color: var(--config-ink);
+  background: #faf9f6;
+  font: inherit;
+  cursor: pointer;
+}
+
+.admission-import-drop:hover,
+.admission-import-drop.is-dragging { border-color: #92703a; background: #f4efe5; }
+.admission-import-drop svg { width: 26px; height: 26px; margin-bottom: 3px; color: var(--config-accent); }
+.admission-import-drop small { color: var(--config-muted); }
+#admission-import-status { max-width: 100%; margin: 0; overflow-wrap: anywhere; text-align: center; }
+#admission-import-status:empty { display: none; }
+#admission-import-status.is-error { color: #a32929; }

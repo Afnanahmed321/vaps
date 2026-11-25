@@ -1,0 +1,28 @@
+.class-table.master-table { min-width: 1250px; }
+.master-class-page .area-body { padding-top: 12px; }
+.class-table .class-status { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.class-status input {
+  appearance: none;
+  width: 32px;
+  height: 18px;
+  flex: none;
+  margin: 0;
+  border: 1px solid #657181;
+  border-radius: 999px;
+  background: radial-gradient(circle at 8px center, #fff 5px, transparent 6px), #657181;
+  cursor: pointer;
+}
+.class-status input:checked {
+  border-color: #167346;
+  background: radial-gradient(circle at 23px center, #fff 5px, transparent 6px), #167346;
+}
+.class-status input:checked + span { color: #167346; }
+.class-dialog-table.master-table { min-width: 0; }
+.class-dialog-table.is-details { min-width: 1200px; }
+.class-dialog-table input { width: 90px; }
+#class-list-error { color: #a32929; }
+#class-list-save[hidden] { display: none; }
+
+.master-section-page .class-table.master-table,
+.master-section-page .class-dialog-table.is-details { min-width: 670px; }
+.section-row-actions { display: flex; align-items: center; gap: 12px; }

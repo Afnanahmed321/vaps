@@ -112,38 +112,15 @@ button {
   font-size: 14px;
 }
 
-.breadcrumbs {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  position: relative;
-  z-index: 1;
-  color: #e5eaff;
-  font-size: 12px;
-  white-space: nowrap;
-}
 
-.breadcrumbs a {
-  color: inherit;
-  text-decoration: none;
-}
 
-.breadcrumbs a:hover {
-  color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
 
-.breadcrumbs svg {
-  width: 15px;
-  height: 15px;
-  opacity: .7;
-}
 
-.breadcrumbs span {
-  color: #fff;
-  font-weight: 600;
-}
+
+
+
+
+
 
 .content-area {
   width: 100%;
@@ -662,11 +639,6 @@ button {
   transform: translateY(0);
 }
 
-@media (max-width: 900px) {
-  .breadcrumbs {
-    display: none;
-  }
-}
 
 @media (max-width: 700px) {
   .page-banner {

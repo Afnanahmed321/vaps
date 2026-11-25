@@ -1,0 +1,76 @@
+.performance-content {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+}
+
+.performance-help.master-card {
+  background: #fbf7ee;
+  border-color: #e6d8ba;
+}
+
+.performance-help p,
+.performance-sample p { margin-bottom: 0; }
+
+.performance-upload > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: clamp(16px, 2vw, 24px);
+  cursor: pointer;
+  list-style: none;
+}
+
+.performance-upload > summary::-webkit-details-marker { display: none; }
+.performance-upload > summary:focus-visible,
+.performance-table-wrap:focus-visible { outline: 2px solid var(--config-accent); outline-offset: -3px; }
+.performance-upload > summary strong { display: block; font-size: 1.25rem; }
+.performance-upload > summary small { display: block; margin-top: 4px; color: var(--config-muted); }
+.performance-upload > summary svg { flex: none; width: 20px; height: 20px; color: var(--config-accent); }
+.performance-upload[open] > summary svg { transform: rotate(180deg); }
+
+.performance-upload-body {
+  display: grid;
+  gap: 16px;
+  padding-top: 0;
+}
+
+.performance-sample,
+.performance-picker {
+  min-width: 0;
+  padding: clamp(14px, 2vw, 22px);
+  border: 1px solid var(--config-line);
+  border-radius: 14px;
+}
+
+.performance-sample { background: var(--config-ivory); }
+.performance-table-wrap { overflow-x: auto; margin: 14px 0 10px; border: 1px solid var(--config-line); border-radius: 9px; }
+.performance-table.master-table { min-width: 420px; background: var(--config-surface); }
+.performance-table.master-table :is(th, td) { position: static; padding: 8px 12px; height: auto; }
+.performance-table.master-table td,
+.performance-table.master-table thead th:not(:first-child) { text-align: center; }
+.performance-table.master-table tbody th { background: transparent; font-weight: 600; }
+
+.performance-picker {
+  display: grid;
+  justify-items: center;
+  border: 2px dashed var(--config-line);
+  text-align: center;
+}
+
+.performance-picker-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: #fbf2de;
+  color: var(--config-accent);
+}
+
+.performance-picker-icon svg { width: 21px; height: 21px; }
+#performance-feedback { max-width: 100%; margin: 12px 0 0; overflow-wrap: anywhere; }
+#performance-feedback:empty { margin: 0; }
+#performance-feedback.is-error { color: #a32929; }
