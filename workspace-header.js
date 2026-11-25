@@ -14,6 +14,9 @@
       <input type="search" placeholder="Search pages, students, teachers, reports..." aria-label="Search pages, students, teachers, and reports" />
     </label>
     <div class="top-actions">
+      <button class="top-pill header-modules-trigger" type="button" data-workspace-dialog="operation-tools" aria-haspopup="dialog">
+        <i data-lucide="layout-grid" aria-hidden="true"></i><span>Modules</span>
+      </button>
       <div class="intelligent-apps-dropdown">
         <button class="top-pill" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="intelligent-apps-menu">
           <i data-lucide="sparkles" aria-hidden="true"></i><span>Intelligent Apps</span><i data-lucide="chevron-down" class="tiny-chevron" aria-hidden="true"></i>

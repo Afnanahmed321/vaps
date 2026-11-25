@@ -484,7 +484,8 @@ button {
   margin-left: 4px;
 }
 
-.hero-copy h1 {
+.hero-copy h1,
+.module-popup-hero h2 {
   margin: 0 0 8px;
   color: #f8da8f;
   font-size: clamp(28px, 4.1cqw, 92px);
@@ -494,7 +495,8 @@ button {
   text-shadow: 0 2px 4px #001426b3;
 }
 
-.hero-copy h1::after {
+.hero-copy h1::after,
+.module-popup-hero h2::after {
   content: "";
   display: block;
   width: 1.85em;
@@ -4818,7 +4820,7 @@ a.ai-edge-app { text-decoration: none; }
   margin-top: 12px;
 }
 
-.configuration-view {
+.configuration-view, .operation-dialog {
   --module-blue-gradient: linear-gradient(145deg, #193f56 0%, #15384f 45%, #0f2b41 100%);
 }
 
@@ -4937,7 +4939,8 @@ a.sidebar-module-button { text-decoration: none; }
   box-shadow: 0 4px 10px #50372016;
 }
 
-.configuration-view[data-module="pre-configuration"] .module-tool-item {
+.configuration-view[data-module="pre-configuration"] .module-tool-item,
+.module-main.is-preconfiguration .module-tool-item {
   display: grid;
   position: relative;
   grid-template-columns: minmax(0, 1fr);
@@ -5020,6 +5023,46 @@ a.sidebar-module-button { text-decoration: none; }
   box-shadow: 0 11px 24px rgba(37, 45, 54, .12);
   transform: translateY(-2px);
 }
+
+.module-main .module-popup-hero {
+  min-height: 168px;
+  aspect-ratio: auto;
+  margin: 0 0 12px;
+}
+.module-popup-hero .hero-copy { width: 62%; }
+.module-popup-hero h2 { font-size: clamp(23px, 6cqw, 46px); }
+.module-popup-hero .hero-description { font-size: clamp(13px, 2.3cqw, 16px); }
+.module-popup-hero .configuration-hero-lines { opacity: .45; }
+#operation-tools-dialog .module-tool-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+  column-count: auto;
+}
+#operation-tools-dialog[data-module="pre-configuration"] .module-tool-list {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 185px), 1fr));
+  align-items: stretch;
+}
+.module-main.is-preconfiguration .module-tool-item {
+  grid-template-rows: minmax(74px, auto) 1fr auto;
+  min-height: 170px;
+  gap: 0;
+  border-radius: 17px;
+}
+.module-main.is-preconfiguration .configuration-card-header {
+  gap: 8px;
+  padding: 9px 10px 18px;
+}
+.module-main.is-preconfiguration .configuration-card-header::after { height: 18px; }
+.module-main.is-preconfiguration .configuration-card-mark {
+  width: 36px;
+  height: 36px;
+  border-width: 2px;
+  border-radius: 10px;
+}
+.module-main.is-preconfiguration .configuration-card-header .module-tool-label { font-size: 15px; }
+.module-main.is-preconfiguration .configuration-card-copy { padding: 8px 10px; }
+.module-main.is-preconfiguration .configuration-card-description { font-size: 14px; }
+.module-main.is-preconfiguration .configuration-card-view { margin-bottom: 12px; font-size: 14px; }
 
 .configuration-view .module-tool-number[data-tone] {
   width: clamp(56px, 5.3vw, 78px);
@@ -5303,7 +5346,7 @@ a.sidebar-module-button { text-decoration: none; }
   break-inside: avoid;
 }
 
-.configuration-view .preadmission-category {
+:is(.configuration-view, .operation-dialog) .preadmission-category {
   padding: 0;
   overflow: hidden;
   border: 1px solid #e7d3ae;
@@ -5356,20 +5399,20 @@ a.sidebar-module-button { text-decoration: none; }
   filter: drop-shadow(0 2px 2px #04172b55);
 }
 
-.configuration-view .preadmission-category-tools {
+:is(.configuration-view, .operation-dialog) .preadmission-category-tools {
   max-height: none;
   overflow: visible;
   padding: 6px 8px 8px;
   gap: 2px;
 }
 
-.configuration-view .preadmission-tool-item {
+:is(.configuration-view, .operation-dialog) .preadmission-tool-item {
   min-height: 38px;
   gap: 8px;
   padding: 4px 5px;
 }
 
-.configuration-view .preadmission-category-tools.is-scrollable {
+:is(.configuration-view, .operation-dialog) .preadmission-category-tools.is-scrollable {
   --module-option-height: 46px;
   max-height: calc(6 * var(--module-option-height) + 8px);
   overflow-y: auto;
@@ -5379,14 +5422,14 @@ a.sidebar-module-button { text-decoration: none; }
   scrollbar-gutter: stable;
 }
 
-.configuration-view .is-scrollable > .preadmission-tool-item {
+:is(.configuration-view, .operation-dialog) .is-scrollable > .preadmission-tool-item {
   flex: 0 0 var(--module-option-height);
   min-height: var(--module-option-height);
   padding-block: 3px;
 }
 
-.configuration-view .is-scrollable .preadmission-tool-label { line-height: 1.2; }
-.configuration-view .is-scrollable:focus-visible {
+:is(.configuration-view, .operation-dialog) .is-scrollable .preadmission-tool-label { line-height: 1.2; }
+:is(.configuration-view, .operation-dialog) .is-scrollable:focus-visible {
   outline: 2px solid #b28a44;
   outline-offset: -2px;
 }
@@ -5404,11 +5447,11 @@ a.sidebar-module-button { text-decoration: none; }
   text-align: center;
 }
 
-.configuration-view .preadmission-tool-item + .preadmission-tool-item {
+:is(.configuration-view, .operation-dialog) .preadmission-tool-item + .preadmission-tool-item {
   border-top: 1px solid #efe4d4;
 }
 
-.configuration-view .preadmission-tool-number {
+:is(.configuration-view, .operation-dialog) .preadmission-tool-number {
   width: 34px;
   height: 30px;
   border-radius: 7px;
@@ -5417,12 +5460,12 @@ a.sidebar-module-button { text-decoration: none; }
   font-size: 12px;
 }
 
-.configuration-view .preadmission-tool-label {
+:is(.configuration-view, .operation-dialog) .preadmission-tool-label {
   font-size: clamp(14px, 1vw, 16px);
   line-height: 1.2;
 }
 
-.configuration-view .preadmission-tool-item[href]:is(:hover, :focus-visible) {
+:is(.configuration-view, .operation-dialog) .preadmission-tool-item[href]:is(:hover, :focus-visible) {
   color: #704917;
   background: #faecd5;
   outline-offset: -2px;
@@ -5436,7 +5479,7 @@ a.sidebar-module-button { text-decoration: none; }
   color: #835a29;
 }
 
-.configuration-view .preadmission-tool-item:not([href]) .preadmission-tool-chevron {
+:is(.configuration-view, .operation-dialog) .preadmission-tool-item:not([href]) .preadmission-tool-chevron {
   color: #9c866b;
 }
 

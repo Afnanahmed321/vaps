@@ -2600,6 +2600,11 @@ select:not([multiple]):not(.page-size select):not(.oral-table-pagination select)
   .app-shell[data-mobile-navigation] .top-actions > .notification {
     grid-column: 9 / -1;
   }
+
+  .app-shell[data-mobile-navigation] .top-actions:has(> .header-modules-trigger) > .intelligent-apps-dropdown { grid-column: 4 / 7; }
+  .app-shell[data-mobile-navigation] .top-actions:has(> .header-modules-trigger) > #ai-edge-trigger { grid-column: 7 / 10; }
+  .app-shell[data-mobile-navigation] .top-actions:has(> .header-modules-trigger) > .notification { grid-column: 10 / -1; }
+  .app-shell[data-mobile-navigation] .top-actions > .header-modules-trigger { grid-column: 1 / 4; }
 }
 
 @media (min-width: 391px) and (max-width: 420px) {

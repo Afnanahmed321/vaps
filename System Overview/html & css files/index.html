@@ -71,6 +71,9 @@
       </label>
 
       <div class="top-actions">
+        <button class="top-pill header-modules-trigger" type="button" aria-haspopup="dialog" aria-controls="operation-tools-dialog">
+          <i data-lucide="layout-grid" aria-hidden="true"></i><span>Modules</span>
+        </button>
         <div class="intelligent-apps-dropdown">
           <button class="top-pill" id="intelligent-apps-trigger" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="intelligent-apps-menu">
             <i data-lucide="sparkles"></i>
@@ -882,12 +885,16 @@
         <span class="module-toolbar-title">MODULE EXPLORER</span>
       </header>
       <div class="module-main">
-        <div class="module-heading module-banner">
-          <div>
-            <p class="module-eyebrow"><span></span><b id="module-eyebrow-label">MODULE EXPLORER</b></p>
+        <div class="welcome-hero module-popup-hero">
+          <div class="hero-copy">
+            <p class="configuration-eyebrow"><i data-lucide="layers" aria-hidden="true"></i>Module Explorer</p>
             <h2 id="operation-tools-title">Pre Configuration</h2>
-            <p class="module-description">Set up the essentials that keep your school running smoothly.</p>
+            <p class="hero-description" id="module-popup-description"></p>
           </div>
+          <div class="configuration-hero-lines" aria-hidden="true"></div>
+          <div class="hero-ribbon" aria-hidden="true"></div>
+          <div class="hero-building" aria-hidden="true"></div>
+          <img class="hero-laurel" src="../Assets/leaf.png" width="1536" height="1024" alt="" />
         </div>
         <div class="module-section-heading">
           <div><span class="section-heading-mark"></span><strong id="module-section-label">AVAILABLE SECTIONS</strong></div>
@@ -1803,7 +1810,15 @@
 
     const count = moduleContent[key].categories?.length ?? moduleContent[key].tools.length;
     button.querySelector("small").textContent = `${count} ${count === 1 ? "section" : "sections"}`;
-    button.addEventListener("click", () => openModulePage(key));
+    const preview = () => {
+      if (selectedModule === key) return;
+      renderModule(key);
+      operationDialog.querySelector(".module-main").scrollTop = 0;
+    };
+    button.addEventListener("pointerenter", (event) => {
+      if (event.pointerType === "mouse") preview();
+    });
+    button.addEventListener("click", preview);
   });
 
   sidebarModulesToggle.addEventListener("click", () => {
@@ -1823,9 +1838,8 @@
       const selectedButton = moduleButtons.find((button) => button.dataset.module === moduleKey);
       const title = selectedButton?.querySelector(".module-nav-copy strong")?.textContent.trim() || "Module";
       document.querySelector("#operation-tools-title").textContent = title;
-      document.querySelector(".module-description").textContent = "Explore this area of your school workspace.";
+      document.querySelector("#module-popup-description").textContent = "Explore this area of your school workspace.";
       document.querySelector(".module-main").classList.remove("is-preadmission", "is-admission", "is-fees", "is-exam", "is-hrms", "is-front-office", "is-leave-management", "is-upload", "is-time-table", "is-coe", "is-birthday", "is-sports", "is-online-exam", "is-library", "is-transport", "is-lms", "is-ai-edge", "is-preconfiguration");
-      document.querySelector("#module-eyebrow-label").textContent = "MODULE EXPLORER";
       moduleButtons.forEach((button) => {
         const active = button === selectedButton;
         button.classList.toggle("is-active", active);
@@ -1839,7 +1853,7 @@
       return;
     }
     document.querySelector("#operation-tools-title").textContent = module.title;
-    document.querySelector(".module-description").textContent = module.description;
+    document.querySelector("#module-popup-description").textContent = moduleKey === "pre-configuration" ? configurationDescription : module.description;
     const isPreadmission = moduleKey === "preadmission";
     document.querySelector(".module-main").classList.toggle("is-preadmission", isPreadmission);
     document.querySelector(".module-main").classList.toggle("is-admission", moduleKey === "admission");
@@ -1859,7 +1873,6 @@
     document.querySelector(".module-main").classList.toggle("is-lms", moduleKey === "lms");
     document.querySelector(".module-main").classList.toggle("is-ai-edge", moduleKey === "ai-edge");
     document.querySelector(".module-main").classList.toggle("is-preconfiguration", moduleKey === "pre-configuration");
-    document.querySelector("#module-eyebrow-label").textContent = isPreadmission ? "EXPLORER" : "MODULE EXPLORER";
     document.querySelector("#module-section-label").textContent = isPreadmission ? "PREADMISSION" : "AVAILABLE SECTIONS";
 
     moduleButtons.forEach((button) => {
@@ -2035,9 +2048,10 @@
     const module = moduleContent[selectedModule];
     toolList.replaceChildren();
 
+    if (!module) return;
+    toolEmpty.textContent = "No sections match your search.";
     if (module.categories) {
-      const visibleTools = renderModuleCategories(selectedModule, toolList, query);
-      arrangeCategoryColumns(toolList, selectedModule);
+      const visibleTools = renderModuleCategories(selectedModule, toolList, query, true);
 
       toolCount.textContent = `${visibleTools} ${visibleTools === 1 ? "section" : "sections"}`;
       toolCount.hidden = false;
@@ -2048,7 +2062,7 @@
 
     toolCount.hidden = false;
     const tools = module.tools.filter((tool) => tool.toLocaleLowerCase().includes(query));
-    toolList.replaceChildren(...tools.map((tool) => createToolCard(selectedModule, tool)));
+    toolList.replaceChildren(...tools.map((tool) => createToolCard(selectedModule, tool, selectedModule === "pre-configuration")));
 
     toolCount.textContent = `${tools.length} ${tools.length === 1 ? "section" : "sections"}`;
     toolEmpty.hidden = tools.length !== 0;
@@ -2289,6 +2303,13 @@
     if (!intelligentAppsDropdown.contains(event.target)) setIntelligentAppsOpen(false);
   });
 
+  function openModulesDialog() {
+    if (operationDialog.open) return;
+    operationDialog.showModal();
+    moduleSearch.focus();
+  }
+
+  document.querySelector(".header-modules-trigger").addEventListener("click", openModulesDialog);
   operationClose?.addEventListener("click", () => operationDialog.close());
   operationDialog.addEventListener("click", (event) => {
     if (event.target === operationDialog) operationDialog.close();
@@ -2325,14 +2346,12 @@
     window.clearTimeout(preadmissionResizeTimer);
     preadmissionResizeTimer = window.setTimeout(() => {
       if (!moduleView.hidden) arrangeCategoryColumns(moduleViewTools, selectedModule);
-      else if (moduleContent[selectedModule]?.categories) arrangeCategoryColumns(toolList, selectedModule);
     }, 120);
   });
 
   const requestedDialog = new URLSearchParams(window.location.search).get("open");
   if (requestedDialog === "operation-tools" && moduleView.hidden) {
-    operationDialog.showModal();
-    moduleSearch.focus();
+    openModulesDialog();
   } else if (requestedDialog === "ai-edge") {
     aiEdgeDialog.showModal();
   }
